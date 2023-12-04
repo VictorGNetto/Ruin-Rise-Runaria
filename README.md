@@ -1,1 +1,1 @@
-# Ruin-Rise-Runaria
+# Ruin and Rise of Runaria
