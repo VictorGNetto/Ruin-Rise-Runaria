@@ -222,8 +222,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.001850009, y: -0.0026499927, z: 0}
-    m_Extent: {x: 1.00365, y: 0.99615, z: 0}
+    m_Center: {x: -0.0009999871, y: -0.00090000033, z: 0}
+    m_Extent: {x: 0.9961, y: 0.99549997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -374,7 +374,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1000
+  m_SortingOrder: -2000
   m_Sprite: {fileID: 21300000, guid: d76e0ba8ba98bbf40b2ad684706ef1bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1991,20 +1991,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2332919474401230256, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
-      propertyPath: health
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2332919474401230256, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
       propertyPath: golemProgram
       value: 
       objectReference: {fileID: 1235064757}
     - target: {fileID: 5664090671159924880, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.26
       objectReference: {fileID: 0}
     - target: {fileID: 5664090671159924880, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.9
       objectReference: {fileID: 0}
     - target: {fileID: 5664090671159924880, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
       propertyPath: m_LocalPosition.z

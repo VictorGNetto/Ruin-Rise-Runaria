@@ -7,9 +7,13 @@ public class ComputeOrderInLayer : MonoBehaviour
     public float maxY = 3.7f;
     public float minY = -3.7f;
     public int orderInLayer = 0;
-    public GameObject[] parts;
+    public GameObject Head;
+    public GameObject Body;
+    public GameObject LeftArm;
+    public GameObject RightArm;
+    public GameObject LeftLeg;
+    public GameObject RightLeg;
 
-    // Update is called once per frame
     void Update()
     {
         this.UpdateOrderInLayer();
@@ -20,13 +24,21 @@ public class ComputeOrderInLayer : MonoBehaviour
     {
         float scale = 1000;
         this.orderInLayer = (int) -Mathf.Floor(scale * transform.position.y / (maxY - minY));
+        this.orderInLayer = 3 * this.orderInLayer;
     }
 
     void ApplyOrderInLayer()
     {
-        foreach (GameObject part in this.parts)
-        {
-            part.GetComponent<SpriteRenderer>().sortingOrder = orderInLayer;
-        }
+        // Back layer
+        LeftArm.GetComponent<SpriteRenderer>().sortingOrder = orderInLayer + 0;
+        LeftLeg.GetComponent<SpriteRenderer>().sortingOrder = orderInLayer + 0;
+
+        // Central layer
+        Body.GetComponent<SpriteRenderer>().sortingOrder = orderInLayer + 1;
+
+        // Front layer
+        Head.GetComponent<SpriteRenderer>().sortingOrder = orderInLayer + 2;
+        RightArm.GetComponent<SpriteRenderer>().sortingOrder = orderInLayer + 2;
+        RightLeg.GetComponent<SpriteRenderer>().sortingOrder = orderInLayer + 2;
     }
 }

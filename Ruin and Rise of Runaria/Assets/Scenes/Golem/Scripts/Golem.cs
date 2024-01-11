@@ -68,6 +68,7 @@ public class Golem : MonoBehaviour
     {
         this.cooldown = 3;
         this.movementBehavior = "NoMovementBehavior";
+        this.GetComponent<Animator>().SetBool("Walking", false);
 
         return true;
     }
@@ -81,6 +82,7 @@ public class Golem : MonoBehaviour
     {
         this.cooldown = 1;
         this.movementBehavior = "BackAndForwardMovementBehavior";
+        this.GetComponent<Animator>().SetBool("Walking", true);
 
         return true;
     }
