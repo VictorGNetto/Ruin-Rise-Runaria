@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 public class RuneUI : MonoBehaviour
 {
     public GameObject programUI;
+    public String runeName;
 
     private GameObject runeIcon;
 
@@ -16,7 +18,6 @@ public class RuneUI : MonoBehaviour
 
     public void SetRuneSprite(Sprite sprite)
     {
-        Debug.Log(runeIcon);
         runeIcon.GetComponent<Image>().sprite = sprite;
     }
 

@@ -26,6 +26,7 @@ public class ProgramUI : MonoBehaviour
         runeGO.transform.SetSiblingIndex(insertRunePosition + 1);
         runeGO.GetComponent<RuneUI>().SetRuneSprite(rune.GetComponent<Image>().sprite);
         runeGO.GetComponent<RuneUI>().programUI = this.gameObject;
+        runeGO.GetComponent<RuneUI>().runeName = runeName;
 
         GameObject addRuneGO = Instantiate(AddRunePrefab, scrollContent.transform);
         addRuneGO.transform.SetSiblingIndex(insertRunePosition + 2);
