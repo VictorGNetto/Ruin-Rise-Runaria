@@ -222,8 +222,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0029500127, y: -0.0042000115, z: 0}
-    m_Extent: {x: 0.99615, y: 0.99950004, z: 0}
+    m_Center: {x: 0.001850009, y: -0.0026499927, z: 0}
+    m_Extent: {x: 1.00365, y: 0.99615, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1115,6 +1115,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4401094884014895691, guid: a774159b0249c3342b929a63642b35d7, type: 3}
   m_PrefabInstance: {fileID: 874261224}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &959798522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8010239828806941330, guid: a774159b0249c3342b929a63642b35d7, type: 3}
+  m_PrefabInstance: {fileID: 874261224}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959798520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6524c4c241543fa479e0d638469f2bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &962231496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,7 +1314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e639701a9b5c9f4dbee67f488d2c395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runeSelectionUI: {fileID: 0}
+  runeSelectionUI: {fileID: 959798522}
   program:
   - MB-BackForward
   - H
@@ -1980,6 +1991,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2332919474401230256, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
+      propertyPath: health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332919474401230256, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
       propertyPath: golemProgram
       value: 
       objectReference: {fileID: 1235064757}
@@ -2023,9 +2038,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5781271859557906505, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7422442861380924685, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
       propertyPath: m_Name
       value: Golem - Rocha
+      objectReference: {fileID: 0}
+    - target: {fileID: 8732036535475818589, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

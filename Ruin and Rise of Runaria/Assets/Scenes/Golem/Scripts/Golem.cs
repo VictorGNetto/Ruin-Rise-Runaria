@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class Golem : MonoBehaviour
 {
-    // GOLEM VISIBLE ATRIBUTES
+    // Health and Mana
     public float health = 75;
     public float maxHealth = 100;
+    public float mana = 20;
+    public float maxMana = 30;
+    public HealthManaBar healthManaBar;
 
     // Attack, support, conditional and target runes
     private delegate bool RuneFunction();
@@ -25,9 +28,12 @@ public class Golem : MonoBehaviour
     private float cooldown = 1f;
     private float timeSinceLastAction = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
+        // Health and Mana Bar setup
+        healthManaBar.SetHealth(health, maxHealth);
+        healthManaBar.SetMana(mana, maxMana);
+
         // Support
         this.runeFunctionMap.Add("H", new RuneFunction(Heal));
 
@@ -42,7 +48,8 @@ public class Golem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(health);
+        healthManaBar.SetHealth(health, maxHealth);
+        healthManaBar.SetMana(mana, maxMana);
 
         this.timeSinceLastAction += Time.deltaTime;
 
