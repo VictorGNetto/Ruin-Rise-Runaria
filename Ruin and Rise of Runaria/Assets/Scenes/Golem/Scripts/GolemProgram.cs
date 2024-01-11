@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class GolemProgram : MonoBehaviour
 {
+    public RuneSelectionUI runeSelectionUI;
     public List<String> program;
+
     private int pc = 0;
 
     void Update()
@@ -26,5 +28,11 @@ public class GolemProgram : MonoBehaviour
     public String GetCommand()
     {
         return this.program[this.pc];
+    }
+
+    public void LoadProgram()
+    {
+        program = runeSelectionUI.GetProgram();
+        pc = 0;
     }
 }

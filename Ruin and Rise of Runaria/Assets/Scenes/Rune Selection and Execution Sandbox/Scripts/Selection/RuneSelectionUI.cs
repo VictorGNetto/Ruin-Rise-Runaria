@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class RuneSelectionUI : MonoBehaviour
@@ -12,7 +13,7 @@ public class RuneSelectionUI : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    public String[] GetProgram()
+    public List<String> GetProgram()
     {
         int length = scrollContent.transform.childCount / 2;
         string[] program = new string[length];
@@ -22,6 +23,6 @@ public class RuneSelectionUI : MonoBehaviour
             program[i] = scrollContent.transform.GetChild(2*i + 1).GetComponent<RuneUI>().runeName;
         }
 
-        return program;
+        return program.OfType<String>().ToList();
     }
 }

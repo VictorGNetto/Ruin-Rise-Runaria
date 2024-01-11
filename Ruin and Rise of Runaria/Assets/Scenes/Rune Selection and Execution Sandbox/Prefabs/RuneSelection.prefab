@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 5784027780410700310}
   - component: {fileID: 7641751073526685380}
   m_Layer: 5
-  m_Name: Rune 1_001
+  m_Name: Rune 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   programUI: {fileID: 5251898315015734836}
-  runeName: H
+  runeName: MB-BackForward
 --- !u!114 &7641751073526685380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2262,7 +2262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   programUI: {fileID: 5251898315015734836}
-  runeName: H
+  runeName: MB-None
 --- !u!114 &626390652854101641
 MonoBehaviour:
   m_ObjectHideFlags: 0
