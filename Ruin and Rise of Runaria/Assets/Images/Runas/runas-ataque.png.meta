@@ -127,7 +127,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 287
+        y: 436
         width: 110
         height: 110
       alignment: 0
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 153be6c2246a7274695ac692c248746e
-      internalID: -1306723027
+      spriteID: 87985cd51b75c9a4fb34bc9c0223efc6
+      internalID: -609127806
       vertices: []
       indices: 
       edges: []
@@ -147,7 +147,28 @@ TextureImporter:
       name: runas-ataque_1
       rect:
         serializedVersion: 2
-        x: 2
+        x: 3
+        y: 287
+        width: 110
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17872d50c33842841a39cc6fe10d6393
+      internalID: 1462968866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-ataque_2
+      rect:
+        serializedVersion: 2
+        x: 5
         y: 139
         width: 111
         height: 111
@@ -158,17 +179,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09917064a0a76a34cb9d1b083ce21400
-      internalID: 172261781
+      spriteID: 8e9734e5344f0bb49a517e0e80835471
+      internalID: -755870490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runas-ataque_2
+      name: runas-ataque_3
       rect:
         serializedVersion: 2
-        x: 7
+        x: 10
         y: 0
         width: 110
         height: 110
@@ -179,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffadee0a865ef364ba3139a6dac5ed2d
-      internalID: -1429175991
+      spriteID: 58bbc71fdfd28d64fb486a1c4b9fd2e8
+      internalID: 1765462947
       vertices: []
       indices: 
       edges: []
@@ -196,9 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      runas-ataque_0: -1306723027
-      runas-ataque_1: 172261781
-      runas-ataque_2: -1429175991
+      runas-ataque_0: -609127806
+      runas-ataque_1: 1462968866
+      runas-ataque_2: -755870490
+      runas-ataque_3: 1765462947
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

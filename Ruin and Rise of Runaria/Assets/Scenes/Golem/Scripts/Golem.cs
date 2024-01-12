@@ -48,10 +48,14 @@ public class Golem : MonoBehaviour
         // Without any rune
         this.runeFunctionMap.Add("NoCommand", new RuneFunction(NoCommand));
 
+        // Attack
+        this.runeFunctionMap.Add("RangedAttack", new RuneFunction(RangedAttack));
+        this.setupFunctionMap.Add("RangedAttack", new SetupBeforeAction(RangedAttackSetup));
+
         // Support
-        this.runeFunctionMap.Add("H", new RuneFunction(Heal));
-        this.setupFunctionMap.Add("H", new SetupBeforeAction(HealSetup));
-        this.cleanUpFunctionMap.Add("H", new CleanUpAfterAction(HealCleanUp));
+        this.runeFunctionMap.Add("Heal", new RuneFunction(Heal));
+        this.setupFunctionMap.Add("Heal", new SetupBeforeAction(HealSetup));
+        this.cleanUpFunctionMap.Add("Heal", new CleanUpAfterAction(HealCleanUp));
 
         // Movement Behaviors
         this.runeFunctionMap.Add("MB-None", new RuneFunction(SetMovementBehaviorToNone));
@@ -158,6 +162,30 @@ public class Golem : MonoBehaviour
     }
 
     // Attack Runes
+    private bool RangedAttack()
+    {
+        cooldown = floatDict["cooldown"];
+
+        Debug.Log(floatDict["damage"]);
+
+        return true;
+    }
+
+    private void RangedAttackSetup()
+    {
+        float manaCost = 15.0f;
+
+        floatDict.Clear();
+
+        if (manaCost <= mana) {
+            mana -= manaCost;
+            floatDict.Add("damage", 15.0f);
+            floatDict.Add("cooldown", 3.0f);
+        } else {
+            floatDict.Add("damage", 0.0f);
+            floatDict.Add("cooldown", 1.0f);
+        }
+    }
 
     // Support Runes
     private bool Heal()
