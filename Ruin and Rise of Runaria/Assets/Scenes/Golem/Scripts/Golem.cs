@@ -1,10 +1,17 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Golem : MonoBehaviour
 {
+    // Bullet
+    public Bullet bulletPrefab;
+    public Transform launchOffset;
+
+    // Target
+    private Golem target;
+    public LevelDirector levelDirector;
+
     // Dictionaries to allow variable sharing among related functions
     private Dictionary<String, float> floatDict = new Dictionary<string, float>();
 
@@ -41,6 +48,9 @@ public class Golem : MonoBehaviour
 
     void Start()
     {
+        // Target
+        target = levelDirector.GetEnemy();
+
         // Health and Mana Bar setup
         healthManaBar.SetHealth(health, maxHealth);
         healthManaBar.SetMana(mana, maxMana);
@@ -68,6 +78,8 @@ public class Golem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mana = Math.Min(maxMana, mana + Time.deltaTime * 5);
+
         healthManaBar.SetHealth(health, maxHealth);
         healthManaBar.SetMana(mana, maxMana);
 
@@ -166,7 +178,15 @@ public class Golem : MonoBehaviour
     {
         cooldown = floatDict["cooldown"];
 
-        Debug.Log(floatDict["damage"]);
+        if (floatDict["bulletCount"] > 0) {
+            floatDict["bulletCount"] = floatDict["bulletCount"] - 1;
+
+            Bullet bullet = Instantiate(bulletPrefab, launchOffset.position, transform.rotation);
+            bullet.target = target;
+            bullet.damage = floatDict["damage"];
+
+            Debug.Log(bullet);
+        }
 
         return true;
     }
@@ -180,10 +200,12 @@ public class Golem : MonoBehaviour
         if (manaCost <= mana) {
             mana -= manaCost;
             floatDict.Add("damage", 15.0f);
+            floatDict.Add("bulletCount", 1.0f);
             floatDict.Add("cooldown", 3.0f);
         } else {
             floatDict.Add("damage", 0.0f);
-            floatDict.Add("cooldown", 1.0f);
+            floatDict.Add("bulletCount", 0.0f);
+            floatDict.Add("cooldown", 0.5f);
         }
     }
 
@@ -201,7 +223,7 @@ public class Golem : MonoBehaviour
 
     private void HealSetup()
     {
-        float manaCost = 10.0f;
+        float manaCost = 20.0f;
 
         floatDict.Clear();
 
