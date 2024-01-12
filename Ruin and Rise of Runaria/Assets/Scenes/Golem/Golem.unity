@@ -222,8 +222,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0033000112, y: -0.0038999915, z: 0}
-    m_Extent: {x: 1.0009999, y: 1.0018001, z: 0}
+    m_Center: {x: 0.00095000863, y: 0.0055999756, z: 0}
+    m_Extent: {x: 0.99665, y: 1.0029, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -908,6 +908,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 441800598403905948, guid: a774159b0249c3342b929a63642b35d7, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 958270583575452729, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -943,6 +947,10 @@ PrefabInstance:
     - target: {fileID: 1722165148572891727, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791395812772666425, guid: a774159b0249c3342b929a63642b35d7, type: 3}
+      propertyPath: m_Interactable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3890457893686648234, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1099,6 +1107,10 @@ PrefabInstance:
     - target: {fileID: 8591297856585993459, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -125
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014753332203248413, guid: a774159b0249c3342b929a63642b35d7, type: 3}
+      propertyPath: m_Interactable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1315,9 +1327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runeSelectionUI: {fileID: 959798522}
-  program:
-  - MB-BackForward
-  - H
+  program: []
 --- !u!4 &1235064758
 Transform:
   m_ObjectHideFlags: 0
@@ -1695,6 +1705,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   golemPrograms:
   - {fileID: 1235064757}
+  golems:
+  - {fileID: 1558944415}
 --- !u!1 &1533940256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,6 +1789,17 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &1558944415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2332919474401230256, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
+  m_PrefabInstance: {fileID: 2100789553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4375fea0050b19f49b83595c8730302e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1620797755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,14 +2017,6 @@ PrefabInstance:
       propertyPath: golemProgram
       value: 
       objectReference: {fileID: 1235064757}
-    - target: {fileID: 5664090671159924880, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5664090671159924880, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 5664090671159924880, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.79

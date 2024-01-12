@@ -45,6 +45,9 @@ public class Golem : MonoBehaviour
         healthManaBar.SetHealth(health, maxHealth);
         healthManaBar.SetMana(mana, maxMana);
 
+        // Without any rune
+        this.runeFunctionMap.Add("NoCommand", new RuneFunction(NoCommand));
+
         // Support
         this.runeFunctionMap.Add("H", new RuneFunction(Heal));
         this.setupFunctionMap.Add("H", new SetupBeforeAction(HealSetup));
@@ -56,11 +59,6 @@ public class Golem : MonoBehaviour
 
         this.runeFunctionMap.Add("MB-BackForward", new RuneFunction(SetMovementBehaviorToBackAndForward));
         this.movementBehaviorFunctionMap.Add("BackAndForwardMovementBehavior", new MovementBehavior(BackAndForwardMovementBehavior));
-
-        // Setup the very first action
-        if (this.setupFunctionMap.ContainsKey(this.golemProgram.GetCommand())) {
-            this.setupFunctionMap[this.golemProgram.GetCommand()]();
-        }
     }
 
     // Update is called once per frame
@@ -73,22 +71,32 @@ public class Golem : MonoBehaviour
 
         if (timeSinceLastAction > cooldown) {
             // Clean up last action
-            if (cleanUpFunctionMap.ContainsKey(golemProgram.GetCommand())) {
-                cleanUpFunctionMap[golemProgram.GetCommand()]();
-            }
+            CleanUp();
 
             golemProgram.UpdatePC();
 
             // Setup the next action
-            if (setupFunctionMap.ContainsKey(golemProgram.GetCommand())) {
-                setupFunctionMap[golemProgram.GetCommand()]();
-            }
+            Setup();
 
             timeSinceLastAction = 0;
         }
 
         movementBehaviorFunctionMap[movementBehavior]();
         runeFunctionMap[golemProgram.GetCommand()]();
+    }
+
+    public void Setup()
+    {
+        if (setupFunctionMap.ContainsKey(golemProgram.GetCommand())) {
+            setupFunctionMap[golemProgram.GetCommand()]();
+        }
+    }
+
+    private void CleanUp()
+    {
+        if (cleanUpFunctionMap.ContainsKey(golemProgram.GetCommand())) {
+            cleanUpFunctionMap[golemProgram.GetCommand()]();
+        }
     }
 
     // Movement Behavior Runes
@@ -133,17 +141,25 @@ public class Golem : MonoBehaviour
 
         if (this.movingDirection.Equals("R")) {
             transform.Translate(d, 0 , 0);
-            transform.localScale = new Vector3(0.3f, 0.3f, 0);
+            transform.localScale = new Vector3(0.2f, 0.2f, 1.0f);
         } else {
             transform.Translate(-d, 0 , 0);
-            transform.localScale = new Vector3(-0.3f, 0.3f, 0);
+            transform.localScale = new Vector3(-0.2f, 0.2f, 1.0f);
         }
+    }
+
+    private bool NoCommand()
+    {
+        this.cooldown = 1.0f;
+
+        // do nothing
+
+        return true;
     }
 
     // Attack Runes
 
     // Support Runes
-
     private bool Heal()
     {
         this.cooldown = floatDict["cooldown"];
@@ -165,8 +181,8 @@ public class Golem : MonoBehaviour
 
         if (manaCost <= mana) {
             mana -= manaCost;
-            floatDict.Add("totalHeal", 20.0f);
-            floatDict.Add("cooldown", 2.0f);
+            floatDict.Add("totalHeal", 25.0f);
+            floatDict.Add("cooldown", 1.5f);
         } else {
             floatDict.Add("totalHeal", 0.0f);
             floatDict.Add("cooldown", 0.5f);

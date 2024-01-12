@@ -17,6 +17,8 @@ public class GolemProgram : MonoBehaviour
 
     private void IncrementPC()
     {
+        if (this.program.Count == 0) return;
+        
         this.pc = (this.pc + 1) % this.program.Count;
     }
 
@@ -27,6 +29,8 @@ public class GolemProgram : MonoBehaviour
 
     public String GetCommand()
     {
+        if (program.Count == 0) return new string("NoCommand");
+
         return this.program[this.pc];
     }
 
