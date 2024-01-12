@@ -9,6 +9,5 @@ public class ProgramExecution : MonoBehaviour
     public void ShowRuneSelectionUI()
     {
         runeSelection.SetActive(true);
-        Debug.Log("Imhere");
     }
 }

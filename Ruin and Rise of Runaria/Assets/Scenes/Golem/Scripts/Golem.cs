@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Golem : MonoBehaviour
 {
+    // Dictionaries to allow variable sharing among related functions
+    private Dictionary<String, float> floatDict = new Dictionary<string, float>();
+
     // Health and Mana
     public float health = 75;
     public float maxHealth = 100;
@@ -15,6 +18,14 @@ public class Golem : MonoBehaviour
     // Attack, support, conditional and target runes
     private delegate bool RuneFunction();
     private Dictionary<String, RuneFunction> runeFunctionMap = new Dictionary<string, RuneFunction>();
+
+    // Setup funtions
+    private delegate void SetupBeforeAction();
+    private Dictionary<String, SetupBeforeAction> setupFunctionMap = new Dictionary<string, SetupBeforeAction>();
+
+    // Clean up funtions
+    private delegate void CleanUpAfterAction();
+    private Dictionary<String, CleanUpAfterAction> cleanUpFunctionMap = new Dictionary<string, CleanUpAfterAction>();
 
     // Movement Behavior runes
     private delegate void MovementBehavior();
@@ -36,6 +47,8 @@ public class Golem : MonoBehaviour
 
         // Support
         this.runeFunctionMap.Add("H", new RuneFunction(Heal));
+        this.setupFunctionMap.Add("H", new SetupBeforeAction(HealSetup));
+        this.cleanUpFunctionMap.Add("H", new CleanUpAfterAction(HealCleanUp));
 
         // Movement Behaviors
         this.runeFunctionMap.Add("MB-None", new RuneFunction(SetMovementBehaviorToNone));
@@ -43,6 +56,11 @@ public class Golem : MonoBehaviour
 
         this.runeFunctionMap.Add("MB-BackForward", new RuneFunction(SetMovementBehaviorToBackAndForward));
         this.movementBehaviorFunctionMap.Add("BackAndForwardMovementBehavior", new MovementBehavior(BackAndForwardMovementBehavior));
+
+        // Setup the very first action
+        if (this.setupFunctionMap.ContainsKey(this.golemProgram.GetCommand())) {
+            this.setupFunctionMap[this.golemProgram.GetCommand()]();
+        }
     }
 
     // Update is called once per frame
@@ -51,16 +69,26 @@ public class Golem : MonoBehaviour
         healthManaBar.SetHealth(health, maxHealth);
         healthManaBar.SetMana(mana, maxMana);
 
-        this.timeSinceLastAction += Time.deltaTime;
+        timeSinceLastAction += Time.deltaTime;
 
-        if (this.timeSinceLastAction > this.cooldown) {
-            this.golemProgram.UpdatePC();
+        if (timeSinceLastAction > cooldown) {
+            // Clean up last action
+            if (cleanUpFunctionMap.ContainsKey(golemProgram.GetCommand())) {
+                cleanUpFunctionMap[golemProgram.GetCommand()]();
+            }
+
+            golemProgram.UpdatePC();
+
+            // Setup the next action
+            if (setupFunctionMap.ContainsKey(golemProgram.GetCommand())) {
+                setupFunctionMap[golemProgram.GetCommand()]();
+            }
 
             timeSinceLastAction = 0;
         }
 
-        this.movementBehaviorFunctionMap[this.movementBehavior]();
-        this.runeFunctionMap[this.golemProgram.GetCommand()]();
+        movementBehaviorFunctionMap[movementBehavior]();
+        runeFunctionMap[golemProgram.GetCommand()]();
     }
 
     // Movement Behavior Runes
@@ -118,12 +146,36 @@ public class Golem : MonoBehaviour
 
     private bool Heal()
     {
-        this.cooldown = 2.0f;
-        float total = 10.0f;
-        float amount = total * Time.deltaTime / this.cooldown;
+        this.cooldown = floatDict["cooldown"];
+
+        float totalHeal = floatDict["totalHeal"];
+        float amount = totalHeal * Time.deltaTime / this.cooldown;
         this.health = Math.Min(this.health + amount, this.maxHealth);
 
         return true;
+    }
+
+    private void HealSetup()
+    {
+        float manaCost = 10.0f;
+
+        floatDict.Clear();
+
+        floatDict.Add("health", health);
+
+        if (manaCost <= mana) {
+            mana -= manaCost;
+            floatDict.Add("totalHeal", 20.0f);
+            floatDict.Add("cooldown", 2.0f);
+        } else {
+            floatDict.Add("totalHeal", 0.0f);
+            floatDict.Add("cooldown", 0.5f);
+        }
+    }
+
+    private void HealCleanUp()
+    {
+        this.health = floatDict["health"] + floatDict["totalHeal"];
     }
 
     // Conditional Runes
