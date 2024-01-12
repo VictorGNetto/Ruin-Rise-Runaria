@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Golem/Golem.unity
-    guid: f517239d7eb693441b6d8bbc2de90dbe
+    path: Assets/Scenes/Rune Sandbox/RuneSandbox.unity
+    guid: 61d500a1c6ec23f4db489d10da952811
   m_configObjects: {}

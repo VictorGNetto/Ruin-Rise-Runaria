@@ -643,30 +643,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RuneSelection
       objectReference: {fileID: 0}
-    - target: {fileID: 128379143805359486, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 273169247815172470, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4178571448482810670, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4178571448482810670, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4178571448482810670, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4178571448482810670, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4401094884014895691, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
