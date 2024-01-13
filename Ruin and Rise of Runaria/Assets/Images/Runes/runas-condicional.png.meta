@@ -126,8 +126,50 @@ TextureImporter:
       name: runas-condicional_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 6
+        x: 15
+        y: 249
+        width: 111
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df6adf796c6d0145a1893aee6b6e244
+      internalID: 1067070697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-condicional_1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 245
+        width: 111
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3c0ceb2ec1e17439c9e1e40db2250c
+      internalID: -772894795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-condicional_2
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 243
         width: 110
         height: 100
       alignment: 0
@@ -137,18 +179,60 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbcaa01d593345847aa0e0cf3fd26dd9
-      internalID: -1555975671
+      spriteID: 8dc75e36c75c9be418741093129ee983
+      internalID: 873210640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runas-condicional_1
+      name: runas-condicional_3
       rect:
         serializedVersion: 2
-        x: 116
-        y: 1
+        x: 9
+        y: 121
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f817e17dc7f92bf478539c2fa1fea430
+      internalID: 1813720126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-condicional_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 119
+        width: 111
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f19927643c9fe148944187596e0ba36
+      internalID: -901433387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-condicional_5
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 113
         width: 111
         height: 101
       alignment: 0
@@ -158,18 +242,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 920a7b9ef57f3654fa7d4edfcbc03c6b
-      internalID: -1112309451
+      spriteID: 294e04ef20ad28742a1f4ca83f34f6de
+      internalID: 658531601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runas-condicional_2
+      name: runas-condicional_6
       rect:
         serializedVersion: 2
-        x: 242
-        y: 0
+        x: 0
+        y: 2
         width: 110
         height: 100
       alignment: 0
@@ -179,8 +263,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ba1a96dc5ba5a840946be2cb18c9d13
-      internalID: -305277218
+      spriteID: 68ce80a281468e74aa39e98b0154d9e9
+      internalID: -8779276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-condicional_7
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 2
+        width: 111
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d000e90d48821d4478c97b01dc770df0
+      internalID: -907836229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-condicional_8
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 0
+        width: 111
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca5037ef13f37634cbe76aca068e497d
+      internalID: 1287686385
       vertices: []
       indices: 
       edges: []
@@ -196,9 +322,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      runas-condicional_0: -1555975671
-      runas-condicional_1: -1112309451
-      runas-condicional_2: -305277218
+      runas-condicional_0: 1067070697
+      runas-condicional_1: -772894795
+      runas-condicional_2: 873210640
+      runas-condicional_3: 1813720126
+      runas-condicional_4: -901433387
+      runas-condicional_5: 658531601
+      runas-condicional_6: -8779276
+      runas-condicional_7: -907836229
+      runas-condicional_8: 1287686385
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

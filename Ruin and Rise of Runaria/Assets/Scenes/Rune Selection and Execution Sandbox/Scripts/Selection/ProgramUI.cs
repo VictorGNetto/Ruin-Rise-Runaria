@@ -1,17 +1,19 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ProgramUI : MonoBehaviour
 {
     public GameObject scrollContent;
-    public GameObject RunePrefab;
-    public GameObject AddRunePrefab;
+    public GameObject runePrefab;
+    public GameObject conditionalRunePrefab;
+    public GameObject addRunePrefab;
 
     private GameObject empty;
     private int insertRunePosition = 0;
+
+    private bool insertRuneAsConditional = false;
+    private Sprite conditionalRuneSprite;
 
     private void Awake()
     {
@@ -22,19 +24,40 @@ public class ProgramUI : MonoBehaviour
     {
         scrollContent.transform.GetChild(insertRunePosition).GetComponent<AddRuneUI>().UnsetAsInsertPosition();
 
-        GameObject runeGO = Instantiate(RunePrefab, scrollContent.transform);
-        runeGO.transform.SetSiblingIndex(insertRunePosition + 1);
-        runeGO.GetComponent<RuneUI>().SetRuneSprite(rune.GetComponent<Image>().sprite);
-        runeGO.GetComponent<RuneUI>().programUI = this.gameObject;
-        runeGO.GetComponent<RuneUI>().runeName = runeName;
+        if (insertRuneAsConditional) {
+            GameObject conditionalRuneGO = Instantiate(conditionalRunePrefab, scrollContent.transform);
+            conditionalRuneGO.transform.SetSiblingIndex(insertRunePosition + 1);
+            conditionalRuneGO.GetComponent<ConditionalRuneUI>().SetRuneSprite(rune.GetComponent<Image>().sprite);
+            conditionalRuneGO.GetComponent<ConditionalRuneUI>().SetConditionalRuneSprite(conditionalRuneSprite);
+            conditionalRuneGO.GetComponent<ConditionalRuneUI>().programUI = this.gameObject;
+            conditionalRuneGO.GetComponent<ConditionalRuneUI>().runeName = runeName;
+        } else {
+            GameObject runeGO = Instantiate(runePrefab, scrollContent.transform);
+            runeGO.transform.SetSiblingIndex(insertRunePosition + 1);
+            runeGO.GetComponent<RuneUI>().SetRuneSprite(rune.GetComponent<Image>().sprite);
+            runeGO.GetComponent<RuneUI>().programUI = this.gameObject;
+            runeGO.GetComponent<RuneUI>().runeName = runeName;
+        }
 
-        GameObject addRuneGO = Instantiate(AddRunePrefab, scrollContent.transform);
+
+        GameObject addRuneGO = Instantiate(addRunePrefab, scrollContent.transform);
         addRuneGO.transform.SetSiblingIndex(insertRunePosition + 2);
         addRuneGO.GetComponent<AddRuneUI>().SetAsInsertPosition();
         addRuneGO.GetComponent<AddRuneUI>().programUI = this.gameObject;
 
         insertRunePosition += 2;
         Destroy(rune);
+    }
+
+    public void SetInsertRuneAsConditional(Sprite sprite)
+    {
+        insertRuneAsConditional = true;
+        conditionalRuneSprite = sprite;
+    }
+
+    public void UnsetInsertRuneAsConditional()
+    {
+        insertRuneAsConditional = false;
     }
 
     public void ChangeInsertRunePosition(int index)
