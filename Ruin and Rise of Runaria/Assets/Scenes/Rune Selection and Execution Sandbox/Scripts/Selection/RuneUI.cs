@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +11,7 @@ public class RuneUI : MonoBehaviour
 
     private void Awake()
     {
-        runeIcon = this.transform.GetChild(0).gameObject;
+        runeIcon = transform.GetChild(0).gameObject;
     }
 
     public void SetRuneSprite(Sprite sprite)
@@ -23,7 +21,7 @@ public class RuneUI : MonoBehaviour
 
     public void RemoveRune()
     {
-        int removeRunePostion = this.transform.GetSiblingIndex();
+        int removeRunePostion = transform.GetSiblingIndex();
         programUI.GetComponent<ProgramUI>().RemoveRune(removeRunePostion);
     }
 }
