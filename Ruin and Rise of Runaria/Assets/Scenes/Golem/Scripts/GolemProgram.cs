@@ -7,8 +7,11 @@ public class GolemProgram : MonoBehaviour
 {
     public RuneSelectionUI runeSelectionUI;
     public List<String> program;
+    public bool actionResult = false;
 
     private int pc = 0;
+    private bool waitingForCondition = false;
+    private bool conditionalMode = true;  // true - IF; false - ELSE
 
     void Update()
     {
@@ -17,14 +20,34 @@ public class GolemProgram : MonoBehaviour
 
     private void IncrementPC()
     {
-        if (this.program.Count == 0) return;
-        
-        this.pc = (this.pc + 1) % this.program.Count;
+        pc = (pc + 1) % program.Count;
     }
 
     public void UpdatePC()
     {
-        this.IncrementPC();
+        if (program.Count == 0) return;
+
+        if (waitingForCondition) {
+            waitingForCondition = false;
+            // Jumps over action (do an additional increment) when
+            // actionResult returns false in a IF (true)
+            // actionResult return true in a ELSE (false)
+            if (actionResult != conditionalMode) {
+                IncrementPC();
+            }
+        }
+
+        IncrementPC();
+
+        if (program[pc].Equals("IF")) {
+            waitingForCondition = true;
+            conditionalMode = true;
+            IncrementPC();
+        } else if (program[pc].Equals("ELSE")) {
+            waitingForCondition = true;
+            conditionalMode = false;
+            IncrementPC();
+        }
     }
 
     public String GetCommand()
@@ -37,6 +60,7 @@ public class GolemProgram : MonoBehaviour
     public void LoadProgram()
     {
         program = runeSelectionUI.GetProgram();
-        pc = 0;
+        pc = -1;
+        UpdatePC();
     }
 }

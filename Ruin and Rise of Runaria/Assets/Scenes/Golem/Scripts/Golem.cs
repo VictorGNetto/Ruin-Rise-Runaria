@@ -67,6 +67,11 @@ public class Golem : MonoBehaviour
         this.setupFunctionMap.Add("Heal", new SetupBeforeAction(HealSetup));
         this.cleanUpFunctionMap.Add("Heal", new CleanUpAfterAction(HealCleanUp));
 
+        // Conditional
+        this.runeFunctionMap.Add("C1", new RuneFunction(Conditional));
+        this.runeFunctionMap.Add("C2", new RuneFunction(Conditional));
+        this.runeFunctionMap.Add("C3", new RuneFunction(Conditional));
+
         // Movement Behaviors
         this.runeFunctionMap.Add("MB-None", new RuneFunction(SetMovementBehaviorToNone));
         this.movementBehaviorFunctionMap.Add("NoMovementBehavior", new MovementBehavior(NoMovementBehavior));
@@ -98,7 +103,7 @@ public class Golem : MonoBehaviour
         }
 
         movementBehaviorFunctionMap[movementBehavior]();
-        runeFunctionMap[golemProgram.GetCommand()]();
+        golemProgram.actionResult = runeFunctionMap[golemProgram.GetCommand()]();
     }
 
     public void Setup()
@@ -245,6 +250,14 @@ public class Golem : MonoBehaviour
     }
 
     // Conditional Runes
+    private bool Conditional()
+    {
+        bool b = UnityEngine.Random.Range(0f, 1f) > 0.5f;
+        Debug.Log(b);
+        this.cooldown = 0;
+
+        return b;
+    }
 
     // Target Runes
 }
