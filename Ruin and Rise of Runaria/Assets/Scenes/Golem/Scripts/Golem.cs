@@ -9,11 +9,8 @@ public class Golem : MonoBehaviour
     public Transform launchOffset;
 
     // Target
-    private Golem target;
+    public Golem target;
     public LevelDirector levelDirector;
-
-    // Dictionaries to allow variable sharing among related functions
-    private Dictionary<String, float> floatDict = new Dictionary<string, float>();
 
     // Health and Mana
     public float health = 75;
@@ -23,16 +20,16 @@ public class Golem : MonoBehaviour
     public HealthManaBar healthManaBar;
 
     // Attack, support, conditional and target runes
-    private delegate bool RuneFunction();
-    private Dictionary<String, RuneFunction> runeFunctionMap = new Dictionary<string, RuneFunction>();
+    public delegate bool RuneFunction();
+    public Dictionary<String, RuneFunction> runeFunctionMap = new Dictionary<string, RuneFunction>();
 
     // Setup funtions
-    private delegate void SetupBeforeAction();
-    private Dictionary<String, SetupBeforeAction> setupFunctionMap = new Dictionary<string, SetupBeforeAction>();
+    public delegate void SetupBeforeAction();
+    public Dictionary<String, SetupBeforeAction> setupFunctionMap = new Dictionary<string, SetupBeforeAction>();
 
     // Clean up funtions
-    private delegate void CleanUpAfterAction();
-    private Dictionary<String, CleanUpAfterAction> cleanUpFunctionMap = new Dictionary<string, CleanUpAfterAction>();
+    public delegate void CleanUpAfterAction();
+    public Dictionary<String, CleanUpAfterAction> cleanUpFunctionMap = new Dictionary<string, CleanUpAfterAction>();
 
     // Movement Behavior runes
     private delegate void MovementBehavior();
@@ -43,7 +40,7 @@ public class Golem : MonoBehaviour
 
 
     public GolemProgram golemProgram;
-    private float cooldown = 1f;
+    public float cooldown = 1f;
     private float timeSinceLastAction = 0;
 
     void Awake()
@@ -57,15 +54,6 @@ public class Golem : MonoBehaviour
 
         // Without any rune
         this.runeFunctionMap.Add("NoCommand", new RuneFunction(NoCommand));
-
-        // Attack
-        this.runeFunctionMap.Add("RangedAttack", new RuneFunction(RangedAttack));
-        this.setupFunctionMap.Add("RangedAttack", new SetupBeforeAction(RangedAttackSetup));
-
-        // Support
-        this.runeFunctionMap.Add("Heal", new RuneFunction(Heal));
-        this.setupFunctionMap.Add("Heal", new SetupBeforeAction(HealSetup));
-        this.cleanUpFunctionMap.Add("Heal", new CleanUpAfterAction(HealCleanUp));
 
         // Conditional
         this.runeFunctionMap.Add("C1", new RuneFunction(Conditional));
@@ -178,77 +166,6 @@ public class Golem : MonoBehaviour
         return true;
     }
 
-    // Attack Runes
-    private bool RangedAttack()
-    {
-        cooldown = floatDict["cooldown"];
-
-        if (floatDict["bulletCount"] > 0) {
-            floatDict["bulletCount"] = floatDict["bulletCount"] - 1;
-
-            Bullet bullet = Instantiate(bulletPrefab, launchOffset.position, transform.rotation);
-            bullet.target = target;
-            bullet.damage = floatDict["damage"];
-
-            Debug.Log(bullet);
-        }
-
-        return true;
-    }
-
-    private void RangedAttackSetup()
-    {
-        float manaCost = 15.0f;
-
-        floatDict.Clear();
-
-        if (manaCost <= mana) {
-            mana -= manaCost;
-            floatDict.Add("damage", 15.0f);
-            floatDict.Add("bulletCount", 1.0f);
-            floatDict.Add("cooldown", 3.0f);
-        } else {
-            floatDict.Add("damage", 0.0f);
-            floatDict.Add("bulletCount", 0.0f);
-            floatDict.Add("cooldown", 0.5f);
-        }
-    }
-
-    // Support Runes
-    private bool Heal()
-    {
-        this.cooldown = floatDict["cooldown"];
-
-        float totalHeal = floatDict["totalHeal"];
-        float amount = totalHeal * Time.deltaTime / this.cooldown;
-        this.health = Math.Min(this.health + amount, this.maxHealth);
-
-        return true;
-    }
-
-    private void HealSetup()
-    {
-        float manaCost = 20.0f;
-
-        floatDict.Clear();
-
-        floatDict.Add("health", health);
-
-        if (manaCost <= mana) {
-            mana -= manaCost;
-            floatDict.Add("totalHeal", 25.0f);
-            floatDict.Add("cooldown", 1.5f);
-        } else {
-            floatDict.Add("totalHeal", 0.0f);
-            floatDict.Add("cooldown", 0.5f);
-        }
-    }
-
-    private void HealCleanUp()
-    {
-        this.health = floatDict["health"] + floatDict["totalHeal"];
-    }
-
     // Conditional Runes
     private bool Conditional()
     {
@@ -258,6 +175,4 @@ public class Golem : MonoBehaviour
 
         return b;
     }
-
-    // Target Runes
 }
