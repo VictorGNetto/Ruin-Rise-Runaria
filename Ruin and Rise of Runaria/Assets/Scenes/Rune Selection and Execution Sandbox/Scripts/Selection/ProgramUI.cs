@@ -12,8 +12,11 @@ public class ProgramUI : MonoBehaviour
     private GameObject empty;
     private int insertRunePosition = 0;
 
-    private bool insertRuneAsConditional = false;
+    private String conditionalMode;
     private Sprite conditionalRuneSprite;
+
+    private bool insertRuneAsConditional = false;
+    private String conditionalRuneName;
 
     private void Awake()
     {
@@ -29,8 +32,10 @@ public class ProgramUI : MonoBehaviour
             conditionalRuneGO.transform.SetSiblingIndex(insertRunePosition + 1);
             conditionalRuneGO.GetComponent<ConditionalRuneUI>().SetRuneSprite(rune.GetComponent<Image>().sprite);
             conditionalRuneGO.GetComponent<ConditionalRuneUI>().SetConditionalRuneSprite(conditionalRuneSprite);
-            conditionalRuneGO.GetComponent<ConditionalRuneUI>().programUI = this.gameObject;
+            conditionalRuneGO.GetComponent<ConditionalRuneUI>().conditionalMode = conditionalMode;
             conditionalRuneGO.GetComponent<ConditionalRuneUI>().runeName = runeName;
+            conditionalRuneGO.GetComponent<ConditionalRuneUI>().conditionalRuneName = conditionalRuneName;
+            conditionalRuneGO.GetComponent<ConditionalRuneUI>().programUI = this.gameObject;
         } else {
             GameObject runeGO = Instantiate(runePrefab, scrollContent.transform);
             runeGO.transform.SetSiblingIndex(insertRunePosition + 1);
@@ -49,15 +54,19 @@ public class ProgramUI : MonoBehaviour
         Destroy(rune);
     }
 
-    public void SetInsertRuneAsConditional(Sprite sprite)
+    public void SetInsertRuneAsConditional(Sprite sprite, String conditionalMode, String conditionalRuneName)
     {
         insertRuneAsConditional = true;
         conditionalRuneSprite = sprite;
+        this.conditionalMode = conditionalMode;
+        this.conditionalRuneName = conditionalRuneName;
     }
 
     public void UnsetInsertRuneAsConditional()
     {
         insertRuneAsConditional = false;
+        this.conditionalMode = "";
+        this.conditionalRuneName = "";
     }
 
     public void ChangeInsertRunePosition(int index)

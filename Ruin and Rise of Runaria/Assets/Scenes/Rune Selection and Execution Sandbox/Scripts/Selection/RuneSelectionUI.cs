@@ -15,14 +15,22 @@ public class RuneSelectionUI : MonoBehaviour
 
     public List<String> GetProgram()
     {
+        List<String> program = new List<string>();
+
         int length = scrollContent.transform.childCount / 2;
-        string[] program = new string[length];
 
         for (int i = 0; i < length; i++)
         {
-            program[i] = scrollContent.transform.GetChild(2*i + 1).GetComponent<RuneUI>().runeName;
+            Transform transform = scrollContent.transform.GetChild(2*i + 1);
+            if (transform.GetComponent<RuneUI>() != null) {
+                program.Add(transform.GetComponent<RuneUI>().runeName);
+            } else if (transform.GetComponent<ConditionalRuneUI>() != null) {
+                program.Add(transform.GetComponent<ConditionalRuneUI>().conditionalMode);
+                program.Add(transform.GetComponent<ConditionalRuneUI>().conditionalRuneName);
+                program.Add(transform.GetComponent<ConditionalRuneUI>().runeName);
+            }
         }
 
-        return program.OfType<String>().ToList();
+        return program;
     }
 }

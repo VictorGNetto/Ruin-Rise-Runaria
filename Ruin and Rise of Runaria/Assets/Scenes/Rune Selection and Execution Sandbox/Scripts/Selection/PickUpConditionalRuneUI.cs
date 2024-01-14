@@ -7,7 +7,7 @@ public class PickUpConditionalRuneUI : MonoBehaviour
 {
     public ProgramUI programUI;
     public GameObject details;
-    public String runeName;
+    public String conditionalRuneName;
 
     public Sprite unselected;
     public Sprite selectedAsIf;
@@ -27,11 +27,11 @@ public class PickUpConditionalRuneUI : MonoBehaviour
             SetOthersPickUpConditionalRuneInteractivity(true);
         } else if (internalState == 1) {
             gameObject.GetComponent<Image>().sprite = selectedAsIf;
-            programUI.SetInsertRuneAsConditional(selectedAsIf);
+            programUI.SetInsertRuneAsConditional(selectedAsIf, "IF", conditionalRuneName);
             SetOthersPickUpConditionalRuneInteractivity(false);
         } else {
             gameObject.GetComponent<Image>().sprite = selectedAsElse;
-            programUI.SetInsertRuneAsConditional(selectedAsElse);
+            programUI.SetInsertRuneAsConditional(selectedAsElse, "ELSE", conditionalRuneName);
         }
     }
 

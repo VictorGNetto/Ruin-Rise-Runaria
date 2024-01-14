@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public class ConditionalRuneUI : MonoBehaviour
 {
     public GameObject programUI;
+    public String conditionalMode;
     public String runeName;
+    public String conditionalRuneName;
 
     private GameObject runeIcon;
     private GameObject conditionalIcon;

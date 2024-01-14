@@ -46,7 +46,7 @@ public class Golem : MonoBehaviour
     private float cooldown = 1f;
     private float timeSinceLastAction = 0;
 
-    void Start()
+    void Awake()
     {
         // Target
         target = levelDirector.GetEnemy();
