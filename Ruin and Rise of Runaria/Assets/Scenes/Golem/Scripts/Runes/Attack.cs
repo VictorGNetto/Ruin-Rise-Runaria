@@ -28,8 +28,6 @@ public class Attack : MonoBehaviour
             Bullet bullet = Instantiate(golem.bulletPrefab, golem.launchOffset.position, transform.rotation);
             bullet.target = golem.target;
             bullet.damage = floatDict["damage"];
-
-            Debug.Log(bullet);
         }
 
         return true;

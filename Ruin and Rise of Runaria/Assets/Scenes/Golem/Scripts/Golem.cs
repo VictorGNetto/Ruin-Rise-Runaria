@@ -41,7 +41,7 @@ public class Golem : MonoBehaviour
 
     public GolemProgram golemProgram;
     public float cooldown = 1f;
-    private float timeSinceLastAction = 0;
+    public float timeSinceLastAction = 0;
 
     void Awake()
     {

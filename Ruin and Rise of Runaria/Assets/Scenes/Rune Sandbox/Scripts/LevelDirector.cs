@@ -9,8 +9,6 @@ public class LevelDirector : MonoBehaviour
 
     public Golem GetEnemy()
     {
-        Debug.Log("imhere");
-        Debug.Log(enemys.Count);
         return enemys[0];
     }
 }

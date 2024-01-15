@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,16 +6,13 @@ public class GolemProgram : MonoBehaviour
 {
     public RuneSelectionUI runeSelectionUI;
     public List<String> program;
+    private Dictionary<String, Sprite> runeSprites = new Dictionary<string, Sprite>();
     public bool actionResult = false;
 
     private int pc = 0;
+    private Sprite sprite;
     private bool waitingForCondition = false;
     private bool conditionalMode = true;  // true - IF; false - ELSE
-
-    void Update()
-    {
-        // UI stuff
-    }
 
     private void IncrementPC()
     {
@@ -48,18 +44,26 @@ public class GolemProgram : MonoBehaviour
             conditionalMode = false;
             IncrementPC();
         }
+
+        sprite = runeSprites[program[pc]];
     }
 
     public String GetCommand()
     {
         if (program.Count == 0) return new string("NoCommand");
 
-        return this.program[this.pc];
+        return program[pc];
+    }
+
+    public Sprite GetCurrentRuneSprite()
+    {
+        return sprite;
     }
 
     public void LoadProgram()
     {
         program = runeSelectionUI.GetProgram();
+        runeSprites = runeSelectionUI.GetRuneSprites();
         pc = -1;
         UpdatePC();
     }
