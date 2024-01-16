@@ -525,8 +525,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0014500022, y: 0.004349977, z: 0}
-    m_Extent: {x: 1.0048499, y: 0.99685, z: 0}
+    m_Center: {x: -0.000100016594, y: 0.0010999739, z: 0}
+    m_Extent: {x: 1.0042, y: 1.0008, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -685,6 +685,10 @@ PrefabInstance:
     - target: {fileID: 7422442861380924685, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
       propertyPath: m_Name
       value: Golem - Rocha
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650062346082780980, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8732036535475818589, guid: 9d93c4553191dc44b92aaf8f12c2cbb8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1247,7 +1251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4580164298458534493, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 270
+      value: 390
       objectReference: {fileID: 0}
     - target: {fileID: 4666776609360397438, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: m_AnchorMax.y
