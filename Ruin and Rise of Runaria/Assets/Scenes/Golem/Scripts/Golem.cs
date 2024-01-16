@@ -32,16 +32,13 @@ public class Golem : MonoBehaviour
     public Dictionary<String, CleanUpAfterAction> cleanUpFunctionMap = new Dictionary<string, CleanUpAfterAction>();
 
     // Movement Behavior runes
-    private delegate void MovementBehavior();
-    private Dictionary<String, MovementBehavior> movementBehaviorFunctionMap = new Dictionary<string, MovementBehavior>();
-    private String movementBehavior = "NoMovementBehavior";
-    private String movingDirection = "R";
-    private float timeMoving = 0;
-
+    public delegate void MovementBehavior();
+    public Dictionary<String, MovementBehavior> movementBehaviorFunctionMap = new Dictionary<string, MovementBehavior>();
 
     public GolemProgram golemProgram;
     public float cooldown = 1f;
     public float timeSinceLastAction = 0;
+    public String movementBehavior = "NoMovementBehavior";
 
     void Awake()
     {
@@ -54,18 +51,6 @@ public class Golem : MonoBehaviour
 
         // Without any rune
         this.runeFunctionMap.Add("NoCommand", new RuneFunction(NoCommand));
-
-        // Conditional
-        this.runeFunctionMap.Add("C1", new RuneFunction(Conditional));
-        this.runeFunctionMap.Add("C2", new RuneFunction(Conditional));
-        this.runeFunctionMap.Add("C3", new RuneFunction(Conditional));
-
-        // Movement Behaviors
-        this.runeFunctionMap.Add("MB-None", new RuneFunction(SetMovementBehaviorToNone));
-        this.movementBehaviorFunctionMap.Add("NoMovementBehavior", new MovementBehavior(NoMovementBehavior));
-
-        this.runeFunctionMap.Add("MB-BackForward", new RuneFunction(SetMovementBehaviorToBackAndForward));
-        this.movementBehaviorFunctionMap.Add("BackAndForwardMovementBehavior", new MovementBehavior(BackAndForwardMovementBehavior));
     }
 
     // Update is called once per frame
@@ -108,71 +93,12 @@ public class Golem : MonoBehaviour
         }
     }
 
-    // Movement Behavior Runes
-    private bool SetMovementBehaviorToNone()
-    {
-        this.cooldown = 3;
-        this.movementBehavior = "NoMovementBehavior";
-        this.GetComponent<Animator>().SetBool("Walking", false);
-
-        return true;
-    }
-
-    private void NoMovementBehavior()
-    {
-        // do nothing
-    }
-
-    private bool SetMovementBehaviorToBackAndForward()
-    {
-        this.cooldown = 1;
-        this.movementBehavior = "BackAndForwardMovementBehavior";
-        this.GetComponent<Animator>().SetBool("Walking", true);
-
-        return true;
-    }
-
-    private void BackAndForwardMovementBehavior()
-    {
-        this.timeMoving += Time.deltaTime;
-
-        if (this.timeMoving > 0.75f) {
-            this.timeMoving = 0;
-
-            if (this.movingDirection.Equals("R")) {
-                this.movingDirection = "L";
-            } else {
-                this.movingDirection = "R";
-            }
-        }
-
-        float d = 2 * Time.deltaTime / 0.75f;
-
-        if (this.movingDirection.Equals("R")) {
-            transform.Translate(d, 0 , 0);
-            transform.localScale = new Vector3(0.2f, 0.2f, 1.0f);
-        } else {
-            transform.Translate(-d, 0 , 0);
-            transform.localScale = new Vector3(-0.2f, 0.2f, 1.0f);
-        }
-    }
-
     private bool NoCommand()
     {
-        this.cooldown = 1.0f;
+        this.cooldown = 0.1f;
 
         // do nothing
 
         return true;
-    }
-
-    // Conditional Runes
-    private bool Conditional()
-    {
-        bool b = UnityEngine.Random.Range(0f, 1f) > 0.5f;
-        Debug.Log(b);
-        this.cooldown = 0;
-
-        return b;
     }
 }

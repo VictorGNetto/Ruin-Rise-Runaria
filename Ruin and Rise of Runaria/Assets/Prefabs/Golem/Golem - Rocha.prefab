@@ -1001,6 +1001,8 @@ GameObject:
   - component: {fileID: 2332919474401230256}
   - component: {fileID: 6148605491965508281}
   - component: {fileID: 2209686191450114347}
+  - component: {fileID: 8813658821263791934}
+  - component: {fileID: 4078403257845314987}
   - component: {fileID: 7650062346082780980}
   m_Layer: 0
   m_Name: Golem - Rocha
@@ -1094,6 +1096,7 @@ MonoBehaviour:
   healthManaBar: {fileID: 1584779044628933241}
   golemProgram: {fileID: 0}
   cooldown: 1
+  timeSinceLastAction: 0
 --- !u!114 &6148605491965508281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,6 +1119,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7afc66e2b8a83af4e91e48f7174f9a77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8813658821263791934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7422442861380924685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b628f501537309643a93be7a6de03f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4078403257845314987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7422442861380924685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d91ebd188e28014090f009236a8dfdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!70 &7650062346082780980

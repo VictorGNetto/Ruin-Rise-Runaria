@@ -45,7 +45,15 @@ public class GolemProgram : MonoBehaviour
             IncrementPC();
         }
 
-        sprite = runeSprites[program[pc]];
+        // Remove this when enemys are not golems anymore
+        try
+        {
+            sprite = runeSprites[program[pc]];
+            
+        }
+        catch (System.Exception)
+        {
+        }
     }
 
     public String GetCommand()

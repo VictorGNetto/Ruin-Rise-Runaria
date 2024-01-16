@@ -46,15 +46,13 @@ public class RuneSelectionUI : MonoBehaviour
             Transform transform = scrollContent.transform.GetChild(2*i + 1);
             if (transform.GetComponent<RuneUI>() != null) {
                 Sprite sprite = transform.GetChild(0).GetComponent<Image>().sprite;
-                runeSprites.Add(transform.GetComponent<RuneUI>().runeName, sprite);
+                runeSprites[transform.GetComponent<RuneUI>().runeName] = sprite;
             } else if (transform.GetComponent<ConditionalRuneUI>() != null) {
-                // program.Add(transform.GetComponent<ConditionalRuneUI>().conditionalMode);
-                // program.Add(transform.GetComponent<ConditionalRuneUI>().conditionalRuneName);
                 Sprite sprite = transform.GetChild(0).GetComponent<Image>().sprite;
-                runeSprites.Add(transform.GetComponent<ConditionalRuneUI>().runeName, sprite);
+                runeSprites[transform.GetComponent<ConditionalRuneUI>().runeName] = sprite;
 
                 sprite = transform.GetChild(1).GetComponent<Image>().sprite;
-                runeSprites.Add(transform.GetComponent<ConditionalRuneUI>().conditionalRuneName, sprite);
+                runeSprites[transform.GetComponent<ConditionalRuneUI>().conditionalRuneName] = sprite;
             }
         }
 

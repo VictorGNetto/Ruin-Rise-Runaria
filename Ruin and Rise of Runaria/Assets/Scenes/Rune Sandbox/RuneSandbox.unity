@@ -345,10 +345,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1053237294}
     m_Modifications:
-    - target: {fileID: 1327255389844910685, guid: fe3f5573c25ca394baaf4d3c5791d325, type: 3}
-      propertyPath: m_Sprite
+    - target: {fileID: 7956602164063011628, guid: fe3f5573c25ca394baaf4d3c5791d325, type: 3}
+      propertyPath: golem
       value: 
-      objectReference: {fileID: 21300000, guid: 17b951a9210a409428def940d5a029ca, type: 3}
+      objectReference: {fileID: 237953308}
     - target: {fileID: 7956602164063011628, guid: fe3f5573c25ca394baaf4d3c5791d325, type: 3}
       propertyPath: golemProgram
       value: 
@@ -525,8 +525,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0010000169, y: 0.0024999976, z: 0}
-    m_Extent: {x: 0.9944, y: 1.0067, z: 0}
+    m_Center: {x: -0.0014500022, y: 0.004349977, z: 0}
+    m_Extent: {x: 1.0048499, y: 0.99685, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
