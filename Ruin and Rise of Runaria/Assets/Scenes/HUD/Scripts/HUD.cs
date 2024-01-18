@@ -2,20 +2,23 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class HUD : MonoBehaviour
 {
     public Color activeColor;
     public Color inactiveColor;
+    public bool levelStartedRunning = false;
+    public List<RuneSelectionUI> runeSelectionUIs;
 
-    private float runningTime = 0f;
+    private float runningTime = 0.0f;
     private GameObject timer;
     private GameObject reload;
     private GameObject pause;
     private GameObject play2;
     private GameObject play3;
     private int buttonState = 1;  // 1 - Paused; 2 - playing x1; 3 - playing x1.5; 4 - playing x2
-    private bool allButtonsAreInteractable = false;
+    private bool playWasPressed = false;
 
     private void Awake()
     {
@@ -67,8 +70,11 @@ public class HUD : MonoBehaviour
     public void Play()
     {
         // Active other buttons first time play's pressed
-        if (!allButtonsAreInteractable) {
-            allButtonsAreInteractable = true;
+        if (!playWasPressed) {
+            playWasPressed = true;
+            runningTime = 0.0f;
+            levelStartedRunning = true;
+            DisableRuneSelectionInteractability();
             reload.GetComponent<Button>().interactable = true;
             pause.GetComponent<Button>().interactable = true;
             play2.GetComponent<Button>().interactable = true;
@@ -116,5 +122,13 @@ public class HUD : MonoBehaviour
 
         // Change the time scale
         Time.timeScale = 2f;
+    }
+
+    private void DisableRuneSelectionInteractability()
+    {
+        for (int i = 0; i < runeSelectionUIs.Count; i++)
+        {
+            runeSelectionUIs[i].DisableInteractability();
+        }
     }
 }

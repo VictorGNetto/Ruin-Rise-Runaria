@@ -10,7 +10,7 @@ public class ProgramUI : MonoBehaviour
     public GameObject addRunePrefab;
 
     private GameObject empty;
-    private int insertRunePosition = 0;
+    public int insertRunePosition = 0;
 
     private String conditionalMode;
     private Sprite conditionalRuneSprite;

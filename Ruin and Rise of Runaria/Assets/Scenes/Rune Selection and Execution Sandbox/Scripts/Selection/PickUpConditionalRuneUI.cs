@@ -8,6 +8,7 @@ public class PickUpConditionalRuneUI : MonoBehaviour
     public ProgramUI programUI;
     public GameObject details;
     public String conditionalRuneName;
+    public HUD hud;
 
     public Sprite unselected;
     public Sprite selectedAsIf;
@@ -19,6 +20,8 @@ public class PickUpConditionalRuneUI : MonoBehaviour
 
     public void Select()
     {
+        if (hud.levelStartedRunning) return;
+
         internalState = (internalState + 1) % 3;
 
         if (internalState == 0) {

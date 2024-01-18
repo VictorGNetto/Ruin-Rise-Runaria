@@ -11,11 +11,13 @@ public class ConditionalRuneUI : MonoBehaviour
 
     private GameObject runeIcon;
     private GameObject conditionalIcon;
+    private GameObject remove;
 
     private void Awake()
     {
         runeIcon = transform.GetChild(0).gameObject;
         conditionalIcon = transform.GetChild(1).gameObject;
+        remove = transform.GetChild(2).gameObject;
     }
 
     public void SetRuneSprite(Sprite sprite)
@@ -32,5 +34,10 @@ public class ConditionalRuneUI : MonoBehaviour
     {
         int removeRunePostion = transform.GetSiblingIndex();
         programUI.GetComponent<ProgramUI>().RemoveRune(removeRunePostion);
+    }
+
+    public void HideRemoveButton()
+    {
+        remove.SetActive(true);
     }
 }

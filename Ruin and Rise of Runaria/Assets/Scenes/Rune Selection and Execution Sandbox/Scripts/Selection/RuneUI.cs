@@ -8,10 +8,12 @@ public class RuneUI : MonoBehaviour
     public String runeName;
 
     private GameObject runeIcon;
+    private GameObject remove;
 
     private void Awake()
     {
         runeIcon = transform.GetChild(0).gameObject;
+        remove = transform.GetChild(1).gameObject;
     }
 
     public void SetRuneSprite(Sprite sprite)
@@ -23,5 +25,10 @@ public class RuneUI : MonoBehaviour
     {
         int removeRunePostion = transform.GetSiblingIndex();
         programUI.GetComponent<ProgramUI>().RemoveRune(removeRunePostion);
+    }
+
+    public void HideRemoveButton()
+    {
+        remove.SetActive(false);
     }
 }
