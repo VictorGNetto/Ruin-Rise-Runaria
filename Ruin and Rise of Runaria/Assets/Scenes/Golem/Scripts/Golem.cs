@@ -36,7 +36,7 @@ public class Golem : MonoBehaviour
     public Dictionary<String, MovementBehavior> movementBehaviorFunctionMap = new Dictionary<string, MovementBehavior>();
 
     public GolemProgram golemProgram;
-    public float cooldown = 1f;
+    public float cooldown = 0;
     public float timeSinceLastAction = 0;
     public String movementBehavior = "NoMovementBehavior";
 
@@ -95,7 +95,7 @@ public class Golem : MonoBehaviour
 
     private bool NoCommand()
     {
-        this.cooldown = 0.1f;
+        this.cooldown = 10.0f;
 
         // do nothing
 
