@@ -6,7 +6,7 @@ public class GolemProgram : MonoBehaviour
 {
     public RuneSelectionUI runeSelectionUI;
     public List<String> program;
-    private Dictionary<String, Sprite> runeSprites = new Dictionary<string, Sprite>();
+    public Dictionary<String, Sprite> runeSprites = new Dictionary<string, Sprite>();
     public bool actionResult = false;
 
     private int pc = 0;
@@ -68,10 +68,8 @@ public class GolemProgram : MonoBehaviour
         return sprite;
     }
 
-    public void LoadProgram()
+    public void Reset()
     {
-        program = runeSelectionUI.GetProgram();
-        runeSprites = runeSelectionUI.GetRuneSprites();
         pc = -1;
         UpdatePC();
     }

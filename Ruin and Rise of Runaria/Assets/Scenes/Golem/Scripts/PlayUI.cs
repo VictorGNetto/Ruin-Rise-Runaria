@@ -16,16 +16,4 @@ public class PlayUI : MonoBehaviour
             Time.timeScale = 0;
         }
     }
-
-    public void LoadPrograms()
-    {
-        for (int i = 0; i < golemPrograms.Count; i++)
-        {
-            golemPrograms[i].LoadProgram();
-        }
-
-        for (int i = 0; i < golems.Count; i++) {
-            golems[i].Setup();
-        }
-    }
 }

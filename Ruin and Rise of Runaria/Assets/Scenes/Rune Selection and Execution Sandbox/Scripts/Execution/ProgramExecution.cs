@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ProgramExecution : MonoBehaviour
 {
-    public GameObject runeSelection;
+    public RuneSelectionUI runeSelection;
     public GolemProgram golemProgram;
     public Golem golem;
 
@@ -32,8 +32,8 @@ public class ProgramExecution : MonoBehaviour
         currentRune.GetComponent<Image>().sprite = golemProgram.GetCurrentRuneSprite();
     }
 
-    public void ShowRuneSelectionUI()
+    public void OpenRuneSelectionUI()
     {
-        runeSelection.SetActive(true);
+        runeSelection.OpenRuneSelectionUI();
     }
 }

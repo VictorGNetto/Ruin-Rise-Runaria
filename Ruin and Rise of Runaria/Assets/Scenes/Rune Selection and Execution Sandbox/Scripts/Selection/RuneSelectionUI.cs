@@ -8,13 +8,24 @@ using UnityEngine.UI;
 public class RuneSelectionUI : MonoBehaviour
 {
     public GameObject scrollContent;
+    public Golem golem;
+    public GolemProgram golemProgram;
+    private float lastTimeScale;
+
+    public void OpenRuneSelectionUI()
+    {
+        lastTimeScale = Time.timeScale;
+        Time.timeScale = 0;
+        gameObject.SetActive(true);
+    }
 
     public void CloseRuneSelectionUI()
     {
-        this.gameObject.SetActive(false);
+        Time.timeScale = lastTimeScale;
+        gameObject.SetActive(false);
     }
 
-    public List<String> GetProgram()
+    private List<String> GetProgram()
     {
         List<String> program = new List<string>();
 
@@ -35,7 +46,7 @@ public class RuneSelectionUI : MonoBehaviour
         return program;
     }
 
-    public Dictionary<String, Sprite> GetRuneSprites()
+    private Dictionary<String, Sprite> GetRuneSprites()
     {
         Dictionary<String, Sprite> runeSprites = new Dictionary<string, Sprite>();
 
@@ -57,5 +68,14 @@ public class RuneSelectionUI : MonoBehaviour
         }
 
         return runeSprites;
+    }
+
+    public void LoadProgram()
+    {
+        golemProgram.program = GetProgram();
+        golemProgram.runeSprites = GetRuneSprites();
+        golemProgram.Reset();
+
+        golem.Setup();
     }
 }

@@ -81,6 +81,8 @@ public class Golem : MonoBehaviour
 
     public void Setup()
     {
+        timeSinceLastAction = 0;
+
         if (setupFunctionMap.ContainsKey(golemProgram.GetCommand())) {
             setupFunctionMap[golemProgram.GetCommand()]();
         }

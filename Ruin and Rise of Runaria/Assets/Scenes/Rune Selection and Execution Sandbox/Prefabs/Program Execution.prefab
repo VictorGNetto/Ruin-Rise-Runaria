@@ -580,7 +580,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7956602164063011628}
         m_TargetAssemblyTypeName: ProgramExecution, Assembly-CSharp
-        m_MethodName: ShowRuneSelectionUI
+        m_MethodName: OpenRuneSelectionUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
