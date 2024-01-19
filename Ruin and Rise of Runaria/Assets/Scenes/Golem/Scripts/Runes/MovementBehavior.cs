@@ -28,7 +28,7 @@ public class MovementBehavior : MonoBehaviour
     // Movement Behavior Runes
     private bool SetMovementBehaviorToNone()
     {
-        golem.cooldown = 3;
+        golem.cooldown = 1;
         golem.movementBehavior = "NoMovementBehavior";
         golem.GetComponent<Animator>().SetBool("Walking", false);
 
@@ -42,7 +42,7 @@ public class MovementBehavior : MonoBehaviour
 
     private bool SetMovementBehaviorToBackAndForward()
     {
-        golem.cooldown = 1;
+        golem.cooldown = 2;
         golem.movementBehavior = "BackAndForwardMovementBehavior";
         golem.GetComponent<Animator>().SetBool("Walking", true);
 

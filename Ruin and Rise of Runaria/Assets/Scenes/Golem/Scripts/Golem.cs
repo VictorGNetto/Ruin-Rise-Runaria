@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Golem : MonoBehaviour
@@ -9,7 +10,7 @@ public class Golem : MonoBehaviour
     public Transform launchOffset;
 
     // Target
-    public Golem target;
+    public Enemy target;
     public LevelDirector levelDirector;
 
     // Health and Mana
@@ -43,7 +44,7 @@ public class Golem : MonoBehaviour
     void Awake()
     {
         // Target
-        target = levelDirector.GetEnemy();
+        target = levelDirector.GetRandomEnemy();
 
         // Health and Mana Bar setup
         healthManaBar.SetHealth(health, maxHealth);
@@ -54,8 +55,12 @@ public class Golem : MonoBehaviour
     }
 
     // Update is called once per frame
+    private bool gameOver = false;
     void Update()
     {
+        if (gameOver) return;
+
+        UpdateTarget();
         mana = Math.Min(maxMana, mana + Time.deltaTime * 5);
 
         healthManaBar.SetHealth(health, maxHealth);
@@ -77,6 +82,17 @@ public class Golem : MonoBehaviour
 
         movementBehaviorFunctionMap[movementBehavior]();
         golemProgram.actionResult = runeFunctionMap[golemProgram.GetCommand()]();
+    }
+
+    private void UpdateTarget()
+    {
+        if (target == null || target.isDead) {
+            target = levelDirector.GetRandomEnemy();
+
+            if (target == null) {
+                gameOver = true;
+            }
+        }
     }
 
     public void Setup()

@@ -28,6 +28,7 @@ public class Attack : MonoBehaviour
             Bullet bullet = Instantiate(golem.bulletPrefab, golem.launchOffset.position, transform.rotation);
             bullet.target = golem.target;
             bullet.damage = floatDict["damage"];
+            bullet.speed = UnityEngine.Random.Range(10, 15);
         }
 
         return true;

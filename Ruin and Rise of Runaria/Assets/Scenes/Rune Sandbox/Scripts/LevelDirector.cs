@@ -1,14 +1,25 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelDirector : MonoBehaviour
 {
     public List<Golem> golems;
-    public List<Golem> enemys;
+    public List<Enemy> enemys;
 
-    public Golem GetEnemy()
+    public Enemy GetRandomEnemy()
     {
-        return enemys[0];
+        List<Enemy> validEnemys = new List<Enemy>();
+        foreach (Enemy e in enemys) {
+            if (e != null && !e.isDead) {
+                validEnemys.Add(e);
+            }
+        }
+
+        enemys = validEnemys;
+        if (enemys.Count == 0) return null;
+
+        int index = UnityEngine.Random.Range(0, enemys.Count);
+        return enemys[index];
     }
 }

@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 2.5f;
-    public Golem target;
+    public float speed = 5f;
+    public Enemy target;
     public float damage;
 
     // Update is called once per frame
