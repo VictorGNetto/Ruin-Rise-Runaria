@@ -14,7 +14,9 @@ public class Conditional : MonoBehaviour
     {
         golem = gameObject.GetComponent<Golem>();
 
-        golem.runeFunctionMap.Add("C1", new Golem.RuneFunction(ConditionalDebug));
+        golem.runeFunctionMap.Add("C1", new Golem.RuneFunction(HealthAbove75Percent));
+        golem.setupFunctionMap.Add("C1", new Golem.SetupBeforeAction(HealthAbove75PercentSetup));
+
         golem.runeFunctionMap.Add("C2", new Golem.RuneFunction(ConditionalDebug));
         golem.runeFunctionMap.Add("C3", new Golem.RuneFunction(ConditionalDebug));
     }
@@ -26,5 +28,20 @@ public class Conditional : MonoBehaviour
         golem.cooldown = 0;
 
         return b;
+    }
+
+    private bool HealthAbove75Percent()
+    {
+        return golem.health / golem.maxHealth > 0.75f;
+    }
+
+    private void HealthAbove75PercentSetup()
+    {
+        // float manaCost = 5.0f;
+        golem.cooldown = 1.0f;
+
+        // if (manaCost <= golem.mana) {
+        // } else {
+        // }
     }
 }

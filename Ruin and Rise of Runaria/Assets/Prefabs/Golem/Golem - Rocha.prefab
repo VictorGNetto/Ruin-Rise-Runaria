@@ -1097,6 +1097,7 @@ MonoBehaviour:
   golemProgram: {fileID: 0}
   cooldown: 1
   timeSinceLastAction: 0
+  movementBehavior: NoMovementBehavior
 --- !u!114 &6148605491965508281
 MonoBehaviour:
   m_ObjectHideFlags: 0

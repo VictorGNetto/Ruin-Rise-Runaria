@@ -17,12 +17,14 @@ public class Support : MonoBehaviour
         golem.runeFunctionMap.Add("Heal", new Golem.RuneFunction(Heal));
         golem.setupFunctionMap.Add("Heal", new Golem.SetupBeforeAction(HealSetup));
         golem.cleanUpFunctionMap.Add("Heal", new Golem.CleanUpAfterAction(HealCleanUp));
+
+        golem.runeFunctionMap.Add("HealStronger", new Golem.RuneFunction(Heal));
+        golem.setupFunctionMap.Add("HealStronger", new Golem.SetupBeforeAction(HealStrongerSetup));
+        golem.cleanUpFunctionMap.Add("HealStronger", new Golem.CleanUpAfterAction(HealCleanUp));
     }
 
     private bool Heal()
     {
-        golem.cooldown = floatDict["cooldown"];
-
         float totalHeal = floatDict["totalHeal"];
         float amount = totalHeal * Time.deltaTime / golem.cooldown;
         golem.health = Math.Min(golem.health + amount, golem.maxHealth);
@@ -32,7 +34,7 @@ public class Support : MonoBehaviour
 
     private void HealSetup()
     {
-        float manaCost = 20.0f;
+        float manaCost = 35.0f;
 
         floatDict.Clear();
 
@@ -40,16 +42,34 @@ public class Support : MonoBehaviour
 
         if (manaCost <= golem.mana) {
             golem.mana -= manaCost;
-            floatDict.Add("totalHeal", 25.0f);
-            floatDict.Add("cooldown", 1.5f);
+            floatDict.Add("totalHeal", 0.15f * golem.maxHealth);
+            golem.cooldown =  4f;
         } else {
             floatDict.Add("totalHeal", 0.0f);
-            floatDict.Add("cooldown", 0.5f);
+            golem.cooldown =  1f;
         }
     }
 
     private void HealCleanUp()
     {
         golem.health = floatDict["health"] + floatDict["totalHeal"];
+    }
+
+    private void HealStrongerSetup()
+    {
+        float manaCost = 50.0f;
+
+        floatDict.Clear();
+
+        floatDict.Add("health", golem.health);
+
+        if (manaCost <= golem.mana) {
+            golem.mana -= manaCost;
+            floatDict.Add("totalHeal", 0.25f * golem.maxHealth);
+            golem.cooldown =  5f;
+        } else {
+            floatDict.Add("totalHeal", 0.0f);
+            golem.cooldown =  1f;
+        }
     }
 }

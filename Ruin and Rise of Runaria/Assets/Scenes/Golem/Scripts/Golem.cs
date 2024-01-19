@@ -15,8 +15,8 @@ public class Golem : MonoBehaviour
     // Health and Mana
     public float health = 75;
     public float maxHealth = 100;
-    public float mana = 20;
-    public float maxMana = 30;
+    public float mana = 35;
+    public float maxMana = 70;
     public HealthManaBar healthManaBar;
 
     // Attack, support, conditional and target runes
