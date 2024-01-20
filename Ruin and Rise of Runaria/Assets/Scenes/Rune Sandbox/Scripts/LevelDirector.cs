@@ -6,6 +6,7 @@ public class LevelDirector : MonoBehaviour
 {
     public List<Golem> golems;
     public List<Enemy> enemys;
+    public bool levelStartedRunning = false;
 
     public Enemy GetRandomEnemy()
     {

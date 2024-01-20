@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Golem : MonoBehaviour
 {
@@ -39,7 +40,8 @@ public class Golem : MonoBehaviour
     public GolemProgram golemProgram;
     public float cooldown = 0;
     public float timeSinceLastAction = 0;
-    public String movementBehavior = "NoMovementBehavior";
+    public String movementBehavior = "M1";
+    public NavMeshAgent navMeshAgent;
     public bool runeExecuted;
 
     void Awake()
@@ -53,6 +55,9 @@ public class Golem : MonoBehaviour
 
         // Without any rune
         this.runeFunctionMap.Add("NoCommand", new RuneFunction(NoCommand));
+
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.updateUpAxis = false;
     }
 
     // Update is called once per frame
@@ -60,6 +65,7 @@ public class Golem : MonoBehaviour
     void Update()
     {
         if (gameOver) return;
+        if (!levelDirector.levelStartedRunning) return;
 
         UpdateTarget();
         mana = Math.Min(maxMana, mana + Time.deltaTime * 5);

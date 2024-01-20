@@ -8,11 +8,11 @@ public class PickUpRuneUI : MonoBehaviour
     public ProgramUI programUI;
     public GameObject details;
     public String runeName;
-    public HUD hud;
+    public LevelDirector levelDirector;
 
     public void Select()
     {
-        if (hud.levelStartedRunning) return;
+        if (levelDirector.levelStartedRunning) return;
 
         GameObject duplicate = Instantiate(this.gameObject);
         programUI.InsertRune(duplicate, runeName);

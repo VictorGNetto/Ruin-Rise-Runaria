@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MovementBehavior : MonoBehaviour
 {
     private Golem golem;
 
-    private String movingDirection = "R";
     private float timeMoving = 0;
 
     // Dictionaries to allow variable sharing among related functions
@@ -18,59 +18,59 @@ public class MovementBehavior : MonoBehaviour
         golem = gameObject.GetComponent<Golem>();
 
         // Movement Behaviors
-        golem.runeFunctionMap.Add("MB-None", new Golem.RuneFunction(SetMovementBehaviorToNone));
-        golem.movementBehaviorFunctionMap.Add("NoMovementBehavior", new Golem.MovementBehavior(NoMovementBehavior));
-
-        golem.runeFunctionMap.Add("MB-BackForward", new Golem.RuneFunction(SetMovementBehaviorToBackAndForward));
-        golem.movementBehaviorFunctionMap.Add("BackAndForwardMovementBehavior", new Golem.MovementBehavior(BackAndForwardMovementBehavior));
+        golem.runeFunctionMap.Add("M1", new Golem.RuneFunction(SetMovementBehaviorToM1));
+        golem.movementBehaviorFunctionMap.Add("M1", new Golem.MovementBehavior(M1));
     }
 
     // Movement Behavior Runes
-    private bool SetMovementBehaviorToNone()
+    private bool SetMovementBehaviorToM1()
     {
-        golem.cooldown = 1;
-        golem.movementBehavior = "NoMovementBehavior";
-        golem.GetComponent<Animator>().SetBool("Walking", false);
+        golem.cooldown = 0.5f;
+        golem.runeExecuted = true;
+        golem.movementBehavior = "M1";
 
         return true;
     }
 
-    private void NoMovementBehavior()
+    private void M1()
     {
-        // do nothing
-    }
-
-    private bool SetMovementBehaviorToBackAndForward()
-    {
-        golem.cooldown = 2;
-        golem.movementBehavior = "BackAndForwardMovementBehavior";
-        golem.GetComponent<Animator>().SetBool("Walking", true);
-
-        return true;
-    }
-
-    private void BackAndForwardMovementBehavior()
-    {
-        this.timeMoving += Time.deltaTime;
-
-        if (this.timeMoving > 0.75f) {
-            this.timeMoving = 0;
-
-            if (this.movingDirection.Equals("R")) {
-                this.movingDirection = "L";
-            } else {
-                this.movingDirection = "R";
-            }
+        if (!floatDict.ContainsKey("M1")) {
+            SetupM1();
         }
 
-        float d = 2 * Time.deltaTime / 0.75f;
+        floatDict["timeMoving"] += Time.deltaTime;
 
-        if (this.movingDirection.Equals("R")) {
-            transform.Translate(d, 0 , 0);
-            transform.localScale = new Vector3(0.2f, 0.2f, 1.0f);
+        if (floatDict["timeMoving"] > floatDict["nextMoveDuration"]) {
+            SetupM1();
+        }
+
+        Vector3 destination = new Vector3(floatDict["horizontalFactor"], floatDict["verticalFactor"], 0);
+        golem.navMeshAgent.speed = floatDict["speed"];
+        golem.navMeshAgent.SetDestination(golem.transform.position + destination.normalized);
+    }
+
+    private void SetupM1()
+    {
+        floatDict.Clear();
+        floatDict["M1"] = 0.0f;
+        floatDict["timeMoving"] = 0;
+        floatDict["nextMoveDuration"] = UnityEngine.Random.Range(0.75f, 3.0f);
+        floatDict["speed"] = UnityEngine.Random.Range(0.75f, 1.5f);
+
+        if (UnityEngine.Random.Range(0.0f, 1.0f) > 0.2) {
+            floatDict["horizontalFactor"] = UnityEngine.Random.Range(-1.0f, 1.0f);
+            floatDict["verticalFactor"] = UnityEngine.Random.Range(-1.0f, 1.0f);
+            golem.gameObject.GetComponent<Animator>().SetBool("Walking", true);
         } else {
-            transform.Translate(-d, 0 , 0);
-            transform.localScale = new Vector3(-0.2f, 0.2f, 1.0f);
+            floatDict["horizontalFactor"] = 0;
+            floatDict["verticalFactor"] = 0;
+            golem.gameObject.GetComponent<Animator>().SetBool("Walking", false);
+        }
+
+        if (floatDict["horizontalFactor"] < 0) {
+            golem.GetComponent<SpriteRenderer>().flipX = true;
+        } else {
+            golem.GetComponent<SpriteRenderer>().flipX = false;
         }
     }
 }

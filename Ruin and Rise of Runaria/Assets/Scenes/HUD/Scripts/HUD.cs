@@ -8,8 +8,8 @@ public class HUD : MonoBehaviour
 {
     public Color activeColor;
     public Color inactiveColor;
-    public bool levelStartedRunning = false;
     public List<RuneSelectionUI> runeSelectionUIs;
+    public LevelDirector levelDirector;
 
     private float runningTime = 0.0f;
     private GameObject timer;
@@ -73,7 +73,7 @@ public class HUD : MonoBehaviour
         if (!playWasPressed) {
             playWasPressed = true;
             runningTime = 0.0f;
-            levelStartedRunning = true;
+            levelDirector.levelStartedRunning = true;
             DisableRuneSelectionInteractability();
             reload.GetComponent<Button>().interactable = true;
             pause.GetComponent<Button>().interactable = true;
