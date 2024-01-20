@@ -44,9 +44,11 @@ public class Support : MonoBehaviour
             golem.mana -= manaCost;
             floatDict.Add("totalHeal", 0.15f * golem.maxHealth);
             golem.cooldown =  4f;
+            golem.runeExecuted = true;
         } else {
             floatDict.Add("totalHeal", 0.0f);
-            golem.cooldown =  1f;
+            golem.cooldown =  0.4f;
+            golem.runeExecuted = false;
         }
     }
 

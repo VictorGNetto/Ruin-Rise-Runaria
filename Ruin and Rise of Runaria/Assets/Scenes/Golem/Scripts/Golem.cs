@@ -40,6 +40,7 @@ public class Golem : MonoBehaviour
     public float cooldown = 0;
     public float timeSinceLastAction = 0;
     public String movementBehavior = "NoMovementBehavior";
+    public bool runeExecuted;
 
     void Awake()
     {

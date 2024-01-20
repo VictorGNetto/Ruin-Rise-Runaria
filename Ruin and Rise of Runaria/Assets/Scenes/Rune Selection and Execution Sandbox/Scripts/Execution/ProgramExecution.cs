@@ -7,6 +7,9 @@ public class ProgramExecution : MonoBehaviour
     public RuneSelectionUI runeSelection;
     public GolemProgram golemProgram;
     public Golem golem;
+    public GameObject cooldownFill;
+    public Color executedBarColor;
+    public Color notExecutedBarColor;
 
     private GameObject cooldownBar;
     private GameObject cooldownValue;
@@ -22,13 +25,20 @@ public class ProgramExecution : MonoBehaviour
     private void Update()
     {
         float cooldownBarValue = 0.0f;
-        String cooldownValueText = "";
+        // String cooldownValueText = "";
         if (golem.cooldown > 0.001f) {
             cooldownBarValue = golem.timeSinceLastAction / golem.cooldown;
-            cooldownValueText = String.Format("{0:0.0}/{1:0.0} (s)", golem.timeSinceLastAction, golem.cooldown);
+            // cooldownValueText = String.Format("{0:0.0}/{1:0.0} (s)", golem.timeSinceLastAction, golem.cooldown);
         }
         cooldownBar.GetComponent<Slider>().value = cooldownBarValue;
-        cooldownValue.GetComponent<Text>().text = cooldownValueText;
+        // cooldownValue.GetComponent<Text>().text = cooldownValueText;
+
+        if (golem.runeExecuted) {
+            cooldownFill.GetComponent<Image>().color = executedBarColor;
+        } else {
+            cooldownFill.GetComponent<Image>().color = notExecutedBarColor;
+        }
+
         currentRune.GetComponent<Image>().sprite = golemProgram.GetCurrentRuneSprite();
     }
 

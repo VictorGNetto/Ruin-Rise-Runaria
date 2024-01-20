@@ -8,6 +8,7 @@ public class GolemProgram : MonoBehaviour
     public List<String> program;
     public Dictionary<String, Sprite> runeSprites = new Dictionary<string, Sprite>();
     public bool actionResult = false;
+    public Sprite noActionRune;
 
     private int pc = 0;
     private Sprite sprite;
@@ -65,6 +66,7 @@ public class GolemProgram : MonoBehaviour
 
     public Sprite GetCurrentRuneSprite()
     {
+        if (program.Count == 0) return noActionRune;
         return sprite;
     }
 
