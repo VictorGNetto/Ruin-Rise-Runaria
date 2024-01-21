@@ -48,6 +48,7 @@ public class Golem : MonoBehaviour
     public String movementBehavior = "M1";
     public NavMeshAgent navMeshAgent;
     public bool runeExecuted;
+    public SelectedAndTargetUI selectedAndTargetUI;
 
     void Awake()
     {
