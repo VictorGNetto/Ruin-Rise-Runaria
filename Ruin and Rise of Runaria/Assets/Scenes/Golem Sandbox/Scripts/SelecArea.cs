@@ -4,6 +4,7 @@ using UnityEngine;
 public class SelecArea : MonoBehaviour
 {
     public Golem golem;
+    public RuneSelectionUI runeSelectionUI;
 
     public void UnselectGolem()
     {
@@ -33,6 +34,6 @@ public class SelecArea : MonoBehaviour
 
     public void OpenRuneSelectionUI()
     {
-        // golem.selectedAndTargetUI.PlayTarget();
+        runeSelectionUI.OpenRuneSelectionUI();
     }
 }

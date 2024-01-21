@@ -179,17 +179,6 @@ RectTransform:
   m_AnchoredPosition: {x: 960, y: -50}
   m_SizeDelta: {x: 1920, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &81803253 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8470513433419507537, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
-  m_PrefabInstance: {fileID: 2601456810260501153}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad0b2b1fea0cc1a468191b825d66b95e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &83466566
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,8 +743,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0028000176, y: -0.0022000074, z: 0}
-    m_Extent: {x: 0.99890006, y: 0.9961, z: 0}
+    m_Center: {x: -0.0013999641, y: -0.0059999824, z: 0}
+    m_Extent: {x: 1.0004, y: 0.9975, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1440,17 +1429,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &641188037 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8731617762927642187, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
-  m_PrefabInstance: {fileID: 1406405486001368951}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad0b2b1fea0cc1a468191b825d66b95e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &682020944
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,17 +2000,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6524c4c241543fa479e0d638469f2bf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1103889231 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 210882491129596134, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
-  m_PrefabInstance: {fileID: 3531409790104656732}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad0b2b1fea0cc1a468191b825d66b95e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1146014887
@@ -3322,17 +3289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4375fea0050b19f49b83595c8730302e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1609931035 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5633776468441951467, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
-  m_PrefabInstance: {fileID: 2163198466944749475}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad0b2b1fea0cc1a468191b825d66b95e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1668685638
 GameObject:
   m_ObjectHideFlags: 0
@@ -4140,6 +4096,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem - Earth
       objectReference: {fileID: 0}
+    - target: {fileID: 3886542451901992070, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
+      propertyPath: runeSelectionUI
+      value: 
+      objectReference: {fileID: 1382964159}
     - target: {fileID: 5990858384472245097, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4192,10 +4152,6 @@ PrefabInstance:
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 682020945}
-    - target: {fileID: 9042108169200833378, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
-      propertyPath: selectedAndTargetUI
-      value: 
-      objectReference: {fileID: 641188037}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4265,14 +4221,14 @@ PrefabInstance:
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 682020945}
-    - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
-      propertyPath: selectedAndTargetUI
-      value: 
-      objectReference: {fileID: 1609931035}
     - target: {fileID: 8949049696790486410, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9179445799062432880, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+      propertyPath: runeSelectionUI
+      value: 
+      objectReference: {fileID: 1080602715}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4290,6 +4246,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1532449251887663833, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
+      propertyPath: runeSelectionUI
+      value: 
+      objectReference: {fileID: 1501495473}
     - target: {fileID: 2748040879976406571, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4302,10 +4262,6 @@ PrefabInstance:
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 682020945}
-    - target: {fileID: 3855243366295093512, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
-      propertyPath: selectedAndTargetUI
-      value: 
-      objectReference: {fileID: 81803253}
     - target: {fileID: 5599949639917869962, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.583
@@ -4482,7 +4438,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 428182481837015787, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.74
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 428182481837015787, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4532,14 +4488,14 @@ PrefabInstance:
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 682020945}
-    - target: {fileID: 2893227367573128283, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
-      propertyPath: selectedAndTargetUI
-      value: 
-      objectReference: {fileID: 1103889231}
     - target: {fileID: 3052803534007556269, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9096427289450566605, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: runeSelectionUI
+      value: 
+      objectReference: {fileID: 1195582200}
     - target: {fileID: 9222797031846036991, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

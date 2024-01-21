@@ -3,9 +3,6 @@ using UnityEngine.InputSystem;
 
 public class SelectHandler : MonoBehaviour
 {
-    public bool canSelect = true;
-    // public bool selected = false;
-    // public int numberOfClicks = 0;
     public int selectedGolem = -1;
 
     private SelecArea selecArea = null;
@@ -20,7 +17,6 @@ public class SelectHandler : MonoBehaviour
     public void OnClick(InputAction.CallbackContext context)
     {
         if (!context.started) return;
-        if (!canSelect) return;
 
         var rayHit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
         if (!rayHit.collider || rayHit.collider.gameObject.layer != selectableLayer) {
@@ -35,9 +31,6 @@ public class SelectHandler : MonoBehaviour
 
             return;
         }
-
-        // selected = true;
-        // numberOfClicks += 1;
 
         int oldGolemSelected = selectedGolem;
         selectedGolem = rayHit.collider.gameObject.GetComponent<SelecArea>().golem.guid;

@@ -521,6 +521,7 @@ MonoBehaviour:
   movementBehavior: M1
   navMeshAgent: {fileID: 2446777385863052241}
   runeExecuted: 0
+  selectedAndTargetUI: {fileID: 5633776468441951467}
 --- !u!114 &374985515887445591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1040,7 +1041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   golem: {fileID: 6441404501169219905}
-  selectedAndTargetUI: {fileID: 5633776468441951467}
+  runeSelectionUI: {fileID: 0}
 --- !u!1 &8338410902213735218
 GameObject:
   m_ObjectHideFlags: 0
