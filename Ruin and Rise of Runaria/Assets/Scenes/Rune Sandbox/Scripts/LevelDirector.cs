@@ -23,4 +23,20 @@ public class LevelDirector : MonoBehaviour
         int index = UnityEngine.Random.Range(0, enemys.Count);
         return enemys[index];
     }
+
+    // Returns a random Golem, but the one with the passed UGID
+    public Golem GetRandomFriend(int guid)
+    {
+        List<Golem> validGolems = new List<Golem>();
+        foreach (Golem g in golems) {
+            if (g != null && g.guid != guid) {
+                validGolems.Add(g);
+            }
+        }
+
+        if (validGolems.Count == 0) return null;
+
+        int index = UnityEngine.Random.Range(0, validGolems.Count);
+        return validGolems[index];
+    }
 }

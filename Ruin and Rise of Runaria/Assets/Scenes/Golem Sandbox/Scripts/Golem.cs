@@ -10,9 +10,14 @@ public class Golem : MonoBehaviour
     public Bullet bulletPrefab;
     public Transform launchOffset;
 
-    // Target
-    public Enemy target;
     public LevelDirector levelDirector;
+    public int guid;
+
+    // Target
+    enum TargetType { Friend, Enemy };
+    private TargetType targetType = TargetType.Friend;
+    public Enemy targetEnemy;
+    public Golem targetFriend;
 
     // Health and Mana
     public float health = 75;
@@ -46,9 +51,6 @@ public class Golem : MonoBehaviour
 
     void Awake()
     {
-        // Target
-        target = levelDirector.GetRandomEnemy();
-
         // Health and Mana Bar setup
         healthManaBar.SetHealth(health, maxHealth);
         healthManaBar.SetMana(mana, maxMana);
@@ -93,12 +95,8 @@ public class Golem : MonoBehaviour
 
     private void UpdateTarget()
     {
-        if (target == null || target.isDead) {
-            target = levelDirector.GetRandomEnemy();
-
-            if (target == null) {
-                gameOver = true;
-            }
+        if (targetFriend == null) {
+            targetFriend = levelDirector.GetRandomFriend(guid);
         }
     }
 
@@ -125,5 +123,14 @@ public class Golem : MonoBehaviour
         // do nothing
 
         return true;
+    }
+
+    public Vector3 GetTargetPosition()
+    {
+        if (targetType == TargetType.Friend) {
+            return targetFriend.transform.position;
+        } else {
+            return targetEnemy.transform.position;
+        }
     }
 }

@@ -26,7 +26,7 @@ public class Attack : MonoBehaviour
             intDict["bulletCount"] = intDict["bulletCount"] - 1;
 
             Bullet bullet = Instantiate(golem.bulletPrefab, golem.launchOffset.position, transform.rotation);
-            bullet.target = golem.target;
+            bullet.target = golem.targetEnemy;
             bullet.damage = floatDict["damage"];
             bullet.speed = UnityEngine.Random.Range(10, 15);
         }

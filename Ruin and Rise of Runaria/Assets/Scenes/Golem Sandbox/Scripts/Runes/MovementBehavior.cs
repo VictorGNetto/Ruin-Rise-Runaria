@@ -23,9 +23,12 @@ public class MovementBehavior : MonoBehaviour
 
         golem.runeFunctionMap.Add("M2", new Golem.RuneFunction(SetMovementBehaviorToM2));
         golem.movementBehaviorFunctionMap.Add("M2", new Golem.MovementBehavior(M2));
+
+        golem.runeFunctionMap.Add("M3", new Golem.RuneFunction(SetMovementBehaviorToM3));
+        golem.movementBehaviorFunctionMap.Add("M3", new Golem.MovementBehavior(M3));
     }
 
-    // Movement Behavior Runes
+    // Rune M1
     private bool SetMovementBehaviorToM1()
     {
         golem.cooldown = 0.5f;
@@ -35,7 +38,6 @@ public class MovementBehavior : MonoBehaviour
         return true;
     }
 
-    // Rune M1
     private void M1()
     {
         if (!boolDict.ContainsKey("M1")) {
@@ -154,5 +156,57 @@ public class MovementBehavior : MonoBehaviour
         } else {
             golem.GetComponent<SpriteRenderer>().flipX = false;
         }
+    }
+
+    // Rune M3
+    private bool SetMovementBehaviorToM3()
+    {
+        golem.cooldown = 0.5f;
+        golem.runeExecuted = true;
+        golem.movementBehavior = "M3";
+
+        return true;
+    }
+
+    private void M3()
+    {
+        if (!boolDict.ContainsKey("M3")) {
+            InitM3();
+        }
+
+        Vector3 destination = golem.GetTargetPosition();
+        if (destination.x < golem.transform.position.x) {
+            golem.GetComponent<SpriteRenderer>().flipX = true;
+        } else {
+            golem.GetComponent<SpriteRenderer>().flipX = false;
+        }
+
+        if (boolDict["awake"]) {
+            if ((destination - golem.transform.position).magnitude < floatDict["stoppingDistance"]) {
+                golem.gameObject.GetComponent<Animator>().SetBool("Walking", false);
+                boolDict["awake"] = false;
+            } else {
+                golem.gameObject.GetComponent<Animator>().SetBool("Walking", true);
+            }
+            
+            golem.navMeshAgent.SetDestination(golem.GetTargetPosition());
+        } else {
+            if ((destination - golem.transform.position).magnitude > floatDict["awakeDistance"]) {
+                boolDict["awake"] = true;
+            }
+        }
+    }
+
+    private void InitM3()
+    {
+        boolDict.Clear();
+        floatDict.Clear();
+        boolDict["M3"] = true;
+
+        floatDict["stoppingDistance"] = 1.5f;
+        floatDict["awakeDistance"] = 3.0f;
+        boolDict["awake"] = true;
+        golem.navMeshAgent.speed = 1.5f;
+        golem.navMeshAgent.stoppingDistance = floatDict["stoppingDistance"];
     }
 }
