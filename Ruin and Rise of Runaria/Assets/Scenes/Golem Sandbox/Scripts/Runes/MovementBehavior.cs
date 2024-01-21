@@ -7,8 +7,6 @@ public class MovementBehavior : MonoBehaviour
 {
     private Golem golem;
 
-    private float timeMoving = 0;
-
     // Dictionaries to allow variable sharing among related functions
     private Dictionary<String, float> floatDict = new Dictionary<string, float>();
     private Dictionary<String, float> intDict = new Dictionary<string, float>();
@@ -26,6 +24,9 @@ public class MovementBehavior : MonoBehaviour
 
         golem.runeFunctionMap.Add("M3", new Golem.RuneFunction(SetMovementBehaviorToM3));
         golem.movementBehaviorFunctionMap.Add("M3", new Golem.MovementBehavior(M3));
+
+        golem.runeFunctionMap.Add("M4", new Golem.RuneFunction(SetMovementBehaviorToM4));
+        golem.movementBehaviorFunctionMap.Add("M4", new Golem.MovementBehavior(M4));
     }
 
     // Rune M1
@@ -61,6 +62,8 @@ public class MovementBehavior : MonoBehaviour
         boolDict.Clear();
         floatDict.Clear();
         boolDict["M1"] = true;
+
+        golem.navMeshAgent.stoppingDistance = 0f;
     }
 
     private void UpdateM1()
@@ -123,6 +126,7 @@ public class MovementBehavior : MonoBehaviour
         floatDict["oldGolemPosX"] = golem.transform.position.x;
         floatDict["oldGolemPosY"] = golem.transform.position.y;
         floatDict["radius"] = 0.5f;
+        golem.navMeshAgent.stoppingDistance = 0f;
     }
 
     private void UpdateM2()
@@ -189,7 +193,7 @@ public class MovementBehavior : MonoBehaviour
                 golem.gameObject.GetComponent<Animator>().SetBool("Walking", true);
             }
             
-            golem.navMeshAgent.SetDestination(golem.GetTargetPosition());
+            golem.navMeshAgent.SetDestination(destination);
         } else {
             if ((destination - golem.transform.position).magnitude > floatDict["awakeDistance"]) {
                 boolDict["awake"] = true;
@@ -204,7 +208,65 @@ public class MovementBehavior : MonoBehaviour
         boolDict["M3"] = true;
 
         floatDict["stoppingDistance"] = 1.5f;
-        floatDict["awakeDistance"] = 3.0f;
+        floatDict["awakeDistance"] = 2.0f;
+        boolDict["awake"] = true;
+        golem.navMeshAgent.speed = 1.5f;
+        golem.navMeshAgent.stoppingDistance = floatDict["stoppingDistance"];
+    }
+
+    // Rune M4
+    private bool SetMovementBehaviorToM4()
+    {
+        golem.cooldown = 0.5f;
+        golem.runeExecuted = true;
+        golem.movementBehavior = "M4";
+
+        return true;
+    }
+
+    private void M4()
+    {
+        if (!boolDict.ContainsKey("M4")) {
+            InitM4();
+        }
+
+        Vector3 destination;
+        if (golem.targetType == Golem.TargetType.Friend) {
+            destination = golem.levelDirector.GetGolemsCentroid(golem.guid);
+        } else {
+            destination = golem.levelDirector.GetEnemysCentroid(golem.guid);
+        }
+
+        if (destination.x < golem.transform.position.x) {
+            golem.GetComponent<SpriteRenderer>().flipX = true;
+        } else {
+            golem.GetComponent<SpriteRenderer>().flipX = false;
+        }
+
+        if (boolDict["awake"]) {
+            if ((destination - golem.transform.position).magnitude < floatDict["stoppingDistance"]) {
+                golem.gameObject.GetComponent<Animator>().SetBool("Walking", false);
+                boolDict["awake"] = false;
+            } else {
+                golem.gameObject.GetComponent<Animator>().SetBool("Walking", true);
+            }
+            
+            golem.navMeshAgent.SetDestination(destination);
+        } else {
+            if ((destination - golem.transform.position).magnitude > floatDict["awakeDistance"]) {
+                boolDict["awake"] = true;
+            }
+        }
+    }
+
+    private void InitM4()
+    {
+        boolDict.Clear();
+        floatDict.Clear();
+        boolDict["M4"] = true;
+
+        floatDict["stoppingDistance"] = 1.5f;
+        floatDict["awakeDistance"] = 2.0f;
         boolDict["awake"] = true;
         golem.navMeshAgent.speed = 1.5f;
         golem.navMeshAgent.stoppingDistance = floatDict["stoppingDistance"];

@@ -14,8 +14,8 @@ public class Golem : MonoBehaviour
     public int guid;
 
     // Target
-    enum TargetType { Friend, Enemy };
-    private TargetType targetType = TargetType.Friend;
+    public enum TargetType { Friend, Enemy };
+    public TargetType targetType = TargetType.Friend;
     public Enemy targetEnemy;
     public Golem targetFriend;
 
@@ -68,6 +68,7 @@ public class Golem : MonoBehaviour
     {
         if (gameOver) return;
         if (!levelDirector.levelStartedRunning) return;
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
         UpdateTarget();
         mana = Math.Min(maxMana, mana + Time.deltaTime * 5);
