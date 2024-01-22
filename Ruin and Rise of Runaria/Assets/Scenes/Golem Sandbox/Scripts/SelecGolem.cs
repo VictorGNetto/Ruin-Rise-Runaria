@@ -8,32 +8,17 @@ public class SelecGolem : MonoBehaviour
 
     public void UnselectGolem()
     {
-        golem.selectedAndTargetUI.Hide();
+        golem.Unselect();
 
-        if (golem.targetType == Golem.TargetType.Friend) {
-            if (golem.targetFriend != null) {
-                golem.targetFriend.selectedAndTargetUI.Hide();
-            }
-        } else {
-
-        }
     }
 
     public void SelectGolem()
     {
-        golem.selectedAndTargetUI.PlaySelected();
-
-        if (golem.targetType == Golem.TargetType.Friend) {
-            if (golem.targetFriend != null) {
-                golem.targetFriend.selectedAndTargetUI.PlayFriendTarget();
-            }
-        } else {
-
-        }
+        golem.Select();
     }
 
     public void OpenRuneSelectionUI()
     {
-        runeSelectionUI.OpenRuneSelectionUI();
+        golem.OpenRuneSelectionUI();
     }
 }

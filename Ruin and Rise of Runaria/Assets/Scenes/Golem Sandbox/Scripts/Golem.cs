@@ -14,7 +14,7 @@ public class Golem : MonoBehaviour
     public int guid;
 
     // Target
-    public enum TargetType { Friend, Enemy };
+    public enum TargetType { Self, Friend, Enemy };
     public TargetType targetType = TargetType.Friend;
     public Enemy targetEnemy;
     public Golem targetFriend;
@@ -48,7 +48,11 @@ public class Golem : MonoBehaviour
     public String movementBehavior = "M1";
     public NavMeshAgent navMeshAgent;
     public bool runeExecuted;
+
+    // Select logic
     public SelectedAndTargetUI selectedAndTargetUI;
+    public RuneSelectionUI runeSelectionUI;
+    public bool selected = false;
 
     void Awake()
     {
@@ -134,5 +138,38 @@ public class Golem : MonoBehaviour
         } else {
             return targetEnemy.transform.position;
         }
+    }
+
+    public void Unselect()
+    {
+        selected = false;
+        selectedAndTargetUI.Hide();
+
+        if (targetType == TargetType.Friend) {
+            if (targetFriend != null) {
+                targetFriend.selectedAndTargetUI.Hide();
+            }
+        } else if (targetType == TargetType.Enemy) {
+            // targetEnemy.selectedAndTargetUI.Hide();
+        }
+    }
+
+    public void Select()
+    {
+        selected = true;
+        selectedAndTargetUI.PlaySelected();
+
+        if (targetType == TargetType.Friend) {
+            if (targetFriend != null) {
+                targetFriend.selectedAndTargetUI.PlayFriendTarget();
+            }
+        } else if (targetType == TargetType.Enemy) {
+            // targetEnemy.selectedAndTargetUI.PlayTarget();
+        }
+    }
+
+    public void OpenRuneSelectionUI()
+    {
+        runeSelectionUI.OpenRuneSelectionUI();
     }
 }

@@ -775,6 +775,7 @@ GameObject:
   - component: {fileID: 7367849554365151980}
   - component: {fileID: 5879922963297342660}
   - component: {fileID: 3946846429205544132}
+  - component: {fileID: 6447759281455796527}
   - component: {fileID: 2279856705551154332}
   m_Layer: 0
   m_Name: Golem - Ice
@@ -921,6 +922,8 @@ MonoBehaviour:
   navMeshAgent: {fileID: 2279856705551154332}
   runeExecuted: 0
   selectedAndTargetUI: {fileID: 8470513433419507537}
+  runeSelectionUI: {fileID: 0}
+  selected: 0
 --- !u!114 &3589030901286510185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -967,6 +970,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bea3a19de23963a4eb5bf1a3f8de2b39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6447759281455796527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7035076815978857451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ed65209db470b4c9080a0355b70c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!195 &2279856705551154332

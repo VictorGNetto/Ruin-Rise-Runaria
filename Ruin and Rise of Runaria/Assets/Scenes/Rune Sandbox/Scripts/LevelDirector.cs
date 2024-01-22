@@ -85,4 +85,23 @@ public class LevelDirector : MonoBehaviour
 
         return new Vector3(x, y, 0);
     }
+
+    public Golem GetGolemWithHighestHealth()
+    {
+        List<Golem> validGolems = new List<Golem>();
+        foreach (Golem g in golems) {
+            if (g != null) {
+                validGolems.Add(g);
+            }
+        }
+
+        Golem golemWithHighestHealth = validGolems[0];
+        foreach (Golem g in validGolems) {
+            if (g.health > golemWithHighestHealth.health) {
+                golemWithHighestHealth = g;
+            }
+        }
+
+        return golemWithHighestHealth;
+    }
 }

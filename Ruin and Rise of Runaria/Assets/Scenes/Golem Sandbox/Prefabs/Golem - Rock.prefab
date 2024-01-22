@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5447209576849384779}
   - component: {fileID: 7884417066856074385}
   - component: {fileID: 750655734611848594}
+  - component: {fileID: 312666354955796517}
   - component: {fileID: 7842466034670157911}
   m_Layer: 0
   m_Name: Golem - Rock
@@ -209,6 +210,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bea3a19de23963a4eb5bf1a3f8de2b39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &312666354955796517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634100113169278646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ed65209db470b4c9080a0355b70c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!195 &7842466034670157911
@@ -871,7 +884,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2000
   m_Sprite: {fileID: -1822467650, guid: 967f8887fbf9dd84e93f0b0c1d5eb64e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

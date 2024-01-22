@@ -377,6 +377,7 @@ GameObject:
   - component: {fileID: 8991383364880916592}
   - component: {fileID: 846505524361087636}
   - component: {fileID: 6128269266565791836}
+  - component: {fileID: 9048464804560222238}
   - component: {fileID: 2446777385863052241}
   m_Layer: 0
   m_Name: Golem - Lava
@@ -510,7 +511,7 @@ MonoBehaviour:
   targetType: 0
   targetEnemy: {fileID: 0}
   targetFriend: {fileID: 0}
-  health: 75
+  health: 25
   maxHealth: 100
   mana: 35
   maxMana: 70
@@ -522,6 +523,8 @@ MonoBehaviour:
   navMeshAgent: {fileID: 2446777385863052241}
   runeExecuted: 0
   selectedAndTargetUI: {fileID: 5633776468441951467}
+  runeSelectionUI: {fileID: 0}
+  selected: 0
 --- !u!114 &374985515887445591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,6 +571,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bea3a19de23963a4eb5bf1a3f8de2b39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9048464804560222238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3486168372903519019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ed65209db470b4c9080a0355b70c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!195 &2446777385863052241

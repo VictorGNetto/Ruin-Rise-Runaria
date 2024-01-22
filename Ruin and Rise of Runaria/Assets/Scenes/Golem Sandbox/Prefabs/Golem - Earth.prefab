@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 1035448172478165130}
   - component: {fileID: 5877241704155007850}
   - component: {fileID: 1753476976001076900}
+  - component: {fileID: 2122751120135037203}
   - component: {fileID: 2621000115582183501}
   m_Layer: 0
   m_Name: Golem - Earth
@@ -583,7 +584,7 @@ MonoBehaviour:
   targetType: 0
   targetEnemy: {fileID: 0}
   targetFriend: {fileID: 0}
-  health: 75
+  health: 50
   maxHealth: 100
   mana: 35
   maxMana: 70
@@ -595,6 +596,8 @@ MonoBehaviour:
   navMeshAgent: {fileID: 2621000115582183501}
   runeExecuted: 0
   selectedAndTargetUI: {fileID: 8731617762927642187}
+  runeSelectionUI: {fileID: 0}
+  selected: 0
 --- !u!114 &6849741133935033958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,6 +644,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bea3a19de23963a4eb5bf1a3f8de2b39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2122751120135037203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2894445575586125949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ed65209db470b4c9080a0355b70c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!195 &2621000115582183501
