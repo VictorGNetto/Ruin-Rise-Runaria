@@ -34,15 +34,9 @@ public class Target : MonoBehaviour
 
     private void L15CleanUp()
     {
-        if (golem.selected) {
-            if (golem.targetType == Golem.TargetType.Self || golem.targetType == Golem.TargetType.Friend) {
-                if (golem.targetFriend != null) {
-                    golem.targetFriend.selectedAndTargetUI.Hide();
-                }
-            } else {
-                // targetEnemy.selectedAndTargetUI.Hide();
-            }
-        }
+        bool targetChanged = false;
+        Golem oldFriendTarget = golem.targetFriend;
+        int oldTargetGuid = oldFriendTarget.guid;
 
         golem.targetFriend = golem.levelDirector.GetGolemWithHighestHealth();
         if (golem.guid == golem.targetFriend.guid) {
@@ -51,19 +45,25 @@ public class Target : MonoBehaviour
             golem.targetType = Golem.TargetType.Friend;
         }
 
-        if (golem.selected) {
-            if (golem.targetType == Golem.TargetType.Self) {
-                if (golem.targetFriend != null) {
-                    golem.targetFriend.selectedAndTargetUI.PlayAutoTarget();
-                }
-            } else if (golem.targetType == Golem.TargetType.Friend) {
-                if (golem.targetFriend != null) {
-                    golem.selectedAndTargetUI.PlaySelected();
-                    golem.targetFriend.selectedAndTargetUI.PlayFriendTarget();
-                }
-            } else {
-                // targetEnemy.selectedAndTargetUI.PlayTarget();
-            }
+        if (oldTargetGuid != golem.targetFriend.guid) targetChanged = true;
+
+        if (!targetChanged || !golem.selected) return;
+
+        // Update Select UI
+        // Hide the old target UI
+        if (oldFriendTarget != null) {
+            oldFriendTarget.selectedAndTargetUI.Hide();
+        }
+
+        // Play the new target UI
+        if (golem.targetType == Golem.TargetType.Self) {
+            golem.targetFriend.selectedAndTargetUI.PlayAutoTarget();
+        } else if (golem.targetType == Golem.TargetType.Friend) {
+            golem.selectedAndTargetUI.PlaySelected();
+            golem.targetFriend.selectedAndTargetUI.PlayFriendTarget();
+        } else {
+            golem.selectedAndTargetUI.PlaySelected();
+            // golem.targetEnemy.selectedAndTargetUI.PlayTarget();
         }
     }
 }

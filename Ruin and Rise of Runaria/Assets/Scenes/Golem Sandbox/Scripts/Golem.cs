@@ -103,6 +103,7 @@ public class Golem : MonoBehaviour
     {
         if (targetFriend == null) {
             targetFriend = levelDirector.GetRandomFriend(guid);
+            targetType = TargetType.Friend;
         }
     }
 
@@ -144,6 +145,8 @@ public class Golem : MonoBehaviour
 
     public void Unselect()
     {
+        if (!selected) return;
+
         selected = false;
         selectedAndTargetUI.Hide();
 
@@ -159,13 +162,15 @@ public class Golem : MonoBehaviour
     public void Select()
     {
         selected = true;
-        selectedAndTargetUI.PlaySelected();
 
+        if (targetType == TargetType.Self) {
+            selectedAndTargetUI.PlayAutoTarget();
+        }
         if (targetType == TargetType.Friend) {
-            if (targetFriend != null) {
-                targetFriend.selectedAndTargetUI.PlayFriendTarget();
-            }
+            selectedAndTargetUI.PlaySelected();
+            targetFriend.selectedAndTargetUI.PlayFriendTarget();
         } else if (targetType == TargetType.Enemy) {
+            selectedAndTargetUI.PlaySelected();
             // targetEnemy.selectedAndTargetUI.PlayTarget();
         }
     }
