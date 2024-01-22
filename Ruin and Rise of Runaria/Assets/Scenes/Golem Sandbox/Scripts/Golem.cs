@@ -133,7 +133,9 @@ public class Golem : MonoBehaviour
 
     public Vector3 GetTargetPosition()
     {
-        if (targetType == TargetType.Friend) {
+        if (targetType == TargetType.Self) {
+            return transform.position;
+        } else if (targetType == TargetType.Friend) {
             return targetFriend.transform.position;
         } else {
             return targetEnemy.transform.position;
