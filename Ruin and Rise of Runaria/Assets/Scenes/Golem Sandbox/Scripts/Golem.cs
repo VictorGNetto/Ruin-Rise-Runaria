@@ -1,17 +1,15 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Golem : MonoBehaviour
+public class Golem : MonoBehaviour, ICharacter
 {
     // Bullet
     public Bullet bulletPrefab;
     public Transform launchOffset;
-
-    public LevelDirector levelDirector;
-    public int guid;
 
     // Target
     public enum TargetType { Self, Friend, Enemy };
@@ -42,11 +40,11 @@ public class Golem : MonoBehaviour
     public delegate void MovementBehavior();
     public Dictionary<String, MovementBehavior> movementBehaviorFunctionMap = new Dictionary<string, MovementBehavior>();
 
+    // Rune execution logic
     public GolemProgram golemProgram;
     public float cooldown = 0;
     public float timeSinceLastAction = 0;
     public String movementBehavior = "M1";
-    public NavMeshAgent navMeshAgent;
     public bool runeExecuted;
 
     // Select logic
@@ -54,8 +52,24 @@ public class Golem : MonoBehaviour
     public RuneSelectionUI runeSelectionUI;
     public bool selected = false;
 
+    // Flash Effect
+    private SpriteRenderer spriteRenderer;
+    private Coroutine flashRoutine;
+    public Material stdMaterial;
+    public Material flashMaterial;
+    public float flashDuration;
+
+    // Miscellaneous
+    public LevelDirector levelDirector;
+    public int guid;
+    public NavMeshAgent navMeshAgent;
+    public bool alive;
+
     void Awake()
     {
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer.material = stdMaterial;
+
         // Health and Mana Bar setup
         healthManaBar.SetHealth(health, maxHealth);
         healthManaBar.SetMana(mana, maxMana);
@@ -65,12 +79,18 @@ public class Golem : MonoBehaviour
 
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
+
+        alive = true;
     }
 
     // Update is called once per frame
     private bool gameOver = false;
     void Update()
     {
+        if (Input.GetButtonDown("Fire1")) {
+            Flash();
+        }
+
         if (gameOver) return;
         if (!levelDirector.levelStartedRunning) return;
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
@@ -132,7 +152,7 @@ public class Golem : MonoBehaviour
         return true;
     }
 
-    public Vector3 GetTargetPosition()
+    public Vector3 TargetPosition()
     {
         if (targetType == TargetType.Self) {
             return transform.position;
@@ -178,5 +198,51 @@ public class Golem : MonoBehaviour
     public void OpenRuneSelectionUI()
     {
         runeSelectionUI.OpenRuneSelectionUI();
+    }
+
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
+        Flash();
+        if (health < 0 && alive) Die();
+    }
+
+    public void Die()
+    {
+        // TODO: disable collider2D (That don't exist yet)
+        alive = false;
+        gameObject.GetComponent<Animator>().SetTrigger("Die");
+        Destroy(gameObject, 2.0f);
+    }
+
+    // Code from 
+    // https://github.com/BarthaSzabolcs/Tutorial-SpriteFlash/blob/main/Assets/Scripts/FlashEffects/SimpleFlash.cs
+    public void Flash()
+    {
+        // If the flashRoutine is not null, then it is currently running.
+        if (flashRoutine != null)
+        {
+            // In this case, we should stop it first.
+            // Multiple FlashRoutines the same time would cause bugs.
+            StopCoroutine(flashRoutine);
+        }
+
+        // Start the Coroutine, and store the reference for it.
+        flashRoutine = StartCoroutine(FlashRoutine());
+    }
+
+    private IEnumerator FlashRoutine()
+    {
+        // Swap to the flashMaterial.
+        spriteRenderer.material = flashMaterial;
+
+        // Pause the execution of this function for "duration" seconds.
+        yield return new WaitForSeconds(flashDuration);
+
+        // After the pause, swap back to the original material.
+        spriteRenderer.material = stdMaterial;
+
+        // Set the routine to null, signaling that it's finished.
+        flashRoutine = null;
     }
 }

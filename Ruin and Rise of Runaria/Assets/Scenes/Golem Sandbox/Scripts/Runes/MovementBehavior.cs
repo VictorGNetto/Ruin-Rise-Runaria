@@ -178,7 +178,7 @@ public class MovementBehavior : MonoBehaviour
             InitM3();
         }
 
-        Vector3 destination = golem.GetTargetPosition();
+        Vector3 destination = golem.TargetPosition();
         if (destination.x < golem.transform.position.x) {
             golem.GetComponent<SpriteRenderer>().flipX = true;
         } else {
@@ -207,8 +207,8 @@ public class MovementBehavior : MonoBehaviour
         floatDict.Clear();
         boolDict["M3"] = true;
 
-        floatDict["stoppingDistance"] = 1.5f;
-        floatDict["awakeDistance"] = 2.0f;
+        floatDict["stoppingDistance"] = 0.75f;
+        floatDict["awakeDistance"] = 1.25f;
         boolDict["awake"] = true;
         golem.navMeshAgent.speed = 1.5f;
         golem.navMeshAgent.stoppingDistance = floatDict["stoppingDistance"];

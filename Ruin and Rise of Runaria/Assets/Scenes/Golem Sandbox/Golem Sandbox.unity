@@ -742,8 +742,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0011000037, y: -0.0012000203, z: 0}
-    m_Extent: {x: 0.9983, y: 1.0039, z: 0}
+    m_Center: {x: -0.0013000369, y: -0.0024499893, z: 0}
+    m_Extent: {x: 0.9997, y: 1.00565, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4288,9 +4288,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9042108169200833378, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
+      propertyPath: stdMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 9042108169200833378, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: golemProgram
       value: 
       objectReference: {fileID: 1146014888}
+    - target: {fileID: 9042108169200833378, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
+      propertyPath: flashDuration
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042108169200833378, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
+      propertyPath: flashMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 012956a9da9d6194bb40910c49fb3562, type: 2}
     - target: {fileID: 9042108169200833378, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: levelDirector
       value: 
@@ -4361,9 +4373,21 @@ PrefabInstance:
       value: Golem - Lava
       objectReference: {fileID: 0}
     - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+      propertyPath: stdMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
       propertyPath: golemProgram
       value: 
       objectReference: {fileID: 436060742}
+    - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+      propertyPath: flashDuration
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+      propertyPath: flashMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 012956a9da9d6194bb40910c49fb3562, type: 2}
     - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
       propertyPath: levelDirector
       value: 
@@ -4406,9 +4430,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3855243366295093512, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
+      propertyPath: stdMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 3855243366295093512, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: golemProgram
       value: 
       objectReference: {fileID: 999053024}
+    - target: {fileID: 3855243366295093512, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
+      propertyPath: flashDuration
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855243366295093512, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
+      propertyPath: flashMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 012956a9da9d6194bb40910c49fb3562, type: 2}
     - target: {fileID: 3855243366295093512, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: levelDirector
       value: 
@@ -4636,9 +4672,21 @@ PrefabInstance:
       value: Golem - Rock
       objectReference: {fileID: 0}
     - target: {fileID: 2893227367573128283, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: stdMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 2893227367573128283, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: golemProgram
       value: 
       objectReference: {fileID: 408151357}
+    - target: {fileID: 2893227367573128283, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: flashDuration
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893227367573128283, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: flashMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 012956a9da9d6194bb40910c49fb3562, type: 2}
     - target: {fileID: 2893227367573128283, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: levelDirector
       value: 
