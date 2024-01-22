@@ -5,7 +5,7 @@ public class SelectHandler : MonoBehaviour
 {
     public int selectedGolem = -1;
 
-    private SelecArea selecArea = null;
+    private SelecGolem selecArea = null;
     private Camera mainCamera;
     private int selectableLayer = 6;
 
@@ -33,14 +33,14 @@ public class SelectHandler : MonoBehaviour
         }
 
         int oldGolemSelected = selectedGolem;
-        selectedGolem = rayHit.collider.gameObject.GetComponent<SelecArea>().golem.guid;
+        selectedGolem = rayHit.collider.gameObject.GetComponent<SelecGolem>().golem.guid;
 
         if (oldGolemSelected != selectedGolem) {
             if (selecArea != null) {
                 selecArea.UnselectGolem();
             }
 
-            selecArea =  rayHit.collider.gameObject.GetComponent<SelecArea>();
+            selecArea =  rayHit.collider.gameObject.GetComponent<SelecGolem>();
             selecArea.SelectGolem();
         } else {
             selecArea.OpenRuneSelectionUI();

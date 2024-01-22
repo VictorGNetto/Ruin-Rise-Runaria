@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class SelecArea : MonoBehaviour
+public class SelecGolem : MonoBehaviour
 {
     public Golem golem;
     public RuneSelectionUI runeSelectionUI;
@@ -25,7 +25,7 @@ public class SelecArea : MonoBehaviour
 
         if (golem.targetType == Golem.TargetType.Friend) {
             if (golem.targetFriend != null) {
-                golem.targetFriend.selectedAndTargetUI.PlayTarget();
+                golem.targetFriend.selectedAndTargetUI.PlayFriendTarget();
             }
         } else {
 
