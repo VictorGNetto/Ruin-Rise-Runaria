@@ -742,8 +742,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0042999685, y: 0.00084999204, z: 0}
-    m_Extent: {x: 0.99749994, y: 0.99755, z: 0}
+    m_Center: {x: 0.0011000037, y: -0.0012000203, z: 0}
+    m_Extent: {x: 0.9983, y: 1.0039, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1458,10 +1458,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   golems:
-  - {fileID: 1572756413}
+  - {fileID: 537908809}
   - {fileID: 298458497}
   - {fileID: 337331151}
-  - {fileID: 537908809}
+  - {fileID: 1572756413}
   enemys:
   - {fileID: 726174805}
   levelStartedRunning: 0
@@ -4912,8 +4912,8 @@ SceneRoots:
   - {fileID: 149476906}
   - {fileID: 3531409790104656732}
   - {fileID: 2601456810260501153}
-  - {fileID: 1406405486001368951}
   - {fileID: 2163198466944749475}
+  - {fileID: 1406405486001368951}
   - {fileID: 599512706}
   - {fileID: 1201165571}
   - {fileID: 83466569}

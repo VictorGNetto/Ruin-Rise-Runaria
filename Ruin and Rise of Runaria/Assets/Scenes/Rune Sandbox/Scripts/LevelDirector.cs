@@ -8,6 +8,18 @@ public class LevelDirector : MonoBehaviour
     public List<Enemy> enemys;
     public bool levelStartedRunning = false;
 
+    private void Awake()
+    {
+        int i = 0;
+        foreach (Golem g in golems) {
+            if (g != null) {
+                g.guid = i;
+            }
+            i++;
+        }
+
+    }
+
     public Enemy GetRandomEnemy()
     {
         List<Enemy> validEnemys = new List<Enemy>();
@@ -103,5 +115,72 @@ public class LevelDirector : MonoBehaviour
         }
 
         return golemWithHighestHealth;
+    }
+
+    public Golem GetGolemWithLowestHealth()
+    {
+        List<Golem> validGolems = new List<Golem>();
+        foreach (Golem g in golems) {
+            if (g != null) {
+                validGolems.Add(g);
+            }
+        }
+
+        Golem golemWithLowestHealth = validGolems[0];
+        foreach (Golem g in validGolems) {
+            if (g.health < golemWithLowestHealth.health) {
+                golemWithLowestHealth = g;
+            }
+        }
+
+        return golemWithLowestHealth;
+    }
+
+    public Golem GetNearestGolem(int guid)
+    {
+        List<Golem> validGolems = new List<Golem>();
+        foreach (Golem g in golems) {
+            if (g != null && g.guid != guid) {
+                validGolems.Add(g);
+            }
+        }
+
+        if (validGolems.Count == 0) return golems[guid];
+
+        Golem nearestGolem = validGolems[0];
+        float distance = (golems[guid].transform.position - nearestGolem.transform.position).magnitude;
+        foreach (Golem g in validGolems) {
+            float newDistance = (golems[guid].transform.position - g.transform.position).magnitude;
+            if (newDistance < distance) {
+                distance = newDistance;
+                nearestGolem = g;
+            }
+        }
+
+        return nearestGolem;
+    }
+
+    public Golem GetFarestGolem(int guid)
+    {
+        List<Golem> validGolems = new List<Golem>();
+        foreach (Golem g in golems) {
+            if (g != null && g.guid != guid) {
+                validGolems.Add(g);
+            }
+        }
+
+        if (validGolems.Count == 0) return golems[guid];
+
+        Golem farestGolem = validGolems[0];
+        float distance = (golems[guid].transform.position - farestGolem.transform.position).magnitude;
+        foreach (Golem g in validGolems) {
+            float newDistance = (golems[guid].transform.position - g.transform.position).magnitude;
+            if (newDistance > distance) {
+                distance = newDistance;
+                farestGolem = g;
+            }
+        }
+
+        return farestGolem;
     }
 }
