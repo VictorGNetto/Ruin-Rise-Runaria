@@ -197,8 +197,6 @@ public class Attack : MonoBehaviour
     private void A3CleanUp()
     {
         if (boolDict["success"]) {
-            GameObject go = Instantiate(explosionEffectPrefab);
-            go.transform.position = golem.targetFriend.transform.position;
             golem.gameObject.GetComponent<Animator>().SetTrigger("Idle");
         }
     }
