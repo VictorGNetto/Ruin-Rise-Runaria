@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class LevelDirector : MonoBehaviour
@@ -160,7 +161,7 @@ public class LevelDirector : MonoBehaviour
         return nearestGolem;
     }
 
-    public Golem GetFarestGolem(int guid)
+    public Golem GetFartestGolem(int guid)
     {
         List<Golem> validGolems = new List<Golem>();
         foreach (Golem g in golems) {
@@ -171,16 +172,16 @@ public class LevelDirector : MonoBehaviour
 
         if (validGolems.Count == 0) return golems[guid];
 
-        Golem farestGolem = validGolems[0];
-        float distance = (golems[guid].transform.position - farestGolem.transform.position).magnitude;
+        Golem fartestGolem = validGolems[0];
+        float distance = (golems[guid].transform.position - fartestGolem.transform.position).magnitude;
         foreach (Golem g in validGolems) {
             float newDistance = (golems[guid].transform.position - g.transform.position).magnitude;
             if (newDistance > distance) {
                 distance = newDistance;
-                farestGolem = g;
+                fartestGolem = g;
             }
         }
 
-        return farestGolem;
+        return fartestGolem;
     }
 }

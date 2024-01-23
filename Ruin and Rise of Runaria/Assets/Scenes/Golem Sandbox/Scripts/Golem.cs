@@ -82,7 +82,6 @@ public class Golem : MonoBehaviour, ICharacter
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
 
-        gameObject.GetComponent<Animator>().SetTrigger("Empty");
         UpdateTarget();
 
         alive = true;

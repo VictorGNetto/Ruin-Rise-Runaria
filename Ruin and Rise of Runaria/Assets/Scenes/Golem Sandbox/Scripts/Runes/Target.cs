@@ -177,7 +177,7 @@ public class Target : MonoBehaviour
         oldFriendTarget = golem.targetFriend;
         oldTargetGuid = oldFriendTarget.guid;
 
-        golem.targetFriend = golem.levelDirector.GetFarestGolem(golem.guid);
+        golem.targetFriend = golem.levelDirector.GetFartestGolem(golem.guid);
 
         if (golem.guid == golem.targetFriend.guid) {
             golem.targetType = Golem.TargetType.Self;
