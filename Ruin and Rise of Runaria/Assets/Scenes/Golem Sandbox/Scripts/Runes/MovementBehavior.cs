@@ -76,6 +76,14 @@ public class MovementBehavior : MonoBehaviour
             floatDict["horizontalFactor"] = UnityEngine.Random.Range(-1.0f, 1.0f);
             floatDict["verticalFactor"] = UnityEngine.Random.Range(-1.0f, 1.0f);
             golem.gameObject.GetComponent<Animator>().SetBool("Walking", true);
+
+            Vector2 center = new Vector2(0, 0);
+            Vector2 pos = new Vector2(golem.transform.position.x, golem.transform.position.y);
+
+            if ((center - pos).magnitude > 5.0f) {
+                floatDict["horizontalFactor"] = 0.75f * floatDict["horizontalFactor"] + 0.25f * (center - pos).x;
+                floatDict["verticalFactor"] = 0.75f * floatDict["verticalFactor"] + 0.25f * (center - pos).y;
+            }
         } else {
             floatDict["horizontalFactor"] = 0;
             floatDict["verticalFactor"] = 0;
