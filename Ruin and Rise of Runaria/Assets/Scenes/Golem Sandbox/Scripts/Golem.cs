@@ -13,7 +13,7 @@ public class Golem : MonoBehaviour, ICharacter
 
     // Target
     public enum TargetType { Self, Friend, Enemy };
-    public TargetType targetType = TargetType.Friend;
+    public TargetType targetType;
     public Enemy targetEnemy;
     public Golem targetFriend;
 
@@ -82,6 +82,9 @@ public class Golem : MonoBehaviour, ICharacter
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
 
+        gameObject.GetComponent<Animator>().SetTrigger("Empty");
+        UpdateTarget();
+
         alive = true;
     }
 
@@ -91,6 +94,7 @@ public class Golem : MonoBehaviour, ICharacter
     {
         if (gameOver) return;
         if (!levelDirector.levelStartedRunning) return;
+        if (!alive) return;
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
         UpdateTarget();

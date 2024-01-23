@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -58,6 +59,20 @@ public class Attack : MonoBehaviour
     //     }
     // }
 
+    void DoTakeDamageDelay(float delayTime)
+    {
+        StartCoroutine(DelayTakeDamage(delayTime));
+    }
+
+    IEnumerator DelayTakeDamage(float delayTime)
+    {
+        //Wait for the specified delay time before continuing.
+        yield return new WaitForSeconds(delayTime);
+
+        //Do the action after the delay time has finished.
+        golem.targetFriend.TakeDamage(floatDict["damage"]);
+    }
+
     private bool A2()
     {
         if (boolDict["success"] || !golem.runeExecuted) return true;
@@ -77,8 +92,11 @@ public class Attack : MonoBehaviour
             if (golem.targetType == Golem.TargetType.Enemy) {
                 // golem.targetEnemy.TakeDamage(floatDict["damage"]);
             } else if (golem.targetType == Golem.TargetType.Friend) {
+                if (!golem.targetFriend.alive) return true;
+                
                 golem.gameObject.GetComponent<Animator>().SetTrigger("Attack");
-                golem.targetFriend.TakeDamage(floatDict["damage"]);
+                DoTakeDamageDelay(0.5f);
+                // golem.targetFriend.TakeDamage(floatDict["damage"]);
             }
         }
 
@@ -96,7 +114,6 @@ public class Attack : MonoBehaviour
             golem.mana -= manaCost;
             golem.runeExecuted = true;
             golem.cooldown = 1.0f;
-            // golem.gameObject.GetComponent<Animator>().SetTrigger("Attack");
             floatDict.Add("damage", golem.strength * 0.75f);
             floatDict.Add("attackRange", 1f);
             boolDict.Add("success", false);
