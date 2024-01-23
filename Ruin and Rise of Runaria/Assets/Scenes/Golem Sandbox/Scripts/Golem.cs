@@ -24,6 +24,8 @@ public class Golem : MonoBehaviour, ICharacter
     public float maxMana = 70;
     public HealthManaBar healthManaBar;
 
+    public float strength;
+
     // Attack, support, conditional and target runes
     public delegate bool RuneFunction();
     public Dictionary<String, RuneFunction> runeFunctionMap = new Dictionary<string, RuneFunction>();
@@ -87,10 +89,6 @@ public class Golem : MonoBehaviour, ICharacter
     private bool gameOver = false;
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) {
-            Flash();
-        }
-
         if (gameOver) return;
         if (!levelDirector.levelStartedRunning) return;
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
@@ -122,8 +120,15 @@ public class Golem : MonoBehaviour, ICharacter
     private void UpdateTarget()
     {
         if (targetFriend == null) {
-            targetFriend = levelDirector.GetRandomFriend(guid);
-            targetType = TargetType.Friend;
+            targetFriend = levelDirector.GetRandomFriend();
+
+            if (guid == targetFriend.guid) {
+                targetType = TargetType.Self;
+            } else {
+                targetType = TargetType.Friend;
+            }
+
+            if (selected) Select();
         }
     }
 

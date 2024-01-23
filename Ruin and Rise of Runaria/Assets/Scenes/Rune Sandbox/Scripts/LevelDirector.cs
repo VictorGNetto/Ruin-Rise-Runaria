@@ -37,11 +37,11 @@ public class LevelDirector : MonoBehaviour
     }
 
     // Returns a random Golem, but the one with the passed UGID
-    public Golem GetRandomFriend(int guid)
+    public Golem GetRandomFriend()
     {
         List<Golem> validGolems = new List<Golem>();
         foreach (Golem g in golems) {
-            if (g != null && g.guid != guid) {
+            if (g != null) {
                 validGolems.Add(g);
             }
         }
