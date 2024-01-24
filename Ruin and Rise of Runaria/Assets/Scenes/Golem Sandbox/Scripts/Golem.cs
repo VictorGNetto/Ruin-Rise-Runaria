@@ -118,7 +118,7 @@ public class Golem : MonoBehaviour, ICharacter
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
         UpdateTarget();
-        mana = Math.Min(maxMana, mana + Time.deltaTime * 5);
+        mana = Math.Min(maxMana, mana + Time.deltaTime * 50);
 
         healthManaBar.SetHealth(health, maxHealth);
         healthManaBar.SetMana(mana, maxMana);
