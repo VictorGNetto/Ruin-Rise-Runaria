@@ -29,8 +29,9 @@ public class Golem : MonoBehaviour, ICharacter
     public float speed;
 
     // Animation
-    Animator animator;
-    private string currentAnimation;
+    public Animator animator;
+    public string currentAnimation;
+    public bool walking = false;
 
     // Attack, support, conditional and target runes
     public delegate bool RuneFunction();
@@ -136,7 +137,12 @@ public class Golem : MonoBehaviour, ICharacter
     {
         if (currentAnimation == newAnimation) return;
 
-        Debug.Log(newAnimation);
+        animator.Play(newAnimation);
+        currentAnimation = newAnimation;
+    }
+
+    public void ForceChangeAnimation(string newAnimation)
+    {
         animator.Play(newAnimation);
         currentAnimation = newAnimation;
     }

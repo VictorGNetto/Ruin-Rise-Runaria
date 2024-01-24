@@ -360,6 +360,37 @@ MonoBehaviour:
   manaLow: {r: 0, g: 0.113426745, b: 0.618, a: 1}
   manaHight: {r: 0, g: 0.11372549, b: 0.61960787, a: 1}
   manaOffset: {x: 0, y: 0.56, z: 0}
+--- !u!1 &3417897624930103121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7197062146757563408}
+  m_Layer: 0
+  m_Name: LauchOffset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7197062146757563408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3417897624930103121}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: -1.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1288890420483706570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3486168372903519019
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +433,8 @@ Transform:
   - {fileID: 3988848501528052829}
   - {fileID: 4627947068948584202}
   - {fileID: 3901944298241484631}
+  - {fileID: 7197062146757563408}
+  - {fileID: 3178035869541757646}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &672020412797587963
@@ -492,6 +525,7 @@ MonoBehaviour:
   maxY: 3.7
   minY: -3.7
   orderInLayer: 0
+  foot: {fileID: 0}
 --- !u!114 &6441404501169219905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,25 +540,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 0}
   launchOffset: {fileID: 0}
-  levelDirector: {fileID: 0}
-  guid: 2
   targetType: 0
   targetEnemy: {fileID: 0}
   targetFriend: {fileID: 0}
-  health: 25
+  health: 75
   maxHealth: 100
   mana: 35
   maxMana: 70
   healthManaBar: {fileID: 8954030458734531390}
+  strength: 20
+  baseSpeed: 1
+  speed: 1
   golemProgram: {fileID: 0}
   cooldown: 0
   timeSinceLastAction: 0
   movementBehavior: M1
-  navMeshAgent: {fileID: 2446777385863052241}
   runeExecuted: 0
   selectedAndTargetUI: {fileID: 5633776468441951467}
   runeSelectionUI: {fileID: 0}
   selected: 0
+  stdMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  flashMaterial: {fileID: 2100000, guid: 012956a9da9d6194bb40910c49fb3562, type: 2}
+  flashDuration: 0.03
+  levelDirector: {fileID: 0}
+  guid: 2
+  navMeshAgent: {fileID: 2446777385863052241}
+  alive: 0
 --- !u!114 &374985515887445591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,6 +578,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afc66e2b8a83af4e91e48f7174f9a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  A1_Dano: 1
+  A1_Alcance: 1
+  A1_Execucao: 0.5
+  A1_Mana: 10
+  explosionEffectPrefab: {fileID: 3821610065597546662, guid: 0b396699e3ff2db4b9dae88a5278670c, type: 3}
 --- !u!114 &8991383364880916592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,7 +639,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3486168372903519019}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_Radius: 0.1
   m_Speed: 1
   m_Acceleration: 8
@@ -965,6 +1011,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5921374090389596655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3178035869541757646}
+  m_Layer: 0
+  m_Name: Foot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3178035869541757646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5921374090389596655}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1288890420483706570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7682549295371707063
 GameObject:
   m_ObjectHideFlags: 0

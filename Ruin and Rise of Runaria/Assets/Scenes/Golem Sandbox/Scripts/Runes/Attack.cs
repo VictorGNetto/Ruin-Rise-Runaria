@@ -8,9 +8,10 @@ public class Attack : MonoBehaviour
     // Public Attacks Parameters
     public float A1_Dano = 1.0f;
     public float A1_Alcance = 1.0f;
-    public float A1_Execucao = 0.5f;
+    public float A1_Execucao = 0.75f;
+    public float A1_Recuperacao = 1f;
     public float A1_Mana = 10.0f;
-    private float A1_AnimationSpeed = 1.7f;
+    public float A1_AnimationSpeed = 1.7f;
 
     public GameObject explosionEffectPrefab;
 
@@ -105,16 +106,6 @@ public class Attack : MonoBehaviour
 
         if (distance < floatDict["attackRange"]) {
             boolDict["success"] = true;
-
-            if (golem.targetType == Golem.TargetType.Enemy) {
-                // golem.targetEnemy.TakeDamage(floatDict["damage"]);
-            } else if (golem.targetType == Golem.TargetType.Friend) {
-                if (!golem.targetFriend.alive) return true;
-                
-                // golem.gameObject.GetComponent<Animator>().SetTrigger("Attack");
-                // DoTakeDamageDelay(golem.cooldown / 2);
-                // golem.targetFriend.TakeDamage(floatDict["damage"]);
-            }
         }
 
         return true;
@@ -131,26 +122,51 @@ public class Attack : MonoBehaviour
         if (manaCost <= golem.mana) {
             golem.mana -= manaCost;
             golem.runeExecuted = true;
-            golem.cooldown = A1_Execucao;
+            golem.cooldown = A1_Execucao + A1_Recuperacao;
             floatDict.Add("damage", golem.strength * A1_Dano);
             floatDict.Add("attackRange", A1_Alcance);
 
-            golem.speed = golem.baseSpeed / 2;
-            golem.gameObject.GetComponent<Animator>().speed = A1_AnimationSpeed;
-            golem.gameObject.GetComponent<Animator>().SetTrigger("Attack");
+            golem.speed = golem.baseSpeed * 0.25f;
+            golem.ChangeAnimation("Attack");
+            float attackDelay = 1.0f;
+            golem.animator.speed = attackDelay / A1_Execucao;
+
+            DoA1ResetAnimation(A1_Execucao);
+
+            // Invoke("A1ResetAnimation", A1_Execucao);
         } else {
             golem.runeExecuted = false;
-            golem.cooldown = 0.5f;
+            golem.cooldown = A1_Recuperacao;
         }
     }
 
     private void A1CleanUp()
     {
         golem.speed = golem.baseSpeed;
-        golem.gameObject.GetComponent<Animator>().speed = 1;
+    }
+
+    void DoA1ResetAnimation(float delayTime)
+    {
+        StartCoroutine(A1ResetAnimation(delayTime));
+    }
+
+    IEnumerator A1ResetAnimation(float delayTime)
+    {
+        //Wait for the specified delay time before continuing.
+        yield return new WaitForSeconds(delayTime);
+
+        //Do the action after the delay time has finished.
+        golem.speed = golem.baseSpeed * 0.75f;
+        golem.animator.speed = 1;
+
         if (boolDict["success"]) {
-            golem.gameObject.GetComponent<Animator>().SetTrigger("Idle");
             golem.targetFriend.TakeDamage(floatDict["damage"]);
+        }
+
+        if (golem.walking) {
+            golem.ForceChangeAnimation("Walk");
+        } else {
+            golem.ForceChangeAnimation("Idle");
         }
     }
 

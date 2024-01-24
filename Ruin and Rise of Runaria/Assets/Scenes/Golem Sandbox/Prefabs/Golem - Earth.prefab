@@ -227,7 +227,7 @@ RectTransform:
   m_Father: {fileID: 6947647540490358109}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -302,7 +302,7 @@ RectTransform:
   m_Father: {fileID: 5127364992335834692}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -458,7 +458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6179743829551935389
 Transform:
   m_ObjectHideFlags: 0
@@ -579,8 +579,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 0}
   launchOffset: {fileID: 0}
-  levelDirector: {fileID: 0}
-  guid: 3
   targetType: 0
   targetEnemy: {fileID: 0}
   targetFriend: {fileID: 0}
@@ -589,15 +587,24 @@ MonoBehaviour:
   mana: 35
   maxMana: 70
   healthManaBar: {fileID: 2435291663019695928}
+  strength: 15
+  baseSpeed: 0
+  speed: 0
   golemProgram: {fileID: 0}
   cooldown: 0
   timeSinceLastAction: 0
   movementBehavior: M1
-  navMeshAgent: {fileID: 2621000115582183501}
   runeExecuted: 0
   selectedAndTargetUI: {fileID: 8731617762927642187}
   runeSelectionUI: {fileID: 0}
   selected: 0
+  stdMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  flashMaterial: {fileID: 2100000, guid: 012956a9da9d6194bb40910c49fb3562, type: 2}
+  flashDuration: 0.03
+  levelDirector: {fileID: 0}
+  guid: 3
+  navMeshAgent: {fileID: 2621000115582183501}
+  alive: 0
 --- !u!114 &6849741133935033958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,6 +617,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afc66e2b8a83af4e91e48f7174f9a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  A1_Dano: 1
+  A1_Alcance: 1
+  A1_Execucao: 0.5
+  A1_Mana: 10
+  explosionEffectPrefab: {fileID: 3821610065597546662, guid: 0b396699e3ff2db4b9dae88a5278670c, type: 3}
 --- !u!114 &1035448172478165130
 MonoBehaviour:
   m_ObjectHideFlags: 0
