@@ -10666,7 +10666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programUI: {fileID: 5251898315015734836}
   details: {fileID: 6286275751808175357}
-  runeName: M6
+  runeName: M7
   levelDirector: {fileID: 0}
 --- !u!114 &7885893418644389039
 MonoBehaviour:

@@ -28,6 +28,10 @@ public class Golem : MonoBehaviour, ICharacter
     public float baseSpeed;
     public float speed;
 
+    // Animation
+    Animator animator;
+    private string currentAnimation;
+
     // Attack, support, conditional and target runes
     public delegate bool RuneFunction();
     public Dictionary<String, RuneFunction> runeFunctionMap = new Dictionary<string, RuneFunction>();
@@ -71,17 +75,21 @@ public class Golem : MonoBehaviour, ICharacter
 
     void Awake()
     {
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        spriteRenderer.material = stdMaterial;
-
         // Health and Mana Bar setup
         healthManaBar.SetHealth(health, maxHealth);
         healthManaBar.SetMana(mana, maxMana);
 
+        // Animation
+        animator = gameObject.GetComponent<Animator>();
+
+        // Flash Effect
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer.material = stdMaterial;
+
         // Without any rune
         this.runeFunctionMap.Add("NoCommand", new RuneFunction(NoCommand));
 
-        movementBehavior = "M3";
+        movementBehavior = "M0";
 
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
@@ -122,6 +130,15 @@ public class Golem : MonoBehaviour, ICharacter
 
         movementBehaviorFunctionMap[movementBehavior]();
         golemProgram.actionResult = runeFunctionMap[golemProgram.GetCommand()]();
+    }
+
+    public void ChangeAnimation(string newAnimation)
+    {
+        if (currentAnimation == newAnimation) return;
+
+        Debug.Log(newAnimation);
+        animator.Play(newAnimation);
+        currentAnimation = newAnimation;
     }
 
     private void UpdateTarget()
