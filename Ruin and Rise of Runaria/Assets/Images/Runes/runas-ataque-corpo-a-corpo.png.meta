@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a7fabc0189591d84b914c3fa72a10e2f
+guid: 43489c6e53e21b74c82d10f1e305e23f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: runas-movimento_0
+      name: runas-ataque-corpo-a-corpo_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 125
-        width: 87
-        height: 87
+        y: 126
+        width: 110
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6420bbf9ed6f9a44a754cc8132980ec
-      internalID: -42364710
+      spriteID: d615cd4d806ee294ab24e911c19c669a
+      internalID: 54859095
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runas-movimento_1
+      name: runas-ataque-corpo-a-corpo_1
       rect:
         serializedVersion: 2
-        x: 109
-        y: 125
-        width: 87
-        height: 87
+        x: 127
+        y: 127
+        width: 110
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdc2187e9bed66c43b570ec77f482f55
-      internalID: 1553700586
+      spriteID: 401bda9bdbb7226498e7ee7bd958fe6d
+      internalID: 1118500177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runas-movimento_2
+      name: runas-ataque-corpo-a-corpo_2
       rect:
         serializedVersion: 2
-        x: 218
-        y: 125
-        width: 87
-        height: 87
+        x: 254
+        y: 121
+        width: 111
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd79dc908367c224e9ba4a9d8b60e319
-      internalID: -731092987
+      spriteID: a7b68c5685c0c384aa31f50d6764b3f0
+      internalID: -1032001698
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runas-movimento_3
+      name: runas-ataque-corpo-a-corpo_3
       rect:
         serializedVersion: 2
-        x: 327
-        y: 125
-        width: 87
-        height: 87
+        x: 386
+        y: 121
+        width: 110
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35dc6102d6c069643bb002260fcedc38
-      internalID: 1194949981
+      spriteID: 431d19d9a2b0d8b42b12d70feafeade9
+      internalID: 1961595930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runas-movimento_4
+      name: runas-ataque-corpo-a-corpo_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 87
-        height: 87
+        width: 111
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cca2b8f0d6f0d394a8a4972248aaa9b5
-      internalID: -2141104113
+      spriteID: c4ce5d2d78d3d57469ca097db00d1e35
+      internalID: -1695316610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runas-movimento_5
+      name: runas-ataque-corpo-a-corpo_5
       rect:
         serializedVersion: 2
-        x: 109
+        x: 135
         y: 0
-        width: 87
-        height: 87
+        width: 111
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8717e3bf3d65c5e4f8633684e2da4841
-      internalID: -1855705746
+      spriteID: 8656fd9c8cfa07243862fa8e7c4d8411
+      internalID: -448983712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runas-movimento_6
+      name: runas-ataque-corpo-a-corpo_6
       rect:
         serializedVersion: 2
-        x: 218
+        x: 269
         y: 0
-        width: 87
-        height: 87
+        width: 111
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,29 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cea446f3d3867142aeea0692e3a6358
-      internalID: -1916615619
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: runas-movimento_7
-      rect:
-        serializedVersion: 2
-        x: 327
-        y: 0
-        width: 87
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe31814cbb8ae0e47ad687420bb38a45
-      internalID: -1092373981
+      spriteID: e2fec5dd9984bfd4c833abe51d9a0755
+      internalID: 1142631442
       vertices: []
       indices: 
       edges: []
@@ -301,14 +280,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      runas-movimento_0: -42364710
-      runas-movimento_1: 1553700586
-      runas-movimento_2: -731092987
-      runas-movimento_3: 1194949981
-      runas-movimento_4: -2141104113
-      runas-movimento_5: -1855705746
-      runas-movimento_6: -1916615619
-      runas-movimento_7: -1092373981
+      runas-ataque-corpo-a-corpo_0: 54859095
+      runas-ataque-corpo-a-corpo_1: 1118500177
+      runas-ataque-corpo-a-corpo_2: -1032001698
+      runas-ataque-corpo-a-corpo_3: 1961595930
+      runas-ataque-corpo-a-corpo_4: -1695316610
+      runas-ataque-corpo-a-corpo_5: -448983712
+      runas-ataque-corpo-a-corpo_6: 1142631442
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
