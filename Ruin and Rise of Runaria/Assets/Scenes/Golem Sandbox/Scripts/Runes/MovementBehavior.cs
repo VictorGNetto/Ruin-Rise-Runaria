@@ -16,6 +16,9 @@ public class MovementBehavior : MonoBehaviour
     {
         golem = gameObject.GetComponent<Golem>();
 
+        golem.runeFunctionMap.Add("M0", new Golem.RuneFunction(SetMovementBehaviorToM0));
+        golem.movementBehaviorFunctionMap.Add("M0", new Golem.MovementBehavior(M0));
+
         golem.runeFunctionMap.Add("M1", new Golem.RuneFunction(SetMovementBehaviorToM1));
         golem.movementBehaviorFunctionMap.Add("M1", new Golem.MovementBehavior(M1));
 
@@ -27,6 +30,21 @@ public class MovementBehavior : MonoBehaviour
 
         golem.runeFunctionMap.Add("M4", new Golem.RuneFunction(SetMovementBehaviorToM4));
         golem.movementBehaviorFunctionMap.Add("M4", new Golem.MovementBehavior(M4));
+    }
+
+    // Rune M1
+    private bool SetMovementBehaviorToM0()
+    {
+        golem.cooldown = 0.5f;
+        golem.runeExecuted = true;
+        golem.movementBehavior = "M0";
+
+        return true;
+    }
+
+    private void M0()
+    {
+        // Do nothing
     }
 
     // Rune M1
@@ -201,6 +219,7 @@ public class MovementBehavior : MonoBehaviour
                 golem.gameObject.GetComponent<Animator>().SetBool("Walking", true);
             }
             
+            golem.navMeshAgent.speed = golem.speed;
             golem.navMeshAgent.SetDestination(destination);
         } else {
             if ((destination - golem.transform.position).magnitude > floatDict["awakeDistance"]) {

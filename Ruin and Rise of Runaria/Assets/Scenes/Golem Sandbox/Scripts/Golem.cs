@@ -25,6 +25,8 @@ public class Golem : MonoBehaviour, ICharacter
     public HealthManaBar healthManaBar;
 
     public float strength;
+    public float baseSpeed;
+    public float speed;
 
     // Attack, support, conditional and target runes
     public delegate bool RuneFunction();
@@ -46,7 +48,7 @@ public class Golem : MonoBehaviour, ICharacter
     public GolemProgram golemProgram;
     public float cooldown = 0;
     public float timeSinceLastAction = 0;
-    public String movementBehavior = "M1";
+    public String movementBehavior;
     public bool runeExecuted;
 
     // Select logic
@@ -78,6 +80,8 @@ public class Golem : MonoBehaviour, ICharacter
 
         // Without any rune
         this.runeFunctionMap.Add("NoCommand", new RuneFunction(NoCommand));
+
+        movementBehavior = "M3";
 
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
@@ -252,5 +256,11 @@ public class Golem : MonoBehaviour, ICharacter
 
         // Set the routine to null, signaling that it's finished.
         flashRoutine = null;
+    }
+
+    public void GoIdleAfterAttack()
+    {
+        gameObject.GetComponent<Animator>().SetBool("Attacking", false);
+        gameObject.GetComponent<Animator>().Play("Idle");
     }
 }

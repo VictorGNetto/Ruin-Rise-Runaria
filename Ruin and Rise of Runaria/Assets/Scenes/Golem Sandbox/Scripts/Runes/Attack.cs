@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    // Public Attacks Parameters
+    public float A1_Dano = 1.0f;
+    public float A1_Alcance = 1.0f;
+    public float A1_Execucao = 0.5f;
+    public float A1_Mana = 10.0f;
+    private float A1_AnimationSpeed = 1.7f;
+
     public GameObject explosionEffectPrefab;
 
     private Golem golem;
@@ -20,12 +27,9 @@ public class Attack : MonoBehaviour
     {
         golem = gameObject.GetComponent<Golem>();
 
-        // golem.runeFunctionMap.Add("RangedAttack", new Golem.RuneFunction(RangedAttack));
-        // golem.setupFunctionMap.Add("RangedAttack", new Golem.SetupBeforeAction(RangedAttackSetup));
-
-        golem.runeFunctionMap.Add("A2", new Golem.RuneFunction(A2));
-        golem.setupFunctionMap.Add("A2", new Golem.SetupBeforeAction(A2Setup));
-        golem.cleanUpFunctionMap.Add("A2", new Golem.CleanUpAfterAction(A2CleanUp));
+        golem.runeFunctionMap.Add("A1", new Golem.RuneFunction(A1));
+        golem.setupFunctionMap.Add("A1", new Golem.SetupBeforeAction(A1Setup));
+        golem.cleanUpFunctionMap.Add("A1", new Golem.CleanUpAfterAction(A1CleanUp));
 
         golem.runeFunctionMap.Add("A3", new Golem.RuneFunction(A3));
         golem.setupFunctionMap.Add("A3", new Golem.SetupBeforeAction(A3Setup));
@@ -85,10 +89,10 @@ public class Attack : MonoBehaviour
         golem.targetFriend.TakeDamage(floatDict["damage"]);
     }
 
-    // A2
-    private bool A2()
+    // A1
+    private bool A1()
     {
-        if (boolDict["success"] || !golem.runeExecuted) return true;
+        if (!golem.runeExecuted || boolDict["success"]) return true;
 
         float distance;
         if (golem.targetType == Golem.TargetType.Enemy) {
@@ -107,8 +111,8 @@ public class Attack : MonoBehaviour
             } else if (golem.targetType == Golem.TargetType.Friend) {
                 if (!golem.targetFriend.alive) return true;
                 
-                golem.gameObject.GetComponent<Animator>().SetTrigger("Attack");
-                DoTakeDamageDelay(0.5f);
+                // golem.gameObject.GetComponent<Animator>().SetTrigger("Attack");
+                // DoTakeDamageDelay(golem.cooldown / 2);
                 // golem.targetFriend.TakeDamage(floatDict["damage"]);
             }
         }
@@ -116,30 +120,37 @@ public class Attack : MonoBehaviour
         return true;
     }
 
-    private void A2Setup()
+    private void A1Setup()
     {
-        float manaCost = 5.0f;
+        float manaCost = A1_Mana;
 
         floatDict.Clear();
         boolDict.Clear();
+        boolDict.Add("success", false);
 
         if (manaCost <= golem.mana) {
             golem.mana -= manaCost;
             golem.runeExecuted = true;
-            golem.cooldown = 1.0f;
-            floatDict.Add("damage", golem.strength * 0.75f);
-            floatDict.Add("attackRange", 1f);
-            boolDict.Add("success", false);
+            golem.cooldown = A1_Execucao;
+            floatDict.Add("damage", golem.strength * A1_Dano);
+            floatDict.Add("attackRange", A1_Alcance);
+
+            golem.speed = golem.baseSpeed / 2;
+            golem.gameObject.GetComponent<Animator>().speed = A1_AnimationSpeed;
+            golem.gameObject.GetComponent<Animator>().SetTrigger("Attack");
         } else {
             golem.runeExecuted = false;
             golem.cooldown = 0.5f;
         }
     }
 
-    private void A2CleanUp()
+    private void A1CleanUp()
     {
+        golem.speed = golem.baseSpeed;
+        golem.gameObject.GetComponent<Animator>().speed = 1;
         if (boolDict["success"]) {
             golem.gameObject.GetComponent<Animator>().SetTrigger("Idle");
+            golem.targetFriend.TakeDamage(floatDict["damage"]);
         }
     }
 

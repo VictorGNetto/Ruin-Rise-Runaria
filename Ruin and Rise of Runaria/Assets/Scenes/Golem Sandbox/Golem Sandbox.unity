@@ -155,6 +155,9 @@ MonoBehaviour:
   activeColor: {r: 1, g: 0.55769354, b: 0.27735847, a: 1}
   inactiveColor: {r: 1, g: 1, b: 1, a: 1}
   runeSelectionUIs:
+  - {fileID: 1382964159}
+  - {fileID: 1501495473}
+  - {fileID: 1080602715}
   - {fileID: 1195582200}
   levelDirector: {fileID: 682020945}
 --- !u!224 &10402318
@@ -742,8 +745,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0043500066, y: -0.00455001, z: 0}
-    m_Extent: {x: 1.00285, y: 1.00135, z: 0}
+    m_Center: {x: 0.0059000254, y: 0.0027499795, z: 0}
+    m_Extent: {x: 1.003, y: 1.0000501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1459,9 +1462,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   golems:
   - {fileID: 537908809}
-  - {fileID: 298458497}
+  - {fileID: 0}
   - {fileID: 337331151}
-  - {fileID: 1572756413}
+  - {fileID: 0}
   enemys:
   - {fileID: 726174805}
   levelStartedRunning: 0
@@ -4769,7 +4772,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 860230871381440799, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2894445575586125949, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: m_Name
@@ -4777,7 +4780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2894445575586125949, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3886542451901992070, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: runeSelectionUI
@@ -4785,7 +4788,7 @@ PrefabInstance:
       objectReference: {fileID: 1382964159}
     - target: {fileID: 5990858384472245097, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6179743829551935389, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4937,6 +4940,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+      propertyPath: baseSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
       propertyPath: stdMaterial
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
@@ -4983,7 +4990,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 733215038809088430, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1532449251887663833, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: runeSelectionUI
@@ -4991,7 +4998,7 @@ PrefabInstance:
       objectReference: {fileID: 1501495473}
     - target: {fileID: 2748040879976406571, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3589030901286510185, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: explosionEffectPrefab
@@ -5071,7 +5078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7035076815978857451, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5263,9 +5270,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem - Rock
       objectReference: {fileID: 0}
+    - target: {fileID: 1634100113169278646, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893227367573128283, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2893227367573128283, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: strength
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893227367573128283, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: baseSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2893227367573128283, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: stdMaterial
