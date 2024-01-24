@@ -749,8 +749,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.003150016, y: -0.0064499676, z: 0}
-    m_Extent: {x: 1.00215, y: 1.00325, z: 0}
+    m_Center: {x: 0.0046499968, y: 0.0010499954, z: 0}
+    m_Extent: {x: 1.00115, y: 1.00635, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4724,6 +4724,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 374985515887445591, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+      propertyPath: A2_Alcance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 374985515887445591, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
       propertyPath: A1_Execucao
       value: 0.5
       objectReference: {fileID: 0}
@@ -4731,6 +4735,10 @@ PrefabInstance:
       propertyPath: A1_Recuperacao
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 374985515887445591, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+      propertyPath: explosionEffectPrefab
+      value: 
+      objectReference: {fileID: 3821610065597546662, guid: 0b396699e3ff2db4b9dae88a5278670c, type: 3}
     - target: {fileID: 1288890420483706570, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.16
@@ -5087,6 +5095,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7254611935207310621, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: A2_Alcance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254611935207310621, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: A1_Execucao
       value: 0.5
       objectReference: {fileID: 0}
@@ -5094,6 +5106,10 @@ PrefabInstance:
       propertyPath: A1_Recuperacao
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7254611935207310621, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: explosionEffectPrefab
+      value: 
+      objectReference: {fileID: 3821610065597546662, guid: 0b396699e3ff2db4b9dae88a5278670c, type: 3}
     - target: {fileID: 9096427289450566605, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: runeSelectionUI
       value: 
