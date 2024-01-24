@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Timeline;
 
 public class Golem : MonoBehaviour, ICharacter
 {
@@ -28,10 +29,17 @@ public class Golem : MonoBehaviour, ICharacter
     public float baseSpeed;
     public float speed;
 
+    // range = basicRange + [skillRange * meleeRange | skillRange * distanceRange]
+    public float basicRange = 0.5f;
+    public float meleeRange = 1.0f;
+    public float distanceRange = 1.0f;
+
     // Animation
+    private string currentAnimation;
     public Animator animator;
-    public string currentAnimation;
     public bool walking = false;
+    public bool attacking = false;
+
 
     // Attack, support, conditional and target runes
     public delegate bool RuneFunction();
@@ -131,9 +139,11 @@ public class Golem : MonoBehaviour, ICharacter
 
         movementBehaviorFunctionMap[movementBehavior]();
         golemProgram.actionResult = runeFunctionMap[golemProgram.GetCommand()]();
+
+        ResolveAnimation();
     }
 
-    public void ChangeAnimation(string newAnimation)
+    private void ChangeAnimation(string newAnimation)
     {
         if (currentAnimation == newAnimation) return;
 
@@ -141,10 +151,23 @@ public class Golem : MonoBehaviour, ICharacter
         currentAnimation = newAnimation;
     }
 
-    public void ForceChangeAnimation(string newAnimation)
+    private void ResolveAnimation()
     {
-        animator.Play(newAnimation);
-        currentAnimation = newAnimation;
+        if (!alive) {
+            ChangeAnimation("Dying");
+            return;
+        }
+
+        if (attacking) {
+            ChangeAnimation("Attack");
+            return;
+        }
+
+        if (walking) {
+            ChangeAnimation("Walk");
+        } else {
+            ChangeAnimation("Idle");
+        }
     }
 
     private void UpdateTarget()
@@ -237,16 +260,19 @@ public class Golem : MonoBehaviour, ICharacter
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
+        if (!alive) return;
+
+        health = Mathf.Max(0, health - amount);
+        healthManaBar.SetHealth(health, maxHealth);
         Flash();
-        if (health < 0 && alive) Die();
+        if (health == 0) Die();
     }
 
     public void Die()
     {
         // TODO: disable collider2D (That don't exist yet)
         alive = false;
-        gameObject.GetComponent<Animator>().SetTrigger("Die");
+        ResolveAnimation();
         Destroy(gameObject, 2.0f);
     }
 
@@ -279,11 +305,5 @@ public class Golem : MonoBehaviour, ICharacter
 
         // Set the routine to null, signaling that it's finished.
         flashRoutine = null;
-    }
-
-    public void GoIdleAfterAttack()
-    {
-        gameObject.GetComponent<Animator>().SetBool("Attacking", false);
-        gameObject.GetComponent<Animator>().Play("Idle");
     }
 }

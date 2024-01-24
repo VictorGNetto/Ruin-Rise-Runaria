@@ -124,16 +124,14 @@ public class Attack : MonoBehaviour
             golem.runeExecuted = true;
             golem.cooldown = A1_Execucao + A1_Recuperacao;
             floatDict.Add("damage", golem.strength * A1_Dano);
-            floatDict.Add("attackRange", A1_Alcance);
+            floatDict.Add("attackRange", golem.basicRange + golem.meleeRange * A1_Alcance);
 
             golem.speed = golem.baseSpeed * 0.25f;
-            golem.ChangeAnimation("Attack");
             float attackDelay = 1.0f;
             golem.animator.speed = attackDelay / A1_Execucao;
 
-            DoA1ResetAnimation(A1_Execucao);
-
-            // Invoke("A1ResetAnimation", A1_Execucao);
+            golem.attacking = true;
+            DoA1Damage(A1_Execucao);
         } else {
             golem.runeExecuted = false;
             golem.cooldown = A1_Recuperacao;
@@ -145,12 +143,12 @@ public class Attack : MonoBehaviour
         golem.speed = golem.baseSpeed;
     }
 
-    void DoA1ResetAnimation(float delayTime)
+    void DoA1Damage(float delayTime)
     {
-        StartCoroutine(A1ResetAnimation(delayTime));
+        StartCoroutine(A1Damage(delayTime));
     }
 
-    IEnumerator A1ResetAnimation(float delayTime)
+    IEnumerator A1Damage(float delayTime)
     {
         //Wait for the specified delay time before continuing.
         yield return new WaitForSeconds(delayTime);
@@ -158,15 +156,10 @@ public class Attack : MonoBehaviour
         //Do the action after the delay time has finished.
         golem.speed = golem.baseSpeed * 0.75f;
         golem.animator.speed = 1;
+        golem.attacking = false;
 
         if (boolDict["success"]) {
             golem.targetFriend.TakeDamage(floatDict["damage"]);
-        }
-
-        if (golem.walking) {
-            golem.ForceChangeAnimation("Walk");
-        } else {
-            golem.ForceChangeAnimation("Idle");
         }
     }
 
