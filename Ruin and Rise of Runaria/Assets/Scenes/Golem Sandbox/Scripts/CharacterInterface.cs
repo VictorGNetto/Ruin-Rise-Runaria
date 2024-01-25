@@ -7,5 +7,6 @@ public interface ICharacter
 
     void TakeDamage(float amount);
     void Die();
+    int GUID();
     // void Heal(float amount);
 }

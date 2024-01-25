@@ -44,6 +44,7 @@ public class Attack : MonoBehaviour
     public float A6_Mana = 20.0f;
 
     public GameObject clubHitingGroundPrefab;
+    public GameObject hitAreaPrefab;
 
     private Golem golem;
 
@@ -449,22 +450,6 @@ public class Attack : MonoBehaviour
     // A5
     private bool A5()
     {
-        if (golem.timeSinceLastAction < 0.5f) return true;
-        if (!golem.runeExecuted) return true;
-
-        float distance;
-        for (int i = 0; i < golem.levelDirector.golems.Count; i++) {
-            if (auxGolemArray[i] == null) continue;
-
-            Vector3 position = auxGolemArray[i].transform.position;
-            Vector3 center = new Vector3(floatDict["centerX"], floatDict["centerY"], 0);
-            distance = (golem.transform.position - position).magnitude;
-
-            if (distance < floatDict["area"]) {
-                auxGolemArray[i].TakeDamage(floatDict["damage"]);
-                auxGolemArray[i] = null;
-            }
-        }
 
         return true;
     }
@@ -475,8 +460,6 @@ public class Attack : MonoBehaviour
 
         floatDict.Clear();
         boolDict.Clear();
-        auxGolemArray = golem.levelDirector.golems.ToArray();
-        auxGolemArray[golem.guid] = null;
 
         if (manaCost <= golem.mana) {
             golem.mana -= manaCost;
@@ -516,10 +499,17 @@ public class Attack : MonoBehaviour
         golem.animator.speed = 1;
         golem.speed = golem.baseSpeed * 0.75f;
 
-        GameObject go = Instantiate(clubHitingGroundPrefab);
+        GameObject hitArea = Instantiate(hitAreaPrefab);
+        hitArea.transform.position = golem.transform.position;
+        hitArea.GetComponent<CircleHitArea>().SetDamage(floatDict["damage"]);
+        hitArea.GetComponent<CircleHitArea>().SetRadius(floatDict["area"]);
+        hitArea.GetComponent<CircleHitArea>().DestroyHitArea(0.5f);
+        hitArea.GetComponent<CircleHitArea>().AddNotHitableCharacter(golem.guid);
+
+        GameObject effect = Instantiate(clubHitingGroundPrefab);
         Vector3 position = new Vector3(golem.transform.position.x, golem.transform.position.y + 0.3f, 0);
-        go.transform.position = position;
-        go.GetComponent<ClubHitingGround>().SetOrderInLayer(golem.GetSortingOrder() + 10);
+        effect.transform.position = position;
+        effect.GetComponent<ClubHitingGround>().SetOrderInLayer(golem.GetSortingOrder() + 10);
     }
 
     // A6

@@ -1007,11 +1007,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381714773}
   m_CullTransparentMesh: 1
---- !u!4 &396462715 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3178035869541757646, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
-  m_PrefabInstance: {fileID: 2163198466944749475}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &404827345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,16 +1498,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 516f6ca975a72cd47994495d106b589d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &834846885 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7384781967769388674, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
-  m_PrefabInstance: {fileID: 3531409790104656732}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &876171499 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7251423399960038742, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
-  m_PrefabInstance: {fileID: 2601456810260501153}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &973604260 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3116559769055318539, guid: 3cbbaa9a7075f9f4c9eecf69653560c3, type: 3}
@@ -4728,26 +4713,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 374985515887445591, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
-      propertyPath: A2_Alcance
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 374985515887445591, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
-      propertyPath: A1_Execucao
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 374985515887445591, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
-      propertyPath: A1_Recuperacao
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 374985515887445591, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
-      propertyPath: explosionEffectPrefab
-      value: 
-      objectReference: {fileID: 4327425178519924092, guid: ae90fb9edff851f4a91e3fe837a9487a, type: 3}
-    - target: {fileID: 374985515887445591, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
-      propertyPath: clubHitingGroundPrefab
-      value: 
-      objectReference: {fileID: 4327425178519924092, guid: ae90fb9edff851f4a91e3fe837a9487a, type: 3}
     - target: {fileID: 1288890420483706570, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.16
@@ -4788,6 +4753,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1741677871542111974, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2222774559203903236, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4796,12 +4765,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem - Lava
       objectReference: {fileID: 0}
-    - target: {fileID: 4902571854255631635, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
-      propertyPath: foot
-      value: 
-      objectReference: {fileID: 396462715}
-    - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
-      propertyPath: strength
+    - target: {fileID: 3486168372903519019, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486168372903519019, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
@@ -4825,7 +4794,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1080602715}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7682549295371707063, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
@@ -4839,7 +4809,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 733215038809088430, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1532449251887663833, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: runeSelectionUI
@@ -4847,7 +4817,7 @@ PrefabInstance:
       objectReference: {fileID: 1501495473}
     - target: {fileID: 2748040879976406571, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3855243366295093512, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: golemProgram
@@ -4867,7 +4837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5599949639917869962, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7
+      value: -0.44
       objectReference: {fileID: 0}
     - target: {fileID: 5599949639917869962, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4906,15 +4876,16 @@ PrefabInstance:
       value: Golem - Ice
       objectReference: {fileID: 0}
     - target: {fileID: 7035076815978857451, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 8472914043021332783, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
-      propertyPath: foot
-      value: 
-      objectReference: {fileID: 876171499}
+    - target: {fileID: 7035076815978857451, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9189256923790172865, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
@@ -5061,11 +5032,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 428182481837015787, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.26
+      value: -10.74
       objectReference: {fileID: 0}
     - target: {fileID: 428182481837015787, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -0.48
       objectReference: {fileID: 0}
     - target: {fileID: 428182481837015787, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5103,10 +5074,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem - Rock
       objectReference: {fileID: 0}
-    - target: {fileID: 2539957401673778443, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
-      propertyPath: foot
-      value: 
-      objectReference: {fileID: 834846885}
     - target: {fileID: 2893227367573128283, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: golemProgram
       value: 
@@ -5123,30 +5090,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7254611935207310621, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
-      propertyPath: A2_Alcance
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7254611935207310621, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
-      propertyPath: A1_Execucao
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7254611935207310621, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
-      propertyPath: A1_Recuperacao
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7254611935207310621, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
-      propertyPath: explosionEffectPrefab
-      value: 
-      objectReference: {fileID: 4327425178519924092, guid: ae90fb9edff851f4a91e3fe837a9487a, type: 3}
-    - target: {fileID: 7254611935207310621, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
-      propertyPath: clubHitingGroundPrefab
-      value: 
-      objectReference: {fileID: 4327425178519924092, guid: ae90fb9edff851f4a91e3fe837a9487a, type: 3}
-    - target: {fileID: 9096427289450566605, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
-      propertyPath: runeSelectionUI
-      value: 
-      objectReference: {fileID: 1195582200}
     - target: {fileID: 9222797031846036991, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

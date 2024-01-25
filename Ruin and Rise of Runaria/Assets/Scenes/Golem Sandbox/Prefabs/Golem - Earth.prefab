@@ -227,7 +227,7 @@ RectTransform:
   m_Father: {fileID: 6947647540490358109}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -302,7 +302,7 @@ RectTransform:
   m_Father: {fileID: 5127364992335834692}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -458,7 +458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6179743829551935389
 Transform:
   m_ObjectHideFlags: 0
@@ -473,7 +473,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 205842783040783933}
-  - {fileID: 7369421905752127432}
   - {fileID: 1186119191500105791}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -565,6 +564,7 @@ MonoBehaviour:
   maxY: 3.7
   minY: -3.7
   orderInLayer: 0
+  foot: {fileID: 0}
 --- !u!114 &9042108169200833378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,8 +588,14 @@ MonoBehaviour:
   maxMana: 70
   healthManaBar: {fileID: 2435291663019695928}
   strength: 15
-  baseSpeed: 0
-  speed: 0
+  baseSpeed: 1
+  speed: 1
+  basicRange: 0.5
+  meleeRange: 1
+  distanceRange: 1
+  animator: {fileID: 0}
+  walking: 0
+  attacking: 0
   golemProgram: {fileID: 0}
   cooldown: 0
   timeSinceLastAction: 0
@@ -620,8 +626,36 @@ MonoBehaviour:
   A1_Dano: 1
   A1_Alcance: 1
   A1_Execucao: 0.5
+  A1_Recuperacao: 0.5
   A1_Mana: 10
-  explosionEffectPrefab: {fileID: 3821610065597546662, guid: 0b396699e3ff2db4b9dae88a5278670c, type: 3}
+  A2_Dano: 0.75
+  A2_Alcance: 1.5
+  A2_Execucao: 0.5
+  A2_Recuperacao: 0.5
+  A2_Mana: 15
+  A3_Dano: 1.25
+  A3_Alcance: 1
+  A3_Execucao: 1
+  A3_Recuperacao: 0.5
+  A3_Mana: 20
+  A4_Dano: 1.25
+  A4_Alcance: 1.5
+  A4_Execucao: 1.5
+  A4_Recuperacao: 0.5
+  A4_Mana: 40
+  A5_Dano: 2
+  A5_Area: 2.5
+  A5_Execucao: 1
+  A5_Recuperacao: 0.5
+  A5_Mana: 20
+  A6_Dano: 1.5
+  A6_Alcance: 1
+  A6_Area: 2.5
+  A6_Execucao: 1
+  A6_Recuperacao: 0.5
+  A6_Mana: 20
+  clubHitingGroundPrefab: {fileID: 0}
+  hitAreaPrefab: {fileID: 0}
 --- !u!114 &1035448172478165130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,7 +712,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2894445575586125949}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_Radius: 0.1
   m_Speed: 1
   m_Acceleration: 8
@@ -692,98 +726,6 @@ NavMeshAgent:
   m_BaseOffset: 2.9
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!1 &2956272798258204346
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7369421905752127432}
-  - component: {fileID: 3718967698503636221}
-  - component: {fileID: 3886542451901992070}
-  m_Layer: 6
-  m_Name: Select Area
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7369421905752127432
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2956272798258204346}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6179743829551935389}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &3718967698503636221
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2956272798258204346}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.5, y: 4.8}
-  m_EdgeRadius: 0
---- !u!114 &3886542451901992070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2956272798258204346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4dac723efde9654e9aa94d7fad7d535, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  golem: {fileID: 9042108169200833378}
-  runeSelectionUI: {fileID: 0}
 --- !u!1 &5556443224874592222
 GameObject:
   m_ObjectHideFlags: 0

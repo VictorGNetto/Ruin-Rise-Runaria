@@ -276,6 +276,11 @@ public class Golem : MonoBehaviour, ICharacter
         Destroy(gameObject, 2.0f);
     }
 
+    public int GUID()
+    {
+        return guid;
+    }
+
     public int GetSortingOrder()
     {
         return gameObject.GetComponent<SpriteRenderer>().sortingOrder;
