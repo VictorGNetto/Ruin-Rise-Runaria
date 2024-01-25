@@ -4642,19 +4642,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 860230871381440799, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2894445575586125949, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: m_Name
       value: Golem - Earth
       objectReference: {fileID: 0}
-    - target: {fileID: 2894445575586125949, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5990858384472245097, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6179743829551935389, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4721,6 +4717,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 374985515887445591, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+      propertyPath: flyingClubPrefab
+      value: 
+      objectReference: {fileID: 3469412970625732620, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
     - target: {fileID: 1288890420483706570, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.16
@@ -4806,6 +4806,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3589030901286510185, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
+      propertyPath: hitAreaPrefab
+      value: 
+      objectReference: {fileID: 1140987050725049851, guid: 04eecf9c56a9918489d040068c7e3a59, type: 3}
+    - target: {fileID: 3589030901286510185, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
+      propertyPath: flyingClubPrefab
+      value: 
+      objectReference: {fileID: 3469412970625732620, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+    - target: {fileID: 3589030901286510185, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
+      propertyPath: clubHitingGroundPrefab
+      value: 
+      objectReference: {fileID: 4327425178519924092, guid: ae90fb9edff851f4a91e3fe837a9487a, type: 3}
     - target: {fileID: 3855243366295093512, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: golemProgram
       value: 
@@ -5068,6 +5080,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7254611935207310621, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: hitAreaPrefab
+      value: 
+      objectReference: {fileID: 1140987050725049851, guid: 04eecf9c56a9918489d040068c7e3a59, type: 3}
+    - target: {fileID: 7254611935207310621, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: flyingClubPrefab
+      value: 
+      objectReference: {fileID: 3469412970625732620, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
     - target: {fileID: 9222797031846036991, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5210,6 +5230,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cbbaa9a7075f9f4c9eecf69653560c3, type: 3}
+--- !u!1001 &4961941131822260740
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3469412970625732620, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+      propertyPath: m_Name
+      value: FlyingClub
+      objectReference: {fileID: 0}
+    - target: {fileID: 3469412970625732620, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641071421725273405, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641071421725273405, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641071421725273405, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641071421725273405, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641071421725273405, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641071421725273405, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641071421725273405, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641071421725273405, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641071421725273405, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641071421725273405, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -45
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
 --- !u!1001 &8978052400715388904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5362,3 +5443,4 @@ SceneRoots:
   - {fileID: 599512706}
   - {fileID: 1201165571}
   - {fileID: 83466569}
+  - {fileID: 4961941131822260740}

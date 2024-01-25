@@ -39,7 +39,7 @@ public class Golem : MonoBehaviour, ICharacter
     public Animator animator;
     public bool walking = false;
     public bool attacking = false;
-
+    public bool throwing = false;
 
     // Attack, support, conditional and target runes
     public delegate bool RuneFunction();
@@ -158,7 +158,10 @@ public class Golem : MonoBehaviour, ICharacter
             return;
         }
 
-        if (attacking) {
+        if (throwing) {
+            ChangeAnimation("Throw");
+            return;
+        } else if (attacking) {
             ChangeAnimation("Attack");
             return;
         }
@@ -210,6 +213,15 @@ public class Golem : MonoBehaviour, ICharacter
         return true;
     }
 
+    public ICharacter Target()
+    {
+        if (targetType == TargetType.Self || targetType == TargetType.Friend) {
+            return targetFriend;
+        } else {
+            return targetEnemy;
+        }
+    }
+
     public Vector3 TargetPosition()
     {
         if (targetType == TargetType.Self) {
@@ -219,6 +231,11 @@ public class Golem : MonoBehaviour, ICharacter
         } else {
             return targetEnemy.transform.position;
         }
+    }
+
+    public Vector3 Position()
+    {
+        return transform.position;
     }
 
     public void Unselect()
