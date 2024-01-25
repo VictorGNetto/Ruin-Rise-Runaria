@@ -7,6 +7,7 @@ public class ComputeOrderInLayer : MonoBehaviour
     public float maxY = 3.7f;
     public float minY = -3.7f;
     public int orderInLayer = 0;
+    public Transform foot;
 
     void Update()
     {
@@ -16,7 +17,7 @@ public class ComputeOrderInLayer : MonoBehaviour
     void UpdateOrderInLayer()
     {
         float scale = 1000;
-        orderInLayer = (int) -Mathf.Floor(scale * transform.position.y / (maxY - minY));
+        orderInLayer = (int) -Mathf.Floor(scale * foot.position.y / (maxY - minY));
 
         gameObject.GetComponent<SpriteRenderer>().sortingOrder = orderInLayer;
     }

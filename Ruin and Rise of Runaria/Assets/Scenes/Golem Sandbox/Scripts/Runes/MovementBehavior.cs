@@ -16,6 +16,9 @@ public class MovementBehavior : MonoBehaviour
     {
         golem = gameObject.GetComponent<Golem>();
 
+        golem.runeFunctionMap.Add("M0", new Golem.RuneFunction(SetMovementBehaviorToM0));
+        golem.movementBehaviorFunctionMap.Add("M0", new Golem.MovementBehavior(M0));
+
         golem.runeFunctionMap.Add("M1", new Golem.RuneFunction(SetMovementBehaviorToM1));
         golem.movementBehaviorFunctionMap.Add("M1", new Golem.MovementBehavior(M1));
 
@@ -27,6 +30,22 @@ public class MovementBehavior : MonoBehaviour
 
         golem.runeFunctionMap.Add("M4", new Golem.RuneFunction(SetMovementBehaviorToM4));
         golem.movementBehaviorFunctionMap.Add("M4", new Golem.MovementBehavior(M4));
+    }
+
+    // Rune M0
+    private bool SetMovementBehaviorToM0()
+    {
+        golem.cooldown = 0.5f;
+        golem.runeExecuted = true;
+        golem.movementBehavior = "M0";
+        golem.navMeshAgent.SetDestination(golem.transform.position);
+        golem.walking = false;
+
+        return true;
+    }
+
+    private void M0()
+    {
     }
 
     // Rune M1
@@ -53,7 +72,7 @@ public class MovementBehavior : MonoBehaviour
         }
 
         Vector3 destination = new Vector3(floatDict["horizontalFactor"], floatDict["verticalFactor"], 0);
-        golem.navMeshAgent.speed = floatDict["speed"];
+        golem.navMeshAgent.speed = golem.speed;
         golem.navMeshAgent.SetDestination(golem.transform.position + destination.normalized);
     }
 
@@ -70,16 +89,23 @@ public class MovementBehavior : MonoBehaviour
     {
         floatDict["timeMoving"] = 0;
         floatDict["nextMoveDuration"] = UnityEngine.Random.Range(0.75f, 3.0f);
-        floatDict["speed"] = UnityEngine.Random.Range(0.75f, 1.5f);
 
         if (UnityEngine.Random.Range(0.0f, 1.0f) > 0.2) {
             floatDict["horizontalFactor"] = UnityEngine.Random.Range(-1.0f, 1.0f);
             floatDict["verticalFactor"] = UnityEngine.Random.Range(-1.0f, 1.0f);
-            golem.gameObject.GetComponent<Animator>().SetBool("Walking", true);
+            golem.walking = true;
+
+            Vector2 center = new Vector2(0, 0);
+            Vector2 pos = new Vector2(golem.transform.position.x, golem.transform.position.y);
+
+            if ((center - pos).magnitude > 5.0f) {
+                floatDict["horizontalFactor"] = 0.75f * floatDict["horizontalFactor"] + 0.25f * (center - pos).x;
+                floatDict["verticalFactor"] = 0.75f * floatDict["verticalFactor"] + 0.25f * (center - pos).y;
+            }
         } else {
             floatDict["horizontalFactor"] = 0;
             floatDict["verticalFactor"] = 0;
-            golem.gameObject.GetComponent<Animator>().SetBool("Walking", false);
+            golem.walking = false;
         }
 
         if (floatDict["horizontalFactor"] < 0) {
@@ -113,7 +139,7 @@ public class MovementBehavior : MonoBehaviour
         }
 
         Vector3 destination = new Vector3(floatDict["horizontalFactor"], floatDict["verticalFactor"], 0);
-        golem.navMeshAgent.speed = floatDict["speed"];
+        golem.navMeshAgent.speed = golem.speed;
         golem.navMeshAgent.SetDestination(golem.transform.position + destination.normalized);
     }
 
@@ -133,13 +159,11 @@ public class MovementBehavior : MonoBehaviour
     {
         floatDict["timeMoving"] = 0;
         floatDict["nextMoveDuration"] = UnityEngine.Random.Range(0.75f, 1.5f);
-        floatDict["speed"] = UnityEngine.Random.Range(0.75f, 1.5f);
-
 
         if (UnityEngine.Random.Range(0.0f, 1.0f) > 0.2) {
             floatDict["horizontalFactor"] = UnityEngine.Random.Range(-1.0f, 1.0f);
             floatDict["verticalFactor"] = UnityEngine.Random.Range(-1.0f, 1.0f);
-            golem.gameObject.GetComponent<Animator>().SetBool("Walking", true);
+            golem.walking = true;
 
             Vector2 center = new Vector2(floatDict["oldGolemPosX"], floatDict["oldGolemPosY"]);
             Vector2 pos = new Vector2(golem.transform.position.x, golem.transform.position.y);
@@ -152,7 +176,7 @@ public class MovementBehavior : MonoBehaviour
         } else {
             floatDict["horizontalFactor"] = 0;
             floatDict["verticalFactor"] = 0;
-            golem.gameObject.GetComponent<Animator>().SetBool("Walking", false);
+            golem.walking = false;
         }
 
         if (floatDict["horizontalFactor"] < 0) {
@@ -178,7 +202,7 @@ public class MovementBehavior : MonoBehaviour
             InitM3();
         }
 
-        Vector3 destination = golem.GetTargetPosition();
+        Vector3 destination = golem.TargetPosition();
         if (destination.x < golem.transform.position.x) {
             golem.GetComponent<SpriteRenderer>().flipX = true;
         } else {
@@ -187,13 +211,14 @@ public class MovementBehavior : MonoBehaviour
 
         if (boolDict["awake"]) {
             if ((destination - golem.transform.position).magnitude < floatDict["stoppingDistance"]) {
-                golem.gameObject.GetComponent<Animator>().SetBool("Walking", false);
                 boolDict["awake"] = false;
+                golem.walking = false;
+                golem.navMeshAgent.SetDestination(golem.transform.position);
             } else {
-                golem.gameObject.GetComponent<Animator>().SetBool("Walking", true);
+                golem.walking = true;
+                golem.navMeshAgent.speed = golem.speed;
+                golem.navMeshAgent.SetDestination(destination);
             }
-            
-            golem.navMeshAgent.SetDestination(destination);
         } else {
             if ((destination - golem.transform.position).magnitude > floatDict["awakeDistance"]) {
                 boolDict["awake"] = true;
@@ -207,11 +232,10 @@ public class MovementBehavior : MonoBehaviour
         floatDict.Clear();
         boolDict["M3"] = true;
 
-        floatDict["stoppingDistance"] = 1.5f;
-        floatDict["awakeDistance"] = 2.0f;
+        floatDict["stoppingDistance"] = 1f;
+        floatDict["awakeDistance"] = 1.5f;
         boolDict["awake"] = true;
-        golem.navMeshAgent.speed = 1.5f;
-        golem.navMeshAgent.stoppingDistance = floatDict["stoppingDistance"];
+        golem.navMeshAgent.stoppingDistance = floatDict["stoppingDistance"] * 0.8f;
     }
 
     // Rune M4
@@ -245,13 +269,14 @@ public class MovementBehavior : MonoBehaviour
 
         if (boolDict["awake"]) {
             if ((destination - golem.transform.position).magnitude < floatDict["stoppingDistance"]) {
-                golem.gameObject.GetComponent<Animator>().SetBool("Walking", false);
                 boolDict["awake"] = false;
+                golem.walking = false;
+                golem.navMeshAgent.SetDestination(golem.transform.position);
             } else {
-                golem.gameObject.GetComponent<Animator>().SetBool("Walking", true);
+                golem.walking = true;
+                golem.navMeshAgent.speed = golem.speed;
+                golem.navMeshAgent.SetDestination(destination);
             }
-            
-            golem.navMeshAgent.SetDestination(destination);
         } else {
             if ((destination - golem.transform.position).magnitude > floatDict["awakeDistance"]) {
                 boolDict["awake"] = true;
@@ -268,7 +293,6 @@ public class MovementBehavior : MonoBehaviour
         floatDict["stoppingDistance"] = 1.5f;
         floatDict["awakeDistance"] = 2.0f;
         boolDict["awake"] = true;
-        golem.navMeshAgent.speed = 1.5f;
-        golem.navMeshAgent.stoppingDistance = floatDict["stoppingDistance"];
+        golem.navMeshAgent.stoppingDistance = floatDict["stoppingDistance"] * 0.8f;
     }
 }

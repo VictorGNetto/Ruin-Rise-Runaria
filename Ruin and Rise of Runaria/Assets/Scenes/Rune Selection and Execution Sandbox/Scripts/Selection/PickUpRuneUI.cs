@@ -1,9 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class PickUpRuneUI : MonoBehaviour
+public class PickUpRuneUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public ProgramUI programUI;
     public GameObject details;
@@ -18,12 +17,12 @@ public class PickUpRuneUI : MonoBehaviour
         programUI.InsertRune(duplicate, runeName);
     }
 
-    public void ShowRuneDetails()
+    public void OnPointerEnter(PointerEventData eventData)
     {
         details.SetActive(true);
     }
 
-    public void HideRuneDetails()
+    public void OnPointerExit(PointerEventData eventData)
     {
         details.SetActive(false);
     }

@@ -127,7 +127,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 505
+        y: 125
         width: 87
         height: 87
       alignment: 0
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66a5b25a616d2844eb0deb2554e3014e
-      internalID: 1102929003
+      spriteID: e6420bbf9ed6f9a44a754cc8132980ec
+      internalID: -42364710
       vertices: []
       indices: 
       edges: []
@@ -147,10 +147,10 @@ TextureImporter:
       name: runas-movimento_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 405
+        x: 109
+        y: 125
         width: 87
-        height: 88
+        height: 87
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c56276475a08de3479c50427dbb87eca
-      internalID: -741846201
+      spriteID: fdc2187e9bed66c43b570ec77f482f55
+      internalID: 1553700586
       vertices: []
       indices: 
       edges: []
@@ -168,8 +168,8 @@ TextureImporter:
       name: runas-movimento_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 304
+        x: 218
+        y: 125
         width: 87
         height: 87
       alignment: 0
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9dce58d27f85a642932bf666da067da
-      internalID: -769867300
+      spriteID: fd79dc908367c224e9ba4a9d8b60e319
+      internalID: -731092987
       vertices: []
       indices: 
       edges: []
@@ -189,29 +189,8 @@ TextureImporter:
       name: runas-movimento_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 202
-        width: 87
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f0897f6621a6fb439f9dde247d62236
-      internalID: 1642194113
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: runas-movimento_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 101
+        x: 327
+        y: 125
         width: 87
         height: 87
       alignment: 0
@@ -221,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d72b9b8e1c8ff441bbeca58afdd5d51
-      internalID: -485047573
+      spriteID: 35dc6102d6c069643bb002260fcedc38
+      internalID: 1194949981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runas-movimento_5
+      name: runas-movimento_4
       rect:
         serializedVersion: 2
         x: 0
@@ -242,8 +221,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cca7f8e6f0d074f41ab0db280ca093d4
-      internalID: -577063714
+      spriteID: cca2b8f0d6f0d394a8a4972248aaa9b5
+      internalID: -2141104113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-movimento_5
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 0
+        width: 87
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8717e3bf3d65c5e4f8633684e2da4841
+      internalID: -1855705746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-movimento_6
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 0
+        width: 87
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cea446f3d3867142aeea0692e3a6358
+      internalID: -1916615619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-movimento_7
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 0
+        width: 87
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe31814cbb8ae0e47ad687420bb38a45
+      internalID: -1092373981
       vertices: []
       indices: 
       edges: []
@@ -259,12 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      runas-movimento_0: 1102929003
-      runas-movimento_1: -741846201
-      runas-movimento_2: -769867300
-      runas-movimento_3: 1642194113
-      runas-movimento_4: -485047573
-      runas-movimento_5: -577063714
+      runas-movimento_0: -42364710
+      runas-movimento_1: 1553700586
+      runas-movimento_2: -731092987
+      runas-movimento_3: 1194949981
+      runas-movimento_4: -2141104113
+      runas-movimento_5: -1855705746
+      runas-movimento_6: -1916615619
+      runas-movimento_7: -1092373981
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
