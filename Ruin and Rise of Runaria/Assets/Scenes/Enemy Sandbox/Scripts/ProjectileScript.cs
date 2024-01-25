@@ -3,18 +3,13 @@ using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour
 {
-<<<<<<< Updated upstream
-=======
     private bool hit;
     private BoxCollider2D boxCollider;
     private Animator anim;
->>>>>>> Stashed changes
     public float speed = 5f;
     public Golem target;
     public float damage;
 
-<<<<<<< Updated upstream
-=======
 
     private void Awake()
     {
@@ -23,7 +18,6 @@ public class ProjectileScript : MonoBehaviour
     }
 
 
->>>>>>> Stashed changes
     // Update is called once per frame
     void Update()
     {
@@ -35,12 +29,6 @@ public class ProjectileScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-<<<<<<< Updated upstream
-        target.health = Math.Max(0, target.health - damage);
-        Destroy(gameObject);
-    }
-}
-=======
         boxCollider.enabled = false;
         anim.SetTrigger("Explode");
 
@@ -49,4 +37,3 @@ public class ProjectileScript : MonoBehaviour
         Destroy(gameObject, 0.2f);
     }
 }
->>>>>>> Stashed changes
