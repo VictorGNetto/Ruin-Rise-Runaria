@@ -348,6 +348,11 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!4 &356268281 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7384781967769388674, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+  m_PrefabInstance: {fileID: 1118498965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &404509413
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,8 +419,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00424999, y: -0.004999995, z: 0}
-    m_Extent: {x: 0.99904996, y: 1.0028, z: 0}
+    m_Center: {x: -0.00055000186, y: 0.0048999786, z: 0}
+    m_Extent: {x: 1.00005, y: 0.9985, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -769,7 +774,7 @@ PrefabInstance:
     - target: {fileID: 2539957401673778443, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: foot
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 356268281}
     - target: {fileID: 2893227367573128283, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: golemProgram
       value: 
@@ -961,7 +966,7 @@ PrefabInstance:
     - target: {fileID: 4902571854255631635, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
       propertyPath: foot
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1706818714}
     - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
       propertyPath: golemProgram
       value: 
@@ -1223,6 +1228,11 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!4 &1706818714 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3178035869541757646, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+  m_PrefabInstance: {fileID: 1394461827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1771621229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04976799df50f54ba128eff723155a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
@@ -1365,7 +1375,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.1
+  m_VoxelSize: 0.033333335
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: 7182b01022424264caa68c4a08093226, type: 2}
@@ -1521,6 +1531,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wraith_001
       objectReference: {fileID: 0}
+    - target: {fileID: 820777942159570055, guid: c2f3312d9df979740990fca6a4dffc53, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1628648186786683666, guid: c2f3312d9df979740990fca6a4dffc53, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1590,12 +1604,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7420859742302052132}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ec7ea0f834ab80459d15c361956d9d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 075fd697d4167a2439f3d1d74a11d033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   launchOffset: {fileID: 1832143347}
   levelDirector: {fileID: 1483015609}
-  projectile: {fileID: 6558721958864018535, guid: 32e4265c8269aa745a4f05d094bb3f43, type: 3}
+  projectile: {fileID: 7175520923262880841, guid: 549cc04727614c14891e3404cf4ed2af, type: 3}
 --- !u!4 &7420859742302052134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1628648186786683666, guid: c2f3312d9df979740990fca6a4dffc53, type: 3}
