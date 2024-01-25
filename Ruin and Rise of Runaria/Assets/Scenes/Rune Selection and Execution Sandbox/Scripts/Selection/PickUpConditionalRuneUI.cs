@@ -1,9 +1,10 @@
 using System;
+using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PickUpConditionalRuneUI : MonoBehaviour
+public class PickUpConditionalRuneUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public ProgramUI programUI;
     public GameObject details;
@@ -61,12 +62,12 @@ public class PickUpConditionalRuneUI : MonoBehaviour
         gameObject.GetComponent<Button>().interactable = false;
     }
 
-    public void ShowRuneDetails()
+    public void OnPointerEnter(PointerEventData eventData)
     {
         details.SetActive(true);
     }
 
-    public void HideRuneDetails()
+    public void OnPointerExit(PointerEventData eventData)
     {
         details.SetActive(false);
     }
