@@ -31,12 +31,19 @@ public class Attack : MonoBehaviour
     public float A4_Mana = 40.0f;
 
     public float A5_Dano = 2.0f;
-    public float A5_Area = 3.0f;
-    public float A5_Execucao = 1.5f;
+    public float A5_Area = 2.5f;
+    public float A5_Execucao = 1.0f;
     public float A5_Recuperacao = 0.5f;
     public float A5_Mana = 20.0f;
 
-    public GameObject explosionEffectPrefab;
+    public float A6_Dano = 1.5f;
+    public float A6_Alcance = 1.0f;
+    public float A6_Area = 2.5f;
+    public float A6_Execucao = 1.0f;
+    public float A6_Recuperacao = 0.5f;
+    public float A6_Mana = 20.0f;
+
+    public GameObject clubHitingGroundPrefab;
 
     private Golem golem;
 
@@ -70,6 +77,10 @@ public class Attack : MonoBehaviour
         golem.runeFunctionMap.Add("A5", new Golem.RuneFunction(A5));
         golem.setupFunctionMap.Add("A5", new Golem.SetupBeforeAction(A5Setup));
         golem.cleanUpFunctionMap.Add("A5", new Golem.CleanUpAfterAction(A5CleanUp));
+
+        golem.runeFunctionMap.Add("A6", new Golem.RuneFunction(A6));
+        golem.setupFunctionMap.Add("A6", new Golem.SetupBeforeAction(A6Setup));
+        golem.cleanUpFunctionMap.Add("A6", new Golem.CleanUpAfterAction(A6CleanUp));
     }
 
     // private bool RangedAttack()
@@ -438,7 +449,7 @@ public class Attack : MonoBehaviour
     // A5
     private bool A5()
     {
-        if (golem.timeSinceLastAction < (A5_Execucao - 1)) return true;
+        if (golem.timeSinceLastAction < 0.5f) return true;
         if (!golem.runeExecuted) return true;
 
         float distance;
@@ -449,7 +460,7 @@ public class Attack : MonoBehaviour
             Vector3 center = new Vector3(floatDict["centerX"], floatDict["centerY"], 0);
             distance = (golem.transform.position - position).magnitude;
 
-            if (distance < floatDict["attackRange"]) {
+            if (distance < floatDict["area"]) {
                 auxGolemArray[i].TakeDamage(floatDict["damage"]);
                 auxGolemArray[i] = null;
             }
@@ -470,21 +481,19 @@ public class Attack : MonoBehaviour
         if (manaCost <= golem.mana) {
             golem.mana -= manaCost;
             golem.runeExecuted = true;
-            golem.cooldown = A5_Execucao;
+            golem.cooldown = A5_Execucao + A5_Recuperacao;
             floatDict.Add("damage", golem.strength * A5_Dano);
-            floatDict.Add("attackRange", golem.basicRange + golem.meleeRange * A5_Area);
+            floatDict.Add("area", golem.basicRange + golem.meleeRange * A5_Area);
             floatDict["centerX"] = golem.transform.position.x;
             floatDict["centerY"] = golem.transform.position.y;
 
             golem.speed = golem.baseSpeed * 0.25f;
             golem.attacking = true;
-            float attackDelay = 1.0f;  // plays with dynamic speed
-            float explosionDelay = 1.0f;  // plays with speed = 1
-            golem.animator.speed = attackDelay / (A5_Execucao - explosionDelay);
-            DoA5Damage(A5_Execucao - explosionDelay);
+            golem.animator.speed = 2;
+            DoA5Damage(0.5f);
         } else {
             golem.runeExecuted = false;
-            golem.cooldown = 0.5f;
+            golem.cooldown = A5_Recuperacao;
         }
     }
 
@@ -507,8 +516,112 @@ public class Attack : MonoBehaviour
         golem.animator.speed = 1;
         golem.speed = golem.baseSpeed * 0.75f;
 
-        GameObject go = Instantiate(explosionEffectPrefab);
-        go.transform.position = golem.transform.position;
-        go.GetComponent<Effect>().SetOrderInLayer(golem.GetComponent<SpriteRenderer>().sortingOrder + 1);
+        GameObject go = Instantiate(clubHitingGroundPrefab);
+        Vector3 position = new Vector3(golem.transform.position.x, golem.transform.position.y + 0.3f, 0);
+        go.transform.position = position;
+        go.GetComponent<ClubHitingGround>().SetOrderInLayer(golem.GetSortingOrder() + 10);
+    }
+
+    // A6
+    private bool A6()
+    {
+        if (!golem.runeExecuted) return true;
+
+        if (intDict["attackPhase"] == 1) {
+            if (boolDict["success"]) return true;
+
+            float distance;
+            if (golem.targetType == Golem.TargetType.Enemy) {
+                Vector3 enemyPosition = golem.targetEnemy.transform.position;
+                distance = (golem.transform.position - enemyPosition).magnitude;
+            } else {
+                Vector3 friendPosition = golem.targetFriend.transform.position;
+                distance = (golem.transform.position - friendPosition).magnitude;
+            }
+
+            if (distance < floatDict["attackRange"]) {
+                boolDict["success"] = true;
+            }
+        } else if (intDict["attackPhase"] == 2) {
+            float distance;
+            for (int i = 0; i < golem.levelDirector.golems.Count; i++) {
+                if (auxGolemArray[i] == null) continue;
+
+                Vector3 position = auxGolemArray[i].transform.position;
+                Vector3 center = new Vector3(floatDict["centerX"], floatDict["centerY"], 0);
+                distance = (golem.transform.position - position).magnitude;
+
+                if (distance < floatDict["area"]) {
+                    auxGolemArray[i].TakeDamage(floatDict["damage"]);
+                    auxGolemArray[i] = null;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    private void A6Setup()
+    {
+        float manaCost = A6_Mana;
+
+        floatDict.Clear();
+        boolDict.Clear();
+        intDict.Clear();
+        boolDict.Add("success", false);
+        auxGolemArray = golem.levelDirector.golems.ToArray();
+        auxGolemArray[golem.guid] = null;
+
+        if (manaCost <= golem.mana) {
+            golem.mana -= manaCost;
+            golem.runeExecuted = true;
+            golem.cooldown = A6_Execucao + A6_Recuperacao;
+            floatDict.Add("damage", golem.strength * A6_Dano);
+            floatDict.Add("attackRange", golem.basicRange + golem.meleeRange * A6_Alcance);
+            floatDict.Add("area", golem.basicRange + golem.meleeRange * A6_Area);
+            intDict.Add("attackPhase", 1);  // 1 - Club hiting detectin, 2 - area explosion
+
+            golem.speed = golem.baseSpeed * 0.25f;
+            golem.attacking = true;
+            golem.animator.speed = 2;
+            DoA6Damage(0.5f);
+        } else {
+            golem.runeExecuted = false;
+            golem.cooldown = A6_Recuperacao;
+        }
+    }
+
+    private void A6CleanUp()
+    {
+        golem.speed = golem.baseSpeed;
+    }
+
+    void DoA6Damage(float delayTime)
+    {
+        StartCoroutine(A6Damage(delayTime));
+    }
+
+    IEnumerator A6Damage(float delayTime)
+    {
+        //Wait for the specified delay time before continuing.
+        yield return new WaitForSeconds(delayTime);
+
+        //Do the action after the delay time has finished.
+        golem.speed = golem.baseSpeed * 0.75f;
+        golem.animator.speed = 1;
+        golem.attacking = false;
+
+        if (boolDict["success"]) {
+            GameObject go = Instantiate(clubHitingGroundPrefab);
+            Vector3 targetPosition = golem.TargetPosition();
+            Vector3 position = new Vector3(targetPosition.x, targetPosition.y + 0.3f, 0);
+            go.transform.position = position;
+            go.GetComponent<ClubHitingGround>().SetOrderInLayer(golem.GetTargetSortingOrder() + 10);
+
+            golem.cooldown = golem.timeSinceLastAction + 0.5f;
+            intDict["attackPhase"] = 2;
+            floatDict["centerX"] = targetPosition.x;
+            floatDict["centerY"] = targetPosition.y;
+        }
     }
 }

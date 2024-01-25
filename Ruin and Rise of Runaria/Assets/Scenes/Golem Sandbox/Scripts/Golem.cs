@@ -276,6 +276,22 @@ public class Golem : MonoBehaviour, ICharacter
         Destroy(gameObject, 2.0f);
     }
 
+    public int GetSortingOrder()
+    {
+        return gameObject.GetComponent<SpriteRenderer>().sortingOrder;
+    }
+
+    public int GetTargetSortingOrder()
+    {
+        if (targetType == TargetType.Self) {
+            return gameObject.GetComponent<SpriteRenderer>().sortingOrder;
+        } else if (targetType == TargetType.Friend) {
+            return targetFriend.gameObject.GetComponent<SpriteRenderer>().sortingOrder;
+        } else {
+            return targetEnemy.gameObject.GetComponent<SpriteRenderer>().sortingOrder;
+        }
+    }
+
     // Code from 
     // https://github.com/BarthaSzabolcs/Tutorial-SpriteFlash/blob/main/Assets/Scripts/FlashEffects/SimpleFlash.cs
     public void Flash()
