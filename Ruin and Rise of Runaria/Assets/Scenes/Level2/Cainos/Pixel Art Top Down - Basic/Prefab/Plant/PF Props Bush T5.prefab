@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2055102311959635375}
   - component: {fileID: 2055102311959635368}
   - component: {fileID: 6632155982123679907}
-  - component: {fileID: 6308781285444901233}
   m_Layer: 20
   m_Name: PF Props Bush T5
   m_TagString: Untagged
@@ -88,21 +87,6 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
 --- !u!114 &6632155982123679907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2055102311959635369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feea728a1afcdc94d980234f3b8d26f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxY: 3.7
-  minY: -3.7
-  orderInLayer: 0
---- !u!114 &6308781285444901233
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
