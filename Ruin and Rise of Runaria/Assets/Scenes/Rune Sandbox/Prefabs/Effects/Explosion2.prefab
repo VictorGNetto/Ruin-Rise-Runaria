@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 79504170683204138}
   - component: {fileID: 6907660139034258352}
   - component: {fileID: 193394937815493766}
-  - component: {fileID: 8606624048428735368}
   m_Layer: 0
   m_Name: Animation
   m_TagString: Untagged
@@ -107,21 +106,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8606624048428735368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2238132197969520855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feea728a1afcdc94d980234f3b8d26f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxY: 3.7
-  minY: -3.7
-  orderInLayer: 0
 --- !u!1 &3821610065597546662
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4080448354978044652}
   - component: {fileID: 8782296489296546273}
+  - component: {fileID: 37240718556552584}
   m_Layer: 0
   m_Name: Explosion2
   m_TagString: Untagged
@@ -169,3 +154,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frames: 10
   samples: 18
+--- !u!114 &37240718556552584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3821610065597546662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52b695f2e59d5de44a27b8922e39ff4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxY: 3.7
+  minY: -3.7
+  orderInLayer: 0
+  yOffset: 0
