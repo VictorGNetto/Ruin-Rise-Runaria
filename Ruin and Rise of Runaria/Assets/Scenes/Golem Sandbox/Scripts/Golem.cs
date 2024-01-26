@@ -15,6 +15,7 @@ public class Golem : MonoBehaviour, ICharacter
     // Target
     public enum TargetType { Self, Friend, Enemy };
     public TargetType targetType;
+    public ICharacter target;
     public Enemy targetEnemy;
     public Golem targetFriend;
 
@@ -42,6 +43,7 @@ public class Golem : MonoBehaviour, ICharacter
     public bool walking = false;
     public bool attacking = false;
     public bool throwing = false;
+    public bool casting = false;
 
     // Attack, support, conditional and target runes
     public delegate bool RuneFunction();
@@ -160,7 +162,7 @@ public class Golem : MonoBehaviour, ICharacter
             return;
         }
 
-        if (throwing) {
+        if (throwing || casting) {
             ChangeAnimation("Throw");
             return;
         } else if (attacking) {
@@ -179,6 +181,7 @@ public class Golem : MonoBehaviour, ICharacter
     {
         if (targetFriend == null) {
             targetFriend = levelDirector.GetRandomFriend();
+            target = targetFriend;
 
             if (guid == targetFriend.guid) {
                 targetType = TargetType.Self;
@@ -285,6 +288,17 @@ public class Golem : MonoBehaviour, ICharacter
         healthManaBar.SetHealth(health, maxHealth);
         Flash();
         if (health == 0) Die();
+    }
+
+    public void Heal(float amount)
+    {
+        health = Mathf.Min(maxHealth, health + amount);
+        healthManaBar.SetHealth(health, maxHealth);
+    }
+
+    public float MaxHealth()
+    {
+        return maxHealth;
     }
 
     public void Die()

@@ -49,6 +49,14 @@ public class Enemy : MonoBehaviour, ICharacter
     public void TakeDamage(float amount)
     {}
 
+    public void Heal(float amount)
+    {}
+
+    public float MaxHealth()
+    {
+        return maxHealth;
+    }
+
     public int GUID()
     {
         return guid;

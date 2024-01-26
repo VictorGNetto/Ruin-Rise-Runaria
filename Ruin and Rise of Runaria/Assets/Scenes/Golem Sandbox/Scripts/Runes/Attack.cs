@@ -573,8 +573,7 @@ public class Attack : MonoBehaviour
         if (golem.timeSinceLastAction < 0.5f) {
             if (boolDict["successPhase1"]) return true;
 
-            float distance;
-            distance = (golem.Position() - golem.TargetPosition()).magnitude;
+            float distance = (golem.Position() - golem.TargetPosition()).magnitude;
 
             if (distance < floatDict["attackRange"]) {
                 boolDict["successPhase1"] = true;
