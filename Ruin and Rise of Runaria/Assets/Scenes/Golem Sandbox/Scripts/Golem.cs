@@ -23,9 +23,11 @@ public class Golem : MonoBehaviour, ICharacter
     public float maxHealth = 100;
     public float mana = 35;
     public float maxMana = 70;
+    public float manaRecovery = 10;
     public HealthManaBar healthManaBar;
 
     public float strength;
+    public float defense;
     public float baseSpeed;
     public float speed;
 
@@ -39,7 +41,7 @@ public class Golem : MonoBehaviour, ICharacter
     public Animator animator;
     public bool walking = false;
     public bool attacking = false;
-
+    public bool throwing = false;
 
     // Attack, support, conditional and target runes
     public delegate bool RuneFunction();
@@ -118,7 +120,7 @@ public class Golem : MonoBehaviour, ICharacter
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
         UpdateTarget();
-        mana = Math.Min(maxMana, mana + Time.deltaTime * 50);
+        mana = Math.Min(maxMana, mana + Time.deltaTime * manaRecovery);
 
         healthManaBar.SetHealth(health, maxHealth);
         healthManaBar.SetMana(mana, maxMana);
@@ -158,7 +160,10 @@ public class Golem : MonoBehaviour, ICharacter
             return;
         }
 
-        if (attacking) {
+        if (throwing) {
+            ChangeAnimation("Throw");
+            return;
+        } else if (attacking) {
             ChangeAnimation("Attack");
             return;
         }
@@ -210,6 +215,15 @@ public class Golem : MonoBehaviour, ICharacter
         return true;
     }
 
+    public ICharacter Target()
+    {
+        if (targetType == TargetType.Self || targetType == TargetType.Friend) {
+            return targetFriend;
+        } else {
+            return targetEnemy;
+        }
+    }
+
     public Vector3 TargetPosition()
     {
         if (targetType == TargetType.Self) {
@@ -219,6 +233,11 @@ public class Golem : MonoBehaviour, ICharacter
         } else {
             return targetEnemy.transform.position;
         }
+    }
+
+    public Vector3 Position()
+    {
+        return transform.position;
     }
 
     public void Unselect()
@@ -274,6 +293,27 @@ public class Golem : MonoBehaviour, ICharacter
         alive = false;
         ResolveAnimation();
         Destroy(gameObject, 2.0f);
+    }
+
+    public int GUID()
+    {
+        return guid;
+    }
+
+    public int GetSortingOrder()
+    {
+        return gameObject.GetComponent<SpriteRenderer>().sortingOrder;
+    }
+
+    public int GetTargetSortingOrder()
+    {
+        if (targetType == TargetType.Self) {
+            return gameObject.GetComponent<SpriteRenderer>().sortingOrder;
+        } else if (targetType == TargetType.Friend) {
+            return targetFriend.gameObject.GetComponent<SpriteRenderer>().sortingOrder;
+        } else {
+            return targetEnemy.gameObject.GetComponent<SpriteRenderer>().sortingOrder;
+        }
     }
 
     // Code from 

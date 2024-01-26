@@ -31,12 +31,28 @@ public class Attack : MonoBehaviour
     public float A4_Mana = 40.0f;
 
     public float A5_Dano = 2.0f;
-    public float A5_Area = 3.0f;
-    public float A5_Execucao = 1.5f;
+    public float A5_Area = 2.5f;
+    public float A5_Execucao = 1.0f;
     public float A5_Recuperacao = 0.5f;
     public float A5_Mana = 20.0f;
 
-    public GameObject explosionEffectPrefab;
+    public float A6_Dano = 1.5f;
+    public float A6_Alcance = 1.0f;
+    public float A6_Area = 2.5f;
+    public float A6_Execucao = 1.0f;
+    public float A6_Recuperacao = 0.5f;
+    public float A6_Mana = 20.0f;
+
+    public float A7_Dano = 1.5f;
+    public float A7_Alcance = 2.0f;
+    public float A7_Area = 2.5f;
+    public float A7_Execucao = 0.5f;
+    public float A7_Recuperacao = 0.5f;
+    public float A7_Mana = 40.0f;
+
+    public GameObject clubHitingGroundPrefab;
+    public GameObject hitAreaPrefab;
+    public GameObject flyingClubPrefab;
 
     private Golem golem;
 
@@ -45,8 +61,6 @@ public class Attack : MonoBehaviour
     private Dictionary<String, int> intDict = new Dictionary<string, int>();
     private Dictionary<String, bool> boolDict = new Dictionary<string, bool>();
     
-    private Golem[] auxGolemArray;
-
     private void Awake()
     {
         golem = gameObject.GetComponent<Golem>();
@@ -70,69 +84,41 @@ public class Attack : MonoBehaviour
         golem.runeFunctionMap.Add("A5", new Golem.RuneFunction(A5));
         golem.setupFunctionMap.Add("A5", new Golem.SetupBeforeAction(A5Setup));
         golem.cleanUpFunctionMap.Add("A5", new Golem.CleanUpAfterAction(A5CleanUp));
+
+        golem.runeFunctionMap.Add("A6", new Golem.RuneFunction(A6));
+        golem.setupFunctionMap.Add("A6", new Golem.SetupBeforeAction(A6Setup));
+        golem.cleanUpFunctionMap.Add("A6", new Golem.CleanUpAfterAction(A6CleanUp));
+
+        golem.runeFunctionMap.Add("A7", new Golem.RuneFunction(A7));
+        golem.setupFunctionMap.Add("A7", new Golem.SetupBeforeAction(A7Setup));
+        golem.cleanUpFunctionMap.Add("A7", new Golem.CleanUpAfterAction(A7CleanUp));
     }
 
-    // private bool RangedAttack()
-    // {
-    //     golem.cooldown = floatDict["cooldown"];
-
-    //     if (intDict["bulletCount"] > 0) {
-    //         intDict["bulletCount"] = intDict["bulletCount"] - 1;
-
-    //         Bullet bullet = Instantiate(golem.bulletPrefab, golem.launchOffset.position, transform.rotation);
-    //         bullet.target = golem.targetEnemy;
-    //         bullet.damage = floatDict["damage"];
-    //         bullet.speed = UnityEngine.Random.Range(10, 15);
-    //     }
-
-    //     return true;
-    // }
-
-    // private void RangedAttackSetup()
-    // {
-    //     float manaCost = 15.0f;
-
-    //     floatDict.Clear();
-    //     intDict.Clear();
-
-    //     if (manaCost <= golem.mana) {
-    //         golem.mana -= manaCost;
-    //         floatDict.Add("damage", 15.0f);
-    //         intDict.Add("bulletCount", 1);
-    //         floatDict.Add("cooldown", 3.0f);
-    //     } else {
-    //         floatDict.Add("damage", 0.0f);
-    //         intDict.Add("bulletCount", 0);
-    //         floatDict.Add("cooldown", 0.5f);
-    //     }
-    // }
-
-    void DoTakeDamageDelay(float delayTime)
+    private void LookToTheTarget()
     {
-        StartCoroutine(DelayTakeDamage(delayTime));
-    }
+        float targetX = golem.TargetPosition().x;
+        float golemX = golem.Position().x;
 
-    IEnumerator DelayTakeDamage(float delayTime)
-    {
-        //Wait for the specified delay time before continuing.
-        yield return new WaitForSeconds(delayTime);
-
-        //Do the action after the delay time has finished.
-        golem.targetFriend.TakeDamage(floatDict["damage"]);
+        if (golemX > targetX) {
+            golem.GetComponent<SpriteRenderer>().flipX = true;
+        } else {
+            golem.GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     // A1
     private bool A1()
     {
+        LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
         float distance;
         if (golem.targetType == Golem.TargetType.Enemy) {
             Vector3 enemyPosition = golem.targetEnemy.transform.position;
-            distance = (golem.transform.position - enemyPosition).magnitude;
+            distance = (golem.Position() - enemyPosition).magnitude;
         } else {
             Vector3 friendPosition = golem.targetFriend.transform.position;
-            distance = (golem.transform.position - friendPosition).magnitude;
+            distance = (golem.Position() - friendPosition).magnitude;
         }
 
         if (distance < floatDict["attackRange"]) {
@@ -197,15 +183,16 @@ public class Attack : MonoBehaviour
     // A2
     private bool A2()
     {
+        LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
         float distance;
         if (golem.targetType == Golem.TargetType.Enemy) {
             Vector3 enemyPosition = golem.targetEnemy.transform.position;
-            distance = (golem.transform.position - enemyPosition).magnitude;
+            distance = (golem.Position() - enemyPosition).magnitude;
         } else {
             Vector3 friendPosition = golem.targetFriend.transform.position;
-            distance = (golem.transform.position - friendPosition).magnitude;
+            distance = (golem.Position() - friendPosition).magnitude;
         }
 
         if (distance < floatDict["attackRange"]) {
@@ -270,15 +257,16 @@ public class Attack : MonoBehaviour
     // A3
     private bool A3()
     {
+        LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
         float distance;
         if (golem.targetType == Golem.TargetType.Enemy) {
             Vector3 enemyPosition = golem.targetEnemy.transform.position;
-            distance = (golem.transform.position - enemyPosition).magnitude;
+            distance = (golem.Position() - enemyPosition).magnitude;
         } else {
             Vector3 friendPosition = golem.targetFriend.transform.position;
-            distance = (golem.transform.position - friendPosition).magnitude;
+            distance = (golem.Position() - friendPosition).magnitude;
         }
 
         if (distance < floatDict["attackRange"]) {
@@ -354,15 +342,16 @@ public class Attack : MonoBehaviour
     // A4
     private bool A4()
     {
+        LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
         float distance;
         if (golem.targetType == Golem.TargetType.Enemy) {
             Vector3 enemyPosition = golem.targetEnemy.transform.position;
-            distance = (golem.transform.position - enemyPosition).magnitude;
+            distance = (golem.Position() - enemyPosition).magnitude;
         } else {
             Vector3 friendPosition = golem.targetFriend.transform.position;
-            distance = (golem.transform.position - friendPosition).magnitude;
+            distance = (golem.Position() - friendPosition).magnitude;
         }
 
         if (distance < floatDict["attackRange"]) {
@@ -438,22 +427,7 @@ public class Attack : MonoBehaviour
     // A5
     private bool A5()
     {
-        if (golem.timeSinceLastAction < (A5_Execucao - 1)) return true;
-        if (!golem.runeExecuted) return true;
-
-        float distance;
-        for (int i = 0; i < golem.levelDirector.golems.Count; i++) {
-            if (auxGolemArray[i] == null) continue;
-
-            Vector3 position = auxGolemArray[i].transform.position;
-            Vector3 center = new Vector3(floatDict["centerX"], floatDict["centerY"], 0);
-            distance = (golem.transform.position - position).magnitude;
-
-            if (distance < floatDict["attackRange"]) {
-                auxGolemArray[i].TakeDamage(floatDict["damage"]);
-                auxGolemArray[i] = null;
-            }
-        }
+        LookToTheTarget();
 
         return true;
     }
@@ -464,27 +438,23 @@ public class Attack : MonoBehaviour
 
         floatDict.Clear();
         boolDict.Clear();
-        auxGolemArray = golem.levelDirector.golems.ToArray();
-        auxGolemArray[golem.guid] = null;
 
         if (manaCost <= golem.mana) {
             golem.mana -= manaCost;
             golem.runeExecuted = true;
-            golem.cooldown = A5_Execucao;
+            golem.cooldown = A5_Execucao + A5_Recuperacao;
             floatDict.Add("damage", golem.strength * A5_Dano);
-            floatDict.Add("attackRange", golem.basicRange + golem.meleeRange * A5_Area);
-            floatDict["centerX"] = golem.transform.position.x;
-            floatDict["centerY"] = golem.transform.position.y;
+            floatDict.Add("area", golem.basicRange + golem.meleeRange * A5_Area);
+            floatDict["centerX"] = golem.Position().x;
+            floatDict["centerY"] = golem.Position().y;
 
             golem.speed = golem.baseSpeed * 0.25f;
             golem.attacking = true;
-            float attackDelay = 1.0f;  // plays with dynamic speed
-            float explosionDelay = 1.0f;  // plays with speed = 1
-            golem.animator.speed = attackDelay / (A5_Execucao - explosionDelay);
-            DoA5Damage(A5_Execucao - explosionDelay);
+            golem.animator.speed = 2;
+            DoA5Damage(0.5f);
         } else {
             golem.runeExecuted = false;
-            golem.cooldown = 0.5f;
+            golem.cooldown = A5_Recuperacao;
         }
     }
 
@@ -507,8 +477,166 @@ public class Attack : MonoBehaviour
         golem.animator.speed = 1;
         golem.speed = golem.baseSpeed * 0.75f;
 
-        GameObject go = Instantiate(explosionEffectPrefab);
-        go.transform.position = golem.transform.position;
-        go.GetComponent<Effect>().SetOrderInLayer(golem.GetComponent<SpriteRenderer>().sortingOrder + 1);
+        GameObject hitArea = Instantiate(hitAreaPrefab);
+        hitArea.transform.position = golem.Position();
+        hitArea.GetComponent<CircleHitArea>().SetDamage(floatDict["damage"]);
+        hitArea.GetComponent<CircleHitArea>().SetRadius(floatDict["area"]);
+        hitArea.GetComponent<CircleHitArea>().DestroyHitArea(0.5f);
+        hitArea.GetComponent<CircleHitArea>().AddNotHitableCharacter(golem.guid);
+
+        GameObject effect = Instantiate(clubHitingGroundPrefab);
+        Vector3 position = new Vector3(golem.Position().x, golem.Position().y + 0.3f, 0);
+        effect.transform.position = position;
+        effect.GetComponent<ClubHitingGround>().SetOrderInLayer(golem.GetSortingOrder() + 10);
+    }
+
+    // A6
+    private bool A6()
+    {
+        LookToTheTarget();
+        if (!golem.runeExecuted) return true;
+
+        if (golem.timeSinceLastAction < 0.5f) {
+            if (boolDict["successPhase1"]) return true;
+
+            float distance;
+            distance = (golem.Position() - golem.TargetPosition()).magnitude;
+
+            if (distance < floatDict["attackRange"]) {
+                boolDict["successPhase1"] = true;
+            }
+        } else if (golem.timeSinceLastAction < 1.0f) {
+            if (boolDict["successPhase2"]) return true;
+
+            boolDict["successPhase2"] = true;
+
+            golem.speed = golem.baseSpeed * 0.75f;
+            golem.animator.speed = 1;
+            golem.attacking = false;
+
+            if (boolDict["successPhase1"]) {
+                GameObject hitArea = Instantiate(hitAreaPrefab);
+                hitArea.transform.position = golem.TargetPosition();
+                hitArea.GetComponent<CircleHitArea>().SetDamage(floatDict["damage"]);
+                hitArea.GetComponent<CircleHitArea>().SetRadius(floatDict["area"]);
+                hitArea.GetComponent<CircleHitArea>().DestroyHitArea(0.5f);
+                hitArea.GetComponent<CircleHitArea>().AddNotHitableCharacter(golem.guid);
+
+                GameObject effect = Instantiate(clubHitingGroundPrefab);
+                Vector3 position = new Vector3(golem.Position().x, golem.Position().y + 0.3f, 0);
+                effect.transform.position = position;
+                effect.GetComponent<ClubHitingGround>().SetOrderInLayer(golem.GetSortingOrder() + 10);
+            }
+        }
+
+        return true;
+    }
+
+    private void A6Setup()
+    {
+        float manaCost = A6_Mana;
+
+        floatDict.Clear();
+        boolDict.Clear();
+        intDict.Clear();
+        boolDict.Add("successPhase1", false);
+        boolDict.Add("successPhase2", false);
+
+        if (manaCost <= golem.mana) {
+            golem.mana -= manaCost;
+            golem.runeExecuted = true;
+            golem.cooldown = A6_Execucao + A6_Recuperacao;
+            floatDict.Add("damage", golem.strength * A6_Dano);
+            floatDict.Add("attackRange", golem.basicRange + golem.meleeRange * A6_Alcance);
+            floatDict.Add("area", golem.basicRange + golem.meleeRange * A6_Area);
+
+            golem.speed = golem.baseSpeed * 0.25f;
+            golem.attacking = true;
+            golem.animator.speed = 2;
+        } else {
+            golem.runeExecuted = false;
+            golem.cooldown = A6_Recuperacao;
+        }
+    }
+
+    private void A6CleanUp()
+    {
+        golem.speed = golem.baseSpeed;
+    }
+
+    // A7
+    private bool A7()
+    {
+        LookToTheTarget();
+        if (!golem.runeExecuted) return true;
+
+        if (golem.timeSinceLastAction < 0.5f) {
+            if (boolDict["successPhase1"]) return true;
+
+            float distance;
+            distance = (golem.Position() - golem.TargetPosition()).magnitude;
+
+            if (distance < floatDict["attackRange"]) {
+                boolDict["successPhase1"] = true;
+            }
+        } else if (golem.timeSinceLastAction < 1.0f) {
+            if (boolDict["successPhase2"]) return true;
+
+            boolDict["successPhase2"] = true;
+
+            golem.speed = golem.baseSpeed * 0.75f;
+            golem.animator.speed = 1;
+            golem.throwing = false;
+
+            if (boolDict["successPhase1"]) {
+                GameObject flyingClub = Instantiate(flyingClubPrefab);
+                flyingClub.transform.position = golem.Position();
+                flyingClub.GetComponent<FlyingClub>().throwPosition = golem.Position();
+                flyingClub.GetComponent<FlyingClub>().target = golem.Target();
+                flyingClub.GetComponent<FlyingClub>().SetFlyingTime(0.5f);
+
+                flyingClub.GetComponent<FlyingClub>().clubHitingGroundPrefab = clubHitingGroundPrefab;
+                flyingClub.GetComponent<FlyingClub>().hitAreaPrefab = hitAreaPrefab;
+                flyingClub.GetComponent<FlyingClub>().explosionDamage = floatDict["damage"];
+                flyingClub.GetComponent<FlyingClub>().explosionArea = floatDict["area"];
+                flyingClub.GetComponent<FlyingClub>().explosionDuration = 0.5f;
+                flyingClub.GetComponent<FlyingClub>().whoThrow = golem.GUID();
+
+            }
+        }
+
+        return true;
+    }
+
+    private void A7Setup()
+    {
+        float manaCost = A7_Mana;
+
+        floatDict.Clear();
+        boolDict.Clear();
+        intDict.Clear();
+        boolDict.Add("successPhase1", false);
+        boolDict.Add("successPhase2", false);
+
+        if (manaCost <= golem.mana) {
+            golem.mana -= manaCost;
+            golem.runeExecuted = true;
+            golem.cooldown = A7_Execucao + A7_Recuperacao;
+            floatDict.Add("damage", golem.strength * A7_Dano);
+            floatDict.Add("attackRange", golem.basicRange + golem.meleeRange * A7_Alcance);
+            floatDict.Add("area", golem.basicRange + golem.meleeRange * A7_Area);
+
+            golem.speed = golem.baseSpeed * 0.25f;
+            golem.throwing = true;
+            golem.animator.speed = 2;
+        } else {
+            golem.runeExecuted = false;
+            golem.cooldown = A7_Recuperacao;
+        }
+    }
+
+    private void A7CleanUp()
+    {
+        golem.speed = golem.baseSpeed;
     }
 }

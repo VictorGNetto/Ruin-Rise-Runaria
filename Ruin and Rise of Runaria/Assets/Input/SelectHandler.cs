@@ -7,7 +7,7 @@ public class SelectHandler : MonoBehaviour
 
     private SelecGolem selecArea = null;
     private Camera mainCamera;
-    private int selectableLayer = 6;
+    private int golemLayer = 7;
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class SelectHandler : MonoBehaviour
         if (!context.started) return;
 
         var rayHit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
-        if (!rayHit.collider || rayHit.collider.gameObject.layer != selectableLayer) {
+        if (!rayHit.collider || rayHit.collider.gameObject.layer != golemLayer) {
             // selected = false;
             // numberOfClicks = 0;
 
