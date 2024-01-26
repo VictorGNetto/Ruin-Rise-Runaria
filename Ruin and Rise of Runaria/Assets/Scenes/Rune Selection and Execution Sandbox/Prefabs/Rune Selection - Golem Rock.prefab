@@ -8447,7 +8447,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Reconstru\xE7\xE3o B\xE1sica - Canaliza energia m\xE1gica para reconstruir
-    o golem aliado.\r\n\nCura: 15%\nAlcance: x1\r\nTempo de execu\xE7\xE3o: 1.5s\r\nMana:
+    o golem aliado.\r\n\nCura: 25%\nAlcance: x1\r\nTempo de execu\xE7\xE3o: 1.5s\r\nMana:
     35\r"
 --- !u!1 &5974054072211144854
 GameObject:

@@ -284,6 +284,7 @@ public class Golem : MonoBehaviour, ICharacter
     {
         if (!alive) return;
 
+        amount = (1 - defense) * amount;
         health = Mathf.Max(0, health - amount);
         healthManaBar.SetHealth(health, maxHealth);
         Flash();
@@ -292,6 +293,8 @@ public class Golem : MonoBehaviour, ICharacter
 
     public void Heal(float amount)
     {
+        if (!alive) return;
+        
         health = Mathf.Min(maxHealth, health + amount);
         healthManaBar.SetHealth(health, maxHealth);
     }

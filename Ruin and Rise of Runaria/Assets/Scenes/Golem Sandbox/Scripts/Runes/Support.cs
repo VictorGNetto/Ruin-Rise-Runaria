@@ -7,7 +7,7 @@ public class Support : MonoBehaviour
     private Golem golem;
 
     // Public Attacks Parameters
-    public float S1_Cura = 0.15f;
+    public float S1_Cura = 0.25f;
     public float S1_Alcance = 1.0f;
     public float S1_Execucao = 1.5f;
     public float S1_Recuperacao = 0.5f;
