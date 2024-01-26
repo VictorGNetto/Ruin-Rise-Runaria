@@ -3073,6 +3073,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem - Earth
       objectReference: {fileID: 0}
+    - target: {fileID: 4309597488438637302, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e6b85e92f7b1353468bc07c34fc31262, type: 2}
     - target: {fileID: 5990858384472245097, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
