@@ -21,10 +21,12 @@ public class ProjectileScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Vector3 direction = target.transform.position - transform.position;
         direction.Normalize();
-
         transform.position += direction * Time.deltaTime * speed;
+        Debug.Log("teste");
+
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
