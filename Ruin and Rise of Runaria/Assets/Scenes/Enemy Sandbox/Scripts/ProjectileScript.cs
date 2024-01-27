@@ -21,7 +21,13 @@ public class ProjectileScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (!target.alive || target == null)
+        {
+            anim.SetTrigger("Explode");
+            Destroy(gameObject, 0.2f);
+        }
+
         Vector3 direction = target.transform.position - transform.position;
         direction.Normalize();
         transform.position += direction * Time.deltaTime * speed;
