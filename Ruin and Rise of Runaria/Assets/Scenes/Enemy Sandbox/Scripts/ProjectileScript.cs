@@ -37,6 +37,7 @@ public class ProjectileScript : MonoBehaviour
 
 
         target.health = Math.Max(0, target.health - damage);
+        target.TakeDamage(damage);
         Destroy(gameObject, 0.2f);
     }
 }
