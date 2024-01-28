@@ -1366,17 +1366,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &599889046 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 791743655069758523, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-  m_PrefabInstance: {fileID: 1080971612}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e4700eeddff04438d7f7e1b72b744f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &682020944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,9 +1399,9 @@ MonoBehaviour:
   - {fileID: 537908809}
   - {fileID: 298458497}
   - {fileID: 337331151}
-  - {fileID: 0}
+  - {fileID: 1572756413}
   enemys:
-  - {fileID: 0}
+  - {fileID: 1795645726}
   levelStartedRunning: 0
 --- !u!4 &682020946
 Transform:
@@ -1551,35 +1540,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: alive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: defense
-      value: 5
+      value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: strength
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 599889046}
     - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 682020945}
-    - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: selectedAndTargetUI
-      value: 
-      objectReference: {fileID: 1391969807}
     - target: {fileID: 7601032350855401999, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8912095575279004642, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2019,17 +1988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6524c4c241543fa479e0d638469f2bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1391969807 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3283812841662245477, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-  m_PrefabInstance: {fileID: 1080971612}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad0b2b1fea0cc1a468191b825d66b95e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1401425236 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3098036992344338872, guid: 36e1dbadf962d2144b8a872e6c60933f, type: 3}
@@ -2410,6 +2368,17 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: 5c3b091bacf20f6459abb2a52cfea47d, type: 2}
+--- !u!114 &1795645726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
+  m_PrefabInstance: {fileID: 1080971612}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516f6ca975a72cd47994495d106b589d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1807474413
 GameObject:
   m_ObjectHideFlags: 0

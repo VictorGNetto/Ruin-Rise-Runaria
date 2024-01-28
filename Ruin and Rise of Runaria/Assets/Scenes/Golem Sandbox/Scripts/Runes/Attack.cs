@@ -94,22 +94,10 @@ public class Attack : MonoBehaviour
         golem.cleanUpFunctionMap.Add("A7", new Golem.CleanUpAfterAction(A7CleanUp));
     }
 
-    private void LookToTheTarget()
-    {
-        float targetX = golem.TargetPosition().x;
-        float golemX = golem.Position().x;
-
-        if (golemX > targetX) {
-            golem.GetComponent<SpriteRenderer>().flipX = true;
-        } else {
-            golem.GetComponent<SpriteRenderer>().flipX = false;
-        }
-    }
-
     // A1
     private bool A1()
     {
-        LookToTheTarget();
+        golem.LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
         float distance = (golem.Position() - golem.TargetPosition()).magnitude;
@@ -176,7 +164,7 @@ public class Attack : MonoBehaviour
     // A2
     private bool A2()
     {
-        LookToTheTarget();
+        golem.LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
         float distance = (golem.Position() - golem.TargetPosition()).magnitude;
@@ -243,7 +231,7 @@ public class Attack : MonoBehaviour
     // A3
     private bool A3()
     {
-        LookToTheTarget();
+        golem.LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
         float distance = (golem.Position() - golem.TargetPosition()).magnitude;
@@ -321,7 +309,7 @@ public class Attack : MonoBehaviour
     // A4
     private bool A4()
     {
-        LookToTheTarget();
+        golem.LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
         float distance = (golem.Position() - golem.TargetPosition()).magnitude;
@@ -399,7 +387,7 @@ public class Attack : MonoBehaviour
     // A5
     private bool A5()
     {
-        LookToTheTarget();
+        golem.LookToTheTarget();
 
         return true;
     }
@@ -465,7 +453,7 @@ public class Attack : MonoBehaviour
     // A6
     private bool A6()
     {
-        LookToTheTarget();
+        golem.LookToTheTarget();
         if (!golem.runeExecuted) return true;
 
         if (golem.timeSinceLastAction < 0.5f) {
@@ -539,7 +527,7 @@ public class Attack : MonoBehaviour
     // A7
     private bool A7()
     {
-        LookToTheTarget();
+        golem.LookToTheTarget();
         if (!golem.runeExecuted) return true;
 
         if (golem.timeSinceLastAction < 0.5f) {

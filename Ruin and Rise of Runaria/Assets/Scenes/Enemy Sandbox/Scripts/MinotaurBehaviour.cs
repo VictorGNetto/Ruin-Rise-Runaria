@@ -81,7 +81,6 @@ public class MinotaurBehaviour: MonoBehaviour
     {
         Golem target = enemy.target;
         animator.SetBool("Walking", true);
-        Debug.Log(navMeshAgent);
         navMeshAgent.SetDestination(target.Position());
         if (target.Position().x < transform.position.x)
         {

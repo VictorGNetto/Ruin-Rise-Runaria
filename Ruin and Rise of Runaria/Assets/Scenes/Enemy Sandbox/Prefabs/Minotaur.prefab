@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3567203787012762661}
   - component: {fileID: 5948072114191060044}
   - component: {fileID: 7205365148118967027}
+  - component: {fileID: 3518386716869436213}
   - component: {fileID: 6470036676125402018}
   - component: {fileID: 3675457552695927651}
   - component: {fileID: 1909648586369288730}
@@ -38,6 +39,7 @@ Transform:
   m_Children:
   - {fileID: 2115913010867858740}
   - {fileID: 1159406716066661072}
+  - {fileID: 3903344601528403904}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5948072114191060044
@@ -113,6 +115,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3518386716869436213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2153060957998608583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbfacdf7b1b4a54f9681e3308f097d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxY: 3.7
+  minY: -3.7
+  orderInLayer: 0
+  foot: {fileID: 3903344601528403904}
 --- !u!114 &6470036676125402018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,12 +145,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 75
   maxHealth: 100
-  healthBar: {fileID: 0}
-  strength: 0
-  defense: 0
-  alive: 0
+  healthBar: {fileID: 791743655069758523}
+  target: {fileID: 0}
+  strength: 15
+  defense: 0.1
+  alive: 1
   levelDirector: {fileID: 0}
-  selectedAndTargetUI: {fileID: 0}
+  selectedAndTargetUI: {fileID: 3283812841662245477}
+  stdMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  flashMaterial: {fileID: 2100000, guid: 012956a9da9d6194bb40910c49fb3562, type: 2}
+  flashDuration: 0.03
 --- !u!114 &3675457552695927651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,6 +427,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5913865501071015290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3903344601528403904}
+  m_Layer: 3
+  m_Name: Foot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3903344601528403904
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5913865501071015290}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3567203787012762661}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6168942655114054660
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, ICharacter
@@ -17,8 +18,17 @@ public class Enemy : MonoBehaviour, ICharacter
     // Select logic
     public SelectedAndTargetUI selectedAndTargetUI;
 
+    // Flash Effect
+    private SpriteRenderer spriteRenderer;
+    private Coroutine flashRoutine;
+    public Material stdMaterial;
+    public Material flashMaterial;
+    public float flashDuration;
+
     void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         alive = true;
     }
 
@@ -47,6 +57,8 @@ public class Enemy : MonoBehaviour, ICharacter
 
     public void Die()
     {
+        GetComponent<BoxCollider2D>().enabled = false;
+        alive = false;
         gameObject.GetComponent<Animator>().SetTrigger("Die");
         Destroy(gameObject, 2.0f);
     }
@@ -58,6 +70,7 @@ public class Enemy : MonoBehaviour, ICharacter
         amount = (1 - defense) * amount;
         health = Mathf.Max(0, health - amount);
         healthBar.SetHealth(health, maxHealth);
+        Flash();
         if (health == 0) Die();
     }
 
@@ -92,5 +105,36 @@ public class Enemy : MonoBehaviour, ICharacter
     public SelectedAndTargetUI SelectedAndTargetUI()
     {
         return selectedAndTargetUI;
+    }
+
+    // Code from 
+    // https://github.com/BarthaSzabolcs/Tutorial-SpriteFlash/blob/main/Assets/Scripts/FlashEffects/SimpleFlash.cs
+    public void Flash()
+    {
+        // If the flashRoutine is not null, then it is currently running.
+        if (flashRoutine != null)
+        {
+            // In this case, we should stop it first.
+            // Multiple FlashRoutines the same time would cause bugs.
+            StopCoroutine(flashRoutine);
+        }
+
+        // Start the Coroutine, and store the reference for it.
+        flashRoutine = StartCoroutine(FlashRoutine());
+    }
+
+    private IEnumerator FlashRoutine()
+    {
+        // Swap to the flashMaterial.
+        spriteRenderer.material = flashMaterial;
+
+        // Pause the execution of this function for "duration" seconds.
+        yield return new WaitForSeconds(flashDuration);
+
+        // After the pause, swap back to the original material.
+        spriteRenderer.material = stdMaterial;
+
+        // Set the routine to null, signaling that it's finished.
+        flashRoutine = null;
     }
 }

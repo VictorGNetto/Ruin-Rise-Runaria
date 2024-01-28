@@ -1,11 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Timeline;
 
 public class Golem : MonoBehaviour, ICharacter
 {
@@ -179,13 +176,14 @@ public class Golem : MonoBehaviour, ICharacter
     private void UpdateTarget()
     {
         if (target == null) {
-            target = levelDirector.GetRandomFriend();
+            target = levelDirector.GetRandomEnemy();
             if (GUID() == target.GUID()) {
                 targetType = TargetType.Self;
             } else {
                 targetType = TargetType.Friend;
             }
 
+            targetType = TargetType.Enemy;
             if (selected) Select();
         }
     }
@@ -243,6 +241,20 @@ public class Golem : MonoBehaviour, ICharacter
     public void OpenRuneSelectionUI()
     {
         runeSelectionUI.OpenRuneSelectionUI();
+    }
+
+    public void LookToTheTarget()
+    {
+        if (target == null) return;
+
+        float targetX = TargetPosition().x;
+        float golemX = Position().x;
+
+        if (golemX > targetX) {
+            spriteRenderer.flipX = true;
+        } else {
+            spriteRenderer.flipX = false;
+        }
     }
 
     // ICharacter Interface
@@ -303,7 +315,7 @@ public class Golem : MonoBehaviour, ICharacter
 
     public void Die()
     {
-        // TODO: disable collider2D (That don't exist yet)
+        GetComponent<BoxCollider2D>().enabled = false;
         alive = false;
         ResolveAnimation();
         Destroy(gameObject, 2.0f);
