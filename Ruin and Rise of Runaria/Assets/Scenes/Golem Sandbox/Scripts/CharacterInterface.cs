@@ -9,6 +9,7 @@ public interface ICharacter
     void TakeDamage(float amount);
     void Heal(float amount);
     float MaxHealth();
+    bool Alive();
     void Die();
     int GUID();
     SelectedAndTargetUI SelectedAndTargetUI();

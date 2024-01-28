@@ -296,6 +296,11 @@ public class Golem : MonoBehaviour, ICharacter
         return maxHealth;
     }
 
+    public bool Alive()
+    {
+        return alive;
+    }
+
     public void Die()
     {
         // TODO: disable collider2D (That don't exist yet)

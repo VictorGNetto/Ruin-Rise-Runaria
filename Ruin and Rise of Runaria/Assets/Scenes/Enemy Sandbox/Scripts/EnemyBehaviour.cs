@@ -5,7 +5,7 @@ using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.UIElements;
 
-public class EnemyBehaviour : MonoBehaviour, ICharacter
+public class EnemyBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform launchOffset;
@@ -36,8 +36,6 @@ public class EnemyBehaviour : MonoBehaviour, ICharacter
         scale = transform.localScale;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-
-    
 
     Golem ClosestGolem()
     {

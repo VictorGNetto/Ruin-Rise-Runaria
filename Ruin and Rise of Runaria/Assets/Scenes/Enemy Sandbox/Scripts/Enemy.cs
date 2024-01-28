@@ -2,42 +2,47 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, ICharacter
 {
-    // Health and Mana
+    // Health
     public float health = 75;
     public float maxHealth = 100;
-    public EnemyHealthBar enemyHealthBar;
+    public EnemyHealthBar healthBar;
 
-    public bool isDead = false;
-
+    public Golem target;
+    public float strength;
+    public float defense;
     private int guid;
+    public bool alive = false;
+    public LevelDirector levelDirector;
+
+    // Select logic
+    public SelectedAndTargetUI selectedAndTargetUI;
+
+    void Awake()
+    {
+        alive = true;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (isDead) return;
+        if (!alive) return;
 
-        enemyHealthBar.SetHealth(health, maxHealth);
-
-        if (health <= 0) {
-            isDead = true;
-            enemyHealthBar.gameObject.SetActive(false);
-            Die();
-        }
+        healthBar.SetHealth(health, maxHealth);
     }
 
     public ICharacter Target()
     {
-        return gameObject.GetComponent<Enemy>();
+        return target;
     }
 
     public Vector3 TargetPosition()
     {
-        return new Vector3(0, 0, 0);
+        return target.Position();
     }
 
     public Vector3 Position()
     {
-         return new Vector3(0, 0, 0);
+        return transform.position;
     }
 
     public void Die()
@@ -47,14 +52,31 @@ public class Enemy : MonoBehaviour, ICharacter
     }
 
     public void TakeDamage(float amount)
-    {}
+    {
+        if (!alive) return;
+
+        amount = (1 - defense) * amount;
+        health = Mathf.Max(0, health - amount);
+        healthBar.SetHealth(health, maxHealth);
+        if (health == 0) Die();
+    }
 
     public void Heal(float amount)
-    {}
+    {
+        if (!alive) return;
+
+        health = Mathf.Min(maxHealth, health + amount);
+        healthBar.SetHealth(health, maxHealth);
+    }
 
     public float MaxHealth()
     {
         return maxHealth;
+    }
+
+    public bool Alive()
+    {
+        return alive;
     }
 
     public int GUID()
@@ -64,11 +86,11 @@ public class Enemy : MonoBehaviour, ICharacter
 
     public int GetSortingOrder()
     {
-        return 0;
+        return GetComponent<SpriteRenderer>().sortingOrder;
     }
 
     public SelectedAndTargetUI SelectedAndTargetUI()
     {
-        throw new System.NotImplementedException();
+        return selectedAndTargetUI;
     }
 }
