@@ -178,6 +178,11 @@ public class EnemyBehaviour : MonoBehaviour, ICharacter
         throw new System.NotImplementedException();
     }
 
+    public SelectedAndTargetUI SelectedAndTargetUI()
+    {
+        throw new System.NotImplementedException();
+    }
+
 
 
 }

@@ -66,4 +66,9 @@ public class Enemy : MonoBehaviour, ICharacter
     {
         return 0;
     }
+
+    public SelectedAndTargetUI SelectedAndTargetUI()
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -112,14 +112,7 @@ public class Attack : MonoBehaviour
         LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
-        float distance;
-        if (golem.targetType == Golem.TargetType.Enemy) {
-            Vector3 enemyPosition = golem.targetEnemy.transform.position;
-            distance = (golem.Position() - enemyPosition).magnitude;
-        } else {
-            Vector3 friendPosition = golem.targetFriend.transform.position;
-            distance = (golem.Position() - friendPosition).magnitude;
-        }
+        float distance = (golem.Position() - golem.TargetPosition()).magnitude;
 
         if (distance < floatDict["attackRange"]) {
             boolDict["success"] = true;
@@ -176,7 +169,7 @@ public class Attack : MonoBehaviour
         golem.attacking = false;
 
         if (boolDict["success"]) {
-            golem.targetFriend.TakeDamage(floatDict["damage"]);
+            golem.target.TakeDamage(floatDict["damage"]);
         }
     }
 
@@ -186,14 +179,7 @@ public class Attack : MonoBehaviour
         LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
-        float distance;
-        if (golem.targetType == Golem.TargetType.Enemy) {
-            Vector3 enemyPosition = golem.targetEnemy.transform.position;
-            distance = (golem.Position() - enemyPosition).magnitude;
-        } else {
-            Vector3 friendPosition = golem.targetFriend.transform.position;
-            distance = (golem.Position() - friendPosition).magnitude;
-        }
+        float distance = (golem.Position() - golem.TargetPosition()).magnitude;
 
         if (distance < floatDict["attackRange"]) {
             boolDict["success"] = true;
@@ -250,7 +236,7 @@ public class Attack : MonoBehaviour
         golem.attacking = false;
 
         if (boolDict["success"]) {
-            golem.targetFriend.TakeDamage(floatDict["damage"]);
+            golem.target.TakeDamage(floatDict["damage"]);
         }
     }
 
@@ -260,14 +246,7 @@ public class Attack : MonoBehaviour
         LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
-        float distance;
-        if (golem.targetType == Golem.TargetType.Enemy) {
-            Vector3 enemyPosition = golem.targetEnemy.transform.position;
-            distance = (golem.Position() - enemyPosition).magnitude;
-        } else {
-            Vector3 friendPosition = golem.targetFriend.transform.position;
-            distance = (golem.Position() - friendPosition).magnitude;
-        }
+        float distance = (golem.Position() - golem.TargetPosition()).magnitude;
 
         if (distance < floatDict["attackRange"]) {
             boolDict["success"] = true;
@@ -325,7 +304,7 @@ public class Attack : MonoBehaviour
         intDict["hits"] -= 1;
 
         if (boolDict["success"]) {
-            golem.targetFriend.TakeDamage(floatDict["damage"]);
+            golem.target.TakeDamage(floatDict["damage"]);
             boolDict["success"] = false;
         }
 
@@ -345,14 +324,7 @@ public class Attack : MonoBehaviour
         LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
-        float distance;
-        if (golem.targetType == Golem.TargetType.Enemy) {
-            Vector3 enemyPosition = golem.targetEnemy.transform.position;
-            distance = (golem.Position() - enemyPosition).magnitude;
-        } else {
-            Vector3 friendPosition = golem.targetFriend.transform.position;
-            distance = (golem.Position() - friendPosition).magnitude;
-        }
+        float distance = (golem.Position() - golem.TargetPosition()).magnitude;
 
         if (distance < floatDict["attackRange"]) {
             boolDict["success"] = true;
@@ -410,7 +382,7 @@ public class Attack : MonoBehaviour
         intDict["hits"] -= 1;
 
         if (boolDict["success"]) {
-            golem.targetFriend.TakeDamage(floatDict["damage"]);
+            golem.target.TakeDamage(floatDict["damage"]);
             boolDict["success"] = false;
         }
 

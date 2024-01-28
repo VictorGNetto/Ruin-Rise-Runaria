@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Timeline;
@@ -16,8 +17,6 @@ public class Golem : MonoBehaviour, ICharacter
     public enum TargetType { Self, Friend, Enemy };
     public TargetType targetType;
     public ICharacter target;
-    public Enemy targetEnemy;
-    public Golem targetFriend;
 
     // Health and Mana
     public float health = 75;
@@ -179,11 +178,9 @@ public class Golem : MonoBehaviour, ICharacter
 
     private void UpdateTarget()
     {
-        if (targetFriend == null) {
-            targetFriend = levelDirector.GetRandomFriend();
-            target = targetFriend;
-
-            if (guid == targetFriend.guid) {
+        if (target == null) {
+            target = levelDirector.GetRandomFriend();
+            if (GUID() == target.GUID()) {
                 targetType = TargetType.Self;
             } else {
                 targetType = TargetType.Friend;
@@ -218,45 +215,13 @@ public class Golem : MonoBehaviour, ICharacter
         return true;
     }
 
-    public ICharacter Target()
-    {
-        if (targetType == TargetType.Self || targetType == TargetType.Friend) {
-            return targetFriend;
-        } else {
-            return targetEnemy;
-        }
-    }
-
-    public Vector3 TargetPosition()
-    {
-        if (targetType == TargetType.Self) {
-            return transform.position;
-        } else if (targetType == TargetType.Friend) {
-            return targetFriend.transform.position;
-        } else {
-            return targetEnemy.transform.position;
-        }
-    }
-
-    public Vector3 Position()
-    {
-        return transform.position;
-    }
-
     public void Unselect()
     {
         if (!selected) return;
 
         selected = false;
         selectedAndTargetUI.Hide();
-
-        if (targetType == TargetType.Friend) {
-            if (targetFriend != null) {
-                targetFriend.selectedAndTargetUI.Hide();
-            }
-        } else if (targetType == TargetType.Enemy) {
-            // targetEnemy.selectedAndTargetUI.Hide();
-        }
+        target.SelectedAndTargetUI().Hide();
     }
 
     public void Select()
@@ -268,16 +233,43 @@ public class Golem : MonoBehaviour, ICharacter
         }
         if (targetType == TargetType.Friend) {
             selectedAndTargetUI.PlaySelected();
-            targetFriend.selectedAndTargetUI.PlayFriendTarget();
+            target.SelectedAndTargetUI().PlayFriendTarget();
         } else if (targetType == TargetType.Enemy) {
             selectedAndTargetUI.PlaySelected();
-            // targetEnemy.selectedAndTargetUI.PlayTarget();
+            target.SelectedAndTargetUI().PlayEnemyTarget();
         }
     }
 
     public void OpenRuneSelectionUI()
     {
         runeSelectionUI.OpenRuneSelectionUI();
+    }
+
+    // ICharacter Interface
+
+    public ICharacter Target()
+    {
+        return target;
+    }
+
+    public int GetSortingOrder()
+    {
+        return gameObject.GetComponent<SpriteRenderer>().sortingOrder;
+    }
+
+    public int GetTargetSortingOrder()
+    {
+        return target.GetSortingOrder();
+    }
+
+    public Vector3 TargetPosition()
+    {
+        return target.Position();
+    }
+
+    public Vector3 Position()
+    {
+        return transform.position;
     }
 
     public void TakeDamage(float amount)
@@ -317,20 +309,9 @@ public class Golem : MonoBehaviour, ICharacter
         return guid;
     }
 
-    public int GetSortingOrder()
+    public SelectedAndTargetUI SelectedAndTargetUI()
     {
-        return gameObject.GetComponent<SpriteRenderer>().sortingOrder;
-    }
-
-    public int GetTargetSortingOrder()
-    {
-        if (targetType == TargetType.Self) {
-            return gameObject.GetComponent<SpriteRenderer>().sortingOrder;
-        } else if (targetType == TargetType.Friend) {
-            return targetFriend.gameObject.GetComponent<SpriteRenderer>().sortingOrder;
-        } else {
-            return targetEnemy.gameObject.GetComponent<SpriteRenderer>().sortingOrder;
-        }
+        return selectedAndTargetUI;
     }
 
     // Code from 

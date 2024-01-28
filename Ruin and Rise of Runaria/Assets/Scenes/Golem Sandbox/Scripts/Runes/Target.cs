@@ -11,7 +11,8 @@ public class Target : MonoBehaviour
     private Dictionary<String, float> intDict = new Dictionary<string, float>();
 
     bool targetChanged = false;
-    Golem oldFriendTarget = null;
+    ICharacter oldTarget = null;
+    // Golem oldFriendTarget = null;
     int oldTargetGuid = -1;
 
     private void Awake()
@@ -42,19 +43,19 @@ public class Target : MonoBehaviour
     private void UpdateSelecUI()
     {
         // Hide the old target UI
-        if (oldFriendTarget != null) {
-            oldFriendTarget.selectedAndTargetUI.Hide();
+        if (oldTarget != null) {
+            oldTarget.SelectedAndTargetUI().Hide();
         }
 
         // Play the new target UI
         if (golem.targetType == Golem.TargetType.Self) {
-            golem.targetFriend.selectedAndTargetUI.PlayAutoTarget();
+            golem.selectedAndTargetUI.PlayAutoTarget();
         } else if (golem.targetType == Golem.TargetType.Friend) {
             golem.selectedAndTargetUI.PlaySelected();
-            golem.targetFriend.selectedAndTargetUI.PlayFriendTarget();
+            golem.target.SelectedAndTargetUI().PlayFriendTarget();
         } else {
             golem.selectedAndTargetUI.PlaySelected();
-            // golem.targetEnemy.selectedAndTargetUI.PlayTarget();
+            golem.target.SelectedAndTargetUI().PlayEnemyTarget();
         }
     }
 
@@ -75,18 +76,18 @@ public class Target : MonoBehaviour
     private void L15CleanUp()
     {
         targetChanged = false;
-        oldFriendTarget = golem.targetFriend;
-        oldTargetGuid = oldFriendTarget.guid;
+        oldTarget = golem.target;
+        oldTargetGuid = oldTarget.GUID();
 
-        golem.targetFriend = golem.levelDirector.GetGolemWithHighestHealth();
+        golem.target = golem.levelDirector.GetGolemWithHighestHealth();
 
-        if (golem.guid == golem.targetFriend.guid) {
+        if (golem.guid == golem.target.GUID()) {
             golem.targetType = Golem.TargetType.Self;
         } else {
             golem.targetType = Golem.TargetType.Friend;
         }
 
-        if (oldTargetGuid != golem.targetFriend.guid) targetChanged = true;
+        if (oldTargetGuid != golem.target.GUID()) targetChanged = true;
 
         if (targetChanged && golem.selected) UpdateSelecUI();
     }
@@ -108,18 +109,18 @@ public class Target : MonoBehaviour
     private void L16CleanUp()
     {
         targetChanged = false;
-        oldFriendTarget = golem.targetFriend;
-        oldTargetGuid = oldFriendTarget.guid;
+        oldTarget = golem.target;
+        oldTargetGuid = oldTarget.GUID();
 
-        golem.targetFriend = golem.levelDirector.GetGolemWithLowestHealth();
+        golem.target = golem.levelDirector.GetGolemWithLowestHealth();
 
-        if (golem.guid == golem.targetFriend.guid) {
+        if (golem.guid == golem.target.GUID()) {
             golem.targetType = Golem.TargetType.Self;
         } else {
             golem.targetType = Golem.TargetType.Friend;
         }
 
-        if (oldTargetGuid != golem.targetFriend.guid) targetChanged = true;
+        if (oldTargetGuid != golem.target.GUID()) targetChanged = true;
 
         if (targetChanged && golem.selected) UpdateSelecUI();
     }
@@ -141,18 +142,18 @@ public class Target : MonoBehaviour
     private void L17CleanUp()
     {
         targetChanged = false;
-        oldFriendTarget = golem.targetFriend;
-        oldTargetGuid = oldFriendTarget.guid;
+        oldTarget = golem.target;
+        oldTargetGuid = oldTarget.GUID();
 
-        golem.targetFriend = golem.levelDirector.GetNearestGolem(golem.guid);
+        golem.target = golem.levelDirector.GetNearestGolem(golem.guid);
 
-        if (golem.guid == golem.targetFriend.guid) {
+        if (golem.guid == golem.target.GUID()) {
             golem.targetType = Golem.TargetType.Self;
         } else {
             golem.targetType = Golem.TargetType.Friend;
         }
 
-        if (oldTargetGuid != golem.targetFriend.guid) targetChanged = true;
+        if (oldTargetGuid != golem.target.GUID()) targetChanged = true;
 
         if (targetChanged && golem.selected) UpdateSelecUI();
     }
@@ -174,18 +175,18 @@ public class Target : MonoBehaviour
     private void L18CleanUp()
     {
         targetChanged = false;
-        oldFriendTarget = golem.targetFriend;
-        oldTargetGuid = oldFriendTarget.guid;
+        oldTarget = golem.target;
+        oldTargetGuid = oldTarget.GUID();
 
-        golem.targetFriend = golem.levelDirector.GetFartestGolem(golem.guid);
+        golem.target = golem.levelDirector.GetFartestGolem(golem.guid);
 
-        if (golem.guid == golem.targetFriend.guid) {
+        if (golem.guid == golem.target.GUID()) {
             golem.targetType = Golem.TargetType.Self;
         } else {
             golem.targetType = Golem.TargetType.Friend;
         }
 
-        if (oldTargetGuid != golem.targetFriend.guid) targetChanged = true;
+        if (oldTargetGuid != golem.target.GUID()) targetChanged = true;
 
         if (targetChanged && golem.selected) UpdateSelecUI();
     }
@@ -207,13 +208,13 @@ public class Target : MonoBehaviour
     private void L19CleanUp()
     {
         targetChanged = false;
-        oldFriendTarget = golem.targetFriend;
-        oldTargetGuid = oldFriendTarget.guid;
+        oldTarget = golem.target;
+        oldTargetGuid = oldTarget.GUID();
 
-        golem.targetFriend = golem;
+        golem.target = golem;
         golem.targetType = Golem.TargetType.Self;
 
-        if (oldTargetGuid != golem.targetFriend.guid) targetChanged = true;
+        if (oldTargetGuid != golem.target.GUID()) targetChanged = true;
 
         if (targetChanged && golem.selected) UpdateSelecUI();
     }

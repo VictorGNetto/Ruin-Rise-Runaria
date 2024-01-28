@@ -196,4 +196,9 @@ public class MinotaurBehaviour: MonoBehaviour, ICharacter
     {
         throw new System.NotImplementedException();
     }
+
+    public SelectedAndTargetUI SelectedAndTargetUI()
+    {
+        throw new System.NotImplementedException();
+    }
 }

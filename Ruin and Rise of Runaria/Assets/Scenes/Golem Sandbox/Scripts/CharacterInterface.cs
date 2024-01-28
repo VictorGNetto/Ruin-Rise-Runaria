@@ -11,4 +11,5 @@ public interface ICharacter
     float MaxHealth();
     void Die();
     int GUID();
+    SelectedAndTargetUI SelectedAndTargetUI();
 }
