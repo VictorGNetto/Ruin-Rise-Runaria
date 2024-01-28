@@ -7954,6 +7954,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1675521218}
     - target: {fileID: 2893227367573128283, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: launchOffset
+      value: 
+      objectReference: {fileID: 718065470}
+    - target: {fileID: 2893227367573128283, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: manaRecovery
       value: 10
       objectReference: {fileID: 0}
@@ -10263,6 +10267,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!4 &411318994 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4440463114518005256, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
+  m_PrefabInstance: {fileID: 1111344824}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &464027168
 GameObject:
   m_ObjectHideFlags: 0
@@ -11129,6 +11138,11 @@ Transform:
   - {fileID: 1668389852}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &654370879 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7681322806885808203, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
+  m_PrefabInstance: {fileID: 2012768407}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &656335876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11830,6 +11844,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7509736641193634087, guid: 2d546d2d8b016864ab41e2185c250eb5, type: 3}
   m_PrefabInstance: {fileID: 714299754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &718065470 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6097774195731495501, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+  m_PrefabInstance: {fileID: 58279259}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &719955019
 PrefabInstance:
@@ -14335,9 +14354,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7947911505737750448, guid: 139b2d65b3145ad45bc13b6d111199de, type: 3}
   m_PrefabInstance: {fileID: 1045878236}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1059077726 stripped
+--- !u!4 &1059077733 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3567203787012762661, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
+  m_PrefabInstance: {fileID: 1876631697}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1059077738 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4502425275805260225, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
   m_PrefabInstance: {fileID: 1876631697}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -14346,11 +14370,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 516f6ca975a72cd47994495d106b589d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1059077733 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3567203787012762661, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-  m_PrefabInstance: {fileID: 1876631697}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1059488712
 GameObject:
   m_ObjectHideFlags: 0
@@ -14625,7 +14644,7 @@ MonoBehaviour:
   - {fileID: 1304084284}
   - {fileID: 1111344825}
   enemys:
-  - {fileID: 1059077726}
+  - {fileID: 1059077738}
   - {fileID: 1668389855}
   levelStartedRunning: 0
 --- !u!4 &1085000238
@@ -14852,6 +14871,10 @@ PrefabInstance:
       propertyPath: golemProgram
       value: 
       objectReference: {fileID: 1155322912}
+    - target: {fileID: 9042108169200833378, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
+      propertyPath: launchOffset
+      value: 
+      objectReference: {fileID: 411318994}
     - target: {fileID: 9042108169200833378, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: manaRecovery
       value: 20
@@ -15790,6 +15813,10 @@ PrefabInstance:
       propertyPath: golemProgram
       value: 
       objectReference: {fileID: 1506136006}
+    - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+      propertyPath: launchOffset
+      value: 
+      objectReference: {fileID: 1577616696}
     - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
       propertyPath: manaRecovery
       value: 30
@@ -16891,6 +16918,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1577616696 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7197062146757563408, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+  m_PrefabInstance: {fileID: 1304084283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1622612177
 GameObject:
   m_ObjectHideFlags: 0
@@ -19481,6 +19513,10 @@ PrefabInstance:
       propertyPath: enemyHealthBar
       value: 
       objectReference: {fileID: 1876631698}
+    - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
+      propertyPath: levelDirector
+      value: 
+      objectReference: {fileID: 1085000237}
     - target: {fileID: 7601032350855401999, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -19734,6 +19770,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 640911149}
     m_Modifications:
+    - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1937270406}
+    - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: levelDirector
+      value: 
+      objectReference: {fileID: 1085000237}
     - target: {fileID: 3817782176324100260, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
       propertyPath: m_Name
       value: Wraith
@@ -19746,6 +19790,10 @@ PrefabInstance:
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 1085000237}
+    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: attackCooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
       propertyPath: enemyHealthBar
       value: 
@@ -20107,6 +20155,10 @@ PrefabInstance:
       propertyPath: golemProgram
       value: 
       objectReference: {fileID: 1872588244}
+    - target: {fileID: 3855243366295093512, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
+      propertyPath: launchOffset
+      value: 
+      objectReference: {fileID: 654370879}
     - target: {fileID: 3855243366295093512, guid: 17afbacbf7470f84c9a8716a9d3ae77c, type: 3}
       propertyPath: distanceRange
       value: 1.2

@@ -31,7 +31,7 @@ public class ProjectileScript : MonoBehaviour
         Vector3 direction = target.transform.position - transform.position;
         direction.Normalize();
         transform.position += direction * Time.deltaTime * speed;
-        Debug.Log("teste");
+        
 
     }
 
