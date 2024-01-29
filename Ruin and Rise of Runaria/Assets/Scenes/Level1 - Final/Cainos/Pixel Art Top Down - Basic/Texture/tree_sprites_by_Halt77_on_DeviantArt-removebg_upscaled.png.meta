@@ -1,0 +1,501 @@
+fileFormatVersion: 2
+guid: 54b8b9b4cb546904bbd9326e54184f60
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1686
+        width: 249
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d51cac81f0512a4bb10f1fdc61852c9
+      internalID: 1709592695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_1
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1685
+        width: 394
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a52389ecb834bb4eb112c58a16ace68
+      internalID: 1347644388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_2
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 1545
+        width: 299
+        height: 376
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c207b146be026a848a6a77b1f8302c08
+      internalID: -918947096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_3
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 1802
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ccb9fbe94ca73f4db52a71be84e387b
+      internalID: 925714657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_4
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 1539
+        width: 453
+        height: 509
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce156808f0748e458404eaa5864619a
+      internalID: 965477818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_5
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1027
+        width: 297
+        height: 382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1deeecf52bf4a91499e68dd04de308b9
+      internalID: -1596471450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_6
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1027
+        width: 368
+        height: 494
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338c05c389821e1448bdf1c57c184a5b
+      internalID: -568828708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_7
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 1029
+        width: 371
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54a09e8f3b66cb42ab87b0ad593faf5
+      internalID: 750795035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_8
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 1041
+        width: 367
+        height: 488
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b2c24eb2922c5428be635e190e7826
+      internalID: 1713984019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_9
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 1027
+        width: 31
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6703b648354aecc4cb06ef0b45a68018
+      internalID: 1506599845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_10
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 515
+        width: 366
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30684ef918049c34bb2afe78a78eff14
+      internalID: -1291372117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_11
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 520
+        width: 364
+        height: 494
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43acb23057bc7b41b4b9931e4d7e122
+      internalID: 87060864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_12
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 527
+        width: 364
+        height: 486
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b0a36150bfafb44a98b5df8f7dc019d
+      internalID: -330357218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_13
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 525
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c6037698f9bc44389ec55ee28dbeb2
+      internalID: -18466677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_14
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 0
+        width: 438
+        height: 1014
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b1ccee0076c324483a1de53af5514a
+      internalID: -930224907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_15
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 524
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6a489119ea54f4ab60566678665b2e
+      internalID: -1444729734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 421
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f669c15894dfd49b957b441f3d03b1
+      internalID: 1851203501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_0: 1709592695
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_1: 1347644388
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_10: -1291372117
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_11: 87060864
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_12: -330357218
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_13: -18466677
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_14: -930224907
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_15: -1444729734
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_16: 1851203501
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_2: -918947096
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_3: 925714657
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_4: 965477818
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_5: -1596471450
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_6: -568828708
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_7: 750795035
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_8: 1713984019
+      tree_sprites_by_Halt77_on_DeviantArt-removebg_upscaled_9: 1506599845
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
