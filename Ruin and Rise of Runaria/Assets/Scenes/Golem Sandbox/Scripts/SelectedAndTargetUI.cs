@@ -20,7 +20,7 @@ public class SelectedAndTargetUI : MonoBehaviour
         gameObject.GetComponent<Animator>().SetTrigger("Selected");
     }
 
-    public void PlayTarget()
+    public void PlayEnemyTarget()
     {
         gameObject.SetActive(true);
         gameObject.GetComponent<Animator>().SetTrigger("Target");

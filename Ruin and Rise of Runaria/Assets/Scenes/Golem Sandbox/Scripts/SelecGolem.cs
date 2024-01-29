@@ -4,7 +4,11 @@ using UnityEngine;
 public class SelecGolem : MonoBehaviour
 {
     public Golem golem;
-    public RuneSelectionUI runeSelectionUI;
+
+    private void Awake()
+    {
+        golem = gameObject.GetComponent<Golem>();
+    }
 
     public void UnselectGolem()
     {

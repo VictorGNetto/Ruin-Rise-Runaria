@@ -25,7 +25,7 @@ public class LevelDirector : MonoBehaviour
     {
         List<Enemy> validEnemys = new List<Enemy>();
         foreach (Enemy e in enemys) {
-            if (e != null && !e.isDead) {
+            if (e != null && e.Alive()) {
                 validEnemys.Add(e);
             }
         }
@@ -80,7 +80,7 @@ public class LevelDirector : MonoBehaviour
     {
         List<Enemy> validEnemys = new List<Enemy>();
         foreach (Enemy e in enemys) {
-            if (e != null && !e.isDead) {
+            if (e != null && e.Alive()) {
                 validEnemys.Add(e);
             }
         }

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,24 +13,33 @@ public class Golem : MonoBehaviour, ICharacter
     // Target
     public enum TargetType { Self, Friend, Enemy };
     public TargetType targetType;
-    public Enemy targetEnemy;
-    public Golem targetFriend;
+    public ICharacter target;
 
     // Health and Mana
     public float health = 75;
     public float maxHealth = 100;
     public float mana = 35;
     public float maxMana = 70;
+    public float manaRecovery = 10;
     public HealthManaBar healthManaBar;
 
     public float strength;
+    public float defense;
     public float baseSpeed;
     public float speed;
 
+    // range = basicRange + [skillRange * meleeRange | skillRange * distanceRange]
+    public float basicRange = 0.5f;
+    public float meleeRange = 1.0f;
+    public float distanceRange = 1.0f;
+
     // Animation
+    private string currentAnimation;
     public Animator animator;
-    public string currentAnimation;
     public bool walking = false;
+    public bool attacking = false;
+    public bool throwing = false;
+    public bool casting = false;
 
     // Attack, support, conditional and target runes
     public delegate bool RuneFunction();
@@ -110,7 +118,7 @@ public class Golem : MonoBehaviour, ICharacter
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
         UpdateTarget();
-        mana = Math.Min(maxMana, mana + Time.deltaTime * 5);
+        mana = Math.Min(maxMana, mana + Time.deltaTime * manaRecovery);
 
         healthManaBar.SetHealth(health, maxHealth);
         healthManaBar.SetMana(mana, maxMana);
@@ -131,9 +139,11 @@ public class Golem : MonoBehaviour, ICharacter
 
         movementBehaviorFunctionMap[movementBehavior]();
         golemProgram.actionResult = runeFunctionMap[golemProgram.GetCommand()]();
+
+        ResolveAnimation();
     }
 
-    public void ChangeAnimation(string newAnimation)
+    private void ChangeAnimation(string newAnimation)
     {
         if (currentAnimation == newAnimation) return;
 
@@ -141,23 +151,39 @@ public class Golem : MonoBehaviour, ICharacter
         currentAnimation = newAnimation;
     }
 
-    public void ForceChangeAnimation(string newAnimation)
+    private void ResolveAnimation()
     {
-        animator.Play(newAnimation);
-        currentAnimation = newAnimation;
+        if (!alive) {
+            ChangeAnimation("Dying");
+            return;
+        }
+
+        if (throwing || casting) {
+            ChangeAnimation("Throw");
+            return;
+        } else if (attacking) {
+            ChangeAnimation("Attack");
+            return;
+        }
+
+        if (walking) {
+            ChangeAnimation("Walk");
+        } else {
+            ChangeAnimation("Idle");
+        }
     }
 
     private void UpdateTarget()
     {
-        if (targetFriend == null) {
-            targetFriend = levelDirector.GetRandomFriend();
-
-            if (guid == targetFriend.guid) {
+        if (target == null) {
+            target = levelDirector.GetRandomEnemy();
+            if (GUID() == target.GUID()) {
                 targetType = TargetType.Self;
             } else {
                 targetType = TargetType.Friend;
             }
 
+            targetType = TargetType.Enemy;
             if (selected) Select();
         }
     }
@@ -187,31 +213,13 @@ public class Golem : MonoBehaviour, ICharacter
         return true;
     }
 
-    public Vector3 TargetPosition()
-    {
-        if (targetType == TargetType.Self) {
-            return transform.position;
-        } else if (targetType == TargetType.Friend) {
-            return targetFriend.transform.position;
-        } else {
-            return targetEnemy.transform.position;
-        }
-    }
-
     public void Unselect()
     {
         if (!selected) return;
 
         selected = false;
         selectedAndTargetUI.Hide();
-
-        if (targetType == TargetType.Friend) {
-            if (targetFriend != null) {
-                targetFriend.selectedAndTargetUI.Hide();
-            }
-        } else if (targetType == TargetType.Enemy) {
-            // targetEnemy.selectedAndTargetUI.Hide();
-        }
+        target.SelectedAndTargetUI().Hide();
     }
 
     public void Select()
@@ -223,10 +231,10 @@ public class Golem : MonoBehaviour, ICharacter
         }
         if (targetType == TargetType.Friend) {
             selectedAndTargetUI.PlaySelected();
-            targetFriend.selectedAndTargetUI.PlayFriendTarget();
+            target.SelectedAndTargetUI().PlayFriendTarget();
         } else if (targetType == TargetType.Enemy) {
             selectedAndTargetUI.PlaySelected();
-            // targetEnemy.selectedAndTargetUI.PlayTarget();
+            target.SelectedAndTargetUI().PlayEnemyTarget();
         }
     }
 
@@ -235,19 +243,92 @@ public class Golem : MonoBehaviour, ICharacter
         runeSelectionUI.OpenRuneSelectionUI();
     }
 
+    public void LookToTheTarget()
+    {
+        if (target == null) return;
+
+        float targetX = TargetPosition().x;
+        float golemX = Position().x;
+
+        if (golemX > targetX) {
+            spriteRenderer.flipX = true;
+        } else {
+            spriteRenderer.flipX = false;
+        }
+    }
+
+    // ICharacter Interface
+
+    public ICharacter Target()
+    {
+        return target;
+    }
+
+    public int GetSortingOrder()
+    {
+        return gameObject.GetComponent<SpriteRenderer>().sortingOrder;
+    }
+
+    public int GetTargetSortingOrder()
+    {
+        return target.GetSortingOrder();
+    }
+
+    public Vector3 TargetPosition()
+    {
+        return target.Position();
+    }
+
+    public Vector3 Position()
+    {
+        return transform.position;
+    }
+
     public void TakeDamage(float amount)
     {
-        health -= amount;
+        if (!alive) return;
+
+        amount = (1 - defense) * amount;
+        health = Mathf.Max(0, health - amount);
+        healthManaBar.SetHealth(health, maxHealth);
         Flash();
-        if (health < 0 && alive) Die();
+        if (health == 0) Die();
+    }
+
+    public void Heal(float amount)
+    {
+        if (!alive) return;
+        
+        health = Mathf.Min(maxHealth, health + amount);
+        healthManaBar.SetHealth(health, maxHealth);
+    }
+
+    public float MaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public bool Alive()
+    {
+        return alive;
     }
 
     public void Die()
     {
-        // TODO: disable collider2D (That don't exist yet)
+        GetComponent<BoxCollider2D>().enabled = false;
         alive = false;
-        gameObject.GetComponent<Animator>().SetTrigger("Die");
+        ResolveAnimation();
         Destroy(gameObject, 2.0f);
+    }
+
+    public int GUID()
+    {
+        return guid;
+    }
+
+    public SelectedAndTargetUI SelectedAndTargetUI()
+    {
+        return selectedAndTargetUI;
     }
 
     // Code from 
@@ -279,11 +360,5 @@ public class Golem : MonoBehaviour, ICharacter
 
         // Set the routine to null, signaling that it's finished.
         flashRoutine = null;
-    }
-
-    public void GoIdleAfterAttack()
-    {
-        gameObject.GetComponent<Animator>().SetBool("Attacking", false);
-        gameObject.GetComponent<Animator>().Play("Idle");
     }
 }

@@ -1,5 +1,16 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Ruin and Rise of Runaria/Assets/Scenes/Level3/Level3.unity.meta
+<<<<<<< HEAD
 guid: 8b2ed27314d27234794b3cfb067371d7
+========
+guid: 5dacd1c512959b8479746bf984c01745
+>>>>>>>> main:Ruin and Rise of Runaria/Assets/Scenes/Level4/Level 4.unity.meta
+=======
+guid: 906fd616497b94149b88c6e65f88f4a0
+========
+guid: 1b5791713833ed04dbf2cdda6b1ee13a
+>>>>>>>> main:Ruin and Rise of Runaria/Assets/Scenes/Enemy Sandbox/Animations/craftpix-net-825597-free-slash-effects-sprite-pack/slash/sLash.moho.meta
+>>>>>>> main
 DefaultImporter:
   externalObjects: {}
   userData: 
