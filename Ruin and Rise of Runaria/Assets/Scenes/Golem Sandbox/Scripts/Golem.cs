@@ -117,7 +117,7 @@ public class Golem : MonoBehaviour, ICharacter
         if (!alive) return;
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
-        UpdateTarget();
+        UpdateTargetToDefaulWhenNeeded();
         mana = Math.Min(maxMana, mana + Time.deltaTime * manaRecovery);
 
         healthManaBar.SetHealth(health, maxHealth);
@@ -175,15 +175,16 @@ public class Golem : MonoBehaviour, ICharacter
 
     private void UpdateTarget()
     {
-        if (target == null) {
-            target = levelDirector.GetRandomEnemy();
-            if (GUID() == target.GUID()) {
-                targetType = TargetType.Self;
-            } else {
-                targetType = TargetType.Friend;
-            }
+        target = levelDirector.GetRandomEnemy();
+        targetType = TargetType.Enemy;
+    }
 
-            targetType = TargetType.Enemy;
+    private void UpdateTargetToDefaulWhenNeeded()
+    {
+        if (target == null || !target.Alive()) {
+            target = this;
+            targetType = TargetType.Self;
+
             if (selected) Select();
         }
     }
@@ -258,10 +259,21 @@ public class Golem : MonoBehaviour, ICharacter
     }
 
     // ICharacter Interface
+    private ICharacter SafeTarget()
+    {
+        if (target == null || !target.Alive()) {
+            target = this;
+            targetType = TargetType.Self;
 
+            if (selected) Select();
+        }
+
+        return target;
+    }
+    
     public ICharacter Target()
     {
-        return target;
+        return SafeTarget();
     }
 
     public int GetSortingOrder()
@@ -271,12 +283,12 @@ public class Golem : MonoBehaviour, ICharacter
 
     public int GetTargetSortingOrder()
     {
-        return target.GetSortingOrder();
+        return SafeTarget().GetSortingOrder();
     }
 
     public Vector3 TargetPosition()
     {
-        return target.Position();
+        return SafeTarget().Position();
     }
 
     public Vector3 Position()

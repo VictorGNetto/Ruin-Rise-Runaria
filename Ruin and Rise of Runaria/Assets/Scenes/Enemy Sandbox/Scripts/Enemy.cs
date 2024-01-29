@@ -58,6 +58,8 @@ public class Enemy : MonoBehaviour, ICharacter
     public void Die()
     {
         GetComponent<BoxCollider2D>().enabled = false;
+        selectedAndTargetUI.gameObject.SetActive(false);
+        healthBar.gameObject.SetActive(false);
         alive = false;
         gameObject.GetComponent<Animator>().SetTrigger("Die");
         Destroy(gameObject, 2.0f);
