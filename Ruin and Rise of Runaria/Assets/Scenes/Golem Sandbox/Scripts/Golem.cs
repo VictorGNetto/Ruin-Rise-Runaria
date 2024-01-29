@@ -316,6 +316,7 @@ public class Golem : MonoBehaviour, ICharacter
     public void Die()
     {
         GetComponent<BoxCollider2D>().enabled = false;
+        healthManaBar.gameObject.SetActive(false);
         alive = false;
         ResolveAnimation();
         Destroy(gameObject, 2.0f);
