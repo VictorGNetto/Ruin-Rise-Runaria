@@ -25,6 +25,22 @@ public class LevelDirector : MonoBehaviour
     {
         List<Enemy> validEnemys = new List<Enemy>();
         foreach (Enemy e in enemys) {
+            if (e != null) {
+                validEnemys.Add(e);
+            }
+        }
+
+        enemys = validEnemys;
+        if (enemys.Count == 0) return null;
+
+        int index = UnityEngine.Random.Range(0, enemys.Count);
+        return enemys[index];
+    }
+
+    public Enemy GetRandomAliveEnemy()
+    {
+        List<Enemy> validEnemys = new List<Enemy>();
+        foreach (Enemy e in enemys) {
             if (e != null && e.Alive()) {
                 validEnemys.Add(e);
             }
@@ -53,11 +69,27 @@ public class LevelDirector : MonoBehaviour
         return validGolems[index];
     }
 
+    // Returns a random Golem, but the one with the passed UGID
+    public Golem GetRandomAliveFriend()
+    {
+        List<Golem> validGolems = new List<Golem>();
+        foreach (Golem g in golems) {
+            if (g != null && g.Alive()) {
+                validGolems.Add(g);
+            }
+        }
+
+        if (validGolems.Count == 0) return null;
+
+        int index = UnityEngine.Random.Range(0, validGolems.Count);
+        return validGolems[index];
+    }
+
     public Vector3 GetGolemsCentroid(int guid)
     {
         List<Golem> validGolems = new List<Golem>();
         foreach (Golem g in golems) {
-            if (g != null && g.guid != guid) {
+            if (g != null && g.Alive() && g.guid != guid) {
                 validGolems.Add(g);
             }
         }

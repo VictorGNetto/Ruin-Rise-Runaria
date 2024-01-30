@@ -1423,6 +1423,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6940391983106072662, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
+      propertyPath: strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940391983106072662, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 682020945}

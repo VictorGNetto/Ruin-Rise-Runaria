@@ -261,21 +261,22 @@ public class MovementBehavior : MonoBehaviour
             destination = golem.levelDirector.GetEnemysCentroid(golem.guid);
         }
 
-        if (destination.x < golem.transform.position.x) {
-            golem.GetComponent<SpriteRenderer>().flipX = true;
-        } else {
-            golem.GetComponent<SpriteRenderer>().flipX = false;
-        }
-
         if (boolDict["awake"]) {
             if ((destination - golem.transform.position).magnitude < floatDict["stoppingDistance"]) {
                 boolDict["awake"] = false;
                 golem.walking = false;
                 golem.navMeshAgent.SetDestination(golem.transform.position);
+                golem.GetComponent<SpriteRenderer>().flipX = false;
             } else {
                 golem.walking = true;
                 golem.navMeshAgent.speed = golem.speed;
                 golem.navMeshAgent.SetDestination(destination);
+
+                if (destination.x < golem.transform.position.x) {
+                    golem.GetComponent<SpriteRenderer>().flipX = true;
+                } else {
+                    golem.GetComponent<SpriteRenderer>().flipX = false;
+                }
             }
         } else {
             if ((destination - golem.transform.position).magnitude > floatDict["awakeDistance"]) {
@@ -290,8 +291,8 @@ public class MovementBehavior : MonoBehaviour
         floatDict.Clear();
         boolDict["M4"] = true;
 
-        floatDict["stoppingDistance"] = 1.5f;
-        floatDict["awakeDistance"] = 2.0f;
+        floatDict["stoppingDistance"] = 0.5f;
+        floatDict["awakeDistance"] = 1.0f;
         boolDict["awake"] = true;
         golem.navMeshAgent.stoppingDistance = floatDict["stoppingDistance"] * 0.8f;
     }

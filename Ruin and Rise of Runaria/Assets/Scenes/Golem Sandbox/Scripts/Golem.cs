@@ -12,6 +12,7 @@ public class Golem : MonoBehaviour, ICharacter
 
     // Target
     public enum TargetType { Self, Friend, Enemy };
+    public TargetType targetBias;  // Self or Friend bias will make the golem to chose a golem as default target; Enemy will do the opposite
     public TargetType targetType;
     public ICharacter target;
 
@@ -103,7 +104,7 @@ public class Golem : MonoBehaviour, ICharacter
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
 
-        UpdateTarget();
+        ChooseFirstTarget();
 
         alive = true;
     }
@@ -173,20 +174,50 @@ public class Golem : MonoBehaviour, ICharacter
         }
     }
 
-    private void UpdateTarget()
+    private void ChooseFirstTarget()
     {
-        target = levelDirector.GetRandomEnemy();
-        targetType = TargetType.Enemy;
+        float p = 0.5f;
+
+        if (UnityEngine.Random.Range(0.0f, 1.0f) > p) {
+            target = levelDirector.GetRandomEnemy();
+            targetType = TargetType.Enemy;
+            targetBias = TargetType.Enemy;
+        } else {
+            target = levelDirector.GetRandomFriend();
+            if (guid == target.GUID()) {
+                targetType = TargetType.Self;
+            } else {
+                targetType = TargetType.Friend;
+            }
+            targetBias = TargetType.Friend;
+        }
     }
 
     private void UpdateTargetToDefaulWhenNeeded()
     {
+        if (target != null && target.Alive()) return;
+
+        // Choose a target based on the bias
+        if (targetBias == TargetType.Self || targetBias == TargetType.Friend) {
+            target = levelDirector.GetRandomFriend();
+            if (guid == target.GUID()) {
+                targetType = TargetType.Self;
+            } else {
+                targetType = TargetType.Friend;
+            }
+        } else {
+            target = levelDirector.GetRandomEnemy();
+            targetType = TargetType.Enemy;
+        }
+
+        // It can happen that the choose target are null or dead
+        // In those case, the golem selects itself as target
         if (target == null || !target.Alive()) {
             target = this;
             targetType = TargetType.Self;
-
-            if (selected) Select();
         }
+
+        if (selected) Select();
     }
 
     public void Setup()

@@ -69,6 +69,7 @@ public class Target : MonoBehaviour
 
     private void L15Setup()
     {
+        golem.targetBias = Golem.TargetType.Friend;
         golem.cooldown = 1.5f;
         golem.runeExecuted = true;
     }
@@ -102,6 +103,7 @@ public class Target : MonoBehaviour
 
     private void L16Setup()
     {
+        golem.targetBias = Golem.TargetType.Friend;
         golem.cooldown = 1.5f;
         golem.runeExecuted = true;
     }
@@ -135,6 +137,7 @@ public class Target : MonoBehaviour
 
     private void L17Setup()
     {
+        golem.targetBias = Golem.TargetType.Friend;
         golem.cooldown = 1.5f;
         golem.runeExecuted = true;
     }
@@ -168,6 +171,7 @@ public class Target : MonoBehaviour
 
     private void L18Setup()
     {
+        golem.targetBias = Golem.TargetType.Friend;
         golem.cooldown = 1.5f;
         golem.runeExecuted = true;
     }
@@ -201,6 +205,7 @@ public class Target : MonoBehaviour
 
     private void L19Setup()
     {
+        golem.targetBias = Golem.TargetType.Self;
         golem.cooldown = 1.5f;
         golem.runeExecuted = true;
     }
