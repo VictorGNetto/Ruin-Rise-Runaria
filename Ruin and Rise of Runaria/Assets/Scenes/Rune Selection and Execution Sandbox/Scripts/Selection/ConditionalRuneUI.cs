@@ -8,6 +8,7 @@ public class ConditionalRuneUI : MonoBehaviour
     public String conditionalMode;
     public String runeName;
     public String conditionalRuneName;
+    public int weight;
 
     private GameObject runeIcon;
     private GameObject conditionalIcon;

@@ -445,7 +445,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -0.00048828125, y: -0.000030517578}
-  m_SizeDelta: {x: 870, y: 140}
+  m_SizeDelta: {x: 0, y: 140}
   m_Pivot: {x: 0.000000001016403, y: 0.5}
 --- !u!114 &1629484512624099070
 MonoBehaviour:
@@ -821,9 +821,9 @@ RectTransform:
   - {fileID: 3660763374336919059}
   m_Father: {fileID: 3890457893686648234}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 435, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4931696384541935707
@@ -880,6 +880,7 @@ MonoBehaviour:
   details: {fileID: 1122594217336769343}
   popUp: {fileID: 147578193133725749}
   runeName: A4
+  weight: 2
   levelDirector: {fileID: 0}
 --- !u!114 &4549856138628811167
 MonoBehaviour:
@@ -1710,9 +1711,9 @@ RectTransform:
   - {fileID: 968806158627777888}
   m_Father: {fileID: 273169247815172470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4077825313218123250
@@ -1769,6 +1770,7 @@ MonoBehaviour:
   details: {fileID: 1139220509786356073}
   popUp: {fileID: 147578193133725749}
   runeName: S3
+  weight: 3
   levelDirector: {fileID: 0}
 --- !u!114 &7594837900407710214
 MonoBehaviour:
@@ -1861,9 +1863,9 @@ RectTransform:
   - {fileID: 3951315820529514797}
   m_Father: {fileID: 128379143805359486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1155, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &61066248930044941
@@ -1920,6 +1922,7 @@ MonoBehaviour:
   details: {fileID: 7083261134284386102}
   popUp: {fileID: 147578193133725749}
   runeName: L1-9
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &285059192049063070
 MonoBehaviour:
@@ -2960,9 +2963,9 @@ RectTransform:
   - {fileID: 1663279649910761288}
   m_Father: {fileID: 3890457893686648234}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 675, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7873055405810338526
@@ -3019,6 +3022,7 @@ MonoBehaviour:
   details: {fileID: 233243061399914620}
   popUp: {fileID: 147578193133725749}
   runeName: A6
+  weight: 2
   levelDirector: {fileID: 0}
 --- !u!114 &2514430761276168532
 MonoBehaviour:
@@ -3196,7 +3200,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -0.00048828125, y: -0.000030517578}
-  m_SizeDelta: {x: 1230, y: 140}
+  m_SizeDelta: {x: 0, y: 140}
   m_Pivot: {x: 0.000000001016403, y: 0.5}
 --- !u!114 &999695867162418348
 MonoBehaviour:
@@ -3428,9 +3432,9 @@ RectTransform:
   - {fileID: 5934502052098126356}
   m_Father: {fileID: 273169247815172470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3950003870713091792
@@ -3487,6 +3491,7 @@ MonoBehaviour:
   details: {fileID: 5075315619862762591}
   popUp: {fileID: 147578193133725749}
   runeName: S1
+  weight: 3
   levelDirector: {fileID: 0}
 --- !u!114 &5638721955396848788
 MonoBehaviour:
@@ -3732,9 +3737,9 @@ RectTransform:
   - {fileID: 2250665454435201675}
   m_Father: {fileID: 128379143805359486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 315, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4914646492816371027
@@ -3791,6 +3796,7 @@ MonoBehaviour:
   details: {fileID: 7233354242591865582}
   popUp: {fileID: 147578193133725749}
   runeName: L1-2
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &2915078657432916130
 MonoBehaviour:
@@ -3957,9 +3963,9 @@ RectTransform:
   - {fileID: 4111119681101889676}
   m_Father: {fileID: 4580164298458534493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 675, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5412655178418587745
@@ -4016,6 +4022,7 @@ MonoBehaviour:
   details: {fileID: 812194497336003180}
   popUp: {fileID: 147578193133725749}
   runeName: M5
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &6801270875638712387
 MonoBehaviour:
@@ -5105,9 +5112,9 @@ RectTransform:
   - {fileID: 3725883457890480202}
   m_Father: {fileID: 3890457893686648234}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 795, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8555673045466795282
@@ -5164,6 +5171,7 @@ MonoBehaviour:
   details: {fileID: 8525638880757404285}
   popUp: {fileID: 147578193133725749}
   runeName: A7
+  weight: 2
   levelDirector: {fileID: 0}
 --- !u!114 &1216306353987602511
 MonoBehaviour:
@@ -5331,9 +5339,9 @@ RectTransform:
   - {fileID: 3790366145638237096}
   m_Father: {fileID: 128379143805359486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 555, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9135403210408614726
@@ -5390,6 +5398,7 @@ MonoBehaviour:
   details: {fileID: 4399033008863052518}
   popUp: {fileID: 147578193133725749}
   runeName: L1-4
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &6872621498300649048
 MonoBehaviour:
@@ -5482,9 +5491,9 @@ RectTransform:
   - {fileID: 6206720923045828616}
   m_Father: {fileID: 4580164298458534493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5855340434001007212
@@ -5541,6 +5550,7 @@ MonoBehaviour:
   details: {fileID: 2307454602814306144}
   popUp: {fileID: 147578193133725749}
   runeName: M1
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &2426974548460036501
 MonoBehaviour:
@@ -5795,9 +5805,9 @@ RectTransform:
   - {fileID: 364053592568142798}
   m_Father: {fileID: 3890457893686648234}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2285336422075624292
@@ -5854,6 +5864,7 @@ MonoBehaviour:
   details: {fileID: 304266431036428500}
   popUp: {fileID: 147578193133725749}
   runeName: A1
+  weight: 2
   levelDirector: {fileID: 0}
 --- !u!114 &8651657295739187518
 MonoBehaviour:
@@ -6019,9 +6030,9 @@ RectTransform:
   - {fileID: 4295930990826821880}
   m_Father: {fileID: 128379143805359486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 675, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9065785485035710291
@@ -6078,6 +6089,7 @@ MonoBehaviour:
   details: {fileID: 652114783252208092}
   popUp: {fileID: 147578193133725749}
   runeName: L1-5
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &7335478514258145426
 MonoBehaviour:
@@ -6328,9 +6340,9 @@ RectTransform:
   - {fileID: 7146273935673885441}
   m_Father: {fileID: 128379143805359486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9025551980853702279
@@ -6602,7 +6614,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -0.00048828125, y: -0.000030517578}
-  m_SizeDelta: {x: 990, y: 140}
+  m_SizeDelta: {x: 0, y: 140}
   m_Pivot: {x: 0.000000001016403, y: 0.5}
 --- !u!114 &5661526404601012386
 MonoBehaviour:
@@ -7377,6 +7389,8 @@ MonoBehaviour:
   conditionalRunePrefab: {fileID: 3626962766208173980, guid: 5d2288d81358d2643a90834f13f08736, type: 3}
   addRunePrefab: {fileID: 1173991912469321692, guid: b322c0a3c0442594dba774a1154843f7, type: 3}
   insertRunePosition: 0
+  totalCapacity: 10
+  usedCapacity: 0
 --- !u!1 &5150583844975819457
 GameObject:
   m_ObjectHideFlags: 0
@@ -7487,9 +7501,9 @@ RectTransform:
   - {fileID: 283077234219426816}
   m_Father: {fileID: 128379143805359486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6640977082954050555
@@ -7546,6 +7560,7 @@ MonoBehaviour:
   details: {fileID: 9034285030170500705}
   popUp: {fileID: 147578193133725749}
   runeName: L1-1
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &4749219699079295147
 MonoBehaviour:
@@ -7638,9 +7653,9 @@ RectTransform:
   - {fileID: 6742217624292466605}
   m_Father: {fileID: 3890457893686648234}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 315, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2078763180774422637
@@ -7697,6 +7712,7 @@ MonoBehaviour:
   details: {fileID: 5027408783088436426}
   popUp: {fileID: 147578193133725749}
   runeName: A3
+  weight: 2
   levelDirector: {fileID: 0}
 --- !u!114 &7596039438078751107
 MonoBehaviour:
@@ -7789,9 +7805,9 @@ RectTransform:
   - {fileID: 5769057700336192634}
   m_Father: {fileID: 3890457893686648234}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 555, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6633385897694047897
@@ -7848,6 +7864,7 @@ MonoBehaviour:
   details: {fileID: 3297147703711074068}
   popUp: {fileID: 147578193133725749}
   runeName: A5
+  weight: 2
   levelDirector: {fileID: 0}
 --- !u!114 &7333222746585433780
 MonoBehaviour:
@@ -7940,9 +7957,9 @@ RectTransform:
   - {fileID: 2621181536566998872}
   m_Father: {fileID: 3890457893686648234}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6770129591352099550
@@ -7999,6 +8016,7 @@ MonoBehaviour:
   details: {fileID: 5571565430515051139}
   popUp: {fileID: 147578193133725749}
   runeName: A2
+  weight: 2
   levelDirector: {fileID: 0}
 --- !u!114 &6135346817508581420
 MonoBehaviour:
@@ -8836,9 +8854,9 @@ RectTransform:
   - {fileID: 393450859750598787}
   m_Father: {fileID: 128379143805359486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 435, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6571873055726753086
@@ -8895,6 +8913,7 @@ MonoBehaviour:
   details: {fileID: 6532363404806528229}
   popUp: {fileID: 147578193133725749}
   runeName: L1-3
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &5218062923770391729
 MonoBehaviour:
@@ -9067,9 +9086,9 @@ RectTransform:
   - {fileID: 2693930572759167289}
   m_Father: {fileID: 128379143805359486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 795, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3893498523515615597
@@ -9126,6 +9145,7 @@ MonoBehaviour:
   details: {fileID: 7755742105012233907}
   popUp: {fileID: 147578193133725749}
   runeName: L1-6
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &7156925208512579592
 MonoBehaviour:
@@ -9485,9 +9505,9 @@ RectTransform:
   - {fileID: 1548278619661806318}
   m_Father: {fileID: 128379143805359486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 915, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7235733144387757803
@@ -9544,6 +9564,7 @@ MonoBehaviour:
   details: {fileID: 6580219681006844278}
   popUp: {fileID: 147578193133725749}
   runeName: L1-7
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &4504626429290250864
 MonoBehaviour:
@@ -9638,7 +9659,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -0.00048828125, y: -0.000030517578}
-  m_SizeDelta: {x: 270, y: 140}
+  m_SizeDelta: {x: 0, y: 140}
   m_Pivot: {x: 0.000000001016403, y: 0.5}
 --- !u!114 &852157545809010242
 MonoBehaviour:
@@ -10474,9 +10495,9 @@ RectTransform:
   - {fileID: 1528621445244974544}
   m_Father: {fileID: 4580164298458534493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 435, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5199215378796562381
@@ -10533,6 +10554,7 @@ MonoBehaviour:
   details: {fileID: 4622578403826594518}
   popUp: {fileID: 147578193133725749}
   runeName: M3
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &8957158544401841422
 MonoBehaviour:
@@ -10783,9 +10805,9 @@ RectTransform:
   - {fileID: 1522344159322157885}
   m_Father: {fileID: 4580164298458534493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 915, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4717987254679342741
@@ -10842,6 +10864,7 @@ MonoBehaviour:
   details: {fileID: 6286275751808175357}
   popUp: {fileID: 147578193133725749}
   runeName: M7
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &7885893418644389039
 MonoBehaviour:
@@ -11008,9 +11031,9 @@ RectTransform:
   - {fileID: 207004349875145221}
   m_Father: {fileID: 4580164298458534493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 795, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2295423340142967748
@@ -11067,6 +11090,7 @@ MonoBehaviour:
   details: {fileID: 358482844260632961}
   popUp: {fileID: 147578193133725749}
   runeName: M6
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &968309680242179623
 MonoBehaviour:
@@ -11159,9 +11183,9 @@ RectTransform:
   - {fileID: 6722145991618215468}
   m_Father: {fileID: 4580164298458534493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 315, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7739183189700067411
@@ -11218,6 +11242,7 @@ MonoBehaviour:
   details: {fileID: 6786513279393546634}
   popUp: {fileID: 147578193133725749}
   runeName: M2
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &2609957473004602123
 MonoBehaviour:
@@ -11591,9 +11616,9 @@ RectTransform:
   - {fileID: 834004371972181331}
   m_Father: {fileID: 4580164298458534493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 555, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2202460646744154556
@@ -11650,6 +11675,7 @@ MonoBehaviour:
   details: {fileID: 4721965628854628697}
   popUp: {fileID: 147578193133725749}
   runeName: M4
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &4879780132732773218
 MonoBehaviour:
@@ -11893,7 +11919,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0.000086313026, y: 0.000030517578}
-  m_SizeDelta: {x: 412.9, y: 175}
+  m_SizeDelta: {x: 412.9, y: 0}
   m_Pivot: {x: 0.50000006, y: 0.99999994}
 --- !u!114 &4994493190424595556
 MonoBehaviour:
@@ -12029,6 +12055,8 @@ MonoBehaviour:
   conditionalRunePrefab: {fileID: 0}
   addRunePrefab: {fileID: 0}
   insertRunePosition: 0
+  totalCapacity: 0
+  usedCapacity: 0
 --- !u!1 &8614233004586903407
 GameObject:
   m_ObjectHideFlags: 0
@@ -12064,9 +12092,9 @@ RectTransform:
   - {fileID: 3395295262690657561}
   m_Father: {fileID: 4580164298458534493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9106393140377537196
@@ -12123,6 +12151,7 @@ MonoBehaviour:
   details: {fileID: 2843815891175669188}
   popUp: {fileID: 147578193133725749}
   runeName: M0
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &2629365288109685843
 MonoBehaviour:
@@ -12258,7 +12287,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "A\xE7\xF5es"
+  m_Text: "A\xE7\xF5es (0/10)"
 --- !u!1 &8806455748401574635
 GameObject:
   m_ObjectHideFlags: 0
@@ -12373,9 +12402,9 @@ RectTransform:
   - {fileID: 4990891386266653589}
   m_Father: {fileID: 128379143805359486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1035, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2250605114780938441
@@ -12432,6 +12461,7 @@ MonoBehaviour:
   details: {fileID: 6884944472489123088}
   popUp: {fileID: 147578193133725749}
   runeName: L1-8
+  weight: 1
   levelDirector: {fileID: 0}
 --- !u!114 &1358778771138192757
 MonoBehaviour:
@@ -13032,7 +13062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4158695623179169872, guid: b322c0a3c0442594dba774a1154843f7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4158695623179169872, guid: b322c0a3c0442594dba774a1154843f7, type: 3}
       propertyPath: m_AnchorMin.x
@@ -13040,11 +13070,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4158695623179169872, guid: b322c0a3c0442594dba774a1154843f7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4158695623179169872, guid: b322c0a3c0442594dba774a1154843f7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 412.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4158695623179169872, guid: b322c0a3c0442594dba774a1154843f7, type: 3}
       propertyPath: m_SizeDelta.y
@@ -13080,11 +13110,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4158695623179169872, guid: b322c0a3c0442594dba774a1154843f7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 206.45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4158695623179169872, guid: b322c0a3c0442594dba774a1154843f7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4158695623179169872, guid: b322c0a3c0442594dba774a1154843f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

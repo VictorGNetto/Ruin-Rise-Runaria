@@ -6,6 +6,7 @@ public class RuneUI : MonoBehaviour
 {
     public GameObject programUI;
     public String runeName;
+    public int weight;
 
     private GameObject runeIcon;
     private GameObject remove;

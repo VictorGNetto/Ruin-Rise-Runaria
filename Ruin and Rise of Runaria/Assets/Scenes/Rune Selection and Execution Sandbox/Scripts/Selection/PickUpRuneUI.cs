@@ -8,6 +8,7 @@ public class PickUpRuneUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public GameObject details;
     public PopUp popUp;
     public String runeName;
+    public int weight;
     public LevelDirector levelDirector;
 
     public void Select()
@@ -20,8 +21,16 @@ public class PickUpRuneUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             return;
         }
 
+        if (!programUI.CanInsert(weight)) {
+            Vector3 mouse = Input.mousePosition;
+            popUp.SetText("Sem capacidade para\ninserir esta runa");
+            popUp.Open(mouse.x, mouse.y - 100, 400, 100, 3);
+
+            return;
+        }
+
         GameObject duplicate = Instantiate(this.gameObject);
-        programUI.InsertRune(duplicate, runeName);
+        programUI.InsertRune(duplicate, runeName, weight);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
