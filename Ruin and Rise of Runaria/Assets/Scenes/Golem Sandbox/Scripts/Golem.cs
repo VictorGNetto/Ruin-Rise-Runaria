@@ -362,6 +362,7 @@ public class Golem : MonoBehaviour, ICharacter
     public void Die()
     {
         GetComponent<BoxCollider2D>().enabled = false;
+        selectedAndTargetUI.gameObject.SetActive(false);
         healthManaBar.gameObject.SetActive(false);
         ResolveAnimation();
         Destroy(gameObject, 2.0f);

@@ -437,6 +437,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 639770888023965281, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
+      propertyPath: m_Speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 639770888023965281, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: m_Radius
       value: 0.1
       objectReference: {fileID: 0}
@@ -498,7 +502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6940391983106072662, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: strength
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6940391983106072662, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: levelDirector
@@ -1468,7 +1472,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 639770888023965281, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: m_Speed
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 639770888023965281, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: m_Radius
@@ -1532,7 +1536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6940391983106072662, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: strength
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6940391983106072662, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: levelDirector
@@ -2033,7 +2037,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 639770888023965281, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: m_Speed
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 639770888023965281, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: m_Radius
@@ -2093,7 +2097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6940391983106072662, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: strength
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6940391983106072662, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: levelDirector
@@ -2729,7 +2733,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 639770888023965281, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: m_Speed
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 639770888023965281, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: m_Radius
@@ -2793,7 +2797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6940391983106072662, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: strength
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6940391983106072662, guid: 1a06fc2156e157d4ebf5414d974bf7c1, type: 3}
       propertyPath: levelDirector

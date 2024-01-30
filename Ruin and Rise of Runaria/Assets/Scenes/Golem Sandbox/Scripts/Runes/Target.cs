@@ -27,6 +27,13 @@ public class Target : MonoBehaviour
         golem.setupFunctionMap.Add("L1-2", new Golem.SetupBeforeAction(L12Setup));
         golem.cleanUpFunctionMap.Add("L1-2", new Golem.CleanUpAfterAction(L12CleanUp));
 
+        golem.runeFunctionMap.Add("L1-3", new Golem.RuneFunction(L13));
+        golem.setupFunctionMap.Add("L1-3", new Golem.SetupBeforeAction(L13Setup));
+        golem.cleanUpFunctionMap.Add("L1-3", new Golem.CleanUpAfterAction(L13CleanUp));
+
+        golem.runeFunctionMap.Add("L1-4", new Golem.RuneFunction(L14));
+        golem.setupFunctionMap.Add("L1-4", new Golem.SetupBeforeAction(L14Setup));
+        golem.cleanUpFunctionMap.Add("L1-4", new Golem.CleanUpAfterAction(L14CleanUp));
 
         golem.runeFunctionMap.Add("L1-5", new Golem.RuneFunction(L15));
         golem.setupFunctionMap.Add("L1-5", new Golem.SetupBeforeAction(L15Setup));
@@ -126,6 +133,63 @@ public class Target : MonoBehaviour
         if (targetChanged && golem.selected) UpdateSelecUI();
     }
 
+    // L13
+    private bool L13()
+    {
+        // do nothing
+
+        return true;
+    }
+
+    private void L13Setup()
+    {
+        golem.targetBias = Golem.TargetType.Enemy;
+        golem.cooldown = 1.5f;
+        golem.runeExecuted = true;
+    }
+
+    private void L13CleanUp()
+    {
+        targetChanged = false;
+        oldTarget = golem.target;
+        oldTargetGuid = oldTarget.GUID();
+
+        golem.target = golem.levelDirector.GetNearestEnemy(golem.guid);
+        golem.targetType = Golem.TargetType.Enemy;
+
+        if (oldTargetGuid != golem.target.GUID()) targetChanged = true;
+
+        if (targetChanged && golem.selected) UpdateSelecUI();
+    }
+
+    // L14
+    private bool L14()
+    {
+        // do nothing
+
+        return true;
+    }
+
+    private void L14Setup()
+    {
+        golem.targetBias = Golem.TargetType.Enemy;
+        golem.cooldown = 1.5f;
+        golem.runeExecuted = true;
+    }
+
+    private void L14CleanUp()
+    {
+        targetChanged = false;
+        oldTarget = golem.target;
+        oldTargetGuid = oldTarget.GUID();
+
+        golem.target = golem.levelDirector.GetFartestEnemy(golem.guid);
+        golem.targetType = Golem.TargetType.Enemy;
+
+        if (oldTargetGuid != golem.target.GUID()) targetChanged = true;
+
+        if (targetChanged && golem.selected) UpdateSelecUI();
+    }
 
     // L15
     private bool L15()
