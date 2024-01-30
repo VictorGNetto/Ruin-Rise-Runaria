@@ -30,12 +30,18 @@ public class MovementBehavior : MonoBehaviour
 
         golem.runeFunctionMap.Add("M4", new Golem.RuneFunction(SetMovementBehaviorToM4));
         golem.movementBehaviorFunctionMap.Add("M4", new Golem.MovementBehavior(M4));
+
+        golem.runeFunctionMap.Add("M5", new Golem.RuneFunction(SetMovementBehaviorToM5));
+        golem.movementBehaviorFunctionMap.Add("M5", new Golem.MovementBehavior(M5));
+
+        golem.runeFunctionMap.Add("M7", new Golem.RuneFunction(SetMovementBehaviorToM7));
+        golem.movementBehaviorFunctionMap.Add("M7", new Golem.MovementBehavior(M7));
     }
 
     // Rune M0
     private bool SetMovementBehaviorToM0()
     {
-        golem.cooldown = 0.5f;
+        golem.cooldown = 1.0f;
         golem.runeExecuted = true;
         golem.movementBehavior = "M0";
         golem.navMeshAgent.SetDestination(golem.transform.position);
@@ -51,7 +57,7 @@ public class MovementBehavior : MonoBehaviour
     // Rune M1
     private bool SetMovementBehaviorToM1()
     {
-        golem.cooldown = 0.5f;
+        golem.cooldown = 1.0f;
         golem.runeExecuted = true;
         golem.movementBehavior = "M1";
 
@@ -118,7 +124,7 @@ public class MovementBehavior : MonoBehaviour
     // Rune M2
     private bool SetMovementBehaviorToM2()
     {
-        golem.cooldown = 0.5f;
+        golem.cooldown = 1.0f;
         golem.runeExecuted = true;
         golem.movementBehavior = "M2";
 
@@ -189,7 +195,7 @@ public class MovementBehavior : MonoBehaviour
     // Rune M3
     private bool SetMovementBehaviorToM3()
     {
-        golem.cooldown = 0.5f;
+        golem.cooldown = 1.0f;
         golem.runeExecuted = true;
         golem.movementBehavior = "M3";
 
@@ -241,7 +247,7 @@ public class MovementBehavior : MonoBehaviour
     // Rune M4
     private bool SetMovementBehaviorToM4()
     {
-        golem.cooldown = 0.5f;
+        golem.cooldown = 1.0f;
         golem.runeExecuted = true;
         golem.movementBehavior = "M4";
 
@@ -295,5 +301,133 @@ public class MovementBehavior : MonoBehaviour
         floatDict["awakeDistance"] = 1.0f;
         boolDict["awake"] = true;
         golem.navMeshAgent.stoppingDistance = floatDict["stoppingDistance"] * 0.8f;
+    }
+
+    // Rune M5
+    private bool SetMovementBehaviorToM5()
+    {
+        golem.cooldown = 1.0f;
+        golem.runeExecuted = true;
+        golem.movementBehavior = "M5";
+
+        return true;
+    }
+
+    private void M5()
+    {
+        if (!boolDict.ContainsKey("M5")) {
+            InitM5();
+        }
+
+        if (!boolDict["awake"]) {
+            floatDict["timeToAwake"] -= Time.deltaTime;
+        }
+
+        if (floatDict["timeToAwake"] > 0) {
+            return;
+        }
+        boolDict["awake"] = true;
+
+        Vector3 golemPosition = golem.Position();
+        Vector3 targetPosition = golem.TargetPosition();
+        Vector3 displacement = golemPosition - targetPosition;
+        float radius = floatDict["radius"];
+        Vector3 destination = targetPosition + radius * displacement.normalized;
+        
+        if (displacement.magnitude > radius || (golemPosition - destination).magnitude < 0.1f) {
+            golem.walking = false;
+            golem.navMeshAgent.SetDestination(golem.transform.position);
+            golem.GetComponent<SpriteRenderer>().flipX = false;
+            floatDict["timeToAwake"] = 0.5f;
+            boolDict["awake"] = false;
+        } else {
+            golem.walking = true;
+            golem.navMeshAgent.speed = golem.speed;
+            golem.navMeshAgent.SetDestination(destination);
+
+            if (destination.x < golem.transform.position.x) {
+                golem.GetComponent<SpriteRenderer>().flipX = true;
+            } else {
+                golem.GetComponent<SpriteRenderer>().flipX = false;
+            }
+        }
+    }
+
+    private void InitM5()
+    {
+        boolDict.Clear();
+        floatDict.Clear();
+        boolDict["M5"] = true;
+
+        floatDict["radius"] = 2 * (golem.basicRange + golem.distanceRange);
+        floatDict["timeToAwake"] = 0;
+        boolDict["awake"] = true;
+        golem.navMeshAgent.stoppingDistance = 0;
+    }
+
+    // Rune M7
+    private bool SetMovementBehaviorToM7()
+    {
+        golem.cooldown = 1.0f;
+        golem.runeExecuted = true;
+        golem.movementBehavior = "M7";
+
+        return true;
+    }
+
+    private void M7()
+    {
+        if (!boolDict.ContainsKey("M7")) {
+            InitM7();
+        }
+
+        if (!boolDict["awake"]) {
+            floatDict["timeToAwake"] -= Time.deltaTime;
+        }
+
+        if (floatDict["timeToAwake"] > 0) {
+            return;
+        }
+        boolDict["awake"] = true;
+
+        Vector3 golemPosition = golem.Position();
+        Vector3 targetPosition = golem.TargetPosition();
+        Vector3 displacement = golemPosition - targetPosition;
+
+        float innerRadius = floatDict["innerRadius"];
+        float outerRadius = floatDict["outerRadius"];
+
+        Vector3 destination = targetPosition + 0.5f * (innerRadius + outerRadius) * displacement.normalized;
+        
+        if (displacement.magnitude > innerRadius && displacement.magnitude < outerRadius) {
+            golem.walking = false;
+            golem.navMeshAgent.SetDestination(golem.transform.position);
+            golem.GetComponent<SpriteRenderer>().flipX = false;
+            floatDict["timeToAwake"] = 0.5f;
+            boolDict["awake"] = false;
+        } else {
+            golem.walking = true;
+            golem.navMeshAgent.speed = golem.speed;
+            golem.navMeshAgent.SetDestination(destination);
+
+            if (destination.x < golem.transform.position.x) {
+                golem.GetComponent<SpriteRenderer>().flipX = true;
+            } else {
+                golem.GetComponent<SpriteRenderer>().flipX = false;
+            }
+        }
+    }
+
+    private void InitM7()
+    {
+        boolDict.Clear();
+        floatDict.Clear();
+        boolDict["M7"] = true;
+
+        floatDict["innerRadius"] = (golem.basicRange + golem.distanceRange) * 0.75f;
+        floatDict["outerRadius"] = (golem.basicRange + golem.distanceRange) * 0.95f;
+        floatDict["timeToAwake"] = 0;
+        boolDict["awake"] = true;
+        golem.navMeshAgent.stoppingDistance = 0;
     }
 }
