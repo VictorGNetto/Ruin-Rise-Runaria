@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour, ICharacter
     public Golem target;
     public float strength;
     public float defense;
-    private int guid;
+    public int guid;
     public bool alive = false;
     public LevelDirector levelDirector;
 
@@ -73,7 +73,10 @@ public class Enemy : MonoBehaviour, ICharacter
         health = Mathf.Max(0, health - amount);
         healthBar.SetHealth(health, maxHealth);
         Flash();
-        if (health == 0) Die();
+        if (health == 0) {
+            alive = false;
+            Die();
+        }
     }
 
     public void Heal(float amount)

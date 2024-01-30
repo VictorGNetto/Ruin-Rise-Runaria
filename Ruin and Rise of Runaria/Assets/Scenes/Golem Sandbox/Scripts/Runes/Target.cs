@@ -19,6 +19,15 @@ public class Target : MonoBehaviour
     {
         golem = gameObject.GetComponent<Golem>();
 
+        golem.runeFunctionMap.Add("L1-1", new Golem.RuneFunction(L11));
+        golem.setupFunctionMap.Add("L1-1", new Golem.SetupBeforeAction(L11Setup));
+        golem.cleanUpFunctionMap.Add("L1-1", new Golem.CleanUpAfterAction(L11CleanUp));
+
+        golem.runeFunctionMap.Add("L1-2", new Golem.RuneFunction(L12));
+        golem.setupFunctionMap.Add("L1-2", new Golem.SetupBeforeAction(L12Setup));
+        golem.cleanUpFunctionMap.Add("L1-2", new Golem.CleanUpAfterAction(L12CleanUp));
+
+
         golem.runeFunctionMap.Add("L1-5", new Golem.RuneFunction(L15));
         golem.setupFunctionMap.Add("L1-5", new Golem.SetupBeforeAction(L15Setup));
         golem.cleanUpFunctionMap.Add("L1-5", new Golem.CleanUpAfterAction(L15CleanUp));
@@ -58,6 +67,65 @@ public class Target : MonoBehaviour
             golem.target.SelectedAndTargetUI().PlayEnemyTarget();
         }
     }
+
+    // L11
+    private bool L11()
+    {
+        // do nothing
+
+        return true;
+    }
+
+    private void L11Setup()
+    {
+        golem.targetBias = Golem.TargetType.Enemy;
+        golem.cooldown = 1.5f;
+        golem.runeExecuted = true;
+    }
+
+    private void L11CleanUp()
+    {
+        targetChanged = false;
+        oldTarget = golem.target;
+        oldTargetGuid = oldTarget.GUID();
+
+        golem.target = golem.levelDirector.GetEnemyWithHighestHealth();
+        golem.targetType = Golem.TargetType.Enemy;
+
+        if (oldTargetGuid != golem.target.GUID()) targetChanged = true;
+
+        if (targetChanged && golem.selected) UpdateSelecUI();
+    }
+
+    // L12
+    private bool L12()
+    {
+        // do nothing
+
+        return true;
+    }
+
+    private void L12Setup()
+    {
+        golem.targetBias = Golem.TargetType.Enemy;
+        golem.cooldown = 1.5f;
+        golem.runeExecuted = true;
+    }
+
+    private void L12CleanUp()
+    {
+        targetChanged = false;
+        oldTarget = golem.target;
+        oldTargetGuid = oldTarget.GUID();
+
+        golem.target = golem.levelDirector.GetEnemyWithLowestHealth();
+        golem.targetType = Golem.TargetType.Enemy;
+
+        if (oldTargetGuid != golem.target.GUID()) targetChanged = true;
+
+        if (targetChanged && golem.selected) UpdateSelecUI();
+    }
+
 
     // L15
     private bool L15()
