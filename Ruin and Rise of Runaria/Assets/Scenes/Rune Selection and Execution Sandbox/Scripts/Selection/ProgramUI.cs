@@ -87,6 +87,8 @@ public class ProgramUI : MonoBehaviour
 
     public void ChangeInsertRunePosition(int index)
     {
+        if (index == insertRunePosition) return;
+        
         scrollContent.transform.GetChild(insertRunePosition).GetComponent<AddRuneUI>().UnsetAsInsertPosition();
         scrollContent.transform.GetChild(index).GetComponent<AddRuneUI>().SetAsInsertPosition();
         insertRunePosition = index;

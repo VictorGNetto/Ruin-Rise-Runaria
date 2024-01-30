@@ -3416,6 +3416,10 @@ PrefabInstance:
       value: Golem - Lava
       objectReference: {fileID: 0}
     - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+      propertyPath: defense
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
       propertyPath: golemProgram
       value: 
       objectReference: {fileID: 436060742}
@@ -4526,7 +4530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7367688067627270437, guid: e13fa8356d45c544f80451bb4a2a59eb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 390
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 7382560785402262932, guid: e13fa8356d45c544f80451bb4a2a59eb, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4602,7 +4606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8512947857994512309, guid: e13fa8356d45c544f80451bb4a2a59eb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 315
+      value: 195
       objectReference: {fileID: 0}
     - target: {fileID: 8512947857994512309, guid: e13fa8356d45c544f80451bb4a2a59eb, type: 3}
       propertyPath: m_AnchoredPosition.y

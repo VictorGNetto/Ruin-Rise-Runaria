@@ -134,6 +134,8 @@ public class RuneSelectionUI : MonoBehaviour
         // Hide remove buttons from the RuneUI and ConditionalRuneUI
         int length = scrollContent.transform.childCount / 2;
 
+        programUI.ChangeInsertRunePosition(length*2);
+
         for (int i = 0; i < length; i++)
         {
             Transform transform = scrollContent.transform.GetChild(2*i + 1);
@@ -142,6 +144,12 @@ public class RuneSelectionUI : MonoBehaviour
             } else if (transform.GetComponent<ConditionalRuneUI>() != null) {
                 transform.GetComponent<ConditionalRuneUI>().HideRemoveButton();
             }
+        }
+
+        for (int i = 0; i <= length; i++)
+        {
+            Transform transform = scrollContent.transform.GetChild(2*i);
+            transform.GetComponent<AddRuneUI>().HidePlusButton();
         }
 
         saveProgramGO.SetActive(false);
