@@ -6,12 +6,19 @@ public class PickUpRuneUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 {
     public ProgramUI programUI;
     public GameObject details;
+    public PopUp popUp;
     public String runeName;
     public LevelDirector levelDirector;
 
     public void Select()
     {
-        if (levelDirector.levelStartedRunning) return;
+        if (levelDirector.levelStartedRunning) {
+            Vector3 mouse = Input.mousePosition;
+            popUp.SetText("Reinicie o Level\nPara Modificar as Ações");
+            popUp.Open(mouse.x, mouse.y - 100, 400, 100, 3);
+
+            return;
+        }
 
         GameObject duplicate = Instantiate(this.gameObject);
         programUI.InsertRune(duplicate, runeName);
