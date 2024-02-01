@@ -16,8 +16,8 @@ public class RuneSelectionUI : MonoBehaviour
 
     private float lastTimeScale;
     private List<GameObject> savedProgram = new List<GameObject>();
-    private int savedInsertRunePosition = 0;
-    private int savedUsedCapacity = 0;
+    public int savedInsertRunePosition = 0;
+    public int savedUsedCapacity = 0;
 
     public void OpenRuneSelectionUI()
     {

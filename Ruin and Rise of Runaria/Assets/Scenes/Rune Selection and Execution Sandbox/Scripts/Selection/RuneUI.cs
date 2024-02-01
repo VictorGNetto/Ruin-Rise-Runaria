@@ -30,6 +30,10 @@ public class RuneUI : MonoBehaviour
 
     public void HideRemoveButton()
     {
+        if (remove == null) {
+            remove = transform.GetChild(1).gameObject;
+        }
+        
         remove.SetActive(false);
     }
 }

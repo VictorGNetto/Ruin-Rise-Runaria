@@ -29,6 +29,8 @@ public class HUD : MonoBehaviour
         play2 = transform.GetChild(1).transform.GetChild(3).gameObject;
         play3 = transform.GetChild(1).transform.GetChild(4).gameObject;
         timer = transform.GetChild(2).transform.GetChild(0).gameObject;
+
+        InitializeGolemPrograms();
     }
 
     // Update is called once per frame
@@ -37,6 +39,14 @@ public class HUD : MonoBehaviour
         runningTime += Time.deltaTime;
 
         timer.GetComponent<Text>().text = GetFormatedRunningTime();
+    }
+
+    private void InitializeGolemPrograms()
+    {
+        for (int i = 0; i < runeSelectionUIs.Count; i++)
+        {
+            runeSelectionUIs[i].SaveProgram();
+        }
     }
 
     private String GetFormatedRunningTime()

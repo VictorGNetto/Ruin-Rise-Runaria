@@ -75,6 +75,15 @@ public class Target : MonoBehaviour
         }
     }
 
+    private void GoToSafeTarget()
+    {
+        if (golem.target == null) {
+            golem.target = golem;
+            golem.targetType = Golem.TargetType.Self;
+            golem.targetBias = Golem.TargetType.Friend;
+        }
+    }
+
     // L11
     private bool L11()
     {
@@ -98,6 +107,8 @@ public class Target : MonoBehaviour
 
         golem.target = golem.levelDirector.GetEnemyWithHighestHealth();
         golem.targetType = Golem.TargetType.Enemy;
+
+        GoToSafeTarget();
 
         if (oldTargetGuid != golem.target.GUID()) targetChanged = true;
 
@@ -128,6 +139,8 @@ public class Target : MonoBehaviour
         golem.target = golem.levelDirector.GetEnemyWithLowestHealth();
         golem.targetType = Golem.TargetType.Enemy;
 
+        GoToSafeTarget();
+
         if (oldTargetGuid != golem.target.GUID()) targetChanged = true;
 
         if (targetChanged && golem.selected) UpdateSelecUI();
@@ -157,6 +170,8 @@ public class Target : MonoBehaviour
         golem.target = golem.levelDirector.GetNearestEnemy(golem.guid);
         golem.targetType = Golem.TargetType.Enemy;
 
+        GoToSafeTarget();
+
         if (oldTargetGuid != golem.target.GUID()) targetChanged = true;
 
         if (targetChanged && golem.selected) UpdateSelecUI();
@@ -185,6 +200,8 @@ public class Target : MonoBehaviour
 
         golem.target = golem.levelDirector.GetFartestEnemy(golem.guid);
         golem.targetType = Golem.TargetType.Enemy;
+
+        GoToSafeTarget();
 
         if (oldTargetGuid != golem.target.GUID()) targetChanged = true;
 

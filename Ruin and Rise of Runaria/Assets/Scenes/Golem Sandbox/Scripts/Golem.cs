@@ -119,6 +119,7 @@ public class Golem : MonoBehaviour, ICharacter
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
         UpdateTargetToDefaulWhenNeeded();
+        
         mana = Math.Min(maxMana, mana + Time.deltaTime * manaRecovery);
 
         healthManaBar.SetHealth(health, maxHealth);
@@ -191,6 +192,12 @@ public class Golem : MonoBehaviour, ICharacter
             }
             targetBias = TargetType.Friend;
         }
+
+        if (target == null) {
+            target = this;
+            targetType = TargetType.Self;
+            targetBias = TargetType.Friend;
+        }
     }
 
     private void UpdateTargetToDefaulWhenNeeded()
@@ -215,6 +222,7 @@ public class Golem : MonoBehaviour, ICharacter
         if (target == null || !target.Alive()) {
             target = this;
             targetType = TargetType.Self;
+            targetBias = TargetType.Friend;
         }
 
         if (selected) Select();

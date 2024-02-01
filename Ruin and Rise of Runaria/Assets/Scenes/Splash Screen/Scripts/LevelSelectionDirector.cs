@@ -5,6 +5,7 @@ public class LevelSelectionDirector : MonoBehaviour
 {
     public GameObject elements;
     public GameObject shadow;
+    public GameObject hardShadow;
 
     private float timer = 0;
     private bool enterAnimationDone = false;
@@ -26,9 +27,9 @@ public class LevelSelectionDirector : MonoBehaviour
         }
 
         if (goToLevel) {
-            PlayExitAnimation(false);
-        } else if (goToMainMenu) {
             PlayExitAnimation(true);
+        } else if (goToMainMenu) {
+            PlayExitAnimation(false);
         }
     }
 
@@ -41,12 +42,14 @@ public class LevelSelectionDirector : MonoBehaviour
         if (alpha == 1) enterAnimationDone = true;
     }
 
-    private void PlayExitAnimation(bool insertShadow)
+    private void PlayExitAnimation(bool insertHardShadow)
     {
         float fadeTime = 0.5f;
         float alpha = Mathf.Min(1, timer / fadeTime);
         elements.GetComponent<CanvasGroup>().alpha = 1 - Mathf.Pow(alpha, 3);
-        if (insertShadow) {
+        if (insertHardShadow) {
+            hardShadow.GetComponent<CanvasGroup>().alpha = Mathf.Pow(alpha, 0.5f);
+        } else {
             shadow.GetComponent<CanvasGroup>().alpha = Mathf.Pow(alpha, 3);
         }
     }
