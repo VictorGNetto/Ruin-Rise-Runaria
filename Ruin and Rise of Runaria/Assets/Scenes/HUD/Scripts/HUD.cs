@@ -121,7 +121,7 @@ public class HUD : MonoBehaviour
         currentActiveButton.GetComponent<Button>().image.color = activeColor;
 
         // Change the time scale
-        Time.timeScale = 0.5f;
+        Time.timeScale = 2.0f;
     }
 
     private void DisableRuneSelectionInteractability()

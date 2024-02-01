@@ -25,8 +25,6 @@ public class ProgramUI : MonoBehaviour
     private void Awake()
     {
         empty = new GameObject();
-        actionPanelTitle = transform.GetChild(1).transform.GetChild(0).GetComponent<Text>();
-        UpdateCapacityText();
     }
 
     public bool CanInsert(int weight)
@@ -121,8 +119,11 @@ public class ProgramUI : MonoBehaviour
         UpdateCapacityText();
     }
 
-    private void UpdateCapacityText()
+    public void UpdateCapacityText()
     {
+        if (actionPanelTitle == null) {
+            actionPanelTitle = transform.GetChild(1).transform.GetChild(0).GetComponent<Text>();
+        }
         actionPanelTitle.text = String.Format("Ações ({0}/{1})", usedCapacity, totalCapacity);
     }
 

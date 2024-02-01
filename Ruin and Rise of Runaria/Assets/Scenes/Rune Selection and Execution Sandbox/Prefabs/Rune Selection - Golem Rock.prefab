@@ -4096,7 +4096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7969280201983404211
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9049,7 +9049,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Dist\xE2ncia  Estrat\xE9gica -  Se mant\xE9m distante do alvo.\n\nTempo
+  m_Text: "Dist\xE2ncia  Estrat\xE9gica -  Se mant\xE9m distante de um alvo.\n\nTempo
     de Execu\xE7\xE3o - 1s"
 --- !u!1 &6081835093890924986
 GameObject:
@@ -12007,7 +12007,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4958519576747175495}
-  - component: {fileID: 3911705066379422027}
   m_Layer: 5
   m_Name: Golem Info
   m_TagString: Untagged
@@ -12038,25 +12037,6 @@ RectTransform:
   m_AnchoredPosition: {x: 228.55, y: 390}
   m_SizeDelta: {x: 357.1, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3911705066379422027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8587190031626345638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3937890e73f120149a5616accd8879b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollContent: {fileID: 0}
-  runePrefab: {fileID: 0}
-  conditionalRunePrefab: {fileID: 0}
-  addRunePrefab: {fileID: 0}
-  insertRunePosition: 0
-  totalCapacity: 0
-  usedCapacity: 0
 --- !u!1 &8614233004586903407
 GameObject:
   m_ObjectHideFlags: 0

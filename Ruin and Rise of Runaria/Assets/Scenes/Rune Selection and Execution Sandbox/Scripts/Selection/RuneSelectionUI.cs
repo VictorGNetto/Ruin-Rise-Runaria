@@ -16,7 +16,8 @@ public class RuneSelectionUI : MonoBehaviour
 
     private float lastTimeScale;
     private List<GameObject> savedProgram = new List<GameObject>();
-    private int savedinsertRunePosition = 0;
+    private int savedInsertRunePosition = 0;
+    private int savedUsedCapacity = 0;
 
     public void OpenRuneSelectionUI()
     {
@@ -24,7 +25,9 @@ public class RuneSelectionUI : MonoBehaviour
         Time.timeScale = 0;
         
         SaveProgramState();
-        programUI.insertRunePosition = savedinsertRunePosition;
+        programUI.insertRunePosition = savedInsertRunePosition;
+        programUI.usedCapacity = savedUsedCapacity;
+        programUI.UpdateCapacityText();
 
         gameObject.SetActive(true);
     }
@@ -119,7 +122,8 @@ public class RuneSelectionUI : MonoBehaviour
 
     public void SaveProgram()
     {
-        savedinsertRunePosition = programUI.insertRunePosition;
+        savedInsertRunePosition = programUI.insertRunePosition;
+        savedUsedCapacity = programUI.usedCapacity;
         SaveProgramState();
 
         golemProgram.program = GetProgram();
