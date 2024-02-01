@@ -6,15 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu/MainMenu.unity
-    guid: 98eaa6e7e4d5b4741ad7bc1dc7c9fb14
+    path: Assets/Scenes/Splash Screen/Opening.unity
+    guid: 44d67d84c77f7a845842b2ca9c2b55fc
+  - enabled: 1
+    path: Assets/Scenes/Splash Screen/MainMenu.unity
+    guid: 0f093b33b4783b545b2494e8f3f79fe3
   - enabled: 1
     path: Assets/Scenes/Level Selection/LevelSelection.unity
     guid: abcdb6b310a86374ea9f201e309bb6ed
-  - enabled: 1
-    path: Assets/Scenes/Level1 - Final/Level1 - Final.unity
-    guid: 519f0abea5e82ef429a32952d0dfed5c
-  - enabled: 1
-    path: Assets/Scenes/Golem Sandbox/Golem Sandbox.unity
-    guid: f517239d7eb693441b6d8bbc2de90dbe
   m_configObjects: {}
