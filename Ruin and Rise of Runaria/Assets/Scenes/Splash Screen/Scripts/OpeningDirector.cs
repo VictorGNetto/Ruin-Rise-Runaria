@@ -3,8 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class OpeningDirector : MonoBehaviour
 {
-    public float[] boxEnterTimes = {0, 15, 30, 45};
-    public GameObject continueButton;
+    public float[] boxEnterTimes = {0.5f, 10, 20, 30, 35};
 
     private bool openingStarted = false;
     private float timer = 0;
@@ -29,11 +28,6 @@ public class OpeningDirector : MonoBehaviour
         if (Input.GetButtonDown("Cancel")) {
             timer = boxEnterTimes[3] + 10;
         }
-
-        if (timer > boxEnterTimes[3] + 5) {
-            ShowContinueButton();
-            animationDone = true;
-        }
     }
 
     public bool OpeningStarted()
@@ -44,11 +38,6 @@ public class OpeningDirector : MonoBehaviour
     public float Timer()
     {
         return timer;
-    }
-
-    public void ShowContinueButton()
-    {
-        continueButton.SetActive(true);
     }
 
     public void MainMenu()

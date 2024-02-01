@@ -620,8 +620,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Com seus conhecimentos \xFAnicos sobre runas m\xE1gicas, ele desperta
-    os golems para a vida e os convoca para sua causa."
+  m_Text: "Com seus conhecimentos \xFAnicos sobre runas m\xE1gicas, ele decide desperta
+    os golems e os convoca para lutar e, assim, salvar Runaria da calamidade."
 --- !u!222 &755670243
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1354,13 +1354,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1674478333}
+  - component: {fileID: 1674478334}
+  - component: {fileID: 1674478335}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1674478333
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1382,6 +1384,32 @@ RectTransform:
   m_AnchoredPosition: {x: -250, y: 100}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1674478334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674478332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da8d721ea46571498bd9345e652ed3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openingDirector: {fileID: 2033829134}
+  boxIndex: 4
+--- !u!225 &1674478335
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674478332}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1700870149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,8 +1480,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Um mago destemido surge como a \xFAltima esperan\xE7a, um mestre das antigas
-    runas m\xE1gicas, capaz de dar vida a golems."
+  m_Text: "Um mago destemido surge como a \xFAltima esperan\xE7a. Sendo um mestre
+    das antigas runas m\xE1gicas, ele \xE9 capaz de dar vida aos golems."
 --- !u!222 &1700870152
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1533,7 +1561,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "O reino de Runaria, outrora pr\xF3spero, enfrenta a ru\xEDna devido a
-    uma calamidade que soltou hordas de monstros, trazendo destrui\xE7\xE3o."
+    uma calamidade que soltou hordas de criaturas malignas e crueis."
 --- !u!222 &1862023636
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1668,7 +1696,7 @@ MonoBehaviour:
   - 10
   - 20
   - 30
-  continueButton: {fileID: 1674478332}
+  - 35
 --- !u!1 &2058817029
 GameObject:
   m_ObjectHideFlags: 0

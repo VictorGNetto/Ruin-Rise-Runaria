@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuDirector : MonoBehaviour
+public class LevelSelectionDirector : MonoBehaviour
 {
     public GameObject elements;
     public GameObject shadow;
@@ -9,8 +9,8 @@ public class MainMenuDirector : MonoBehaviour
     private float timer = 0;
     private bool enterAnimationDone = false;
 
-    private bool goToLevelSelection = false;
-    private bool goToOpening = false;
+    private bool goToMainMenu = false;
+    private bool goToLevel = false;
 
     private void Awake()
     {
@@ -25,10 +25,10 @@ public class MainMenuDirector : MonoBehaviour
             PlayEnterAnimation();
         }
 
-        if (goToLevelSelection) {
-            PlayExitAnimation(true);
-        } else if (goToOpening) {
+        if (goToLevel) {
             PlayExitAnimation(false);
+        } else if (goToMainMenu) {
+            PlayExitAnimation(true);
         }
     }
 
@@ -41,42 +41,49 @@ public class MainMenuDirector : MonoBehaviour
         if (alpha == 1) enterAnimationDone = true;
     }
 
-    private void PlayExitAnimation(bool removeShadow)
+    private void PlayExitAnimation(bool insertShadow)
     {
         float fadeTime = 0.5f;
         float alpha = Mathf.Min(1, timer / fadeTime);
         elements.GetComponent<CanvasGroup>().alpha = 1 - Mathf.Pow(alpha, 3);
-        if (removeShadow) {
-            shadow.GetComponent<CanvasGroup>().alpha = 1 - Mathf.Pow(alpha, 3);
+        if (insertShadow) {
+            shadow.GetComponent<CanvasGroup>().alpha = Mathf.Pow(alpha, 3);
         }
     }
 
-    public void Opening()
+    public void MainMenu()
     {
-        goToOpening = true;
+        goToMainMenu = true;
         timer = 0;
-        Invoke("LoadOpening", 0.5f);
+        Invoke("LoadMainMenu", 0.5f);
     }
 
-    private void LoadOpening()
+    private void LoadMainMenu()
     {
-        SceneManager.LoadScene("Opening");
+        SceneManager.LoadScene("MainMenu");
     }
 
-    public void Play()
+    public void Level1()
     {
-        goToLevelSelection = true;
+        goToLevel = true;
         timer = 0;
-        Invoke("LoadLevelSelectionScene", 0.5f);
+        Invoke("LoadLevel1", 0.5f);
     }
 
-    private void LoadLevelSelectionScene()
+    private void LoadLevel1()
     {
-        SceneManager.LoadScene("LevelSelection");
+        SceneManager.LoadScene("Level1");
     }
 
-    public void Quit()
-    {
-        Application.Quit();
-    }
+    public void Level2()
+    {}
+
+    public void Level3()
+    {}
+
+    public void Level4()
+    {}
+
+    public void Level5()
+    {}
 }
