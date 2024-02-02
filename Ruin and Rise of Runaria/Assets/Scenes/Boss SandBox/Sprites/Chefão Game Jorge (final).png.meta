@@ -1,0 +1,457 @@
+fileFormatVersion: 2
+guid: fb3be3ac5ac60824d94b4641164a4c07
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_0"
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 1152
+        width: 503
+        height: 2425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 675aebe4fb24739489a1e572117bab57
+      internalID: 1007571392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_1"
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 2837
+        width: 205
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43fff85d1883886448bf751763b0863d
+      internalID: -995589865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_2"
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 2960
+        width: 566
+        height: 511
+      alignment: 9
+      pivot: {x: 0.5232745, y: 0.16057047}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3ab3c7766b71842888e4cc33c98b06
+      internalID: 1630802521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_3"
+      rect:
+        serializedVersion: 2
+        x: 2735
+        y: 2850
+        width: 239
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84d1fdcd6b755f4479fa1b38e2180103
+      internalID: -2121232013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_4"
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 2301
+        width: 323
+        height: 162
+      alignment: 9
+      pivot: {x: 0.90104485, y: 0.68973947}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c1284f4df823fb419f6deb2f43ae29f
+      internalID: 570492047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_5"
+      rect:
+        serializedVersion: 2
+        x: 1667
+        y: 2413
+        width: 249
+        height: 314
+      alignment: 9
+      pivot: {x: 0.84388137, y: 0.91254014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd73335f687573429840066448ae0e4
+      internalID: -286064664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_6"
+      rect:
+        serializedVersion: 2
+        x: 1929
+        y: 2140
+        width: 412
+        height: 731
+      alignment: 9
+      pivot: {x: 0.34177378, y: 0.06603587}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae9b484c0d3d16e4e8d95cd53d4b8843
+      internalID: -1734021401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_7"
+      rect:
+        serializedVersion: 2
+        x: 2376
+        y: 2390
+        width: 176
+        height: 354
+      alignment: 9
+      pivot: {x: 0.23803157, y: 0.8969361}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857f66b7ea31d5740b0e672238fb1231
+      internalID: -1267603947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_8"
+      rect:
+        serializedVersion: 2
+        x: 2602
+        y: 2299
+        width: 323
+        height: 162
+      alignment: 9
+      pivot: {x: 0.11254958, y: 0.7168451}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e043af5c1355b24ab563da32f4b9b37
+      internalID: -449382910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_9"
+      rect:
+        serializedVersion: 2
+        x: 2974
+        y: 2155
+        width: 329
+        height: 359
+      alignment: 9
+      pivot: {x: 0.046208624, y: 0.48165274}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1076e0317826bb9428a3ee3d4e8e168c
+      internalID: -1337078812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_10"
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 1946
+        width: 399
+        height: 156
+      alignment: 9
+      pivot: {x: 0.46790284, y: 0.5820946}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9515555d8592a604a90228ac2c91abe5
+      internalID: -1574292731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_11"
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 1667
+        width: 196
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b173c0ff48b62a349ad72cde2debd34e
+      internalID: 629501420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_12"
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 744
+        width: 855
+        height: 1196
+      alignment: 9
+      pivot: {x: 0.43580243, y: 0.78270465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644eee345754c4a42910e70cc9893ade
+      internalID: -20185131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_13"
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 1424
+        width: 173
+        height: 106
+      alignment: 9
+      pivot: {x: 0.903815, y: 0.5244106}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8beb3246a52b98f41bed1ccf6d1c2570
+      internalID: 1995951865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Chef\xE3o Game Jorge (final)_14"
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 939
+        width: 746
+        height: 183
+      alignment: 9
+      pivot: {x: 0.96500933, y: 0.7759443}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74d20cd3641f43488e45e299587aabb
+      internalID: 1369282760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "Chef\xE3o Game Jorge (final)_0": 1007571392
+      "Chef\xE3o Game Jorge (final)_1": -995589865
+      "Chef\xE3o Game Jorge (final)_10": -1574292731
+      "Chef\xE3o Game Jorge (final)_11": 629501420
+      "Chef\xE3o Game Jorge (final)_12": -20185131
+      "Chef\xE3o Game Jorge (final)_13": 1995951865
+      "Chef\xE3o Game Jorge (final)_14": 1369282760
+      "Chef\xE3o Game Jorge (final)_2": 1630802521
+      "Chef\xE3o Game Jorge (final)_3": -2121232013
+      "Chef\xE3o Game Jorge (final)_4": 570492047
+      "Chef\xE3o Game Jorge (final)_5": -286064664
+      "Chef\xE3o Game Jorge (final)_6": -1734021401
+      "Chef\xE3o Game Jorge (final)_7": -1267603947
+      "Chef\xE3o Game Jorge (final)_8": -449382910
+      "Chef\xE3o Game Jorge (final)_9": -1337078812
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
