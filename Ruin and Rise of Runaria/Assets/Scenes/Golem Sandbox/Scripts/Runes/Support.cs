@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,6 +34,19 @@ public class Support : MonoBehaviour
         golem.cleanUpFunctionMap.Add("HealStronger", new Golem.CleanUpAfterAction(HealCleanUp));
     }
 
+    void DoResetCastingAnimation(float delayTime)
+    {
+        StartCoroutine(ResetCastingAnimation(delayTime));
+    }
+
+    IEnumerator ResetCastingAnimation(float delayTime)
+    {
+        //Wait for the specified delay time before continuing.
+        yield return new WaitForSeconds(delayTime);
+
+        golem.casting = false;
+    }
+
     private bool S1()
     {
         if (!golem.runeExecuted || boolDict["success"]) return true;
@@ -44,7 +58,6 @@ public class Support : MonoBehaviour
 
             golem.target.Heal(floatDict["totalHeal"]);
             golem.speed = golem.baseSpeed * 0.75f;
-            golem.casting = true;
 
             GameObject healEffect = Instantiate(HealPrefab);
             healEffect.GetComponent<Heal>().target = golem.target;
@@ -67,8 +80,10 @@ public class Support : MonoBehaviour
             floatDict.Add("range", golem.basicRange + golem.distanceRange * S1_Alcance);
             golem.cooldown =  S1_Execucao + S1_Recuperacao;
             golem.runeExecuted = true;
-            golem.speed = golem.baseSpeed * 0.25f;
+            golem.speed = golem.baseSpeed * 0.5f;
             golem.animator.speed = 1;
+            golem.casting = true;
+            DoResetCastingAnimation(1.0f);
         } else {
             golem.cooldown =  S1_Recuperacao;
             golem.runeExecuted = false;

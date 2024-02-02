@@ -7,7 +7,6 @@ using UnityEngine.AI;
 public class Golem : MonoBehaviour, ICharacter
 {
     // Bullet
-    public Bullet bulletPrefab;
     public Transform launchOffset;
 
     // Target
