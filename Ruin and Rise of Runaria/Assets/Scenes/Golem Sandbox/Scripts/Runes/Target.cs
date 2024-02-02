@@ -92,10 +92,12 @@ public class Target : MonoBehaviour
         return true;
     }
 
+    const float cooldown_value = 0.5f;
+
     private void L11Setup()
     {
         golem.targetBias = Golem.TargetType.Enemy;
-        golem.cooldown = 1.5f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
     }
 
@@ -126,7 +128,7 @@ public class Target : MonoBehaviour
     private void L12Setup()
     {
         golem.targetBias = Golem.TargetType.Enemy;
-        golem.cooldown = 1.5f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
     }
 
@@ -157,7 +159,7 @@ public class Target : MonoBehaviour
     private void L13Setup()
     {
         golem.targetBias = Golem.TargetType.Enemy;
-        golem.cooldown = 1.5f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
     }
 
@@ -188,7 +190,7 @@ public class Target : MonoBehaviour
     private void L14Setup()
     {
         golem.targetBias = Golem.TargetType.Enemy;
-        golem.cooldown = 1.5f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
     }
 
@@ -219,7 +221,7 @@ public class Target : MonoBehaviour
     private void L15Setup()
     {
         golem.targetBias = Golem.TargetType.Friend;
-        golem.cooldown = 1.5f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
     }
 
@@ -253,7 +255,7 @@ public class Target : MonoBehaviour
     private void L16Setup()
     {
         golem.targetBias = Golem.TargetType.Friend;
-        golem.cooldown = 1.5f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
     }
 
@@ -287,7 +289,7 @@ public class Target : MonoBehaviour
     private void L17Setup()
     {
         golem.targetBias = Golem.TargetType.Friend;
-        golem.cooldown = 1.5f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
     }
 
@@ -321,7 +323,7 @@ public class Target : MonoBehaviour
     private void L18Setup()
     {
         golem.targetBias = Golem.TargetType.Friend;
-        golem.cooldown = 1.5f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
     }
 
@@ -355,7 +357,7 @@ public class Target : MonoBehaviour
     private void L19Setup()
     {
         golem.targetBias = Golem.TargetType.Self;
-        golem.cooldown = 1.5f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
     }
 

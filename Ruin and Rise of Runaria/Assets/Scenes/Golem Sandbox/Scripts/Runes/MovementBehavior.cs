@@ -38,10 +38,12 @@ public class MovementBehavior : MonoBehaviour
         golem.movementBehaviorFunctionMap.Add("M7", new Golem.MovementBehavior(M7));
     }
 
+    const float cooldown_value = 0.5f;
+
     // Rune M0
     private bool SetMovementBehaviorToM0()
     {
-        golem.cooldown = 1.0f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
         golem.movementBehavior = "M0";
         golem.navMeshAgent.SetDestination(golem.transform.position);
@@ -57,7 +59,7 @@ public class MovementBehavior : MonoBehaviour
     // Rune M1
     private bool SetMovementBehaviorToM1()
     {
-        golem.cooldown = 1.0f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
         golem.movementBehavior = "M1";
 
@@ -124,7 +126,7 @@ public class MovementBehavior : MonoBehaviour
     // Rune M2
     private bool SetMovementBehaviorToM2()
     {
-        golem.cooldown = 1.0f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
         golem.movementBehavior = "M2";
 
@@ -195,7 +197,7 @@ public class MovementBehavior : MonoBehaviour
     // Rune M3
     private bool SetMovementBehaviorToM3()
     {
-        golem.cooldown = 1.0f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
         golem.movementBehavior = "M3";
 
@@ -247,7 +249,7 @@ public class MovementBehavior : MonoBehaviour
     // Rune M4
     private bool SetMovementBehaviorToM4()
     {
-        golem.cooldown = 1.0f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
         golem.movementBehavior = "M4";
 
@@ -306,7 +308,7 @@ public class MovementBehavior : MonoBehaviour
     // Rune M5
     private bool SetMovementBehaviorToM5()
     {
-        golem.cooldown = 1.0f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
         golem.movementBehavior = "M5";
 
@@ -368,7 +370,7 @@ public class MovementBehavior : MonoBehaviour
     // Rune M7
     private bool SetMovementBehaviorToM7()
     {
-        golem.cooldown = 1.0f;
+        golem.cooldown = cooldown_value;
         golem.runeExecuted = true;
         golem.movementBehavior = "M7";
 

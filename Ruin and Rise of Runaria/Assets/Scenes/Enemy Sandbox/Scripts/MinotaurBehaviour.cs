@@ -33,7 +33,7 @@ public class MinotaurBehaviour: MonoBehaviour
         {
             if (target == null || !target.Alive())
             {
-                enemy.target = LowestGolem();
+                enemy.target = LowestGolemPercent();
                 target = enemy.target;
             }
 
@@ -65,6 +65,30 @@ public class MinotaurBehaviour: MonoBehaviour
             if (levelDirector.golems[i] != null && levelDirector.golems[i].health < leastHealth && levelDirector.golems[i].alive)
             {
                 leastHealth = levelDirector.golems[i].health;
+                lowestGolem = levelDirector.golems[i];
+            }
+        }
+
+        if (lowestGolem == null)
+        {
+            thereAreGolems = false;
+        }
+
+        return lowestGolem;
+    }
+
+    Golem LowestGolemPercent()
+    {
+        Golem lowestGolem = null;
+        LevelDirector levelDirector = enemy.levelDirector;
+        double leastHealth;
+        leastHealth = 2.0;
+        for (int i = 0; i < enemy.levelDirector.golems.Count; i++)
+        {
+            double golemHealthPercent = levelDirector.golems[i].health / levelDirector.golems[i].maxHealth;
+            if (levelDirector.golems[i] != null && golemHealthPercent < leastHealth && levelDirector.golems[i].alive)
+            {
+                leastHealth = golemHealthPercent;
                 lowestGolem = levelDirector.golems[i];
             }
         }

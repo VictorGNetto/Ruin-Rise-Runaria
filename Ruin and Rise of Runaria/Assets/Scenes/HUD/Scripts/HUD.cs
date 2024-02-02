@@ -19,10 +19,12 @@ public class HUD : MonoBehaviour
     private GameObject play3;
     private int buttonState = 1;  // 1 - Paused; 2 - playing x1; 3 - playing x1.5; 4 - playing x2
     private bool playWasPressed = false;
+    private float ticTac = 0;
 
     private void Awake()
     {
-        Time.timeScale = 0;
+        ticTac = 0;
+        Time.timeScale = ticTac;
 
         reload = transform.GetChild(1).transform.GetChild(0).gameObject;
         pause = transform.GetChild(1).transform.GetChild(1).gameObject;
@@ -74,7 +76,8 @@ public class HUD : MonoBehaviour
         currentActiveButton.GetComponent<Button>().image.color = activeColor;
 
         // Change the time scale
-        Time.timeScale = 0;
+        ticTac = 0.0f;
+        Time.timeScale = ticTac;
     }
 
     public void Play()
@@ -101,7 +104,8 @@ public class HUD : MonoBehaviour
         currentActiveButton.GetComponent<Button>().image.color = activeColor;
 
         // Change the time scale
-        Time.timeScale = 1f;
+        ticTac = 1.0f;
+        Time.timeScale = ticTac;
     }
 
     public void PlayFaster()
@@ -116,7 +120,8 @@ public class HUD : MonoBehaviour
         currentActiveButton.GetComponent<Button>().image.color = activeColor;
 
         // Change the time scale
-        Time.timeScale = 1.5f;
+        ticTac = 1.5f;
+        Time.timeScale = ticTac;
     }
 
     public void PlayEvenFaster()
@@ -131,7 +136,8 @@ public class HUD : MonoBehaviour
         currentActiveButton.GetComponent<Button>().image.color = activeColor;
 
         // Change the time scale
-        Time.timeScale = 2.0f;
+        ticTac = 2.0f;
+        Time.timeScale = ticTac;
     }
 
     private void DisableRuneSelectionInteractability()
@@ -140,5 +146,15 @@ public class HUD : MonoBehaviour
         {
             runeSelectionUIs[i].DisableInteractability();
         }
+    }
+
+    public void StopTicTac()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ResumeTicTac()
+    {
+        Time.timeScale = ticTac;
     }
 }
