@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
@@ -17,9 +18,16 @@ public class Menu : MonoBehaviour
         hud.ResumeTicTac();
     }
 
+    public void LevelSelection()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("LevelSelection");
+    }
 
     public void Quit()
     {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void OpenTips()
