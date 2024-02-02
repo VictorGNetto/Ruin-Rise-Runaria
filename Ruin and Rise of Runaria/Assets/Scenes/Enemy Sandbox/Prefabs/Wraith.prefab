@@ -242,8 +242,8 @@ GameObject:
   - component: {fileID: 2788101411575259012}
   - component: {fileID: 4785670260359871321}
   - component: {fileID: 2657251120362635703}
-  - component: {fileID: 2786661001430134421}
   - component: {fileID: 4392400260169607699}
+  - component: {fileID: 3163010066884486631}
   m_Layer: 3
   m_Name: Wraith
   m_TagString: Untagged
@@ -355,10 +355,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 75
   maxHealth: 100
-  enemyHealthBar: {fileID: 3834497914837000140}
-  isDead: 0
---- !u!70 &2786661001430134421
-CapsuleCollider2D:
+  healthBar: {fileID: 0}
+  target: {fileID: 0}
+  strength: 0
+  defense: 0
+  guid: 0
+  alive: 0
+  levelDirector: {fileID: 0}
+  selectedAndTargetUI: {fileID: 0}
+  stdMaterial: {fileID: 0}
+  flashMaterial: {fileID: 0}
+  flashDuration: 0
+--- !u!114 &4392400260169607699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3817782176324100260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 075fd697d4167a2439f3d1d74a11d033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchOffset: {fileID: 8881627229177037744}
+  levelDirector: {fileID: 0}
+  projectile: {fileID: 7175520923262880841, guid: 549cc04727614c14891e3404cf4ed2af, type: 3}
+  anim: {fileID: 0}
+  scale: {x: 0, y: 0, z: 0}
+  spriteRenderer: {fileID: 0}
+  target: {fileID: 0}
+  attackCooldown: 0
+  defense: 0
+  health: 75
+  maxHealth: 100
+  enemyHealthBar: {fileID: 0}
+  alive: 1
+--- !u!61 &3163010066884486631
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -386,30 +420,22 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.2, y: 2}
-  m_Direction: 0
---- !u!114 &4392400260169607699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3817782176324100260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 075fd697d4167a2439f3d1d74a11d033, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  launchOffset: {fileID: 8881627229177037744}
-  levelDirector: {fileID: 0}
-  projectile: {fileID: 7175520923262880841, guid: 549cc04727614c14891e3404cf4ed2af, type: 3}
-  anim: {fileID: 0}
-  scale: {x: 0, y: 0, z: 0}
-  spriteRenderer: {fileID: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.2, y: 4.2}
+    newSize: {x: 5.2, y: 4.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.2, y: 4.2}
+  m_EdgeRadius: 0
 --- !u!1 &4245980654913625366
 GameObject:
   m_ObjectHideFlags: 0
