@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour, ICharacter
     public float maxHealth = 100;
     public EnemyHealthBar healthBar;
 
+    public Enemy friendlyTarget;
     public Golem target;
     public float strength;
     public float defense;
@@ -57,12 +58,12 @@ public class Enemy : MonoBehaviour, ICharacter
 
     public void Die()
     {
+        Destroy(gameObject, 2.0f);
         GetComponent<BoxCollider2D>().enabled = false;
         selectedAndTargetUI.gameObject.SetActive(false);
         healthBar.gameObject.SetActive(false);
         alive = false;
         gameObject.GetComponent<Animator>().SetTrigger("Die");
-        Destroy(gameObject, 2.0f);
     }
 
     public void TakeDamage(float amount)
