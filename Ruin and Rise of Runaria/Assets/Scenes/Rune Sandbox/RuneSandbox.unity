@@ -966,72 +966,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rune Selection - Golem Rock
       objectReference: {fileID: 0}
-    - target: {fileID: 452139287974297004, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 466263972726608767, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 581756656860582354, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 951521861149211843, guid: a774159b0249c3342b929a63642b35d7, type: 3}
+    - target: {fileID: 2304970356968589805, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: m_Text
-      value: "Cura cont\xEDnua longa - Com os poderes da floresta, cura o alvo por
-        6 segundos.\n\nCura: 55%\nAlcance: x1\r\nTempo de execu\xE7\xE3o: 2.0s\r\nMana:
-        55\nCusto: 3"
+      value: "Modo de Ataque - Usa as for\xE7as arcanas para aumentar o ataque do
+        pr\xF3prio golem por 8 segundos.\n\nAtaque: +7.5\nTempo de execu\xE7\xE3o
+        0.5s\r\nMana: 75\r\nCusto: 4"
       objectReference: {fileID: 0}
-    - target: {fileID: 958134630345211864, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 1011419284767165275, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 1158449118910011214, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 1457281337993256753, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 1819983671170586481, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 1821591225540885770, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 2097185066879887582, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 2346324712849392675, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 2357262635970483304, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 3173027789383605897, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 3465420309266028256, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 3853920553519976338, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
     - target: {fileID: 4401094884014895691, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1112,63 +1052,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4651369299166107244, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 5347763509094251577, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 5592708338492913739, guid: a774159b0249c3342b929a63642b35d7, type: 3}
+    - target: {fileID: 5738122930550038527, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 1348146143}
     - target: {fileID: 5787230089873715327, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 6080403412252075539, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 6314213511131723314, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 6468173381923302296, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 6716471634006161888, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 6951935186134854520, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 7006896235737358043, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 7123942374186511996, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 7222849345345332416, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 7236912590822114881, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 7624302183069512214, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 7789387240489157074, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 1348146143}
@@ -1180,18 +1068,6 @@ PrefabInstance:
       propertyPath: golemProgram
       value: 
       objectReference: {fileID: 1671765033}
-    - target: {fileID: 8115791029689935171, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 8348391142361495277, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
-    - target: {fileID: 9148774254434666606, guid: a774159b0249c3342b929a63642b35d7, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 1348146143}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1477,6 +1353,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 750655734611848594, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: attackBuffPrefab
+      value: 
+      objectReference: {fileID: 8371870312088574938, guid: 2846750aecaaf2f4e8d7e09d2a5d71bd, type: 3}
+    - target: {fileID: 750655734611848594, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: defenseBuffPrefab
+      value: 
+      objectReference: {fileID: 1778014385987534756, guid: ff9861bfb5852a448ab154691186bf12, type: 3}
+    - target: {fileID: 750655734611848594, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
+      propertyPath: brightEffectPrefab
+      value: 
+      objectReference: {fileID: 3120735254337743173, guid: 703a76ca43b3d5847a7ef044d53b2ad4, type: 3}
     - target: {fileID: 1634100113169278646, guid: 3109bd6c437b2b34f86b13bb8cf68641, type: 3}
       propertyPath: m_Name
       value: Golem - Rock
@@ -4067,6 +3955,10 @@ PrefabInstance:
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 1348146143}
+    - target: {fileID: 3050305700215267244, guid: e13fa8356d45c544f80451bb4a2a59eb, type: 3}
+      propertyPath: levelDirector
+      value: 
+      objectReference: {fileID: 1348146143}
     - target: {fileID: 3441355031977180266, guid: e13fa8356d45c544f80451bb4a2a59eb, type: 3}
       propertyPath: levelDirector
       value: 
@@ -5142,67 +5034,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4375fea0050b19f49b83595c8730302e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &754984724509530278
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4914631772797541894, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914631772797541894, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914631772797541894, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914631772797541894, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914631772797541894, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914631772797541894, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914631772797541894, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914631772797541894, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914631772797541894, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914631772797541894, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7079521381966228495, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
-      propertyPath: m_Name
-      value: Healer
-      objectReference: {fileID: 0}
-    - target: {fileID: 7079521381966228495, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5222,4 +5053,3 @@ SceneRoots:
   - {fileID: 327392925}
   - {fileID: 904918975}
   - {fileID: 1114197471}
-  - {fileID: 754984724509530278}

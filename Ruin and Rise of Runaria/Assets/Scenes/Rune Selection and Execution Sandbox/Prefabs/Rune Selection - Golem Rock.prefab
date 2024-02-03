@@ -1327,7 +1327,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: A4
   weight: 2
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &4549856138628811167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2508,7 +2508,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: L1-9
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &285059192049063070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3013,6 +3013,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8075320736462467460}
+  - component: {fileID: 5738122930550038527}
   m_Layer: 5
   m_Name: Runes
   m_TagString: Untagged
@@ -3045,6 +3046,19 @@ RectTransform:
   m_AnchoredPosition: {x: -450, y: 385.7357}
   m_SizeDelta: {x: 800, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5738122930550038527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296873183595248857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9e3e3b85e216f4680100583ac7c2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelDirector: {fileID: 0}
 --- !u!1 &1300204692798064340
 GameObject:
   m_ObjectHideFlags: 0
@@ -3612,7 +3626,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: A6
   weight: 2
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &2514430761276168532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3914,7 +3928,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: S3
   weight: 3
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &488955439941726902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4066,7 +4080,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: S2
   weight: 2
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &1450734703741000055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4654,7 +4668,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: S1
   weight: 2
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &5638721955396848788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5067,7 +5081,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: L1-2
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &2915078657432916130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5443,7 +5457,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: M5
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &6801270875638712387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6630,9 +6644,9 @@ MonoBehaviour:
   programUI: {fileID: 5251898315015734836}
   details: {fileID: 1253992109182501932}
   popUp: {fileID: 147578193133725749}
-  runeName: S1
-  weight: 3
-  levelDirector: {fileID: 0}
+  runeName: S8
+  weight: 4
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &8171899812802224310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6849,9 +6863,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Reconstru\xE7\xE3o B\xE1sica - Canaliza energia m\xE1gica para reconstruir
-    o golem aliado.\r\n\nCura: 25%\nAlcance: x1\r\nTempo de execu\xE7\xE3o: 1.5s\r\nMana:
-    35\r"
+  m_Text: "Modo de Defesa - Usa as for\xE7as arcanas para aumentar a defesa do pr\xF3prio
+    golem por 8 segundos.\n\nDefesa: +20%\nTempo de execu\xE7\xE3o 0.5s\r\nMana:
+    65\r\nCusto: 4"
 --- !u!1 &3097074454007090964
 GameObject:
   m_ObjectHideFlags: 0
@@ -7090,7 +7104,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Cura cont\xEDnua longa - Com os poderes da floresta, cura o alvo por 6
     segundos.\n\nCura: 55%\nAlcance: x1\r\nTempo de execu\xE7\xE3o: 2.0s\r\nMana:
-    55\nCusto: 2"
+    55\nCusto: 3"
 --- !u!1 &3207033392022610966
 GameObject:
   m_ObjectHideFlags: 0
@@ -7570,7 +7584,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: A7
   weight: 2
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &1216306353987602511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7872,7 +7886,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: L1-4
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &6872621498300649048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8024,7 +8038,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: M1
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &2426974548460036501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8639,7 +8653,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: S4
   weight: 2
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &2992735872359302243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8791,7 +8805,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: A1
   weight: 2
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &8651657295739187518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9016,7 +9030,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: L1-5
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &7335478514258145426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11042,7 +11056,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: L1-1
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &4749219699079295147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11194,7 +11208,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: A3
   weight: 2
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &7596039438078751107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11346,7 +11360,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: A5
   weight: 2
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &7333222746585433780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11578,7 +11592,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: A2
   weight: 2
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &6135346817508581420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13095,9 +13109,9 @@ MonoBehaviour:
   programUI: {fileID: 5251898315015734836}
   details: {fileID: 5765312627099687620}
   popUp: {fileID: 147578193133725749}
-  runeName: S1
-  weight: 3
-  levelDirector: {fileID: 0}
+  runeName: S7
+  weight: 4
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &8115695013650863904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13324,7 +13338,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: L1-3
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &5218062923770391729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13631,7 +13645,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: L1-6
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &7156925208512579592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13846,9 +13860,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Reconstru\xE7\xE3o B\xE1sica - Canaliza energia m\xE1gica para reconstruir
-    o golem aliado.\r\n\nCura: 25%\nAlcance: x1\r\nTempo de execu\xE7\xE3o: 1.5s\r\nMana:
-    35\r"
+  m_Text: "Modo de Ataque - Usa as for\xE7as arcanas para aumentar o ataque do pr\xF3prio
+    golem por 8 segundos.\n\nAtaque: +7.5\nTempo de execu\xE7\xE3o 0.5s\r\nMana:
+    75\r\nCusto: 4"
 --- !u!1 &6134268424857361206
 GameObject:
   m_ObjectHideFlags: 0
@@ -14433,7 +14447,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: L1-7
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &4504626429290250864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14707,7 +14721,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: S1
   weight: 3
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &621519309356340170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15788,7 +15802,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: M3
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &8957158544401841422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16173,7 +16187,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: M7
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &7885893418644389039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16711,7 +16725,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: M6
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &968309680242179623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16863,7 +16877,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: M2
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &2609957473004602123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17521,7 +17535,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: M4
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &4879780132732773218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18208,7 +18222,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: M0
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &2629365288109685843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18825,7 +18839,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: L1-8
   weight: 1
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &1358778771138192757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18977,7 +18991,7 @@ MonoBehaviour:
   popUp: {fileID: 147578193133725749}
   runeName: S5
   weight: 3
-  levelDirector: {fileID: 0}
+  levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &3943828367227900629
 MonoBehaviour:
   m_ObjectHideFlags: 0

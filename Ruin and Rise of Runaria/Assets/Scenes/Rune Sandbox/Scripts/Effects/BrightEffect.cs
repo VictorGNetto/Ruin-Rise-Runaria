@@ -1,20 +1,36 @@
 using UnityEngine;
 
-public class Heal : MonoBehaviour
+public class BrightEffect : MonoBehaviour
 {
     public ICharacter target;
+
     private SpriteRenderer spriteRenderer;
+    private bool ready;
 
     private void Awake()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        Destroy(gameObject, 1.67f);
+        ready = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!ready) return;
+
         transform.position = target.Position();
         spriteRenderer.sortingOrder = target.GetSortingOrder() + 1;
+    }
+
+    public void SetAnimation(string animation)
+    {
+        gameObject.GetComponent<Animator>().Play(animation);
+    }
+
+    public void SetTarget(ICharacter target)
+    {
+        ready = true;
+        Destroy(gameObject, 1.67f);
+        this.target = target;
     }
 }

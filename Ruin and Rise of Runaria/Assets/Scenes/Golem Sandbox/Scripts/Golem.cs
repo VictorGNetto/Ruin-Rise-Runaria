@@ -385,6 +385,17 @@ public class Golem : MonoBehaviour, ICharacter
         return selectedAndTargetUI;
     }
 
+    public void IncreaseDefense(float amount)
+    {
+        defense = Mathf.Max(0, defense + amount);
+    }
+
+    public void IncreaseAttack(float amount)
+    {
+        strength = Mathf.Max(0, strength + amount);
+    }
+
+
     // Code from 
     // https://github.com/BarthaSzabolcs/Tutorial-SpriteFlash/blob/main/Assets/Scripts/FlashEffects/SimpleFlash.cs
     public void Flash()

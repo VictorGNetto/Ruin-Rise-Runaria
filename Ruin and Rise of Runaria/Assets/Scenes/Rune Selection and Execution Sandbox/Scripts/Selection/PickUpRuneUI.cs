@@ -9,11 +9,11 @@ public class PickUpRuneUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public PopUp popUp;
     public String runeName;
     public int weight;
-    public LevelDirector levelDirector;
+    public LevelDirectorProxy levelDirectorProxy;
 
     public void Select()
     {
-        if (levelDirector.levelStartedRunning) {
+        if (levelDirectorProxy.levelDirector.levelStartedRunning) {
             Vector3 mouse = Input.mousePosition;
             popUp.SetText("Reinicie o Level\nPara Modificar as Ações");
             popUp.Open(mouse.x, mouse.y - 100, 400, 100, 3);
