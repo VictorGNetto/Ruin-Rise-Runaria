@@ -26,7 +26,20 @@ public class Support : MonoBehaviour
     public float S3_Recuperacao = 0.5f;
     public float S3_Mana = 70.0f;
 
-    public GameObject HealPrefab;
+    public float S4_Cura = 0.35f;
+    public float S4_Alcance = 1.0f;
+    public float S4_Execucao = 2.0f;
+    public float S4_Recuperacao = 0.5f;
+    public float S4_Mana = 40.0f;
+
+    public float S5_Cura = 0.55f;
+    public float S5_Alcance = 1.0f;
+    public float S5_Execucao = 2.0f;
+    public float S5_Recuperacao = 0.5f;
+    public float S5_Mana = 55.0f;
+
+    public GameObject healPrefab;
+    public GameObject healerPrefab;
 
     // Dictionaries to allow variable sharing among related functions
     private Dictionary<String, float> floatDict = new Dictionary<string, float>();
@@ -48,6 +61,14 @@ public class Support : MonoBehaviour
         golem.runeFunctionMap.Add("S3", new Golem.RuneFunction(S3));
         golem.setupFunctionMap.Add("S3", new Golem.SetupBeforeAction(S3Setup));
         golem.cleanUpFunctionMap.Add("S3", new Golem.CleanUpAfterAction(S3CleanUp));
+
+        golem.runeFunctionMap.Add("S4", new Golem.RuneFunction(S4));
+        golem.setupFunctionMap.Add("S4", new Golem.SetupBeforeAction(S4Setup));
+        golem.cleanUpFunctionMap.Add("S4", new Golem.CleanUpAfterAction(S4CleanUp));
+
+        golem.runeFunctionMap.Add("S5", new Golem.RuneFunction(S5));
+        golem.setupFunctionMap.Add("S5", new Golem.SetupBeforeAction(S5Setup));
+        golem.cleanUpFunctionMap.Add("S5", new Golem.CleanUpAfterAction(S5CleanUp));
     }
 
     void DoResetCastingAnimation(float delayTime)
@@ -76,7 +97,7 @@ public class Support : MonoBehaviour
             golem.target.Heal(floatDict["totalHeal"]);
             golem.speed = golem.baseSpeed * 0.75f;
 
-            GameObject healEffect = Instantiate(HealPrefab);
+            GameObject healEffect = Instantiate(healPrefab);
             healEffect.GetComponent<Heal>().target = golem.target;
         }
 
@@ -126,7 +147,7 @@ public class Support : MonoBehaviour
             golem.target.Heal(floatDict["totalHeal"]);
             golem.speed = golem.baseSpeed * 0.75f;
 
-            GameObject healEffect = Instantiate(HealPrefab);
+            GameObject healEffect = Instantiate(healPrefab);
             healEffect.GetComponent<Heal>().target = golem.target;
         }
 
@@ -176,7 +197,7 @@ public class Support : MonoBehaviour
             golem.target.Heal(floatDict["totalHeal"]);
             golem.speed = golem.baseSpeed * 0.75f;
 
-            GameObject healEffect = Instantiate(HealPrefab);
+            GameObject healEffect = Instantiate(healPrefab);
             healEffect.GetComponent<Heal>().target = golem.target;
         }
 
@@ -208,6 +229,108 @@ public class Support : MonoBehaviour
     }
 
     private void S3CleanUp()
+    {
+        golem.casting = false;
+        golem.speed = golem.baseSpeed;
+    }
+
+    // S4
+    private bool S4()
+    {
+        if (!golem.runeExecuted || boolDict["success"]) return true;
+
+        float distance = (golem.Position() - golem.TargetPosition()).magnitude;
+
+        if (distance < floatDict["range"]) {
+            boolDict["success"] = true;
+
+            GameObject healer = Instantiate(healerPrefab);
+            healer.GetComponent<Healer>().Setup(golem.target, floatDict["totalHeal"], 4.0f);
+            golem.speed = golem.baseSpeed * 0.75f;
+
+            GameObject healEffect = Instantiate(healPrefab);
+            healEffect.GetComponent<Heal>().target = golem.target;
+        }
+
+        return true;
+    }
+
+    private void S4Setup()
+    {
+        float manaCost = S4_Mana;
+
+        floatDict.Clear();
+        boolDict.Clear();
+        boolDict.Add("success", false);
+
+        if (manaCost <= golem.mana) {
+            golem.mana -= manaCost;
+            floatDict.Add("totalHeal", S4_Cura * golem.target.MaxHealth());
+            floatDict.Add("range", golem.basicRange + golem.distanceRange * S4_Alcance);
+            golem.cooldown =  S4_Execucao + S4_Recuperacao;
+            golem.runeExecuted = true;
+            golem.speed = golem.baseSpeed * 0.5f;
+            golem.animator.speed = 1;
+            golem.casting = true;
+            DoResetCastingAnimation(1.0f);
+        } else {
+            golem.cooldown =  S4_Recuperacao;
+            golem.runeExecuted = false;
+        }
+    }
+
+    private void S4CleanUp()
+    {
+        golem.casting = false;
+        golem.speed = golem.baseSpeed;
+    }
+
+    // S5
+    private bool S5()
+    {
+        if (!golem.runeExecuted || boolDict["success"]) return true;
+
+        float distance = (golem.Position() - golem.TargetPosition()).magnitude;
+
+        if (distance < floatDict["range"]) {
+            boolDict["success"] = true;
+
+            GameObject healer = Instantiate(healerPrefab);
+            healer.GetComponent<Healer>().Setup(golem.target, floatDict["totalHeal"], 6.0f);
+            golem.speed = golem.baseSpeed * 0.75f;
+
+            GameObject healEffect = Instantiate(healPrefab);
+            healEffect.GetComponent<Heal>().target = golem.target;
+        }
+
+        return true;
+    }
+
+    private void S5Setup()
+    {
+        float manaCost = S5_Mana;
+
+        floatDict.Clear();
+        boolDict.Clear();
+        boolDict.Add("success", false);
+
+        if (manaCost <= golem.mana) {
+            golem.mana -= manaCost;
+            floatDict.Add("totalHeal", S5_Cura * golem.target.MaxHealth());
+            floatDict.Add("range", golem.basicRange + golem.distanceRange * S5_Alcance);
+            golem.cooldown =  S5_Execucao + S5_Recuperacao;
+            golem.runeExecuted = true;
+            golem.speed = golem.baseSpeed * 0.5f;
+            golem.animator.speed = 1;
+            golem.casting = true;
+            DoResetCastingAnimation(1.0f);
+        } else {
+            golem.cooldown =  S5_Recuperacao;
+            golem.runeExecuted = false;
+        }
+    }
+
+    private void S5CleanUp()
     {
         golem.casting = false;
         golem.speed = golem.baseSpeed;

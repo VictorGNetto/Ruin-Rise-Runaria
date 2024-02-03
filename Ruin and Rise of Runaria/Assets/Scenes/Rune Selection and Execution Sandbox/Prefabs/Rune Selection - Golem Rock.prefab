@@ -7088,9 +7088,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Reconstru\xE7\xE3o B\xE1sica - Canaliza energia m\xE1gica para reconstruir
-    o golem aliado.\r\n\nCura: 25%\nAlcance: x1\r\nTempo de execu\xE7\xE3o: 1.5s\r\nMana:
-    35\r"
+  m_Text: "Cura cont\xEDnua longa - Com os poderes da floresta, cura o alvo por 6
+    segundos.\n\nCura: 55%\nAlcance: x1\r\nTempo de execu\xE7\xE3o: 2.0s\r\nMana:
+    55\nCusto: 2"
 --- !u!1 &3207033392022610966
 GameObject:
   m_ObjectHideFlags: 0
@@ -7125,8 +7125,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 210}
-  m_SizeDelta: {x: 400, y: 300}
+  m_AnchoredPosition: {x: 0, y: 225}
+  m_SizeDelta: {x: 400, y: 330}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3261548341781252301
 GameObject:
@@ -8637,8 +8637,8 @@ MonoBehaviour:
   programUI: {fileID: 5251898315015734836}
   details: {fileID: 3207033392022610966}
   popUp: {fileID: 147578193133725749}
-  runeName: S1
-  weight: 3
+  runeName: S4
+  weight: 2
   levelDirector: {fileID: 0}
 --- !u!114 &2992735872359302243
 MonoBehaviour:
@@ -9692,8 +9692,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 210}
-  m_SizeDelta: {x: 400, y: 300}
+  m_AnchoredPosition: {x: 0, y: 225}
+  m_SizeDelta: {x: 400, y: 330}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4487078270029959079
 GameObject:
@@ -11481,9 +11481,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Reconstru\xE7\xE3o B\xE1sica - Canaliza energia m\xE1gica para reconstruir
-    o golem aliado.\r\n\nCura: 25%\nAlcance: x1\r\nTempo de execu\xE7\xE3o: 1.5s\r\nMana:
-    35\r"
+  m_Text: "Cura cont\xEDnua - Com os poderes da floresta, cura o alvo por 4 segundos.\n\nCura:
+    35%\nAlcance: x1\r\nTempo de execu\xE7\xE3o: 2.0s\nMana: 40\nCusto: 2"
 --- !u!1 &5429210795776134210
 GameObject:
   m_ObjectHideFlags: 0
@@ -18496,7 +18495,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Reconstru\xE7\xE3o Avan\xE7ada - Canaliza toda energia m\xE1gica poss\xEDvel
     para reconstruir a vida do alvo.\n\nCura: 60%\nAlcance: x1\r\nTempo de execu\xE7\xE3o:
-    2s\r\nMana: 70\r\nCusto: 3"
+    2.0s\r\nMana: 70\r\nCusto: 3"
 --- !u!1 &8768243343302167122
 GameObject:
   m_ObjectHideFlags: 0
@@ -18976,7 +18975,7 @@ MonoBehaviour:
   programUI: {fileID: 5251898315015734836}
   details: {fileID: 4485117922300306130}
   popUp: {fileID: 147578193133725749}
-  runeName: S1
+  runeName: S5
   weight: 3
   levelDirector: {fileID: 0}
 --- !u!114 &3943828367227900629

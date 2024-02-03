@@ -448,7 +448,13 @@ MonoBehaviour:
   S3_Execucao: 2
   S3_Recuperacao: 0.5
   S3_Mana: 70
-  HealPrefab: {fileID: 3120735254337743173, guid: 703a76ca43b3d5847a7ef044d53b2ad4, type: 3}
+  S4_Cura: 0.35
+  S4_Alcance: 1
+  S4_Execucao: 2
+  S4_Recuperacao: 0.5
+  S4_Mana: 40
+  healPrefab: {fileID: 3120735254337743173, guid: 703a76ca43b3d5847a7ef044d53b2ad4, type: 3}
+  healerPrefab: {fileID: 7079521381966228495, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
 --- !u!114 &312666354955796517
 MonoBehaviour:
   m_ObjectHideFlags: 0
