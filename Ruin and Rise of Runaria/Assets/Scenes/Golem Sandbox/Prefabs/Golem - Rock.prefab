@@ -309,8 +309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4375fea0050b19f49b83595c8730302e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
   launchOffset: {fileID: 0}
+  targetBias: 0
   targetType: 0
   health: 100
   maxHealth: 100
@@ -433,11 +433,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea3a19de23963a4eb5bf1a3f8de2b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  S1_Cura: 0.25
+  S1_Cura: 0.15
   S1_Alcance: 1
   S1_Execucao: 1.5
   S1_Recuperacao: 0.5
   S1_Mana: 35
+  S2_Cura: 0.4
+  S2_Alcance: 1
+  S2_Execucao: 2
+  S2_Recuperacao: 0.5
+  S2_Mana: 50
+  S3_Cura: 0.6
+  S3_Alcance: 1
+  S3_Execucao: 2
+  S3_Recuperacao: 0.5
+  S3_Mana: 70
   HealPrefab: {fileID: 3120735254337743173, guid: 703a76ca43b3d5847a7ef044d53b2ad4, type: 3}
 --- !u!114 &312666354955796517
 MonoBehaviour:
