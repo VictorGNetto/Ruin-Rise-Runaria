@@ -248,8 +248,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seleciona como alvo o golem aliado que tem a maior quantidade de pontos
+  m_Text: 'Seleciona como alvo o golem aliado que tem o maior percentual de pontos
     de vida.
+
+
+    Custo: 1'
 --- !u!1 &115888346817299609
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +331,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seleciona como alvo o inimigo que tem a maior quantidade de pontos de vida.
+  m_Text: 'Seleciona como alvo o inimigo que tem o maior percentual de pontos de
+    vida.
+
+
+    Custo: 1'
 --- !u!1 &215086169924710391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,8 +1704,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 140}
-  m_SizeDelta: {x: 300, y: 160}
+  m_AnchoredPosition: {x: 0, y: 160}
+  m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &710170581753892968
 GameObject:
@@ -2209,8 +2216,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seleciona como alvo o golem aliado que tem a menor quantidade de pontos
+  m_Text: 'Seleciona como alvo o golem aliado que tem o menor percentual de pontos
     de vida.
+
+
+    Custo: 1'
 --- !u!1 &812194497336003180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,7 +2643,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seleciona como alvo o inimigo que tem a menor quantidade de pontos de vida.
+  m_Text: 'Seleciona como alvo o inimigo que tem o menor percentual de pontos de
+    vida.
+
+
+    Custo: 1'
 --- !u!1 &1118586347808820023
 GameObject:
   m_ObjectHideFlags: 0
@@ -3109,7 +3123,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Seleciona como alvo o pr\xF3prio golem."
+  m_Text: "Seleciona como alvo o pr\xF3prio golem.\n\nCusto: 1"
 --- !u!1 &1370993991599845505
 GameObject:
   m_ObjectHideFlags: 0
@@ -4469,7 +4483,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Caminho Err\xE1tico - Padr\xE3o de movimenta\xE7\xE3o aleat\xF3rio por
-    todo o mapa.\n\nTempo de Execu\xE7\xE3o - 1s"
+    todo o mapa.\n\nCusto: 1"
 --- !u!1 &1994811096564499366
 GameObject:
   m_ObjectHideFlags: 0
@@ -7459,8 +7473,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Postura Inabal\xE1vel - O golem se mant\xE9m parado na posi\xE7\xE3o atual.\n\nTempo
-    de Execu\xE7\xE3o - 1s"
+  m_Text: "Postura Inabal\xE1vel - O golem se mant\xE9m parado na posi\xE7\xE3o atual.\n\nCusto:
+    1"
 --- !u!1 &3568652976428130849
 GameObject:
   m_ObjectHideFlags: 0
@@ -8220,7 +8234,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Seleciona como alvo o inimigo que est\xE1 mais distante do golem."
+  m_Text: "Seleciona como alvo o inimigo que est\xE1 mais distante do golem.\n\nCusto:
+    1"
 --- !u!1 &3833446965370909236
 GameObject:
   m_ObjectHideFlags: 0
@@ -9215,7 +9230,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Seleciona como alvo o inimigo que est\xE1 mais pr\xF3ximo do golem."
+  m_Text: "Seleciona como alvo o inimigo que est\xE1 mais pr\xF3ximo do golem.\n\nCusto:
+    1"
 --- !u!1 &4273734686063982103
 GameObject:
   m_ObjectHideFlags: 0
@@ -9479,8 +9495,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 300, y: 130}
+  m_AnchoredPosition: {x: 0, y: 145}
+  m_SizeDelta: {x: 400, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4441904231821794479
 GameObject:
@@ -10371,7 +10387,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Seleciona como alvo o golem aliado que est\xE1 mais distante."
+  m_Text: "Seleciona como alvo o golem aliado que est\xE1 mais distante.\n\nCusto:
+    1"
 --- !u!1 &4876134444226331236
 GameObject:
   m_ObjectHideFlags: 0
@@ -12334,7 +12351,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Margem Estrat\xE9gica - Se mant\xE9m longe do alvo, sem sair do seu alcance
-    de ataque a dist\xE2ncia.\n\nTempo de Execu\xE7\xE3o - 1s"
+    de ataque a dist\xE2ncia.\n\nCusto: 1"
 --- !u!1 &5673573259788006928
 GameObject:
   m_ObjectHideFlags: 0
@@ -12748,7 +12765,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Caminho Pragm\xE1tico - Padr\xE3o de movimenta\xE7\xE3o aleat\xF3rio nas
-    vizinhan\xE7as do golem.\n\nTempo de Execu\xE7\xE3o - 1s"
+    vizinhan\xE7as do golem.\n\nCusto: 1"
 --- !u!1 &5923811219677340707
 GameObject:
   m_ObjectHideFlags: 0
@@ -13443,8 +13460,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Dist\xE2ncia  Estrat\xE9gica -  Se mant\xE9m distante de um alvo.\n\nTempo
-    de Execu\xE7\xE3o - 1s"
+  m_Text: "Dist\xE2ncia  Estrat\xE9gica -  Se mant\xE9m distante de um alvo.\n\nCusto:
+    1"
 --- !u!1 &6008761431659199668
 GameObject:
   m_ObjectHideFlags: 0
@@ -13751,7 +13768,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Epicentro T\xE1tico - Se mant\xE9m no meio de um conjunto de inimigos
-    ou de amigos.\n\nTempo de Execu\xE7\xE3o - 1s"
+    ou de amigos.\n\nCusto: 1"
 --- !u!1 &6119527890450578136
 GameObject:
   m_ObjectHideFlags: 0
@@ -14593,8 +14610,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 300, y: 130}
+  m_AnchoredPosition: {x: 0, y: 145}
+  m_SizeDelta: {x: 400, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6570744166201244712
 GameObject:
@@ -14782,8 +14799,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 300, y: 130}
+  m_AnchoredPosition: {x: 0, y: 145}
+  m_SizeDelta: {x: 400, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6638987316963842978
 GameObject:
@@ -15182,8 +15199,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "V\xEDnculo pr\xF3ximo - Se mant\xE9m pr\xF3ximo a um alvo, amigo ou inimigo.\n\nTempo
-    de Execu\xE7\xE3o - 1s"
+  m_Text: "V\xEDnculo pr\xF3ximo - Se mant\xE9m pr\xF3ximo a um alvo, amigo ou inimigo.\n\nCusto:
+    1"
 --- !u!1 &6747369136972707721
 GameObject:
   m_ObjectHideFlags: 0
@@ -15674,8 +15691,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 300, y: 130}
+  m_AnchoredPosition: {x: 0, y: 145}
+  m_SizeDelta: {x: 400, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6910335277184780980
 GameObject:
@@ -16248,8 +16265,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 110}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: 0, y: 125}
+  m_SizeDelta: {x: 260, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7233354242591865582
 GameObject:
@@ -16285,8 +16302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 300, y: 130}
+  m_AnchoredPosition: {x: 0, y: 160}
+  m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7266414978296398762
 GameObject:
@@ -17013,8 +17030,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 140}
-  m_SizeDelta: {x: 300, y: 160}
+  m_AnchoredPosition: {x: 0, y: 160}
+  m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7762713205164588416
 GameObject:
@@ -18712,7 +18729,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Seleciona como alvo o golem aliado que est\xE1 mais pr\xF3ximo."
+  m_Text: "Seleciona como alvo o golem aliado que est\xE1 mais pr\xF3ximo.\n\nCusto:
+    1"
 --- !u!1 &8837957734615849752
 GameObject:
   m_ObjectHideFlags: 0
@@ -19339,8 +19357,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 300, y: 130}
+  m_AnchoredPosition: {x: 0, y: 160}
+  m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &9041377984138044407
 GameObject:
