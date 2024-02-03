@@ -620,7 +620,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Com seus conhecimentos \xFAnicos sobre runas m\xE1gicas, ele decide desperta
+  m_Text: "Com seus conhecimentos \xFAnicos sobre runas m\xE1gicas, ele decide despertar
     os golems e os convoca para lutar e, assim, salvar Runaria da calamidade."
 --- !u!222 &755670243
 CanvasRenderer:
