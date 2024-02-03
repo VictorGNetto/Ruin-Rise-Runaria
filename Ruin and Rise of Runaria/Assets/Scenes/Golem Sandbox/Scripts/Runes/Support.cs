@@ -38,6 +38,11 @@ public class Support : MonoBehaviour
     public float S5_Recuperacao = 0.5f;
     public float S5_Mana = 55.0f;
 
+    public float S6_Alcance = 1.0f;
+    public float S6_Execucao = 1.0f;
+    public float S6_Recuperacao = 0.5f;
+    public float S6_Mana = 30.0f;
+
     public float S7_Execucao = 0.5f;
     public float S7_Recuperacao = 0.5f;
     public float S7_Mana = 65.0f;
@@ -47,6 +52,7 @@ public class Support : MonoBehaviour
     public float S8_Mana = 75.0f;
 
     public GameObject brightEffectPrefab;
+    public GameObject agroEffectPrefab;
     public GameObject healerPrefab;
     public GameObject defenseBuffPrefab;
     public GameObject attackBuffPrefab;
@@ -79,6 +85,10 @@ public class Support : MonoBehaviour
         golem.runeFunctionMap.Add("S5", new Golem.RuneFunction(S5));
         golem.setupFunctionMap.Add("S5", new Golem.SetupBeforeAction(S5Setup));
         golem.cleanUpFunctionMap.Add("S5", new Golem.CleanUpAfterAction(S5CleanUp));
+
+        golem.runeFunctionMap.Add("S6", new Golem.RuneFunction(S6));
+        golem.setupFunctionMap.Add("S6", new Golem.SetupBeforeAction(S6Setup));
+        golem.cleanUpFunctionMap.Add("S6", new Golem.CleanUpAfterAction(S6CleanUp));
 
         golem.runeFunctionMap.Add("S7", new Golem.RuneFunction(S7));
         golem.setupFunctionMap.Add("S7", new Golem.SetupBeforeAction(S7Setup));
@@ -354,6 +364,55 @@ public class Support : MonoBehaviour
     }
 
     private void S5CleanUp()
+    {
+        golem.casting = false;
+        golem.speed = golem.baseSpeed;
+    }
+
+    // S6
+    private bool S6()
+    {
+        if (!golem.runeExecuted || boolDict["success"]) return true;
+        boolDict["success"] = true;
+        
+        List<Enemy> enemys =  golem.levelDirector.GetEnemysInsideCircle(golem.Position(), floatDict["range"]);
+        foreach (Enemy e in enemys)
+        {
+            if (e != null && e.Alive()) {
+                e.target = golem;
+            }
+        }
+
+        return true;
+    }
+
+    private void S6Setup()
+    {
+        float manaCost = S6_Mana;
+
+        floatDict.Clear();
+        boolDict.Clear();
+        boolDict.Add("success", false);
+
+        if (manaCost <= golem.mana) {
+            golem.mana -= manaCost;
+            golem.cooldown =  S6_Execucao + S6_Recuperacao;
+            golem.runeExecuted = true;
+            golem.speed = golem.baseSpeed * 0.25f;
+            golem.animator.speed = 1;
+            golem.casting = true;
+            DoResetCastingAnimation(1.0f);
+            floatDict.Add("range", golem.basicRange + S6_Alcance * golem.meleeRange);
+
+            GameObject agro = Instantiate(agroEffectPrefab);
+            agro.GetComponent<Agro>().SetTarget(golem);
+        } else {
+            golem.cooldown =  S6_Recuperacao;
+            golem.runeExecuted = false;
+        }
+    }
+
+    private void S6CleanUp()
     {
         golem.casting = false;
         golem.speed = golem.baseSpeed;

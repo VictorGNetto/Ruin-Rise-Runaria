@@ -1,6 +1,5 @@
 using UnityEngine;
-
-public class BrightEffect : MonoBehaviour
+public class Agro : MonoBehaviour
 {
     public ICharacter target;
 
@@ -17,19 +16,16 @@ public class BrightEffect : MonoBehaviour
     {
         if (!ready) return;
 
-        transform.position = target.Position();
-        spriteRenderer.sortingOrder = target.GetSortingOrder() + 1;
-    }
+        Vector3 position = target.Position();
 
-    public void SetAnimation(string animation)
-    {
-        gameObject.GetComponent<Animator>().Play(animation);
+        transform.position = new Vector3(position.x, position.y + 1.1f, 0);
+        spriteRenderer.sortingOrder = target.GetSortingOrder() - 1;
     }
 
     public void SetTarget(ICharacter target)
     {
         ready = true;
-        Destroy(gameObject, 1.67f);
+        Destroy(gameObject, 1.0f);
         this.target = target;
     }
 }

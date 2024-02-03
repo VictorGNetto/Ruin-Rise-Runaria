@@ -312,4 +312,16 @@ public class LevelDirector : MonoBehaviour
 
         return fartestEnemy;
     }
+
+    public List<Enemy> GetEnemysInsideCircle(Vector3 position, float range)
+    {
+        List<Enemy> enemysInsideCircle = new List<Enemy>();
+        foreach (Enemy e in enemys) {
+            if (e != null && e.Alive() && (e.Position() - position).magnitude < range) {
+                enemysInsideCircle.Add(e);
+            }
+        }
+
+        return enemysInsideCircle;
+    }
 }

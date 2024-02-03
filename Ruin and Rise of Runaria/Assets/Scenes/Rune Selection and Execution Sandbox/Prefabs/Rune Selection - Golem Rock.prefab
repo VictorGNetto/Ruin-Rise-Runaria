@@ -5592,9 +5592,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Reconstru\xE7\xE3o B\xE1sica - Canaliza energia m\xE1gica para reconstruir
-    o golem aliado.\r\n\nCura: 25%\nAlcance: x1\r\nTempo de execu\xE7\xE3o: 1.5s\r\nMana:
-    35\r"
+  m_Text: "Provocar - Chama aten\xE7\xE3o de todos inimigos num pequeno c\xEDrculo
+    ao redor do golem.\n\nAlcance: x1\r.5\nTempo de execu\xE7\xE3o: 1.5s\r\nMana:
+    30\nCusto: 3\r"
 --- !u!1 &2420317244140976598
 GameObject:
   m_ObjectHideFlags: 0
@@ -14719,7 +14719,7 @@ MonoBehaviour:
   programUI: {fileID: 5251898315015734836}
   details: {fileID: 713240212642994162}
   popUp: {fileID: 147578193133725749}
-  runeName: S1
+  runeName: S6
   weight: 3
   levelDirectorProxy: {fileID: 5738122930550038527}
 --- !u!114 &621519309356340170
