@@ -809,7 +809,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.564
+  m_Value: 0.282
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -903,6 +903,7 @@ GameObject:
   - component: {fileID: 8472914043021332783}
   - component: {fileID: 3855243366295093512}
   - component: {fileID: 3589030901286510185}
+  - component: {fileID: 5558585715192001905}
   - component: {fileID: 7367849554365151980}
   - component: {fileID: 5879922963297342660}
   - component: {fileID: 3946846429205544132}
@@ -1050,22 +1051,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4375fea0050b19f49b83595c8730302e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
   launchOffset: {fileID: 0}
+  targetBias: 0
   targetType: 0
-  health: 75
-  maxHealth: 100
-  mana: 35
-  maxMana: 70
+  health: 100
+  maxHealth: 140
+  mana: 100
+  maxMana: 100
   manaRecovery: 10
   healthManaBar: {fileID: 4753912597406726544}
-  strength: 20
-  defense: 0
-  baseSpeed: 1
-  speed: 1
-  basicRange: 0.5
-  meleeRange: 1
-  distanceRange: 1
+  strength: 10
+  defense: 0.3
+  baseSpeed: 0.8
+  speed: 0.8
+  basicRange: 0.75
+  meleeRange: 1.2
+  distanceRange: 1.2
   animator: {fileID: 0}
   walking: 0
   attacking: 0
@@ -1135,9 +1136,27 @@ MonoBehaviour:
   A7_Execucao: 0.5
   A7_Recuperacao: 0.5
   A7_Mana: 40
-  clubHitingGroundPrefab: {fileID: 0}
-  hitAreaPrefab: {fileID: 0}
-  flyingClubPrefab: {fileID: 0}
+  clubHitingGroundPrefab: {fileID: 4327425178519924092, guid: ae90fb9edff851f4a91e3fe837a9487a, type: 3}
+  hitAreaPrefab: {fileID: 1140987050725049851, guid: 04eecf9c56a9918489d040068c7e3a59, type: 3}
+  flyingClubPrefab: {fileID: 3469412970625732620, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+--- !u!114 &5558585715192001905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7035076815978857451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79fca25c3dbeb9e4cbee7c251df3a97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  A8_Dano: 1
+  A8_Alcance: 1
+  A8_Execucao: 1
+  A8_Recuperacao: 0.5
+  A8_Mana: 15
+  runicSpellPrefab: {fileID: 134017811733249524, guid: d67bb55a48e0b4a4eb210a5fcaea2dff, type: 3}
 --- !u!114 &7367849554365151980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,7 +1198,41 @@ MonoBehaviour:
   S1_Execucao: 1.5
   S1_Recuperacao: 0.5
   S1_Mana: 35
-  HealPrefab: {fileID: 0}
+  S2_Cura: 0.4
+  S2_Alcance: 1
+  S2_Execucao: 2
+  S2_Recuperacao: 0.5
+  S2_Mana: 50
+  S3_Cura: 0.6
+  S3_Alcance: 1
+  S3_Execucao: 2
+  S3_Recuperacao: 0.5
+  S3_Mana: 70
+  S4_Cura: 0.35
+  S4_Alcance: 1
+  S4_Execucao: 2
+  S4_Recuperacao: 0.5
+  S4_Mana: 40
+  S5_Cura: 0.55
+  S5_Alcance: 1
+  S5_Execucao: 2
+  S5_Recuperacao: 0.5
+  S5_Mana: 55
+  S6_Alcance: 1.5
+  S6_Execucao: 1
+  S6_Recuperacao: 0.5
+  S6_Mana: 30
+  S7_Execucao: 0.5
+  S7_Recuperacao: 0.5
+  S7_Mana: 65
+  S8_Execucao: 0.5
+  S8_Recuperacao: 0.5
+  S8_Mana: 75
+  brightEffectPrefab: {fileID: 3120735254337743173, guid: 703a76ca43b3d5847a7ef044d53b2ad4, type: 3}
+  agroEffectPrefab: {fileID: 8063159601592880174, guid: e2c77863e38050842995be6c18cee9c9, type: 3}
+  healerPrefab: {fileID: 7079521381966228495, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
+  defenseBuffPrefab: {fileID: 1778014385987534756, guid: ff9861bfb5852a448ab154691186bf12, type: 3}
+  attackBuffPrefab: {fileID: 8371870312088574938, guid: 2846750aecaaf2f4e8d7e09d2a5d71bd, type: 3}
 --- !u!114 &6447759281455796527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1201,7 +1254,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7035076815978857451}
   m_Enabled: 1
   m_AgentTypeID: -334000983
-  m_Radius: 0.1
+  m_Radius: 0.3
   m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50

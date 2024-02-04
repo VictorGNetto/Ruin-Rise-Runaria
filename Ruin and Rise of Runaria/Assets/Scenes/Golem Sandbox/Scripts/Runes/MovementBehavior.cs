@@ -240,10 +240,10 @@ public class MovementBehavior : MonoBehaviour
         floatDict.Clear();
         boolDict["M3"] = true;
 
-        floatDict["stoppingDistance"] = 1f;
-        floatDict["awakeDistance"] = 1.5f;
         boolDict["awake"] = true;
-        golem.navMeshAgent.stoppingDistance = floatDict["stoppingDistance"] * 0.8f;
+        floatDict["awakeDistance"] = golem.basicRange + golem.meleeRange * 0.85f;
+        floatDict["stoppingDistance"] = floatDict["awakeDistance"] * 0.85f;
+        golem.navMeshAgent.stoppingDistance = floatDict["stoppingDistance"] * 0.85f;
     }
 
     // Rune M4
@@ -299,9 +299,9 @@ public class MovementBehavior : MonoBehaviour
         floatDict.Clear();
         boolDict["M4"] = true;
 
+        boolDict["awake"] = true;
         floatDict["stoppingDistance"] = 0.5f;
         floatDict["awakeDistance"] = 1.0f;
-        boolDict["awake"] = true;
         golem.navMeshAgent.stoppingDistance = floatDict["stoppingDistance"] * 0.8f;
     }
 
