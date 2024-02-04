@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 2539957401673778443}
   - component: {fileID: 2893227367573128283}
   - component: {fileID: 7254611935207310621}
+  - component: {fileID: 709521851582185705}
   - component: {fileID: 5447209576849384779}
   - component: {fileID: 7884417066856074385}
   - component: {fileID: 750655734611848594}
@@ -322,7 +323,7 @@ MonoBehaviour:
   defense: 0.15
   baseSpeed: 1
   speed: 1
-  basicRange: 0.5
+  basicRange: 0.75
   meleeRange: 1
   distanceRange: 1
   animator: {fileID: 0}
@@ -397,6 +398,23 @@ MonoBehaviour:
   clubHitingGroundPrefab: {fileID: 4327425178519924092, guid: ae90fb9edff851f4a91e3fe837a9487a, type: 3}
   hitAreaPrefab: {fileID: 1140987050725049851, guid: 04eecf9c56a9918489d040068c7e3a59, type: 3}
   flyingClubPrefab: {fileID: 3469412970625732620, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+--- !u!114 &709521851582185705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634100113169278646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79fca25c3dbeb9e4cbee7c251df3a97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  A8_Dano: 1
+  A8_Alcance: 1
+  A8_Execucao: 1
+  A8_Recuperacao: 0.5
+  A8_Mana: 15
 --- !u!114 &5447209576849384779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,8 +471,26 @@ MonoBehaviour:
   S4_Execucao: 2
   S4_Recuperacao: 0.5
   S4_Mana: 40
-  healPrefab: {fileID: 3120735254337743173, guid: 703a76ca43b3d5847a7ef044d53b2ad4, type: 3}
+  S5_Cura: 0.55
+  S5_Alcance: 1
+  S5_Execucao: 2
+  S5_Recuperacao: 0.5
+  S5_Mana: 55
+  S6_Alcance: 1.5
+  S6_Execucao: 1
+  S6_Recuperacao: 0.5
+  S6_Mana: 30
+  S7_Execucao: 0.5
+  S7_Recuperacao: 0.5
+  S7_Mana: 65
+  S8_Execucao: 0.5
+  S8_Recuperacao: 0.5
+  S8_Mana: 75
+  brightEffectPrefab: {fileID: 3120735254337743173, guid: 703a76ca43b3d5847a7ef044d53b2ad4, type: 3}
+  agroEffectPrefab: {fileID: 8063159601592880174, guid: e2c77863e38050842995be6c18cee9c9, type: 3}
   healerPrefab: {fileID: 7079521381966228495, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
+  defenseBuffPrefab: {fileID: 1778014385987534756, guid: ff9861bfb5852a448ab154691186bf12, type: 3}
+  attackBuffPrefab: {fileID: 8371870312088574938, guid: 2846750aecaaf2f4e8d7e09d2a5d71bd, type: 3}
 --- !u!114 &312666354955796517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,7 +512,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1634100113169278646}
   m_Enabled: 1
   m_AgentTypeID: -334000983
-  m_Radius: 0.1
+  m_Radius: 0.3
   m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50

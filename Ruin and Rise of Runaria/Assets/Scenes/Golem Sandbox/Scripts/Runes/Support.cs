@@ -115,6 +115,7 @@ public class Support : MonoBehaviour
     // S1
     private bool S1()
     {
+        golem.LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
         float distance = (golem.Position() - golem.TargetPosition()).magnitude;
@@ -166,6 +167,7 @@ public class Support : MonoBehaviour
     // S2
     private bool S2()
     {
+        golem.LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
         float distance = (golem.Position() - golem.TargetPosition()).magnitude;
@@ -217,6 +219,7 @@ public class Support : MonoBehaviour
     // S3
     private bool S3()
     {
+        golem.LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
         float distance = (golem.Position() - golem.TargetPosition()).magnitude;
@@ -268,6 +271,7 @@ public class Support : MonoBehaviour
     // S4
     private bool S4()
     {
+        golem.LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
         float distance = (golem.Position() - golem.TargetPosition()).magnitude;
@@ -320,6 +324,7 @@ public class Support : MonoBehaviour
     // S5
     private bool S5()
     {
+        golem.LookToTheTarget();
         if (!golem.runeExecuted || boolDict["success"]) return true;
 
         float distance = (golem.Position() - golem.TargetPosition()).magnitude;
