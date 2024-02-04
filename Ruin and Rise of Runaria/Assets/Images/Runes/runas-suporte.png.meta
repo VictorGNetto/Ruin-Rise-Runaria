@@ -126,8 +126,29 @@ TextureImporter:
       name: runas-suporte_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 212
+        x: 1
+        y: 123
+        width: 88
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f261d0406f9706041bd9d11e99ae262c
+      internalID: -1098191559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-suporte_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 123
         width: 87
         height: 87
       alignment: 0
@@ -137,18 +158,60 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bedb3858f2af31147a9ba5c0215a3d08
-      internalID: -1086149591
+      spriteID: f19f27318bad1f241b4400ac94e80363
+      internalID: -202484913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runas-suporte_1
+      name: runas-suporte_2
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 123
+        width: 88
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7b7faf3f680d90449c6865df1ef9133
+      internalID: -556309571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-suporte_3
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 122
+        width: 87
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9698ac1143ce5d24c9cbcab9f043904e
+      internalID: 881860146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-suporte_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 103
+        y: 2
         width: 87
         height: 88
       alignment: 0
@@ -158,19 +221,61 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a69832b2779e1204e87d45c6b286e875
-      internalID: -1822891208
+      spriteID: 15a757eb764246b45a6f7b9f05f8dd79
+      internalID: 390084859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runas-suporte_2
+      name: runas-suporte_5
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
+        x: 105
+        y: 3
         width: 87
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa0f6e013130be41a2135ef24c7eb0e
+      internalID: 881573167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-suporte_6
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 3
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bed47c0ec287904e821abfd253d3014
+      internalID: -1359867430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-suporte_7
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 0
+        width: 88
         height: 87
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -179,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ac61768b6dac1d4ebafdb4a2c68d308
-      internalID: -1402252053
+      spriteID: 4b3bd7e8f6e70bd43a0de3a5e9a56136
+      internalID: 2076470114
       vertices: []
       indices: 
       edges: []
@@ -196,9 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      runas-suporte_0: -1086149591
-      runas-suporte_1: -1822891208
-      runas-suporte_2: -1402252053
+      runas-suporte_0: -1098191559
+      runas-suporte_1: -202484913
+      runas-suporte_2: -556309571
+      runas-suporte_3: 881860146
+      runas-suporte_4: 390084859
+      runas-suporte_5: 881573167
+      runas-suporte_6: -1359867430
+      runas-suporte_7: 2076470114
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

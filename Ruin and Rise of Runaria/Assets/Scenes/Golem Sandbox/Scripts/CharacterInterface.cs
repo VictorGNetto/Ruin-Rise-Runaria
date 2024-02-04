@@ -13,4 +13,7 @@ public interface ICharacter
     void Die();
     int GUID();
     SelectedAndTargetUI SelectedAndTargetUI();
+
+    void IncreaseDefense(float amount);
+    void IncreaseAttack(float amount);
 }

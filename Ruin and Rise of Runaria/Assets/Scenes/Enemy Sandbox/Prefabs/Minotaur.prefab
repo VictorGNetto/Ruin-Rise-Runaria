@@ -146,9 +146,11 @@ MonoBehaviour:
   health: 75
   maxHealth: 100
   healthBar: {fileID: 791743655069758523}
+  friendlyTarget: {fileID: 0}
   target: {fileID: 0}
   strength: 15
   defense: 0.1
+  guid: 0
   alive: 1
   levelDirector: {fileID: 0}
   selectedAndTargetUI: {fileID: 3283812841662245477}
