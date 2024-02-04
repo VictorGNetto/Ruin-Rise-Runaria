@@ -60,7 +60,7 @@ public class RunicSpell : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (timeSinceThrow / flyingTime < 0.25f || !ready) return;
+        if (timeSinceThrow / flyingTime < 0.10f || !ready) return;
 
         ICharacter character = collider.gameObject.GetComponent<ICharacter>();
         int guid = character.GUID();

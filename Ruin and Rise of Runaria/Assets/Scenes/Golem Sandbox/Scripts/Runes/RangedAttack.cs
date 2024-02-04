@@ -12,6 +12,13 @@ public class RangedAttack : MonoBehaviour
     public float A8_Recuperacao = 0.5f;
     public float A8_Mana = 15.0f;
 
+    public float A10_Dano = 0.75f;
+    public float A10_Alcance = 1.5f;
+    public float A10_Execucao = 1.5f;
+    public float A10_Recuperacao = 0.5f;
+    public float A10_Mana = 30.0f;
+
+
     public Transform launchOffset;
     public GameObject runicSpellPrefab;
 
@@ -29,6 +36,10 @@ public class RangedAttack : MonoBehaviour
         golem.runeFunctionMap.Add("A8", new Golem.RuneFunction(A8));
         golem.setupFunctionMap.Add("A8", new Golem.SetupBeforeAction(A8Setup));
         golem.cleanUpFunctionMap.Add("A8", new Golem.CleanUpAfterAction(A8CleanUp));
+
+        golem.runeFunctionMap.Add("A10", new Golem.RuneFunction(A10));
+        golem.setupFunctionMap.Add("A10", new Golem.SetupBeforeAction(A10Setup));
+        golem.cleanUpFunctionMap.Add("A10", new Golem.CleanUpAfterAction(A10CleanUp));
     }
 
     void DoResetCastingAnimation(float delayTime)
@@ -111,6 +122,47 @@ public class RangedAttack : MonoBehaviour
     }
 
     private void A8CleanUp()
+    {
+        golem.speed = golem.baseSpeed;
+    }
+
+    // A10
+    private bool A10()
+    {
+        golem.LookToTheTarget();
+        
+        // if (!golem.runeExecuted || boolDict["success"]) return true;
+
+        return true;
+    }
+
+    private void A10Setup()
+    {
+        float manaCost = A10_Mana;
+
+        floatDict.Clear();
+        boolDict.Clear();
+        boolDict.Add("success", false);
+
+        if (manaCost <= golem.mana) {
+            golem.mana -= manaCost;
+            golem.runeExecuted = true;
+            golem.cooldown = A10_Execucao + A10_Recuperacao;
+            floatDict.Add("damage", golem.strength * A10_Dano);
+            floatDict.Add("attackRange", golem.basicRange + golem.distanceRange * A10_Alcance);
+
+            golem.speed = golem.baseSpeed * 0.5f;
+            golem.animator.speed = 1;
+            golem.casting = true;
+            DoResetCastingAnimation(1.0f);
+            DoThrowSpell(3, 1.0f);
+        } else {
+            golem.runeExecuted = false;
+            golem.cooldown = A10_Recuperacao;
+        }
+    }
+
+    private void A10CleanUp()
     {
         golem.speed = golem.baseSpeed;
     }
