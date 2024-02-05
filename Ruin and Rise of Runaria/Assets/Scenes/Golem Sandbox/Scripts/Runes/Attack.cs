@@ -94,6 +94,17 @@ public class Attack : MonoBehaviour
         golem.cleanUpFunctionMap.Add("A7", new Golem.CleanUpAfterAction(A7CleanUp));
     }
 
+    private void SafeTakeDamage()
+    {
+        if (golem.targetType == Golem.TargetType.Self) {
+            golem.target.TakeDamage(floatDict["damage"] * 0.3f);
+        } else if (golem.targetType == Golem.TargetType.Friend) {
+            golem.target.TakeDamage(floatDict["damage"] * 0.5f);
+        } else {
+            golem.target.TakeDamage(floatDict["damage"]);
+        }
+    }
+
     // A1
     private bool A1()
     {
@@ -157,7 +168,7 @@ public class Attack : MonoBehaviour
         golem.attacking = false;
 
         if (boolDict["success"]) {
-            golem.target.TakeDamage(floatDict["damage"]);
+            SafeTakeDamage();
         }
     }
 
@@ -224,7 +235,7 @@ public class Attack : MonoBehaviour
         golem.attacking = false;
 
         if (boolDict["success"]) {
-            golem.target.TakeDamage(floatDict["damage"]);
+            SafeTakeDamage();
         }
     }
 
@@ -292,7 +303,7 @@ public class Attack : MonoBehaviour
         intDict["hits"] -= 1;
 
         if (boolDict["success"]) {
-            golem.target.TakeDamage(floatDict["damage"]);
+            SafeTakeDamage();
             boolDict["success"] = false;
         }
 
@@ -370,7 +381,7 @@ public class Attack : MonoBehaviour
         intDict["hits"] -= 1;
 
         if (boolDict["success"]) {
-            golem.target.TakeDamage(floatDict["damage"]);
+            SafeTakeDamage();
             boolDict["success"] = false;
         }
 
@@ -483,9 +494,9 @@ public class Attack : MonoBehaviour
                 hitArea.GetComponent<CircleHitArea>().AddNotHitableCharacter(golem.guid);
 
                 GameObject effect = Instantiate(clubHitingGroundPrefab);
-                Vector3 position = new Vector3(golem.Position().x, golem.Position().y + 0.3f, 0);
+                Vector3 position = new Vector3(golem.TargetPosition().x, golem.TargetPosition().y + 0.3f, 0);
                 effect.transform.position = position;
-                effect.GetComponent<ClubHitingGround>().SetOrderInLayer(golem.GetSortingOrder() + 10);
+                effect.GetComponent<ClubHitingGround>().SetOrderInLayer(golem.GetTargetSortingOrder() + 10);
             }
         }
 

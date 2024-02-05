@@ -65,6 +65,17 @@ public class RangedAttack : MonoBehaviour
         golem.cleanUpFunctionMap.Add("A11", new Golem.CleanUpAfterAction(A11CleanUp));
     }
 
+    private void SafeTakeDamage()
+    {
+        if (golem.targetType == Golem.TargetType.Self) {
+            golem.target.TakeDamage(floatDict["damage"] * 0.3f);
+        } else if (golem.targetType == Golem.TargetType.Friend) {
+            golem.target.TakeDamage(floatDict["damage"] * 0.5f);
+        } else {
+            golem.target.TakeDamage(floatDict["damage"]);
+        }
+    }
+
     void DoResetCastingAnimation(float delayTime)
     {
         StartCoroutine(ResetCastingAnimation(delayTime));
@@ -118,13 +129,7 @@ public class RangedAttack : MonoBehaviour
         //Wait for the specified delay time before continuing.
         yield return new WaitForSeconds(delayTime);
 
-        if (golem.targetType == Golem.TargetType.Self) {
-            golem.target.TakeDamage(floatDict["damage"] * 0.3f);
-        } else if (golem.targetType == Golem.TargetType.Friend) {
-            golem.target.TakeDamage(floatDict["damage"] * 0.5f);
-        } else {
-            golem.target.TakeDamage(floatDict["damage"]);
-        }
+        SafeTakeDamage();
     }
 
     // A8
@@ -156,7 +161,7 @@ public class RangedAttack : MonoBehaviour
             golem.animator.speed = 1;
             golem.casting = true;
             DoResetCastingAnimation(1.0f);
-            DoThrowSpell(1, 1.0f);
+            DoThrowSpell(1, A8_Execucao/2);
         } else {
             golem.runeExecuted = false;
             golem.cooldown = A8_Recuperacao;
@@ -251,7 +256,7 @@ public class RangedAttack : MonoBehaviour
             golem.animator.speed = 1;
             golem.casting = true;
             DoResetCastingAnimation(1.0f);
-            DoThrowSpell(3, 1.0f);
+            DoThrowSpell(3, A10_Execucao/2);
         } else {
             golem.runeExecuted = false;
             golem.cooldown = A10_Recuperacao;

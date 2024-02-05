@@ -35,7 +35,16 @@ public class CircleHitArea : MonoBehaviour
         if (!hitedEntities.Contains(guid)) {
             hitedEntities.Add(guid);
 
-            character.TakeDamage(damage);
+            if (IsGolem(guid)) {
+                character.TakeDamage(damage * 0.5f);
+            } else {
+                character.TakeDamage(damage);
+            }
         }
+    }
+
+    private bool IsGolem(int guid)
+    {
+        return guid < 100;
     }
 }
