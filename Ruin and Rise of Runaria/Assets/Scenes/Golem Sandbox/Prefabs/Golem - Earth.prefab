@@ -317,7 +317,7 @@ RectTransform:
   m_Father: {fileID: 3901091278651767342}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.282, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -410,6 +410,7 @@ GameObject:
   - component: {fileID: 2350670848561484043}
   - component: {fileID: 9042108169200833378}
   - component: {fileID: 6849741133935033958}
+  - component: {fileID: 6278503477726101476}
   - component: {fileID: 1035448172478165130}
   - component: {fileID: 5877241704155007850}
   - component: {fileID: 1753476976001076900}
@@ -423,7 +424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6179743829551935389
 Transform:
   m_ObjectHideFlags: 0
@@ -557,8 +558,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4375fea0050b19f49b83595c8730302e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
   launchOffset: {fileID: 0}
+  targetBias: 0
   targetType: 0
   health: 85
   maxHealth: 85
@@ -570,7 +571,7 @@ MonoBehaviour:
   defense: 0.05
   baseSpeed: 1.2
   speed: 1.2
-  basicRange: 0.5
+  basicRange: 0.75
   meleeRange: 1
   distanceRange: 2
   animator: {fileID: 0}
@@ -645,6 +646,43 @@ MonoBehaviour:
   clubHitingGroundPrefab: {fileID: 4327425178519924092, guid: ae90fb9edff851f4a91e3fe837a9487a, type: 3}
   hitAreaPrefab: {fileID: 1140987050725049851, guid: 04eecf9c56a9918489d040068c7e3a59, type: 3}
   flyingClubPrefab: {fileID: 3469412970625732620, guid: 859a745fe4c0fb441a3ba0390aa1b8e3, type: 3}
+--- !u!114 &6278503477726101476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2894445575586125949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79fca25c3dbeb9e4cbee7c251df3a97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  A8_Dano: 1
+  A8_Alcance: 1
+  A8_Execucao: 1
+  A8_Recuperacao: 0.5
+  A8_Mana: 15
+  A9_Dano: 2
+  A9_Alcance: 1.5
+  A9_Execucao: 1.5
+  A9_Recuperacao: 0.5
+  A9_Mana: 25
+  A9_Ray_Color: {r: 0, g: 0, b: 0, a: 0}
+  A10_Dano: 0.75
+  A10_Alcance: 1.5
+  A10_Execucao: 1.5
+  A10_Recuperacao: 0.5
+  A10_Mana: 30
+  A11_Dano: 4
+  A11_Alcance: 1.5
+  A11_Execucao: 1.5
+  A11_Recuperacao: 0.5
+  A11_Mana: 50
+  A11_Ray_Color: {r: 0, g: 0, b: 0, a: 0}
+  launchOffset: {fileID: 0}
+  runicSpellPrefab: {fileID: 0}
+  rayPrefab: {fileID: 0}
 --- !u!114 &1035448172478165130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,7 +724,41 @@ MonoBehaviour:
   S1_Execucao: 1.5
   S1_Recuperacao: 0.5
   S1_Mana: 35
-  HealPrefab: {fileID: 3120735254337743173, guid: 703a76ca43b3d5847a7ef044d53b2ad4, type: 3}
+  S2_Cura: 0.4
+  S2_Alcance: 1
+  S2_Execucao: 2
+  S2_Recuperacao: 0.5
+  S2_Mana: 50
+  S3_Cura: 0.6
+  S3_Alcance: 1
+  S3_Execucao: 2
+  S3_Recuperacao: 0.5
+  S3_Mana: 70
+  S4_Cura: 0.35
+  S4_Alcance: 1
+  S4_Execucao: 2
+  S4_Recuperacao: 0.5
+  S4_Mana: 40
+  S5_Cura: 0.55
+  S5_Alcance: 1
+  S5_Execucao: 2
+  S5_Recuperacao: 0.5
+  S5_Mana: 55
+  S6_Alcance: 1.5
+  S6_Execucao: 1
+  S6_Recuperacao: 0.5
+  S6_Mana: 30
+  S7_Execucao: 0.5
+  S7_Recuperacao: 0.5
+  S7_Mana: 65
+  S8_Execucao: 0.5
+  S8_Recuperacao: 0.5
+  S8_Mana: 75
+  brightEffectPrefab: {fileID: 3120735254337743173, guid: 703a76ca43b3d5847a7ef044d53b2ad4, type: 3}
+  agroEffectPrefab: {fileID: 8063159601592880174, guid: e2c77863e38050842995be6c18cee9c9, type: 3}
+  healerPrefab: {fileID: 7079521381966228495, guid: 2264e3207f1ae2b4e928e8f49e41f183, type: 3}
+  defenseBuffPrefab: {fileID: 1778014385987534756, guid: ff9861bfb5852a448ab154691186bf12, type: 3}
+  attackBuffPrefab: {fileID: 8371870312088574938, guid: 2846750aecaaf2f4e8d7e09d2a5d71bd, type: 3}
 --- !u!114 &2122751120135037203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,7 +780,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2894445575586125949}
   m_Enabled: 1
   m_AgentTypeID: -334000983
-  m_Radius: 0.1
+  m_Radius: 0.3
   m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1133,7 +1205,7 @@ RectTransform:
   m_Father: {fileID: 1047616288071861597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.231, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

@@ -6411,7 +6411,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Raio R\xFAnico Celestial - Invoca um intenso raio celestial em dire\xE7\xE3o
-    ao alvo.\n\nDano: x3\nAlcance: x1\nTempo de execu\xE7\xE3o: 2.0 s\nMana: 50\r\nCusto:
+    ao alvo.\n\nDano: x4\nAlcance: x1\nTempo de execu\xE7\xE3o: 1.50 s\nMana: 50\r\nCusto:
     2"
 --- !u!1 &2573950147420448236
 GameObject:
@@ -17325,7 +17325,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Disparos R\xFAnicos - De uma longa dist\xE2ncia, lan\xE7a tr\xEAs proj\xE9teis
     r\xFAnicos em dire\xE7\xE3o ao alvo.\n\nDano: x0.75 (3 hits)\nAlcance: x1.5\nTempo
-    de execu\xE7\xE3o: 1.5 s\r\nMana: 30\r\nCusto: 3"
+    de execu\xE7\xE3o: 1.0 s\r\nMana: 30\r\nCusto: 3"
 --- !u!1 &7137141841494630677
 GameObject:
   m_ObjectHideFlags: 0
