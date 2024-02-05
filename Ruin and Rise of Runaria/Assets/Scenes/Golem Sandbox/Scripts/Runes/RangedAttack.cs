@@ -33,9 +33,18 @@ public class RangedAttack : MonoBehaviour
     public float A11_Mana = 50.0f;
     public Color A11_Ray_Color;
 
+    public float A12_Dano = 0.85f;
+    public float A12_Alcance = 1.0f;
+    public float A12_Area = 2.0f;
+    public float A12_Execucao = 1.5f;
+    public float A12_Recuperacao = 0.5f;
+    public float A12_Mana = 20.0f;
+
     public Transform launchOffset;
     public GameObject runicSpellPrefab;
     public GameObject rayPrefab;
+    public GameObject hitAreaPrefab;
+    public GameObject explosion3Prefab;
 
     private Golem golem;
 
@@ -63,6 +72,10 @@ public class RangedAttack : MonoBehaviour
         golem.runeFunctionMap.Add("A11", new Golem.RuneFunction(A11));
         golem.setupFunctionMap.Add("A11", new Golem.SetupBeforeAction(A11Setup));
         golem.cleanUpFunctionMap.Add("A11", new Golem.CleanUpAfterAction(A11CleanUp));
+
+        golem.runeFunctionMap.Add("A12", new Golem.RuneFunction(A12));
+        golem.setupFunctionMap.Add("A12", new Golem.SetupBeforeAction(A12Setup));
+        golem.cleanUpFunctionMap.Add("A12", new Golem.CleanUpAfterAction(A12CleanUp));
     }
 
     private void SafeTakeDamage()
@@ -115,8 +128,40 @@ public class RangedAttack : MonoBehaviour
             runicSpell.GetComponent<RunicSpell>().damage = floatDict["damage"];
             runicSpell.GetComponent<RunicSpell>().whoThrow = golem.GUID();
             runicSpell.GetComponent<RunicSpell>().autoTarget = golem.GUID() == golem.target.GUID();
+            runicSpell.GetComponent<RunicSpell>().doExplosion = false;
             runicSpell.GetComponent<RunicSpell>().Setup(flyingTime, launchOffset.position, targetPosition);
         }
+    }
+
+    void DoThrowExplosionSpell(float delayTime)
+    {
+        StartCoroutine(ThrowExplosionSpell(delayTime));
+    }
+
+    IEnumerator ThrowExplosionSpell(float delayTime)
+    {
+        //Wait for the specified delay time before continuing.
+        yield return new WaitForSeconds(delayTime);
+
+        Vector3 targetPosition;
+        float distance = (golem.Position() - golem.TargetPosition()).magnitude;
+        if (distance < floatDict["attackRange"]) {
+            targetPosition = golem.TargetPosition();
+        } else {
+            targetPosition = golem.Position() + floatDict["attackRange"] * (golem.TargetPosition() - golem.Position()).normalized;
+        }
+        float actualDistance = (golem.Position() - targetPosition).magnitude;
+        float flyingTime = 0.25f + 0.25f * actualDistance / floatDict["attackRange"];
+
+        GameObject runicSpell = Instantiate(runicSpellPrefab);
+        runicSpell.GetComponent<RunicSpell>().damage = floatDict["damage"];
+        runicSpell.GetComponent<RunicSpell>().whoThrow = golem.GUID();
+        runicSpell.GetComponent<RunicSpell>().autoTarget = golem.GUID() == golem.target.GUID();
+        runicSpell.GetComponent<RunicSpell>().doExplosion = true;
+        runicSpell.GetComponent<RunicSpell>().explosionRadius = floatDict["attackArea"];
+        runicSpell.GetComponent<RunicSpell>().hitAreaPrefab = hitAreaPrefab;
+        runicSpell.GetComponent<RunicSpell>().explosion3Prefab = explosion3Prefab;
+        runicSpell.GetComponent<RunicSpell>().Setup(flyingTime, launchOffset.position, targetPosition);
     }
 
     void DoDelayedDamage(float delayTime)
@@ -318,6 +363,48 @@ public class RangedAttack : MonoBehaviour
     }
 
     private void A11CleanUp()
+    {
+        golem.speed = golem.baseSpeed;
+    }
+
+    // A12
+    private bool A12()
+    {
+        golem.LookToTheTarget();
+        
+        // if (!golem.runeExecuted || boolDict["success"]) return true;
+
+        return true;
+    }
+
+    private void A12Setup()
+    {
+        float manaCost = A12_Mana;
+
+        floatDict.Clear();
+        boolDict.Clear();
+        boolDict.Add("success", false);
+
+        if (manaCost <= golem.mana) {
+            golem.mana -= manaCost;
+            golem.runeExecuted = true;
+            golem.cooldown = A12_Execucao + A12_Recuperacao;
+            floatDict.Add("damage", golem.strength * A12_Dano);
+            floatDict.Add("attackRange", golem.basicRange + golem.distanceRange * A12_Alcance);
+            floatDict.Add("attackArea", golem.basicRange + golem.meleeRange * A12_Area);
+
+            golem.speed = golem.baseSpeed * 0.5f;
+            golem.animator.speed = 1;
+            golem.casting = true;
+            DoResetCastingAnimation(1.0f);
+            DoThrowExplosionSpell(A12_Execucao/2);
+        } else {
+            golem.runeExecuted = false;
+            golem.cooldown = A12_Recuperacao;
+        }
+    }
+
+    private void A12CleanUp()
     {
         golem.speed = golem.baseSpeed;
     }

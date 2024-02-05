@@ -7,6 +7,11 @@ public class RunicSpell : MonoBehaviour
     public int whoThrow;
     public bool autoTarget;
 
+    public bool doExplosion;
+    public float explosionRadius;
+    public GameObject hitAreaPrefab;
+    public GameObject explosion3Prefab;
+
     private Vector3 v0;
 
     private float flyingTime;
@@ -65,6 +70,12 @@ public class RunicSpell : MonoBehaviour
         ICharacter character = collider.gameObject.GetComponent<ICharacter>();
         int guid = character.GUID();
 
+        if (doExplosion) {
+            Explosion(character, guid);
+            Destroy(gameObject);
+            return;
+        }
+
         if (guid == whoThrow) {
             character.TakeDamage(damage * 0.3f);
         } else if (IsGolem(guid)) {
@@ -74,6 +85,21 @@ public class RunicSpell : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    private void Explosion(ICharacter character, int guid)
+    {
+        GameObject hitArea = Instantiate(hitAreaPrefab);
+        hitArea.transform.position = character.Position();
+        hitArea.GetComponent<CircleHitArea>().SetRadius(explosionRadius);
+        hitArea.GetComponent<CircleHitArea>().DestroyHitArea(0.5f);
+        hitArea.GetComponent<CircleHitArea>().AddNotHitableCharacter(whoThrow);
+        hitArea.GetComponent<CircleHitArea>().SetDamage(damage);
+
+        GameObject effect = Instantiate(explosion3Prefab);
+        Vector3 position = new Vector3(character.TargetPosition().x, character.TargetPosition().y + 1.8f, 0);
+        effect.transform.position = position;
+        effect.GetComponent<Explosion3>().SetOrderInLayer(character.GetSortingOrder() + 10);
     }
 
     private bool IsGolem(int guid)

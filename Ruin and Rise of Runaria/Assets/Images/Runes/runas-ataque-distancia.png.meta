@@ -127,7 +127,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 143
         width: 110
         height: 110
       alignment: 0
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2d72eb3f5a1c72498e0ed0be13decd9
-      internalID: -956263256
+      spriteID: 733a1f92ec5fcb544bf89d63b55407eb
+      internalID: -351702358
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 0
+        y: 143
         width: 110
         height: 110
       alignment: 0
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f0ac70967de4984f84c8f4741b1b63c
-      internalID: 534122926
+      spriteID: 28c72396ad3abdc4da46fc20d80b2eac
+      internalID: 1156661252
       vertices: []
       indices: 
       edges: []
@@ -169,7 +169,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 0
+        y: 143
         width: 110
         height: 110
       alignment: 0
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f29d099a6e6d0a4bafcecc2824051de
-      internalID: 965597472
+      spriteID: 1089a45ebc20f864090971584f3e2b87
+      internalID: -1226404238
       vertices: []
       indices: 
       edges: []
@@ -190,6 +190,69 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
+        y: 143
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7fd3078f3be3034fb721cf435a8e7ca
+      internalID: -566311219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-ataque-distancia_4
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 10
+        width: 110
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab4093efec7a2d4883a617eeb6571de
+      internalID: -179536222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-ataque-distancia_5
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 7
+        width: 110
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9f72bbbffe197478841c5a1b3518ac
+      internalID: -440732742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runas-ataque-distancia_6
+      rect:
+        serializedVersion: 2
+        x: 263
         y: 0
         width: 110
         height: 110
@@ -200,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f76426a299b042d49a44e6754c59dd13
-      internalID: 878597643
+      spriteID: c59fece8fcca800468802c03afd2702b
+      internalID: -1539344265
       vertices: []
       indices: 
       edges: []
@@ -217,10 +280,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      runas-ataque-distancia_0: -956263256
-      runas-ataque-distancia_1: 534122926
-      runas-ataque-distancia_2: 965597472
-      runas-ataque-distancia_3: 878597643
+      runas-ataque-distancia_0: -351702358
+      runas-ataque-distancia_1: 1156661252
+      runas-ataque-distancia_2: -1226404238
+      runas-ataque-distancia_3: -566311219
+      runas-ataque-distancia_4: -179536222
+      runas-ataque-distancia_5: -440732742
+      runas-ataque-distancia_6: -1539344265
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

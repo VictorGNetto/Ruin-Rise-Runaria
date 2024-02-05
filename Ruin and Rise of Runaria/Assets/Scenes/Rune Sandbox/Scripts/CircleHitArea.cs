@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CircleHitArea : MonoBehaviour
 {
-    public float damage;
+    private float damage;
 
     private HashSet<int> hitedEntities = new HashSet<int>();
 
