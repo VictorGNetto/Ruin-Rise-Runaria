@@ -19,6 +19,7 @@ public class AddRuneUI : MonoBehaviour
 
     public void SetAsInsertPosition()
     {
+        add = this.gameObject;
         add.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 50);
 
         add.transform.Find("New Rune").gameObject.SetActive(true);
@@ -27,6 +28,7 @@ public class AddRuneUI : MonoBehaviour
 
     public void UnsetAsInsertPosition()
     {
+        add = this.gameObject;
         add.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 50);
     
         add.transform.Find("New Rune").gameObject.SetActive(false);
