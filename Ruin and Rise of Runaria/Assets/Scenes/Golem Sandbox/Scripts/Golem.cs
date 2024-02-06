@@ -108,11 +108,15 @@ public class Golem : MonoBehaviour, ICharacter
         alive = true;
     }
 
-    // Update is called once per frame
-    private bool gameOver = false;
     void Update()
     {
-        if (gameOver) return;
+        if (levelDirector.levelDone) {
+            casting = false;
+            attacking = false;
+            throwing = false;
+            ResolveAnimation();
+            return;
+        }
         if (!levelDirector.levelStartedRunning) return;
         if (!alive) return;
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);

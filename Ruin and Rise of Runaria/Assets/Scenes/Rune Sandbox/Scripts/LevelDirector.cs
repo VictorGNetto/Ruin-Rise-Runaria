@@ -12,9 +12,12 @@ public class LevelDirector : MonoBehaviour
     public bool levelStartedRunning = false;
     public GameObject WinUI;
     public GameObject LossUI;
+    public bool levelDone;
 
     private void Awake()
     {
+        levelDone = false;
+
         int i = 0;
         foreach (Golem g in golems) {
             if (g != null) {
@@ -34,6 +37,8 @@ public class LevelDirector : MonoBehaviour
 
     private void Update()
     {
+        if (levelDone) return;
+        
         GameState();
     }
 
@@ -348,17 +353,17 @@ public class LevelDirector : MonoBehaviour
     }
 
     public void GameState()
-    {
+    {        
         //check if all elements in list are null
         bool golemsDead = golems.All(element => element == null || !element.Alive());
         bool enemiesDead = enemys.All(element => element == null || !element.Alive());
         if (golemsDead)
         {
-            Time.timeScale = 0;
+            levelDone = true;
             Loss();
         }else if (enemiesDead)
         {
-            Time.timeScale = 0;
+            levelDone = true;
             Win();
         }
     }
@@ -371,7 +376,6 @@ public class LevelDirector : MonoBehaviour
     public void Win()
     {
         WinUI.SetActive(true);
-        Time.timeScale = 0.0f;
         UnlockNextLevel();
     }
 

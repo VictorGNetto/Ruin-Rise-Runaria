@@ -26,6 +26,7 @@ public class MinotaurBehaviour: MonoBehaviour
 
     private void Update()
     {
+        if (enemy.levelDirector.levelDone) return;
         if (!enemy.alive) return;
 
         Golem target = enemy.target;
@@ -36,6 +37,8 @@ public class MinotaurBehaviour: MonoBehaviour
                 enemy.target = LowestGolemPercent();
                 target = enemy.target;
             }
+
+            if (enemy.levelDirector.levelDone || target == null) return;
 
             if (Vector2.Distance(transform.position, target.Position()) >= range)
             {

@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour, ICharacter
     // Update is called once per frame
     void Update()
     {
+        if (levelDirector.levelDone) return;
         if (!alive) return;
 
         healthBar.SetHealth(health, maxHealth);

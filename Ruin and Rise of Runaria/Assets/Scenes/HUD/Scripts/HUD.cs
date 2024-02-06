@@ -38,6 +38,8 @@ public class HUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (levelDirector.levelDone) return;
+        
         runningTime += Time.deltaTime;
 
         timer.GetComponent<Text>().text = GetFormatedRunningTime();
