@@ -94,7 +94,7 @@ public class LevelDirector : MonoBehaviour
 
         Golem golemWithHighestHealth = validGolems[0];
         foreach (Golem g in validGolems) {
-            if (g.health > golemWithHighestHealth.health) {
+            if (g.health / g.maxHealth > golemWithHighestHealth.health / golemWithHighestHealth.maxHealth) {
                 golemWithHighestHealth = g;
             }
         }
@@ -113,7 +113,7 @@ public class LevelDirector : MonoBehaviour
 
         Golem golemWithLowestHealth = validGolems[0];
         foreach (Golem g in validGolems) {
-            if (g.health < golemWithLowestHealth.health) {
+            if (g.health / g.maxHealth < golemWithLowestHealth.health / golemWithLowestHealth.maxHealth) {
                 golemWithLowestHealth = g;
             }
         }
@@ -236,7 +236,7 @@ public class LevelDirector : MonoBehaviour
 
         Enemy enemyWithHighestHealth = validEnemys[0];
         foreach (Enemy e in validEnemys) {
-            if (e.health > enemyWithHighestHealth.health) {
+            if (e.health / e.maxHealth > enemyWithHighestHealth.health / enemyWithHighestHealth.maxHealth) {
                 enemyWithHighestHealth = e;
             }
         }
@@ -257,7 +257,7 @@ public class LevelDirector : MonoBehaviour
 
         Enemy enemyWithLowestHealth = validEnemys[0];
         foreach (Enemy e in validEnemys) {
-            if (e.health < enemyWithLowestHealth.health) {
+            if (e.health / e.maxHealth < enemyWithLowestHealth.health / enemyWithLowestHealth.maxHealth) {
                 enemyWithLowestHealth = e;
             }
         }
