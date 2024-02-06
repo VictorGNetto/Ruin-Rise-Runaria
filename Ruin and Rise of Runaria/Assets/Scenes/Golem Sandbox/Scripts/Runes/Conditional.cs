@@ -23,6 +23,8 @@ public class Conditional : MonoBehaviour
         golem.runeFunctionMap.Add("L2-1", new Golem.RuneFunction(L21));
         golem.runeFunctionMap.Add("L2-2", new Golem.RuneFunction(L22));
         golem.runeFunctionMap.Add("L2-3", new Golem.RuneFunction(L23));
+        golem.runeFunctionMap.Add("L2-4", new Golem.RuneFunction(L24));
+        golem.runeFunctionMap.Add("L2-5", new Golem.RuneFunction(L25));
     }
 
     private void L2xSetup()
@@ -43,5 +45,27 @@ public class Conditional : MonoBehaviour
     private bool L23()
     {
         return golem.target.Health() / golem.target.MaxHealth() > 0.50f;
+    }
+
+    private bool L24()
+    {
+        float range1 = golem.basicRange + golem.meleeRange;
+        float range2 = (golem.basicRange + golem.distanceRange) * 2;
+
+        int c1 = golem.levelDirector.GetGolemsInsideCircle(golem.GUID(), golem.Position(), range1).Count;
+        int c2 = golem.levelDirector.GetGolemsInsideCircle(golem.GUID(), golem.Position(), range2).Count - c1;
+
+        return c1 * 2 + c2 * 1 > 2;
+    }
+
+    private bool L25()
+    {
+        float range1 = golem.basicRange + golem.meleeRange;
+        float range2 = (golem.basicRange + golem.distanceRange) * 2;
+
+        int c1 = golem.levelDirector.GetEnemysInsideCircle(golem.Position(), range1).Count;
+        int c2 = golem.levelDirector.GetEnemysInsideCircle(golem.Position(), range2).Count - c1;
+
+        return c1 * 2 + c2 * 1 > 3;
     }
 }

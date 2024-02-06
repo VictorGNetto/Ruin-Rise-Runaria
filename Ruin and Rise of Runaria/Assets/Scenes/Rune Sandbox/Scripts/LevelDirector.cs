@@ -335,6 +335,18 @@ public class LevelDirector : MonoBehaviour
         return enemysInsideCircle;
     }
 
+    public List<Golem> GetGolemsInsideCircle(int guid, Vector3 position, float range)
+    {
+        List<Golem> golemsInsideCircle = new List<Golem>();
+        foreach (Golem g in golems) {
+            if (g != null && g.Alive() && (g.Position() - position).magnitude < range && g.GUID() != guid) {
+                golemsInsideCircle.Add(g);
+            }
+        }
+
+        return golemsInsideCircle;
+    }
+
     public void GameState()
     {
         //check if all elements in list are null
