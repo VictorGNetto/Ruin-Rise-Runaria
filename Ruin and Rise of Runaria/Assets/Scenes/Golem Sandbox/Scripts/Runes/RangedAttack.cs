@@ -7,44 +7,61 @@ using UnityEngine;
 public class RangedAttack : MonoBehaviour
 {
     // Public Attacks Parameters
-    public float A8_Dano = 1.0f;
-    public float A8_Alcance = 1.0f;
-    public float A8_Execucao = 1.0f;
-    public float A8_Recuperacao = 0.5f;
-    public float A8_Mana = 15.0f;
+    private float A8_Dano = 1.0f;
+    private float A8_Alcance = 1.0f;
+    private float A8_Execucao = 1.0f;
+    private float A8_Recuperacao = 0.5f;
+    private float A8_Mana = 15.0f;
 
-    public float A9_Dano = 2.0f;
-    public float A9_Alcance = 1.5f;
-    public float A9_Execucao = 1.5f;
-    public float A9_Recuperacao = 0.5f;
-    public float A9_Mana = 25.0f;
+    private float A9_Dano = 2.0f;
+    private float A9_Alcance = 1.5f;
+    private float A9_Execucao = 1.5f;
+    private float A9_Recuperacao = 0.5f;
+    private float A9_Mana = 25.0f;
     public Color A9_Ray_Color;
 
-    public float A10_Dano = 0.75f;
-    public float A10_Alcance = 1.5f;
-    public float A10_Execucao = 1.5f;
-    public float A10_Recuperacao = 0.5f;
-    public float A10_Mana = 30.0f;
+    private float A10_Dano = 0.75f;
+    private float A10_Alcance = 1.5f;
+    private float A10_Execucao = 1.5f;
+    private float A10_Recuperacao = 0.5f;
+    private float A10_Mana = 30.0f;
 
-    public float A11_Dano = 4.0f;
-    public float A11_Alcance = 1.5f;
-    public float A11_Execucao = 1.5f;
-    public float A11_Recuperacao = 0.5f;
-    public float A11_Mana = 50.0f;
+    private float A11_Dano = 4.0f;
+    private float A11_Alcance = 1.5f;
+    private float A11_Execucao = 1.5f;
+    private float A11_Recuperacao = 0.5f;
+    private float A11_Mana = 50.0f;
     public Color A11_Ray_Color;
 
-    public float A12_Dano = 0.85f;
-    public float A12_Alcance = 1.0f;
-    public float A12_Area = 2.0f;
-    public float A12_Execucao = 1.5f;
-    public float A12_Recuperacao = 0.5f;
-    public float A12_Mana = 20.0f;
+    private float A12_Dano = 0.85f;
+    private float A12_Alcance = 1.0f;
+    private float A12_Area = 2.0f;
+    private float A12_Execucao = 1.5f;
+    private float A12_Recuperacao = 0.5f;
+    private float A12_Mana = 20.0f;
+
+    private float A13_Dano = 1.0f;
+    private float A13_Alcance = 1.5f;
+    private float A13_Area = 2.5f;
+    private float A13_Execucao = 2.0f;
+    private float A13_Recuperacao = 0.5f;
+    private float A13_Mana = 40.0f;
+    public Color A13_Explosion_Color;
+
+    private float A14_Dano = 1.5f;
+    private float A14_Alcance = 1.5f;
+    private float A14_Area = 3.0f;
+    private float A14_Execucao = 2.0f;
+    private float A14_Recuperacao = 0.5f;
+    private float A14_Mana = 60.0f;
+    public Color A14_Explosion_Color;
 
     public Transform launchOffset;
     public GameObject runicSpellPrefab;
     public GameObject rayPrefab;
     public GameObject hitAreaPrefab;
     public GameObject explosion3Prefab;
+    public GameObject explosion6Prefab;
 
     private Golem golem;
 
@@ -76,6 +93,14 @@ public class RangedAttack : MonoBehaviour
         golem.runeFunctionMap.Add("A12", new Golem.RuneFunction(A12));
         golem.setupFunctionMap.Add("A12", new Golem.SetupBeforeAction(A12Setup));
         golem.cleanUpFunctionMap.Add("A12", new Golem.CleanUpAfterAction(A12CleanUp));
+
+        golem.runeFunctionMap.Add("A13", new Golem.RuneFunction(A13));
+        golem.setupFunctionMap.Add("A13", new Golem.SetupBeforeAction(A13Setup));
+        golem.cleanUpFunctionMap.Add("A13", new Golem.CleanUpAfterAction(A13CleanUp));
+
+        golem.runeFunctionMap.Add("A14", new Golem.RuneFunction(A14));
+        golem.setupFunctionMap.Add("A14", new Golem.SetupBeforeAction(A14Setup));
+        golem.cleanUpFunctionMap.Add("A14", new Golem.CleanUpAfterAction(A14CleanUp));
     }
 
     private void SafeTakeDamage()
@@ -405,6 +430,128 @@ public class RangedAttack : MonoBehaviour
     }
 
     private void A12CleanUp()
+    {
+        golem.speed = golem.baseSpeed;
+    }
+
+    // A13
+    private bool A13()
+    {
+        golem.LookToTheTarget();
+        if (golem.timeSinceLastAction < A13_Execucao * 0.25f) return true;
+        if (!golem.runeExecuted || boolDict["success"]) return true;
+
+        float distance = (golem.Position() - golem.TargetPosition()).magnitude;
+
+        if (distance < floatDict["attackRange"]) {
+            boolDict["success"] = true;
+
+            GameObject explosion6 = Instantiate(explosion6Prefab);
+            Vector3 offset = new Vector3(0, 0.65f, 0);
+            explosion6.transform.position = golem.TargetPosition() + offset;
+            explosion6.GetComponent<Explosion6>().Setup(golem.GetTargetSortingOrder() + 1, A13_Explosion_Color);
+
+            GameObject hitArea = Instantiate(hitAreaPrefab);
+            hitArea.transform.position = golem.TargetPosition();
+            hitArea.GetComponent<CircleHitArea>().SetRadius(floatDict["attackArea"]);
+            hitArea.GetComponent<CircleHitArea>().DestroyHitArea(0.5f);
+            hitArea.GetComponent<CircleHitArea>().AddNotHitableCharacter(golem.GUID());
+            hitArea.GetComponent<CircleHitArea>().SetDamage(floatDict["damage"]);
+
+            golem.speed = golem.baseSpeed * 0.75f;
+        }
+
+        return true;
+    }
+
+    private void A13Setup()
+    {
+        float manaCost = A13_Mana;
+
+        floatDict.Clear();
+        boolDict.Clear();
+        boolDict.Add("success", false);
+
+        if (manaCost <= golem.mana) {
+            golem.mana -= manaCost;
+            golem.runeExecuted = true;
+            golem.cooldown = A13_Execucao + A13_Recuperacao;
+            floatDict.Add("damage", golem.strength * A13_Dano);
+            floatDict.Add("attackRange", golem.basicRange + golem.distanceRange * A13_Alcance);
+            floatDict.Add("attackArea", golem.basicRange + golem.meleeRange * A13_Area);
+
+            golem.speed = golem.baseSpeed * 0.5f;
+            golem.animator.speed = 1;
+            golem.casting = true;
+            DoResetCastingAnimation(1.0f);
+        } else {
+            golem.runeExecuted = false;
+            golem.cooldown = A13_Recuperacao;
+        }
+    }
+
+    private void A13CleanUp()
+    {
+        golem.speed = golem.baseSpeed;
+    }
+
+    // A14
+    private bool A14()
+    {
+        golem.LookToTheTarget();
+        if (golem.timeSinceLastAction < A14_Execucao * 0.25f) return true;
+        if (!golem.runeExecuted || boolDict["success"]) return true;
+
+        float distance = (golem.Position() - golem.TargetPosition()).magnitude;
+
+        if (distance < floatDict["attackRange"]) {
+            boolDict["success"] = true;
+
+            GameObject explosion6 = Instantiate(explosion6Prefab);
+            Vector3 offset = new Vector3(0, 0.65f, 0);
+            explosion6.transform.position = golem.TargetPosition() + offset;
+            explosion6.GetComponent<Explosion6>().Setup(golem.GetTargetSortingOrder() + 1, A14_Explosion_Color);
+
+            GameObject hitArea = Instantiate(hitAreaPrefab);
+            hitArea.transform.position = golem.TargetPosition();
+            hitArea.GetComponent<CircleHitArea>().SetRadius(floatDict["attackArea"]);
+            hitArea.GetComponent<CircleHitArea>().DestroyHitArea(0.5f);
+            hitArea.GetComponent<CircleHitArea>().AddNotHitableCharacter(golem.GUID());
+            hitArea.GetComponent<CircleHitArea>().SetDamage(floatDict["damage"]);
+
+            golem.speed = golem.baseSpeed * 0.75f;
+        }
+
+        return true;
+    }
+
+    private void A14Setup()
+    {
+        float manaCost = A14_Mana;
+
+        floatDict.Clear();
+        boolDict.Clear();
+        boolDict.Add("success", false);
+
+        if (manaCost <= golem.mana) {
+            golem.mana -= manaCost;
+            golem.runeExecuted = true;
+            golem.cooldown = A14_Execucao + A14_Recuperacao;
+            floatDict.Add("damage", golem.strength * A14_Dano);
+            floatDict.Add("attackRange", golem.basicRange + golem.distanceRange * A14_Alcance);
+            floatDict.Add("attackArea", golem.basicRange + golem.meleeRange * A14_Area);
+
+            golem.speed = golem.baseSpeed * 0.5f;
+            golem.animator.speed = 1;
+            golem.casting = true;
+            DoResetCastingAnimation(1.0f);
+        } else {
+            golem.runeExecuted = false;
+            golem.cooldown = A14_Recuperacao;
+        }
+    }
+
+    private void A14CleanUp()
     {
         golem.speed = golem.baseSpeed;
     }

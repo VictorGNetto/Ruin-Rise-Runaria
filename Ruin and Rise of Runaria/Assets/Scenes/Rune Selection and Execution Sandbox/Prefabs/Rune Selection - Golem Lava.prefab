@@ -6335,6 +6335,10 @@ PrefabInstance:
       propertyPath: usedCapacity
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5251898315015734836, guid: a774159b0249c3342b929a63642b35d7, type: 3}
+      propertyPath: insertRunePosition
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5259616755554057291, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6462,6 +6466,10 @@ PrefabInstance:
     - target: {fileID: 8010239828806941330, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: savedUsedCapacity
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010239828806941330, guid: a774159b0249c3342b929a63642b35d7, type: 3}
+      propertyPath: savedInsertRunePosition
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8129094159637012758, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: m_AnchorMax.y
