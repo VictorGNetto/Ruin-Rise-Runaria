@@ -702,7 +702,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7681322806885808203}
   m_Layer: 0
-  m_Name: LauncOffset
+  m_Name: LaunchOffset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1151,31 +1151,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79fca25c3dbeb9e4cbee7c251df3a97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  A8_Dano: 1
-  A8_Alcance: 1
-  A8_Execucao: 1
-  A8_Recuperacao: 0.5
-  A8_Mana: 15
-  A9_Dano: 2
-  A9_Alcance: 1.5
-  A9_Execucao: 1.5
-  A9_Recuperacao: 0.5
-  A9_Mana: 25
   A9_Ray_Color: {r: 1, g: 0.9843137, b: 0.4, a: 1}
-  A10_Dano: 0.75
-  A10_Alcance: 1.5
-  A10_Execucao: 1
-  A10_Recuperacao: 0.5
-  A10_Mana: 30
-  A11_Dano: 4
-  A11_Alcance: 1.5
-  A11_Execucao: 1.5
-  A11_Recuperacao: 0.5
-  A11_Mana: 25
   A11_Ray_Color: {r: 0, g: 0.9805918, b: 1, a: 1}
+  A13_Explosion_Color: {r: 0.6, g: 0.7, b: 0.17857142, a: 1}
+  A14_Explosion_Color: {r: 0.7019608, g: 0.1764706, b: 0.17254902, a: 1}
   launchOffset: {fileID: 7681322806885808203}
   runicSpellPrefab: {fileID: 134017811733249524, guid: d67bb55a48e0b4a4eb210a5fcaea2dff, type: 3}
   rayPrefab: {fileID: 4396527084627835567, guid: 89f0a4e1754ccef43aca690e20c86fdc, type: 3}
+  hitAreaPrefab: {fileID: 1140987050725049851, guid: 04eecf9c56a9918489d040068c7e3a59, type: 3}
+  explosion3Prefab: {fileID: 3195598482690510327, guid: 4ed0608cc6d3a1a46b1f8faaf4a1cd95, type: 3}
+  explosion6Prefab: {fileID: 5286934567864022038, guid: 50bc5211e907d674d9a7b8353d9b86c3, type: 3}
 --- !u!114 &7367849554365151980
 MonoBehaviour:
   m_ObjectHideFlags: 0

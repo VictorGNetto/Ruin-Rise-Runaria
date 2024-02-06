@@ -7740,21 +7740,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1909648586369288730, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: m_Radius
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1909648586369288730, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: m_AgentTypeID
-      value: -334000983
-      objectReference: {fileID: 0}
-    - target: {fileID: 1909648586369288730, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2153060957998608583, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: m_Name
       value: Minotaur
+      objectReference: {fileID: 0}
+    - target: {fileID: 3339544310727367782, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3567203787012762661, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7796,62 +7788,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3675457552695927651, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: range
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3675457552695927651, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: damage
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3675457552695927651, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3675457552695927651, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: attackCooldown
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3675457552695927651, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: enemyHealthBar
-      value: 
-      objectReference: {fileID: 980573549}
     - target: {fileID: 5948072114191060044, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: strength
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 1792038908}
-    - target: {fileID: 7601032350855401999, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
---- !u!114 &980573549 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 791743655069758523, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-  m_PrefabInstance: {fileID: 980573548}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e4700eeddff04438d7f7e1b72b744f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &980573550 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
@@ -11666,15 +11615,15 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1792038909}
   - {fileID: 1253342037}
+  - {fileID: 1671737197}
   - {fileID: 993483176}
-  - {fileID: 978099371}
+  - {fileID: 1792038909}
   - {fileID: 922102738}
   - {fileID: 980573548}
   - {fileID: 1513803115}
-  - {fileID: 101144494}
-  - {fileID: 1671737197}
+  - {fileID: 978099371}
   - {fileID: 1740635610}
   - {fileID: 897300149}
   - {fileID: 1765139896}
+  - {fileID: 101144494}

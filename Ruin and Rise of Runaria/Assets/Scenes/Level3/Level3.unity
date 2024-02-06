@@ -10703,25 +10703,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2081105506}
     m_Modifications:
-    - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: health
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: defense
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: strength
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 1967834193}
-    - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: maxHealth
-      value: 75
+    - target: {fileID: 2114582177768379376, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
       propertyPath: levelDirector
@@ -10735,20 +10719,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wraith2
       objectReference: {fileID: 0}
-    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 482770234}
-    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: attackCooldown
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: enemyHealthBar
-      value: 
-      objectReference: {fileID: 1967834193}
-    - target: {fileID: 5517280175730278024, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: m_AnchorMax.y
+    - target: {fileID: 3817782176324100260, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7238298966314479811, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
@@ -14562,25 +14534,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2081105506}
     m_Modifications:
-    - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: health
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: defense
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: strength
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 1491680517}
-    - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: maxHealth
-      value: 75
+    - target: {fileID: 2114582177768379376, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
       propertyPath: levelDirector
@@ -14594,20 +14550,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wraith1
       objectReference: {fileID: 0}
-    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: levelDirector
-      value: 
-      objectReference: {fileID: 482770234}
-    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: attackCooldown
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: enemyHealthBar
-      value: 
-      objectReference: {fileID: 1491680517}
-    - target: {fileID: 5517280175730278024, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-      propertyPath: m_AnchorMax.y
+    - target: {fileID: 3817782176324100260, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7238298966314479811, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
@@ -20318,17 +20262,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7277dd75e907b27448ec1de08238d0bb, type: 3}
---- !u!114 &1491680517 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3834497914837000140, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-  m_PrefabInstance: {fileID: 793730046}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e4700eeddff04438d7f7e1b72b744f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1493314004
 GameObject:
   m_ObjectHideFlags: 0
@@ -22942,6 +22875,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minotaur3
       objectReference: {fileID: 0}
+    - target: {fileID: 3339544310727367782, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3567203787012762661, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: m_LocalPosition.x
       value: -953
@@ -22987,17 +22924,9 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 482770234}
-    - target: {fileID: 7601032350855401999, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23155,6 +23084,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minotaur2
       objectReference: {fileID: 0}
+    - target: {fileID: 3339544310727367782, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3567203787012762661, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: m_LocalPosition.x
       value: -955
@@ -23200,17 +23133,9 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 482770234}
-    - target: {fileID: 7601032350855401999, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24566,17 +24491,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7277dd75e907b27448ec1de08238d0bb, type: 3}
---- !u!114 &1967834193 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3834497914837000140, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
-  m_PrefabInstance: {fileID: 304124629}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e4700eeddff04438d7f7e1b72b744f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1970495453
 GameObject:
   m_ObjectHideFlags: 0
@@ -25669,13 +25583,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2081105506}
     m_Modifications:
-    - target: {fileID: 1909648586369288730, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: m_AgentTypeID
-      value: -334000983
-      objectReference: {fileID: 0}
     - target: {fileID: 2153060957998608583, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: m_Name
       value: Minotaur1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3339544310727367782, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3567203787012762661, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25722,17 +25636,9 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470036676125402018, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 482770234}
-    - target: {fileID: 7601032350855401999, guid: 9eda2fded58599d498e4fd4fbe754604, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27053,7 +26959,6 @@ SceneRoots:
   - {fileID: 509225601}
   - {fileID: 482770235}
   - {fileID: 207449657}
-  - {fileID: 732647175}
   - {fileID: 76768700}
   - {fileID: 156856458}
   - {fileID: 984625717}
@@ -27062,3 +26967,4 @@ SceneRoots:
   - {fileID: 618974846}
   - {fileID: 2081105506}
   - {fileID: 1871562613}
+  - {fileID: 732647175}

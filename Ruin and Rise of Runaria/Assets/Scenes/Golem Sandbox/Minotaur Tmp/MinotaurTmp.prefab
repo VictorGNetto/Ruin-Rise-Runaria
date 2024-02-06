@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1995853583184169345}
   - component: {fileID: 3979032667586062140}
   - component: {fileID: 1408191240517573513}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 995366446943564596}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7324894271291706921}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 639770888023965281}
   - component: {fileID: 4556535303091715305}
   - component: {fileID: 8989263538786074752}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: MinotaurTmp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,9 +288,11 @@ MonoBehaviour:
   health: 75
   maxHealth: 100
   healthBar: {fileID: 6176139660781751328}
+  friendlyTarget: {fileID: 0}
   target: {fileID: 0}
   strength: 15
   defense: 0.1
+  guid: 0
   alive: 1
   levelDirector: {fileID: 0}
   selectedAndTargetUI: {fileID: 5895810400089001353}
@@ -416,7 +418,7 @@ GameObject:
   - component: {fileID: 2023602643211981260}
   - component: {fileID: 370127944458675116}
   - component: {fileID: 4358313864742772332}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +494,7 @@ GameObject:
   - component: {fileID: 5799451916810592142}
   - component: {fileID: 3273113750901726460}
   - component: {fileID: 5895810400089001353}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Selected/Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3228414881660781455}
   - component: {fileID: 6952346904964850351}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Heath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +704,7 @@ GameObject:
   - component: {fileID: 1716745022328215212}
   - component: {fileID: 2326356981427607681}
   - component: {fileID: 6176139660781751328}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -819,7 +821,7 @@ GameObject:
   - component: {fileID: 7971492879569751025}
   - component: {fileID: 5274391663546890576}
   - component: {fileID: 776746808996240817}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
