@@ -359,38 +359,68 @@ public class LevelDirector : MonoBehaviour
     public void Win()
     {
         WinUI.SetActive(true);
+        Time.timeScale = 0.0f;
         UnlockNextLevel();
+        
     }
 
     public void LevelSelection()
     {
-        SceneManager.LoadScene("LevelSelection");
+        Time.timeScale = 1.0f;
+        if (SceneManager.GetActiveScene().name == "Level1")
+        {
+            SceneManager.LoadScene("Level2");
+        }
+        else if (SceneManager.GetActiveScene().name == "Level2")
+        {
+            SceneManager.LoadScene("Level3");
+        }
+        else if (SceneManager.GetActiveScene().name == "Level3")
+        {
+            SceneManager.LoadScene("Level4");
+        }
+        else if (SceneManager.GetActiveScene().name == "Level4")
+        {
+            SceneManager.LoadScene("Level5");
+        }
     }
+
     public void Menu()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("MainMenu");
     }
+
+   
 
     public void UnlockNextLevel()
     {
         if(SceneManager.GetActiveScene().name == "Level1")
         {
             GameManager.unlockedLevels[1] = true;
+            
+
         }
         else if(SceneManager.GetActiveScene().name == "Level2")
         {
             GameManager.unlockedLevels[2] = true;
+            
+
         }
         else if (SceneManager.GetActiveScene().name == "Level3")
         {
             GameManager.unlockedLevels[3] = true;
+            
+
         }
         else if (SceneManager.GetActiveScene().name == "Level4")
         {
             GameManager.unlockedLevels[4] = true;
+            
+
         }
-        
-        
+
+
     }
 
 }
