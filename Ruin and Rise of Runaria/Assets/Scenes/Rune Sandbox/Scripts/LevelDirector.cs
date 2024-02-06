@@ -350,22 +350,22 @@ public class LevelDirector : MonoBehaviour
     public void GameState()
     {
         //check if all elements in list are null
-        bool golemsDead = golems.All(element => element == null);
-        bool enemiesDead = enemys.All(element => element == null);
+        bool golemsDead = golems.All(element => element == null || !element.Alive());
+        bool enemiesDead = enemys.All(element => element == null || !element.Alive());
         if (golemsDead)
         {
+            Time.timeScale = 0;
             Loss();
         }else if (enemiesDead)
         {
+            Time.timeScale = 0;
             Win();
         }
     }
 
     public void Loss()
     {
-        Debug.Log("perdeu");
         LossUI.SetActive(true);
-
     }
 
     public void Win()
@@ -373,7 +373,6 @@ public class LevelDirector : MonoBehaviour
         WinUI.SetActive(true);
         Time.timeScale = 0.0f;
         UnlockNextLevel();
-        
     }
 
     public void LevelSelection()

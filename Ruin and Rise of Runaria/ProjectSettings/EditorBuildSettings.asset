@@ -14,12 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Splash Screen/LevelSelection.unity
     guid: abcdb6b310a86374ea9f201e309bb6ed
-  - enabled: 0
-    path: Assets/Scenes/Level1 - Final/Level1 - Final.unity
-    guid: 519f0abea5e82ef429a32952d0dfed5c
   - enabled: 1
-    path: Assets/Scenes/Level1/Level0.unity
-    guid: 1683dcfa0d75eab4489c7ff41b34f7c6
+    path: Assets/Scenes/Level1/Level1.unity
+    guid: c5ff7bf1805398343ac0a71769663837
   - enabled: 1
     path: Assets/Scenes/Level2/Level2.unity
     guid: 5e9fe5a7fce3af742b009ab3a21721fe
