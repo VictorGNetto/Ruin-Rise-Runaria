@@ -17,6 +17,11 @@ public class MainMenuDirector : MonoBehaviour
         timer = 0;
     }
 
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     private void Update()
     {
         timer += Time.deltaTime;
