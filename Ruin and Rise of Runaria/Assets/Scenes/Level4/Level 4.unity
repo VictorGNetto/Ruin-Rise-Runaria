@@ -792,8 +792,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
       propertyPath: strength
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 453877846}
     - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
       propertyPath: maxHealth
       value: 75
@@ -810,6 +814,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wraith1
       objectReference: {fileID: 0}
+    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: maxHealth
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: levelDirector
+      value: 
+      objectReference: {fileID: 1577266092}
+    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: attackCooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: enemyHealthBar
+      value: 
+      objectReference: {fileID: 453877846}
     - target: {fileID: 5517280175730278024, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1324,6 +1344,10 @@ PrefabInstance:
     - target: {fileID: 1513534931489187242, guid: 4e996b24ddb76df4f88ea11b823d6f23, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588059601797717825, guid: 4e996b24ddb76df4f88ea11b823d6f23, type: 3}
+      propertyPath: m_AgentTypeID
+      value: -334000983
       objectReference: {fileID: 0}
     - target: {fileID: 4918699649955800131, guid: 4e996b24ddb76df4f88ea11b823d6f23, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2508,6 +2532,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &453877846 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3834497914837000140, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+  m_PrefabInstance: {fileID: 122457036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e4700eeddff04438d7f7e1b72b744f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &460591757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3368,6 +3403,10 @@ PrefabInstance:
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3050305700215267244, guid: e13fa8356d45c544f80451bb4a2a59eb, type: 3}
+      propertyPath: levelDirector
+      value: 
+      objectReference: {fileID: 1577266092}
     - target: {fileID: 3284621324956955445, guid: e13fa8356d45c544f80451bb4a2a59eb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -4688,6 +4727,10 @@ PrefabInstance:
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 1577266092}
+    - target: {fileID: 3659480722104488416, guid: dece6e1610f5274468ab779dc9c59302, type: 3}
+      propertyPath: levelDirector
+      value: 
+      objectReference: {fileID: 1577266092}
     - target: {fileID: 3800956297572456472, guid: dece6e1610f5274468ab779dc9c59302, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -5746,6 +5789,10 @@ PrefabInstance:
       propertyPath: levelDirector
       value: 
       objectReference: {fileID: 1577266092}
+    - target: {fileID: 5738122930550038527, guid: a774159b0249c3342b929a63642b35d7, type: 3}
+      propertyPath: levelDirector
+      value: 
+      objectReference: {fileID: 1577266092}
     - target: {fileID: 5787230089873715327, guid: a774159b0249c3342b929a63642b35d7, type: 3}
       propertyPath: levelDirector
       value: 
@@ -5997,6 +6044,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2588059601797717825, guid: 4e996b24ddb76df4f88ea11b823d6f23, type: 3}
+      propertyPath: m_AgentTypeID
+      value: -334000983
+      objectReference: {fileID: 0}
     - target: {fileID: 4918699649955800131, guid: 4e996b24ddb76df4f88ea11b823d6f23, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6060,6 +6111,10 @@ PrefabInstance:
     - target: {fileID: 2894445575586125949, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: m_Name
       value: Golem - Earth
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894445575586125949, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6179743829551935389, guid: b822f77ce34105743b86f1fb94ffe8b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20062,6 +20117,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 215530870}
     m_Modifications:
+    - target: {fileID: 103198397133914348, guid: d45d159f1b04cce41b731ce973882dac, type: 3}
+      propertyPath: levelDirector
+      value: 
+      objectReference: {fileID: 1577266092}
     - target: {fileID: 239254384285312856, guid: d45d159f1b04cce41b731ce973882dac, type: 3}
       propertyPath: levelDirector
       value: 
@@ -20469,8 +20528,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
       propertyPath: strength
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1989750567}
     - target: {fileID: 2657251120362635703, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
       propertyPath: maxHealth
       value: 75
@@ -20487,6 +20550,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wraith2
       objectReference: {fileID: 0}
+    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: maxHealth
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: levelDirector
+      value: 
+      objectReference: {fileID: 1577266092}
+    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: attackCooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392400260169607699, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+      propertyPath: enemyHealthBar
+      value: 
+      objectReference: {fileID: 1989750567}
     - target: {fileID: 5517280175730278024, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -23592,6 +23671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem - Lava
       objectReference: {fileID: 0}
+    - target: {fileID: 3486168372903519019, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6441404501169219905, guid: 3d99d6f6180b3ee42b4c7cd59e98af77, type: 3}
       propertyPath: defense
       value: 0.5
@@ -24933,7 +25016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04976799df50f54ba128eff723155a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
@@ -24947,10 +25030,10 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.1
+  m_VoxelSize: 0.033333335
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: db75eb34506deaf4dbce91f1bf581c7f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: a6d4a574d27cc65f6965f855c3b6260e, type: 2}
 --- !u!4 &1649469155
 Transform:
   m_ObjectHideFlags: 0
@@ -26850,6 +26933,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3098036992344338872, guid: 36e1dbadf962d2144b8a872e6c60933f, type: 3}
   m_PrefabInstance: {fileID: 1986271000}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1989750567 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3834497914837000140, guid: 4f8d22bf49a755046bfb0eb1f02320fb, type: 3}
+  m_PrefabInstance: {fileID: 1340138615}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e4700eeddff04438d7f7e1b72b744f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1999265801
 GameObject:
   m_ObjectHideFlags: 0
