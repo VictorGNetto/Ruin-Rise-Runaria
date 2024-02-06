@@ -14,34 +14,34 @@ public class Conditional : MonoBehaviour
     {
         golem = gameObject.GetComponent<Golem>();
 
-        golem.runeFunctionMap.Add("C1", new Golem.RuneFunction(HealthAbove75Percent));
-        golem.setupFunctionMap.Add("C1", new Golem.SetupBeforeAction(HealthAbove75PercentSetup));
-
-        golem.runeFunctionMap.Add("C2", new Golem.RuneFunction(ConditionalDebug));
-        golem.runeFunctionMap.Add("C3", new Golem.RuneFunction(ConditionalDebug));
+        golem.setupFunctionMap.Add("L2-1", new Golem.SetupBeforeAction(L2xSetup));
+        golem.setupFunctionMap.Add("L2-2", new Golem.SetupBeforeAction(L2xSetup));
+        golem.setupFunctionMap.Add("L2-3", new Golem.SetupBeforeAction(L2xSetup));
+        golem.setupFunctionMap.Add("L2-4", new Golem.SetupBeforeAction(L2xSetup));
+        golem.setupFunctionMap.Add("L2-5", new Golem.SetupBeforeAction(L2xSetup));
+        
+        golem.runeFunctionMap.Add("L2-1", new Golem.RuneFunction(L21));
+        golem.runeFunctionMap.Add("L2-2", new Golem.RuneFunction(L22));
+        golem.runeFunctionMap.Add("L2-3", new Golem.RuneFunction(L23));
     }
 
-    private bool ConditionalDebug()
+    private void L2xSetup()
     {
-        bool b = UnityEngine.Random.Range(0f, 1f) > 0.5f;
-        Debug.Log(b);
-        golem.cooldown = 0;
-
-        return b;
-    }
-
-    private bool HealthAbove75Percent()
-    {
-        return golem.health / golem.maxHealth > 0.75f;
-    }
-
-    private void HealthAbove75PercentSetup()
-    {
-        // float manaCost = 5.0f;
         golem.cooldown = 1.0f;
+    }
 
-        // if (manaCost <= golem.mana) {
-        // } else {
-        // }
+    private bool L21()
+    {
+        return golem.health / golem.maxHealth > 0.50f;
+    }
+
+    private bool L22()
+    {
+        return golem.mana / golem.maxMana > 0.50f;
+    }
+
+    private bool L23()
+    {
+        return golem.target.Health() / golem.target.MaxHealth() > 0.50f;
     }
 }

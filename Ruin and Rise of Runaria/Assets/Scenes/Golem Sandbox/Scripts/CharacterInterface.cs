@@ -8,6 +8,7 @@ public interface ICharacter
     Vector3 Position();
     void TakeDamage(float amount);
     void Heal(float amount);
+    float Health();
     float MaxHealth();
     bool Alive();
     void Die();

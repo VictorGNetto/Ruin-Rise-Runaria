@@ -88,6 +88,11 @@ public class Enemy : MonoBehaviour, ICharacter
         healthBar.SetHealth(health, maxHealth);
     }
 
+    public float Health()
+    {
+        return health;
+    }
+
     public float MaxHealth()
     {
         return maxHealth;
