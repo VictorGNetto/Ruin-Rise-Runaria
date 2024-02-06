@@ -906,8 +906,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ea1ffad3545ab40ab27e8bdd18393f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 2
-  attackCooldown: 2
+  enemyPrefab: {fileID: 7045989180890955263, guid: dc23b7a70333a6f42b643d7721011a67, type: 3}
+  target: {fileID: 0}
+  launchOffset: {fileID: 0}
+  projectile: {fileID: 7175520923262880841, guid: 549cc04727614c14891e3404cf4ed2af, type: 3}
+  Meleerange: 2.5
+  Ragedrange: 10
+  InvokeCooldown: 60
+  MeleeCooldown: 3
+  RengedCooldown: 20
 --- !u!195 &731369281796892735
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1492,7 +1499,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1574292731, guid: fb3be3ac5ac60824d94b4641164a4c07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
