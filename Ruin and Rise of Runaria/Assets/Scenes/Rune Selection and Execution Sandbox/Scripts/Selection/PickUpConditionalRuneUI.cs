@@ -17,11 +17,13 @@ public class PickUpConditionalRuneUI : MonoBehaviour, IPointerEnterHandler, IPoi
 
     public List<PickUpConditionalRuneUI> othersPickUpConditionalRune;
 
+    public LevelDirectorProxy levelDirectorProxy;
+
     private int internalState = 0;  // 0 - unselected; 1 - selected as IF; 2 - selected as ELSE
 
     public void Select()
     {
-        if (levelDirector.levelStartedRunning) return;
+        if (levelDirectorProxy.levelDirector.levelStartedRunning) return;
 
         internalState = (internalState + 1) % 3;
 
