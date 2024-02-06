@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,9 +14,16 @@ public class LevelSelectionDirector : MonoBehaviour
     private bool goToMainMenu = false;
     private bool goToLevel = false;
 
+    private void Start()
+    {
+        
+        UnlockedLevels();
+    }
+
     private void Awake()
     {
         timer = 0;
+        
     }
 
     private void Update()
@@ -54,6 +62,20 @@ public class LevelSelectionDirector : MonoBehaviour
         }
     }
 
+    public List <GameObject> buttons;
+
+    public void UnlockedLevels ()
+    {
+
+        for (int i = 0; i < GameManager.unlockedLevels.Length; i++)
+        {
+            if (GameManager.unlockedLevels[i] == true)
+            {
+                buttons[i].SetActive(true);
+            }
+        }
+    }
+
     public void MainMenu()
     {
         goToMainMenu = true;
@@ -72,21 +94,51 @@ public class LevelSelectionDirector : MonoBehaviour
         timer = 0;
         Invoke("LoadLevel1", 0.5f);
     }
+    public void Level2()
+    {
+        goToLevel = true;
+        timer = 0;
+        Invoke("LoadLevel2", 0.5f);
+    }
+    public void Level3()
+    {
+        goToLevel = true;
+        timer = 0;
+        Invoke("LoadLevel3", 0.5f);
+    }
+    public void Level4()
+    {
+        goToLevel = true;
+        timer = 0;
+        Invoke("LoadLevel4", 0.5f);
+    }
+    public void Level5()
+    {
+        goToLevel = true;
+        timer = 0;
+        Invoke("LoadLevel5", 0.5f);
+    }
 
     private void LoadLevel1()
     {
         SceneManager.LoadScene("Level1");
     }
+    private void LoadLevel2()
+    {
+        SceneManager.LoadScene("Level2");
+    }
+    private void LoadLevel3()
+    {
+        SceneManager.LoadScene("Level3");
+    }
+    private void LoadLevel4()
+    {
+        SceneManager.LoadScene("Level4");
+    }
+    private void LoadLevel5()
+    {
+        SceneManager.LoadScene("Level5");
+    }
 
-    public void Level2()
-    {}
 
-    public void Level3()
-    {}
-
-    public void Level4()
-    {}
-
-    public void Level5()
-    {}
 }

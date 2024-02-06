@@ -1,13 +1,17 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelDirector : MonoBehaviour
 {
     public List<Golem> golems;
     public List<Enemy> enemys;
     public bool levelStartedRunning = false;
+    public GameObject WinUI;
+    public GameObject LossUI;
 
     private void Awake()
     {
@@ -27,6 +31,12 @@ public class LevelDirector : MonoBehaviour
             i++;
         }
     }
+
+    private void Update()
+    {
+        GameState();
+    }
+
 
     // Returns a random Golem, but the one with the passed UGID
     public Golem GetRandomFriend()
@@ -324,4 +334,63 @@ public class LevelDirector : MonoBehaviour
 
         return enemysInsideCircle;
     }
+
+    public void GameState()
+    {
+        //check if all elements in list are null
+        bool golemsDead = golems.All(element => element == null);
+        bool enemiesDead = enemys.All(element => element == null);
+        if (golemsDead)
+        {
+            Loss();
+        }else if (enemiesDead)
+        {
+            Win();
+        }
+    }
+
+    public void Loss()
+    {
+        Debug.Log("perdeu");
+        LossUI.SetActive(true);
+
+    }
+
+    public void Win()
+    {
+        WinUI.SetActive(true);
+        UnlockNextLevel();
+    }
+
+    public void LevelSelection()
+    {
+        SceneManager.LoadScene("LevelSelection");
+    }
+    public void Menu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void UnlockNextLevel()
+    {
+        if(SceneManager.GetActiveScene().name == "Level1")
+        {
+            GameManager.unlockedLevels[1] = true;
+        }
+        else if(SceneManager.GetActiveScene().name == "Level2")
+        {
+            GameManager.unlockedLevels[2] = true;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level3")
+        {
+            GameManager.unlockedLevels[3] = true;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level4")
+        {
+            GameManager.unlockedLevels[4] = true;
+        }
+        
+        
+    }
+
 }
