@@ -29,6 +29,7 @@ public class CircleHitArea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        Debug.Log("imehre");
         ICharacter character = collider.gameObject.GetComponent<ICharacter>();
         int guid = character.GUID();
 

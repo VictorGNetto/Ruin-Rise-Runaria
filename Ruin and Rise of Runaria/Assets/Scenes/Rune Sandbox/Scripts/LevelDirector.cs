@@ -38,7 +38,7 @@ public class LevelDirector : MonoBehaviour
     private void Update()
     {
         if (levelDone) return;
-        
+
         GameState();
     }
 
@@ -360,10 +360,12 @@ public class LevelDirector : MonoBehaviour
         if (golemsDead)
         {
             levelDone = true;
+            Time.timeScale = 1.0f;
             Loss();
         }else if (enemiesDead)
         {
             levelDone = true;
+            Time.timeScale = 1.0f;
             Win();
         }
     }

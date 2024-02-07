@@ -107,6 +107,7 @@ public class MinotaurBehaviour: MonoBehaviour
     public void Walk()
     {
         Golem target = enemy.target;
+        if (enemy.levelDirector.levelDone || target == null) return;
         animator.SetBool("Walking", true);
         navMeshAgent.SetDestination(target.Position());
         if (target.Position().x < transform.position.x)
@@ -121,7 +122,9 @@ public class MinotaurBehaviour: MonoBehaviour
 
     public void DealDamage()
     {
-        enemy.target.TakeDamage(enemy.strength);
+        Golem target = enemy.target;
+        if (enemy.levelDirector.levelDone || target == null) return;
+        target.TakeDamage(enemy.strength);
     }
 
     public void Attack()

@@ -63,7 +63,7 @@ public class SatyrBehaviour : MonoBehaviour
         leastHealth = Mathf.Infinity;
         for (int i = 0; i < enemy.levelDirector.enemys.Count; i++)
         {
-            if (levelDirector.enemys[i] != null && levelDirector.enemys[i].health < leastHealth && levelDirector.golems[i].alive)
+            if (levelDirector.enemys[i] != null && levelDirector.enemys[i].health < leastHealth && levelDirector.enemys[i].alive)
             {
                 leastHealth = levelDirector.enemys[i].health;
                 lowestEnemy = levelDirector.enemys[i];
